@@ -187,14 +187,19 @@
   color: var(--gray-600);
 }
 
-.section.bg-white {
-  background-color: #fff;
-}
-
-.section.bg-gray {
+.content-fluid.bg-gray {
   background-color: var(--background-bg_lightGray);
 }
 
 .top-contents {
   text-align: center;
+  padding: 64px 20px;
+}
+
+.top-contents .headline-medium {
+  margin: 16px 0;
+}
+
+.top-contents .body-xlarge {
+  margin-bottom: 16px;
 }
