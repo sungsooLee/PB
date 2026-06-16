@@ -1,0 +1,239 @@
+<!--
+/*************************************************************************
+* @ 서비스경로 : MN10M
+* @ 파일명      : MN10M.html 메인 - [T] 홈
+* @ 화면ID		: PBWMA000000
+* @ 작성자      : 90194835
+* @ 작성일      : 2025-01-13
+************************** 수정이력 ****************************************
+* 날짜                    작업자                 변경내용
+*_________________________________________________________________________
+* 2025-01-13            윤은정                 최초작성
+*************************************************************************/
+-->
+
+<style>
+  .main-inner > #container > .content {
+    padding-bottom: 0;
+  }
+</style>
+
+<div class="section-tablet section-tablet-half">
+  <div class="section">
+    <!-- visual-headline -->
+    <div class="visual-headline content-fluid" id="welcomeInfo"></div>
+    <!-- visual-headline -->
+
+    <!-- main-schedule-section -->
+    <div class="main-schedule-section">
+      <div class="main-schedule-title">
+        <div class="today">
+          <strong id="isToDay"></strong>
+          <div class="date" id="currDate"></div>
+        </div>
+        <a class="anchor" id="btnSchdView"></a>
+      </div>
+
+      <div class="main-schedule-week">
+        <ul id="listContainer"></ul>
+      </div>
+
+      <!-- 수신만기, 고객생일 -->
+      <div class="main-schedule-detail" id="custContainer">
+        <div id="custChevronContainer"></div>
+      </div>
+
+      <!-- 개인일정 -->
+      <div class="main-schedule-list">
+        <div id="planContainer"></div>
+        <div id="chevronContainer"></div>
+      </div>
+
+      <div class="main-schedule-list">
+        <div id="schdNoData" style="display: none"></div>
+      </div>
+    </div>
+    <!-- main-schedule-section -->
+  </div>
+  <div class="section">
+    <!-- main-stock-section -->
+    <div class="main-stock-section content-fluid">
+      <div class="main-section-title">
+        <strong class="title-large" id="nidxStr"></strong>
+        <a class="anchor chevron fs-15" id="btnNidxView"></a>
+      </div>
+      <div class="main-stock-list">
+        <ul class="overflow-list" id="nidxContainer"></ul>
+        <!-- 		<div class="body-caption px4 ar mt8" ><span id="nidxBasicDate"></span> 기준</div> -->
+      </div>
+    </div>
+    <!-- //main-stock-section -->
+    <div class="is-tablet">
+      <div class="divide content-fluid"></div>
+    </div>
+    <!-- main-figure-section -->
+    <div class="main-figure-section">
+      <div class="main-section-title">
+        <strong class="title-large">펀드 동향</strong>
+      </div>
+      <div class="main-figure-list">
+        <ul class="flex-wrap">
+          <li id="btnRateView" name="btnFndView" data-key="fnd22m">
+            <figure>
+              <picture>
+                <source
+                  srcset="../../resources/images/PBWMA/ico_fig_main_list01.svg"
+                />
+                <img
+                  src="../../resources/images/PBWMA/ico_fig_main_list01.svg"
+                  alt=""
+                />
+              </picture>
+              <figcaption>수익률 BEST</figcaption>
+            </figure>
+          </li>
+          <li id="btnSaleView" name="btnFndView" data-key="fnd21m">
+            <figure>
+              <picture>
+                <source
+                  srcset="../../resources/images/PBWMA/ico_fig_main_list02.svg"
+                />
+                <img
+                  src="../../resources/images/PBWMA/ico_fig_main_list02.svg"
+                  alt=""
+                />
+              </picture>
+              <figcaption>판매 BEST</figcaption>
+            </figure>
+          </li>
+          <li id="btnRecoView" name="btnFndView" data-key="fnd23m">
+            <figure>
+              <picture>
+                <source
+                  srcset="../../resources/images/PBWMA/ico_fig_main_list03.svg"
+                />
+                <img
+                  src="../../resources/images/PBWMA/ico_fig_main_list03.svg"
+                  alt=""
+                />
+              </picture>
+              <figcaption>이달의 추천</figcaption>
+            </figure>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- //main-figure-section -->
+
+    <div class="main-figure-section pt10">
+      <div class="main-section-title">
+        <strong class="title-large">ETF 동향</strong>
+      </div>
+      <div class="main-figure-list">
+        <ul class="flex-wrap">
+          <li id="btnRateView" name="btnFndView" data-key="etf22m">
+            <figure>
+              <picture>
+                <source
+                  srcset="../../resources/images/PBWMA/ico_fig_main_list01.svg"
+                />
+                <img
+                  src="../../resources/images/PBWMA/ico_fig_main_list01.svg"
+                  alt=""
+                />
+              </picture>
+              <figcaption>수익률 BEST</figcaption>
+            </figure>
+          </li>
+          <li id="btnSaleView" name="btnFndView" data-key="etf21m">
+            <figure>
+              <picture>
+                <source
+                  srcset="../../resources/images/PBWMA/ico_fig_main_list02.svg"
+                />
+                <img
+                  src="../../resources/images/PBWMA/ico_fig_main_list02.svg"
+                  alt=""
+                />
+              </picture>
+              <figcaption>판매 BEST</figcaption>
+            </figure>
+          </li>
+          <li id="btnRecoView" name="btnFndView" data-key="etf23m">
+            <figure>
+              <picture>
+                <source
+                  srcset="../../resources/images/PBWMA/ico_fig_main_list03.svg"
+                />
+                <img
+                  src="../../resources/images/PBWMA/ico_fig_main_list03.svg"
+                  alt=""
+                />
+              </picture>
+              <figcaption>유망 종목</figcaption>
+            </figure>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="is-tablet">
+      <div class="divide content-fluid"></div>
+    </div>
+
+    <!-- main-banner-section -->
+    <div class="main-banner-section" id="bannerArea">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper" id="bnrSwiper">
+          <!-- 			<div class="swiper-slide"> -->
+          <!-- 				<a href="javascript:void(0);"> -->
+          <!-- 					<picture> -->
+          <!-- 						<source srcset="../../resources/images/PBWMA/img_banner01.png"> -->
+          <!-- 						<img src="../../resources/images/PBWMA/img_banner01.png" alt=""> -->
+          <!-- 					</picture> -->
+          <!-- 				</a> -->
+          <!-- 			</div> -->
+          <!-- 			<div class="swiper-slide"> -->
+          <!-- 				<a href="javascript:void(0);"> -->
+          <!-- 					<picture> -->
+          <!-- 						<source srcset="../../resources/images/PBWMA/img_banner01.png"> -->
+          <!-- 						<img src="../../resources/images/PBWMA/img_banner01.png" alt=""> -->
+          <!-- 					</picture> -->
+          <!-- 				</a> -->
+          <!-- 			</div> -->
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+    <!-- main-banner-section -->
+
+    <div class="is-tablet">
+      <div class="divide content-fluid"></div>
+    </div>
+
+    <!-- main-notice-section -->
+    <div class="main-notice-section">
+      <div class="main-section-title">
+        <strong class="title-large">공지사항</strong>
+        <a
+          href="javascript:void(0);"
+          class="anchor chevron fs-15"
+          id="btnBlbrAll"
+          >전체보기</a
+        >
+      </div>
+      <div class="main-notice-list">
+        <a href="javascript:void(0);" id="notiMsg">
+          <p id="blbrTitleNm"></p>
+          <div class="date" id="bltnStaDt"></div>
+        </a>
+        <a href="javascript:void(0);" id="notiNoMsg" style="display: none">
+          <p class="description caution body-small fc-typography-caption ac">
+            공지사항이 없습니다.
+          </p>
+        </a>
+      </div>
+    </div>
+    <!-- //main-notice-section -->
+  </div>
+</div>

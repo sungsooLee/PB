@@ -1,0 +1,143 @@
+<!--
+/*************************************************************************
+* @ 서비스경로 : FNCPL40M
+* @ 파일명      : FNCPL40M.html  금융+ > 환율계산기 > 환율 계산
+* @ 작성자      : 90196258
+* @ 작성일      : 2025-01-10
+************************** 수정이력 ****************************************
+* 날짜                    작업자                 변경내용
+*_________________________________________________________________________
+* 2025-01-10       90196258                 최초작성
+*************************************************************************/
+-->
+
+<style>
+	body {
+		background-color: var(--background-bg_lightGray);
+	}
+</style>
+
+<!-- tab-content -->
+<div id="selectTab" class="tab-content tab-fluid tab-sticky">
+	<ul class="tab-list tab-col overflow-list px24" role="tablist">
+		<li id="tab1" class="tab tab-active"><a role="tab" href="javascript:void(0)" class="fs-18">외국통화매도</a></li>
+		<li id="tab2" class="tab"><a role="tab" href="javascript:void(0)" class="fs-18">외국통화매입</a></li>
+		<li id="tab3" class="tab"><a role="tab" href="javascript:void(0)" class="fs-18">당발송금</a></li>
+		<li id="tab4" class="tab"><a role="tab" href="javascript:void(0)" class="fs-18">타발송금</a></li>
+	</ul>
+</div>
+<!-- //tab-content -->
+
+<!-- form -->
+<!-- div class="group-form mt25"><div class="group-title">
+	<strong class="title-medium mx16">소수점 보이기</strong>
+	<div class="inp inp-toggle mx16">
+		<label>
+			<input type="checkbox" aria-label="소수점 보이기" id="dotShow">
+		</label>
+	</div>
+</div-->
+<div class="form mt8">
+	<div class="form-exchange block">
+		<div class="label">
+			<button id="cucdIcon" class="flag" data-micromodal-trigger="modal-select"><strong id="cucd">USD</strong><span id="cucdKrNm">미국 달러</span></button>
+		</div>
+		<div class="ex-input-wrap">
+			<input id="iptAmt" type="tel" placeholder="1" maxlength='17'>
+			<span id="iptAmtOut">달러</span>
+		</div>
+	</div>
+</div>
+<!-- //form -->
+
+<!-- form -->
+<div class="form mt16">
+	<div class="form-exchange block">
+		<div class="label j-start">환율우대율<i class="icon-only icon-24 icon-percent bg-icon-default"></i></div>
+		<div class="ex-input-wrap d-flex">
+			<button id="xrtPrmeRt" type="button" class="anchor chevron anchor-fluid" data-placeholder="없음" data-micromodal-trigger="modal-alert1"></button>
+		</div>
+	</div>
+</div>
+<!-- //form -->
+
+<!-- btn-wrap -->
+<div class="btn-wrap bg-transparent py0 my32">
+	<button type="button" id="btnSearch" class="btn-medium btn-primary btn-round" style="max-width:130px;"><i class="ico-check"></i>조회</button>
+</div>
+<!-- //btn-wrap -->
+
+<!-- form -->
+<div class="form mt16" style="display:none;">
+	<div class="form-exchange block" style="border-bottom-left-radius:0;border-bottom-right-radius:0;">
+		<div class="label">
+			<span class="flag flag-kr"><strong>KRW</strong><span>대한민국</span></span>
+		</div>
+		<div class="ex-input-wrap">
+			<input id="krwAmt" type="text" readonly value="">
+			<span id="krwAmtOut"></span>
+		</div>
+	</div>
+	<div class="form-exchange block" style="border-top-left-radius:0;border-top-right-radius:0;">
+		<div class="label j-start"><i class="icon-only icon-24 icon-calculator bg-icon-gray_1"></i>손익정보</div>
+		<div class="ex-input-wrap">
+			<input id="plInfAmt" type="text" readonly value="" class="fc-brandPrimary-blue600">
+			<span id="plInfAmtOut"></span>
+		</div>
+	</div>
+</div>
+<!-- //form -->
+
+<!-- form -->
+<div class="form mt16">
+	<div class="form-exchange a-start pt32 pb32" style="border-bottom-left-radius:0;border-bottom-right-radius:0;">
+		<div class="label">
+			<span class="flag flag-kr"><strong>KRW</strong><span class="mt-0">대한민국</span></span>
+		</div>
+		<div class="ex-benefit-wrap mt-5">
+			<dl>
+				<dd><span id="exBenefit_1">13,886,500</span></dd>
+				<dd class="sub-text">우대 전 <span id="exBenefit_0">14,031,300</span></dd>
+			</dl>
+		</div>
+		
+	</div>
+	<div class="form-exchange a-start pt0" style="border-radius:0;">
+		<div class="label">
+			<span><strong>적용환율</strong></span>
+		</div>
+		<div class="ex-input-wrap">
+			<div class="d-flex a-center gap4">
+				<input id="ex_1" type="text" class="fs-24" value="1,388" readonly>
+			</div>
+			<div class="d-flex a-center j-end gap4">
+				<span class="nowrap">우대 전 </span><span id="ex_0">1,403</span>
+			</div>
+		</div>
+	</div>
+	<div class="form-exchange a-start pt0" style="border-top-left-radius:0;border-top-right-radius:0;">
+		<div class="label">
+			<span><strong>손익정보</strong></span>
+		</div>
+		<div class="ex-benefit-wrap mt-5">
+			<dl>
+				<dd><span id="bankBenefit_1">91,500</span></dd>
+				<dd class="sub-text">우대 전 <span id="bankBenefit_0">236,300</span></dd>
+			</dl>
+		</div>
+	</div>
+</div>
+<!-- //form -->
+
+<!-- 당발솜금 시 노출 -->
+<div id="exFeePop" style="display:none;">
+	<div class="stroke stroke4 stroke-fluid mt40"></div>
+	<div class="content-fluid px0">
+		<button id="exFeebtn" type="button" class="anchor chevron anchor-fluid" data-micromodal-trigger="modal-popup-exFee"><strong class="title-medium px4">당발송금수수료</strong></button>
+	</div>
+	<div class="stroke stroke4 stroke-fluid"></div>
+</div>
+<!-- //당발솜금 시 노출 -->
+					
+<p class="description caution body-small fc-typography-caption mt32">단순 계산 및 조회용으로 수수료는 포함되지 않았습니다.</p>
+<p class="description caution body-small fc-typography-caption mt16">상세 계산은 WINI FG900(외환리테일 사전상담 금액계산)거래를 이용하시기 바랍니다.</p>

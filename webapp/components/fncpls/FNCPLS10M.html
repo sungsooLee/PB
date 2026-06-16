@@ -1,0 +1,172 @@
+<!--
+/*************************************************************************
+* @ 서비스경로 : FNCPLS10M
+* @ 파일명      : FNCPLS10M.html  메인 > 금융+
+* @ 작성자      : 90195654
+* @ 작성일      : 2024-12-26
+************************** 수정이력 ****************************************
+* 날짜                    작업자                 변경내용
+*_________________________________________________________________________
+* 2024-12-26       90195654                 최초작성
+*************************************************************************/
+-->
+<style>
+  body {
+    background-color: var(--background-bg_lightGray);
+  }
+</style>
+
+<!-- main-figure-section -->
+<div class="main-figure-section content-fluid bg-surface-surface">
+  <div class="main-section-title">
+    <strong class="headline-small">스마트한 업무 지원!</strong>
+  </div>
+  <div class="main-figure-list">
+    <ul class="flex-wrap">
+      <li id="goFncMenu1">
+        <figure>
+          <picture>
+            <source
+              srcset="../../resources/images/PBWMA/ico_fig_main_list04.svg"
+            />
+            <img
+              src="../../resources/images/PBWMA/ico_fig_main_list04.svg"
+              alt=""
+            />
+          </picture>
+          <figcaption>예적금 계산기</figcaption>
+        </figure>
+      </li>
+      <li id="goFncMenu2">
+        <figure>
+          <picture>
+            <source
+              srcset="../../resources/images/PBWMA/ico_fig_main_list05.svg"
+            />
+            <img
+              src="../../resources/images/PBWMA/ico_fig_main_list05.svg"
+              alt=""
+            />
+          </picture>
+          <figcaption>대출 계산기</figcaption>
+        </figure>
+      </li>
+      <li id="goFncMenu3">
+        <figure>
+          <picture>
+            <source
+              srcset="../../resources/images/PBWMA/ico_fig_main_list06.svg"
+            />
+            <img
+              src="../../resources/images/PBWMA/ico_fig_main_list06.svg"
+              alt=""
+            />
+          </picture>
+          <figcaption>환율 계산기</figcaption>
+        </figure>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- //main-figure-section -->
+
+<div class="main-exchange-section">
+  <div class="main-section-title">
+    <strong class="headline-small">환율 조회</strong>
+  </div>
+
+  <div class="caption-visible mb16 ar" id="basDt"></div>
+
+  <div class="pl12 py8">
+    <ul class="label-list pl8">
+      <li class="list01"><i aria-label="매매기준율"></i></li>
+      <li class="list02"><i aria-label="본지점매도율"></i></li>
+      <li class="list03"><i aria-label="본지점매입율"></i></li>
+    </ul>
+  </div>
+
+  <div class="exchange-wrap mt16">
+    <div class="exchange-list">
+      <div
+        class="flag flag-us flag-fluid"
+        data-micromodal-trigger="modal-country"
+      >
+        <strong>USD</strong><span>미국 달러</span>
+      </div>
+      <div class="stroke my16"></div>
+      <ul class="label-list">
+        <li class="list01"><i aria-label="매매기준율" id="sbBasRtUSD"></i></li>
+        <li class="list02">
+          <i aria-label="본지점매도율" id="ioffSellRtUSD"></i>
+        </li>
+        <li class="list03">
+          <i aria-label="본지점매입율" id="ioffBuyRtUSD"></i>
+        </li>
+      </ul>
+    </div>
+    <div class="exchange-list">
+      <div
+        class="flag flag-jp flag-fluid"
+        data-micromodal-trigger="modal-country"
+      >
+        <strong>JPY</strong><span>일본 100엔</span>
+      </div>
+      <div class="stroke my16"></div>
+      <ul class="label-list">
+        <li class="list01"><i aria-label="매매기준율" id="sbBasRtJPY"></i></li>
+        <li class="list02">
+          <i aria-label="본지점매도율" id="ioffSellRtJPY"></i>
+        </li>
+        <li class="list03">
+          <i aria-label="본지점매입율" id="ioffBuyRtJPY"></i>
+        </li>
+      </ul>
+    </div>
+    <div class="exchange-list">
+      <div
+        class="flag flag-eu flag-fluid"
+        data-micromodal-trigger="modal-country"
+      >
+        <strong>EUR</strong><span>유럽 유로</span>
+      </div>
+      <div class="stroke my16"></div>
+      <ul class="label-list">
+        <li class="list01"><i aria-label="매매기준율" id="sbBasRtEUR"></i></li>
+        <li class="list02">
+          <i aria-label="본지점매도율" id="ioffSellRtEUR"></i>
+        </li>
+        <li class="list03">
+          <i aria-label="본지점매입율" id="ioffBuyRtEUR"></i>
+        </li>
+      </ul>
+    </div>
+    <div class="exchange-list">
+      <div
+        class="flag flag-gb flag-fluid"
+        data-micromodal-trigger="modal-country"
+      >
+        <strong>GBP</strong><span>영국 파운드</span>
+      </div>
+      <div class="stroke my16"></div>
+      <ul class="label-list">
+        <li class="list01"><i aria-label="매매기준율" id="sbBasRtGBP"></i></li>
+        <li class="list02">
+          <i aria-label="본지점매도율" id="ioffSellRtGBP"></i>
+        </li>
+        <li class="list03">
+          <i aria-label="본지점매입율" id="ioffBuyRtGBP"></i>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="btn-wrap bg-transparent">
+  <button
+    type="button"
+    class="btn-xsmall btn-outlined btn-round"
+    id="goFncMenu4"
+  >
+    전체보기<i class="ico-chevron"></i>
+  </button>
+</div>

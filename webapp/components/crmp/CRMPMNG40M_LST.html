@@ -1,0 +1,41 @@
+<!--
+/*************************************************************************
+* @ 서비스경로 : CRMPMNG40M
+* @ 파일명      : CRMPMNG40M_LST.html  고객관리 > 기업정보조회 > 결과 리스트
+* @ 작성자      : 90195654
+* @ 작성일      : 2024-12-26
+************************** 수정이력 ****************************************
+* 날짜                    작업자                 변경내용
+*_________________________________________________________________________
+* 2024-12-26       90195654                 최초작성
+*************************************************************************/
+-->
+<button type="button" class="customer-card" id="company">
+	<strong class="anchor chevron anchor-fluid title-medium p0 fc-typography-title fw-700" data-bind="copNm"></strong>
+	<div class="info-detail-list p0 bg-white-100">
+		<div class="info-table">
+			<div class="info-body">
+				<div class="info-row">
+					<div class="info-th fc-typography-black px0">대표자명</div>
+					<div class="info-td ar" data-bind="rppeNm"></div>
+				</div>
+				<div class="info-row">
+					<div class="info-th fc-typography-black px0">기업상태</div>
+					<div class="info-td ar" data-bind="state"></div>
+				</div>
+				<div class="info-row">
+					<div class="info-th fc-typography-black px0">사업자번호</div>
+					<div class="info-td ar" data-bind="bzpeNo"></div>
+				</div>
+				<div class="info-row">
+					<div class="info-th fc-typography-black px0">업종</div>
+					<div class="info-td ar" data-bind="bzctGrcd"></div>
+				</div>
+				<div class="info-row">
+					<div class="info-th fc-typography-black px0">주소</div>
+					<div class="info-td ar" data-bind="rdnmAdr"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</button>

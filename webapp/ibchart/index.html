@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- Chrome, Safari, IE -->
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <!-- Firefox, Opera (Chrome and Safari say thanks but no thanks) -->
+    <link rel="icon" href="./favicon.ico" />
+
+    <link rel="stylesheet" href="/resources/css/d2coding.css" />
+    <link rel="stylesheet" href="/resources/css/NanumGothic.css" />
+    <link rel="stylesheet" href="/resources/css/all.min.css" />
+    <link rel="stylesheet" href="/resources/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/resources/css/toc-manager.min.css" />
+    <link rel="stylesheet" href="/resources/css/main.min.css" />
+    <title>IBChart Manual</title>
+  </head>
+  <body>
+    <div id="main">
+      <div id="sidebarWrapper">
+        <div class="logo-wrapper">
+          <div
+            class="manual-title"
+            style="
+              margin: 5px 10px 0px 10px;
+              padding-bottom: 0px;
+              background-image: none;
+            "
+          >
+            Manual for
+          </div>
+          <div
+            style="
+              margin: -10px 10px 0px 10px;
+              color: #437fec;
+              font-weight: 700;
+              white-space: nowrap;
+              font-size: 23pt;
+            "
+          >
+            IB Chart
+          </div>
+        </div>
+        <div class="controls-wrapper p-1">
+          <div class="input-group input-group-sm mb-1" data-role="title">
+            <div class="input-group-prepend">
+              <span class="input-group-text"
+                ><i class="fas fa-filter"></i
+              ></span>
+            </div>
+            <input
+              id="titleInput"
+              type="text"
+              class="form-control"
+              placeholder="Enter Title"
+            />
+            <div class="input-group-append">
+              <button
+                class="btn btn-secondary cancel"
+                tabindex="-1"
+                type="button"
+              >
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+          </div>
+          <div class="input-group input-group-sm mb-1" data-role="body">
+            <div class="input-group-prepend">
+              <span class="input-group-text"
+                ><i class="fas fa-search"></i
+              ></span>
+            </div>
+            <input
+              id="bodyInput"
+              type="text"
+              class="form-control"
+              placeholder="Enter Keyword"
+            />
+            <div class="input-group-append">
+              <button
+                class="btn btn-secondary cancel"
+                tabindex="-1"
+                type="button"
+              >
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+          </div>
+          <div class="toc-controls btn-toolbar">
+            <div class="tree btn-group btn-group-sm mr-1">
+              <button
+                type="button"
+                class="btn btn-outline-info"
+                data-role="default"
+              >
+                <i class="fas fa-stream"></i>
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-info"
+                data-role="expandAll"
+              >
+                <i class="fas fa-plus"></i>
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-info"
+                data-role="collapseAll"
+              >
+                <i class="fas fa-minus"></i>
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-info"
+                data-role="autoCollapse"
+              >
+                <i class="fas fa-flag"></i>
+              </button>
+            </div>
+            <div class="li-type btn-group btn-group-sm mr-1">
+              <button
+                type="button"
+                class="btn btn-outline-info"
+                data-role="hideListNumber"
+              >
+                <i class="fas fa-list-ul"></i>
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-info"
+                data-role="showListNumber"
+              >
+                <i class="fas fa-list-ol"></i>
+              </button>
+            </div>
+          </div>
+          <div class="manual-info p-2">
+            <a href="./archive/ibchart-manual_v241023-0458.zip"
+              ><i class="fas fa-download"></i
+              ><span>Updated 241023-0458</span></a
+            >
+          </div>
+        </div>
+        <div id="toc-wrapper">
+          <div class="loading">
+            <span>Loading..</span>
+            <i class="fas fa-spinner fa-spin fa-lg"></i>
+          </div>
+        </div>
+      </div>
+      <div class="toggle"></div>
+      <div id="dragbar"></div>
+      <div id="contents">
+        <iframe id="contentFrame" name="contentFrame"></iframe>
+        <div class="footer">
+          Copyright 2024. IB Leaders All rights reserved.
+        </div>
+      </div>
+    </div>
+    <script src="../../resources/plugins/jquery/jquery.slim.min.js"></script>
+    <script src="../../resources/plugins/jquery/jquery.mark.min.js"></script>
+    <script src="../../resources/ext/lodash.min.js"></script>
+    <script src="../../resources/ext/bootstrap.bundle.min.js"></script>
+    <script src="../../resources/js/ibChart/index-toc.js"></script>
+    <script src="../../resources/js/ibChart/toc-manager.min.js"></script>
+    <script src="../../resources/js/ibChart/main.js"></script>
+  </body>
+</html>

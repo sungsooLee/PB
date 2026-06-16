@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <title>자산관리 영업지원 App</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0, user-scalable=no"
+    />
+
+    <script src="../../resources/plugins/jquery/jquery.min.js"></script>
+
+    <!-- [plugins] -->
+    <!-- micromodal -->
+    <link
+      rel="stylesheet"
+      href="../../resources/plugins/micromodal/0.4.10/micromodal.css"
+    />
+    <script src="../../resources/plugins/micromodal/0.4.10/micromodal.min.js"></script>
+    <!-- sortable -->
+    <script src="../../resources/plugins/sortable/1.15.2/Sortable.min.js"></script>
+    <!-- sweetalert2 -->
+    <link
+      rel="stylesheet"
+      href="../../resources/plugins/sweetalert2/11.11.0/sweetalert2.min.css"
+    />
+    <script src="../../resources/plugins/sweetalert2/11.11.0/sweetalert2.min.js"></script>
+    <!-- swiper -->
+    <link
+      rel="stylesheet"
+      href="../../resources/plugins/swiper/11.1.1/swiper-bundle.min.css"
+    />
+    <script src="../../resources/plugins/swiper/11.1.1/swiper-bundle.min.js"></script>
+    <!-- tippy -->
+    <script src="../../resources/plugins/popper.js/2.11.8/umd/popper.min.js"></script>
+    <script src="../../resources/plugins/popper.js/2.11.8/umd/tippy-bundle.umd.min.js"></script>
+    <!-- toastr -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../resources/plugins/toastr/2.1.4/toastr.min.css"
+    />
+    <script src="../../resources/plugins/toastr/2.1.4/toastr.min.js"></script>
+    <!-- jquery-ui -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../resources/plugins/jquery-ui/jquery-ui.css"
+    />
+    <script src="../../resources/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- pinch-zoom -->
+    <script src="../../resources/plugins/pinch-zoom/pinch-zoom.umd.js"></script>
+    <!-- apexcharts -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../resources/plugins/apexcharts/3.50.0/apexcharts.css"
+    />
+    <script src="../../resources/plugins/apexcharts/3.50.0/apexcharts.min.js"></script>
+    <!-- AOS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../resources/plugins/aos/3.0.0-beta.6/aos.css"
+    />
+    <script src="../../resources/plugins/aos/3.0.0-beta.6/aos.js"></script>
+    <!-- jquery-ui-monthpicker-master -->
+    <script src="../../resources/plugins/jquery-ui-monthpicker-master/monthpicker.js"></script>
+    <!-- jquery-touchSwipe -->
+    <script src="../../resources/plugins/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <!-- //[plugins] -->
+
+    <!-- ui source -->
+    <link rel="stylesheet" href="../../resources/css/ui-fonts.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-variable.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-default.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-layout.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-style.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-content.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-bscard.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-plugins.css" />
+
+    <link rel="stylesheet" href="../../resources/css/ui-skeletone.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-mediaquery.css" />
+    <script src="../../resources/js/ui-script.js"></script>
+    <script src="../../resources/js/ui-temp.js"></script>
+    <!-- 개발서버에서 include 제외해주세요 -->
+    <!-- //ui source -->
+  </head>
+
+  <body>
+    <!-- main -->
+    <main>
+      <!-- header -->
+      <header>
+        <div class="main-header">
+          <div class="left">
+            <button type="button" class="header-btn" aria-label="뒤로 가기">
+              <i class="i-back"></i>
+            </button>
+          </div>
+          <div class="center">
+            <h1>고객 명함 관리</h1>
+          </div>
+          <div class="right">
+            <button type="button" class="header-btn" aria-label="메뉴 열기">
+              <i class="i-menu"></i>
+            </button>
+          </div>
+        </div>
+      </header>
+      <!-- //header -->
+
+      <!-- main-inner -->
+      <!-- content start -->
+      <div class="main-inner">
+        <!-- container -->
+        <div id="container">
+          <!-- content -->
+          <div class="content">
+            <!-- sticky-content -->
+            <div class="sticky-sentinal"></div>
+            <div class="sticky-content content-fluid">
+              <div class="sticky-content-inner">
+                <!-- form -->
+                <div class="form">
+                  <div class="label"></div>
+                  <div class="input-wrap input-btn">
+                    <input
+                      type="text"
+                      placeholder="이름, 회사명으로 검색해 보세요."
+                      aria-label="검색"
+                    />
+                    <button
+                      type="button"
+                      class="input-remove"
+                      aria-label="입력 내용 삭제"
+                    ></button>
+                    <button
+                      type="button"
+                      class="input-search"
+                      aria-label="입력 내용 검색"
+                    ></button>
+                  </div>
+                  <p class="validate-text"></p>
+                </div>
+                <!-- //form -->
+              </div>
+            </div>
+            <!-- //sticky-content -->
+
+            <!-- sort-wrap -->
+            <div class="sort-wrap pt4">
+              <!-- sort-list -->
+              <button
+                class="sort-list"
+                data-micromodal-trigger="modal-select-filter"
+                aria-label="정렬"
+              >
+                <span class="filter">
+                  <span>전체</span>
+                  <i class="badge ml0">3</i>
+                </span>
+                <span class="division mx8"></span>
+                <span class="sort">최신순</span>
+              </button>
+              <!-- sort-list -->
+            </div>
+            <!-- sort-wrap -->
+
+            <!-- business-card-customer -->
+            <div class="business-card-customer-list">
+              <div class="business-card-customer">
+                <button>
+                  <strong class="title-medium">김성민</strong>
+                  <span class="divide-list">
+                    <span>디지털공통개발부 UI/UX팀</span>
+                    <span class="division h14 mx8"></span>
+                    <span>과장</span>
+                  </span>
+                  <span class="company-name">파인너츠</span>
+                  <span class="tag-wrap d-flex gap8">
+                    <span class="tags tags-small tags-lightBlue"
+                      ><i class="icon-only icon-15 icon-keyman"></i>키맨</span
+                    >
+                    <span class="tags tags-small tags-lightCyan"
+                      ><i class="icon-only icon-15 icon-privacy"></i
+                      >나만보기</span
+                    >
+                  </span>
+                </button>
+                <figure>
+                  <div class="due-date">
+                    <strong class="body-small">만료일</strong>
+                    <span>2024.11.26</span>
+                  </div>
+                  <div class="thumb thumb-nodata">
+                    <!-- <button type="button" class="btn-xsmall btn-black btn-round">연장하기</button> -->
+                    <picture>
+                      <source
+                        srcset="
+                          ../../resources/images/PBWBU/ico_business_card_empty.svg
+                        "
+                      />
+                      <img
+                        src="../../resources/images/PBWBU/ico_business_card_empty.svg"
+                        alt=""
+                      />
+                    </picture>
+                  </div>
+                </figure>
+              </div>
+
+              <div class="business-card-customer">
+                <button>
+                  <strong class="title-medium">이름</strong>
+                  <span class="divide-list">
+                    <span>부서명</span>
+                    <span class="division h14 mx8"></span>
+                    <span>직책</span>
+                  </span>
+                  <span class="company-name">회사명</span>
+                  <span class="tag-wrap d-flex gap8">
+                    <span class="tags tags-small tags-lightCyan"
+                      ><i class="icon-only icon-15 icon-privacy"></i
+                      >나만보기</span
+                    >
+                  </span>
+                </button>
+                <figure>
+                  <div class="due-date">
+                    <strong class="body-small">만료일</strong>
+                    <div class="tags tags-small tags-lightBlue">D-30</div>
+                  </div>
+                  <div class="thumb">
+                    <button
+                      type="button"
+                      class="btn-xsmall btn-black btn-round"
+                      onclick="toastr.success(``, '연장되었습니다.')"
+                    >
+                      연장하기
+                    </button>
+                    <picture>
+                      <source srcset="../../resources/@temp/thumb_w.png" />
+                      <img src="../../resources/@temp/thumb_w.png" alt="" />
+                    </picture>
+                  </div>
+                </figure>
+              </div>
+
+              <div class="business-card-customer">
+                <button>
+                  <strong class="title-medium">이름</strong>
+                  <span class="divide-list">
+                    <span>부서명</span>
+                    <span class="division h14 mx8"></span>
+                    <span>직책</span>
+                  </span>
+                  <span class="company-name">회사명</span>
+                </button>
+                <figure>
+                  <div class="due-date">
+                    <div class="tags tags-small tags-lightRed">삭제예정</div>
+                  </div>
+                  <div class="thumb">
+                    <button
+                      type="button"
+                      class="btn-xsmall btn-black btn-round"
+                      onclick="toastr.success(``, '연장되었습니다.')"
+                    >
+                      연장하기
+                    </button>
+                    <picture>
+                      <source srcset="../../resources/@temp/thumb_w.png" />
+                      <img src="../../resources/@temp/thumb_w.png" alt="" />
+                    </picture>
+                  </div>
+                </figure>
+              </div>
+            </div>
+            <!-- //business-card-customer -->
+          </div>
+          <!-- //content -->
+        </div>
+        <!-- //container -->
+      </div>
+      <!-- //content end -->
+      <!-- //main-inner -->
+
+      <!-- bottom-btn -->
+      <div class="bottom-btn">
+        <div class="btn-wrap">
+          <button type="button" class="btn-large btn-primary">
+            <i class="ico-add"></i>고객 명함 등록
+          </button>
+        </div>
+      </div>
+      <!-- //bottom-btn -->
+    </main>
+    <!-- //main -->
+
+    <!-- micromodal -->
+    <div
+      class="micromodal-slide micromodal-slide-bottom modal"
+      id="modal-select-filter"
+    >
+      <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+        <div class="modal__container" role="dialog" aria-modal="true">
+          <div class="modal__header modal__header__alert">
+            <button
+              type="button"
+              class="modal__close"
+              aria-label="팝업 닫기"
+              data-micromodal-close
+            ></button>
+          </div>
+          <div class="modal__content">
+            <div class="content content-fluid">
+              <div class="select-option">
+                <strong class="title-large">필터</strong>
+                <ul>
+                  <li class="select-all">
+                    <button type="button">
+                      <span>전체</span><i class="badge">10</i>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button">
+                      <span>키맨</span><i class="badge">2</i>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button">
+                      <span>내가 등록한 명함</span><i class="badge">5</i>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button">
+                      <span>나만보기한 명함</span><i class="badge">10</i>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button">
+                      <span
+                        >내가 등록한 명함 내가 등록한 명함 내가 등록한 명함 내가
+                        등록한 명함</span
+                      ><i class="badge">5</i>
+                    </button>
+                  </li>
+                  <li class="select-active">
+                    <button type="button" aria-label="선택됨">
+                      <span>PB 1팀</span><i class="badge">3</i>
+                    </button>
+                  </li>
+                </ul>
+                <div class="stroke stroke4"></div>
+                <strong class="title-large">정렬</strong>
+                <ul>
+                  <li class="select-active">
+                    <button type="button" aria-label="선택됨">
+                      <span>최신순</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button"><span>이름순</span></button>
+                  </li>
+                  <li>
+                    <button type="button"><span>회사명순</span></button>
+                  </li>
+                  <li>
+                    <button type="button"><span>만료일</span></button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="modal__footer">
+            <!-- bottom-btn -->
+            <div class="bottom-btn">
+              <div class="btn-wrap">
+                <button
+                  type="button"
+                  class="btn-large btn-primary"
+                  data-micromodal-close=""
+                >
+                  <i class="ico-check"></i>저장
+                </button>
+              </div>
+            </div>
+            <!-- //bottom-btn -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //micromodal -->
+
+    <script>
+      function swalFire() {
+        Swal.fire({
+          showCloseButton: true,
+          reverseButtons: true,
+          confirmButtonText: "확인",
+          customClass: {
+            htmlContainer: "mt40",
+            actions: "btn-wrap pt40",
+            cancelButton: "btn-large btn-outlined",
+            confirmButton: "btn-large btn-primary",
+          },
+          buttonsStyling: false,
+          html: `
+                    <i class="icon-only icon-48 icon-camera bg-icon-gray_1"></i>
+                    <strong class="title-large mt8">명함 촬영 안내</strong>
+                    <p class="body-large mt8">휴대폰 세로 모드로 촬영하세요.</p>
+                    <picture class="d-flex j-center mt16">
+                        <source srcset="../../resources/images/PBWBU/img_bc_info.svg">
+                        <img src="../../resources/images/PBWBU/img_bc_info.svg" alt="">
+                    </picture>
+                `,
+        });
+      }
+    </script>
+  </body>
+</html>

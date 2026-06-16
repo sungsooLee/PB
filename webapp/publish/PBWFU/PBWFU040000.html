@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<title>자산관리 영업지원 App</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0, user-scalable=no">
+
+	<script src="../../resources/plugins/jquery/jquery.min.js"></script>
+
+	<!-- [plugins] -->
+	<!-- micromodal -->
+	<link rel="stylesheet" href="../../resources/plugins/micromodal/0.4.10/micromodal.css">
+	<script src="../../resources/plugins/micromodal/0.4.10/micromodal.min.js"></script>
+	<!-- sortable -->
+	<script src="../../resources/plugins/sortable/1.15.2/Sortable.min.js"></script>
+	<!-- sweetalert2 -->
+	<link rel="stylesheet" href="../../resources/plugins/sweetalert2/11.11.0/sweetalert2.min.css">
+	<script src="../../resources/plugins/sweetalert2/11.11.0/sweetalert2.min.js"></script>
+	<!-- swiper -->
+	<link rel="stylesheet" href="../../resources/plugins/swiper/11.1.1/swiper-bundle.min.css">
+	<script src="../../resources/plugins/swiper/11.1.1/swiper-bundle.min.js"></script>
+	<!-- tippy -->
+	<script src="../../resources/plugins/popper.js/2.11.8/umd/popper.min.js"></script>
+	<script src="../../resources/plugins/popper.js/2.11.8/umd/tippy-bundle.umd.min.js"></script>
+	<!-- toastr -->
+	<link rel="stylesheet" type="text/css" href="../../resources/plugins/toastr/2.1.4/toastr.min.css">
+	<script src="../../resources/plugins/toastr/2.1.4/toastr.min.js"></script>
+	<!-- jquery-ui -->
+	<link rel="stylesheet" type="text/css" href="../../resources/plugins/jquery-ui/jquery-ui.css">
+	<script src="../../resources/plugins/jquery-ui/jquery-ui.min.js"></script>
+	<!-- pinch-zoom -->
+	<script src="../../resources/plugins/pinch-zoom/pinch-zoom.umd.js"></script>
+	<!-- apexcharts -->
+	<link rel="stylesheet" type="text/css" href="../../resources/plugins/apexcharts/3.50.0/apexcharts.css">
+	<script src="../../resources/plugins/apexcharts/3.50.0/apexcharts.js"></script>
+	<!-- AOS -->
+	<link rel="stylesheet" type="text/css" href="../../resources/plugins/aos/3.0.0-beta.6/aos.css">
+	<script src="../../resources/plugins/aos/3.0.0-beta.6/aos.js"></script>
+
+	<!-- jquery-ui-monthpicker-master -->
+	<script src="../../resources/plugins/jquery-ui-monthpicker-master/monthpicker.js"></script>
+	<!-- jquery-touchSwipe -->
+	<script src="../../resources/plugins/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script><!-- //[plugins] -->
+
+	<!-- ui source -->
+	<link rel="stylesheet" href="../../resources/css/ui-fonts.css">
+	<link rel="stylesheet" href="../../resources/css/ui-variable.css">
+	<link rel="stylesheet" href="../../resources/css/ui-default.css">
+	<link rel="stylesheet" href="../../resources/css/ui-layout.css">
+	<link rel="stylesheet" href="../../resources/css/ui-style.css">
+	<link rel="stylesheet" href="../../resources/css/ui-content.css">
+	<link rel="stylesheet" href="../../resources/css/ui-bscard.css">
+	<link rel="stylesheet" href="../../resources/css/ui-plugins.css">
+
+	<link rel="stylesheet" href="../../resources/css/ui-skeletone.css">
+	<link rel="stylesheet" href="../../resources/css/ui-mediaquery.css">
+	<script src="../../resources/js/ui-script.js"></script>
+	<script src="../../resources/js/ui-temp.js"></script> <!-- 개발서버에서 include 제외해주세요 -->
+	<!-- //ui source -->
+</head>
+
+<body>
+
+	<!-- main -->
+	<main>
+
+		<!-- header -->
+		<header>
+			<div class="main-header">
+				<div class="left">
+					<button type="button" class="header-btn" aria-label="뒤로 가기"><i class="i-back"></i></button>
+				</div>
+				<div class="center">
+					<h1><span class="blind">신한글로벌탄소중립솔루션증권투자신탁(H)(주식)</span></h1>
+				</div>
+				<div class="right">
+					<button type="button" class="header-btn" aria-label="관심 펀드"><i class="i-favorite"></i></button>
+					<button type="button" class="header-btn" aria-label="메뉴 열기"><i class="i-menu"></i></button>
+				</div>
+			</div>
+		</header>
+		<!-- //header -->
+
+		<!-- main-inner -->
+		<!-- content start -->
+		<div class="main-inner">
+
+			<!-- container -->
+			<div id="container">
+
+				<!-- content -->
+				<div class="content">
+
+					<style>
+						body {
+							background-color: var(--background-bg_lightGray);
+						}
+
+						@media (max-width:360px) {
+							.fs-responsive {
+								padding-left: 0;
+							}
+
+							.fs-responsive ul {
+								font-size: 14px;
+							}
+						}
+					</style>
+					</style>
+
+
+					<!-- tab-content -->
+					<div class="tab-content tab-fluid tab-sticky">
+						<ul class="tab-list tab-col overflow-list" role="tablist">
+							<li class="tab tab-active"><a role="tab" href="#">펀드</a></li>
+							<li class="tab"><a role="tab" href="#">커뮤니티<i class="badge">8,999</i></a></li>
+						</ul>
+					</div>
+					<!-- //tab-content -->
+
+					<!-- fund-detail -->
+					<div class="fund-detail">
+
+						<div class="fund-detail-title">
+							<div class="tag-wrap tag-wrap-top">
+								<div class="tags tags-medium tags-lightPurple">레이블</div>
+								<div class="tags tags-medium tags-green-50">레이블</div>
+							</div>
+							<h2 class="headline-medium">신한글로벌탄소중립솔루션증권투자신탁(H)(주식)</h2>
+
+							<div class="favorite-btn-wrap" data-toggle="toggle-wrap">
+								<button type="button" data-toggle="toggle-trigger" id="success">
+									<i class="icon-only icon-36 icon-fav" data-switch-inner="true" data-switch-inner-before="icon-fav" data-switch-inner-after="icon-fav-active"></i>
+									<span class="toggle-off blind">관심펀드 등록</span>
+									<span class="toggle-on blind">관심펀드 등록해제</span>
+								</button>
+							</div>
+
+							<p class="body-xlarge fw-400">국내 상장 최우량 리츠/인프라에 투자하여 지속 가능한 자본수익과 안정적인 월배당을 목표로 하는 ETF</p>
+							<div class="tag-wrap tag-wrap-bottom">
+								<div class="tags tags-medium tags-white">친환경 · 탄소중립</div>
+								<div class="tags tags-medium tags-white">채권 · 인컴 · 단기</div>
+								<div class="tags tags-medium tags-white">채권 · 인컴 · 초단기</div>
+							</div>
+						</div>
+
+						<div class="fund-detail-rate mt16">
+							<div class="rate-inner">
+								<h3 class="title-large fw-700">수익률</h3>
+								<dl class="expect-list">
+									<div class="list">
+										<dt>1개월</dt>
+										<dd>-888.88%</dd>
+									</div>
+									<div class="list rise">
+										<dt>3개월</dt>
+										<dd>+888.88%</dd>
+									</div>
+									<div class="list">
+										<dt>6개월</dt>
+										<dd>-888.88%</dd>
+									</div>
+									<div class="list">
+										<dt>12개월</dt>
+										<dd>-888.88%</dd>
+									</div>
+								</dl>
+								<div class="expect-desc">
+									<p>수익률 미수신</p>
+								</div>
+								<div class="expect-desc">
+									<p>설정기간 1개월 미경과</p>
+								</div>
+							</div>
+							<div class="stroke stroke-dashed my32"></div>
+							<div class="rate-status">
+								<h3 class="title-large fw-700">기준가</h3>
+								<dl class="status-list">
+									<dt>1,813.84</dt>
+									<dd class="rise" aria-label="상승">88.88</dd>
+									<!-- <dd class="fall" aria-label="하락">88.88</dd> -->
+									<!-- <dd class="steady" aria-label="보합">0</dd> -->
+								</dl>
+							</div>
+						</div>
+
+						<p class="description info body-small fc-typography-caption mt16 mb40">투자대상, 투자에 따른 위험, 위험등급, 수수료는 「금융소비자보호법」 제19조 제1항에서 규정하고 있는 중요한 사항입니다.</p>
+
+						<div class="fund-detail-info content-fluid mt40">
+							<h4 class="headline-small">상품 특징</h4>
+							<pre class="body-large fw-400 px8">텍스트가 들어갑니다텍스트가 들어갑니다텍스트가 들어갑니다텍스트가 들어갑니다텍스트가 들어갑니다 &#10;&#10;텍스트가 들어갑니다텍스트가 들어갑니다텍스트가 들어갑니다텍스트가 들어갑니다텍스트가 들어갑니다텍스트가 들어갑니다텍스트가 들어갑니다텍스트가 들어갑니다 &#10;&#10; 텍스트가 들어갑니다텍스트가 들어갑니다텍스트가 들어갑니다텍스트가 들어갑니다텍스트가 들어갑니다</pre>
+						</div>
+
+						<div class="stroke stroke4 stroke-fluid"></div>
+
+						<div class="fund-detail-info content-fluid">
+							<h4 class="headline-small">자산구성</h4>
+							<div style="height:250px;">
+								<div id="chart1" data-aos data-aos-id="chart1"></div>
+
+							</div>
+							<div class="group pb8">
+								<div class="right">
+									<span class="divide-list">
+										<span class="fs-14">2024-01-21</span>
+										<span class="division h14 mx8"></span>
+										<span class="fs-14">자료제공 : 제로인</span>
+									</span>
+								</div>
+							</div>
+							<ul>
+								<li class="fc-blue-500">1 : #2589F4
+								<li>
+								<li class="fc-deepblue-700">2 : #1641D0</li>
+								<li class="fc-pink-400">3 : #F35E9C</li>
+								<li class="fc-purple-500">4 : #B348E5</li>
+								<li class="fc-violet-400">5 : #7163EE</li>
+								<li class="fc-cyan-500">6 : #1AA3C1</li>
+								<li class="fc-green-700">7 : #048B65</li>
+								<li class="fc-yellow-400">8 : #FFD138</li>
+								<li class="fc-red-300">9 : #F68486</li>
+								<li class="fc-red-700">10 : #CC1E24</li>
+
+							</ul>
+						</div>
+
+						<div class="stroke stroke4 stroke-fluid"></div>
+
+						<div class="fund-detail-info content-fluid">
+							<h4 class="headline-small">상위 10위</h4>
+							<div class="top10-list">
+								<dl>
+									<div class="list">
+										<dt>1. NVDIA</dt>
+										<dd>9.62%</dd>
+									</div>
+									<div class="list">
+										<dt>2. NVDIA</dt>
+										<dd>9.62%</dd>
+									</div>
+									<div class="list">
+										<dt>3. NVDIA</dt>
+										<dd>9.62%</dd>
+									</div>
+								</dl>
+							</div>
+							<div class="btn-wrap">
+								<button type="button" class="btn-xsmall btn-outlined btn-round">전체보기</button>
+							</div>
+						</div>
+
+						<div class="stroke stroke4 stroke-fluid"></div>
+
+						<div class="fund-detail-info content-fluid">
+							<h4 class="headline-small">누적 수익률</h4>
+							<!-- tab-content -->
+							<div class="tab-content">
+								<ul class="tab-list tab-button" role="tablist">
+									<li class="tab tab-active"><a role="tab" href="#" onclick="Windows.open(uri)">1개월</a></li>
+									<li class="tab"><a role="tab" href="#">3개월</a></li>
+									<li class="tab"><a role="tab" href="#">6개월</a></li>
+									<li class="tab"><a role="tab" href="#">12개월</a></li>
+								</ul>
+							</div>
+							<!-- //tab-content -->
+							<!-- <div class="fund-rate mt24">
+								<h5 class="headline-small"><span>3개월 수익률</span><strong class="rise">+ 888.88%</strong></h5>
+								<h5 class="headline-small"><span>3개월 수익률</span><strong class="fall">- 888.88%</strong></h5>
+								<h5 class="headline-small"><span>3개월 수익률</span><strong class="steady">0.00%</strong></h5>
+							</div> -->
+							<div class="chart-wrap mt24">
+								<div style="height:180px;">
+									<div id="chart2" data-aos data-aos-id="chart2"></div>
+								</div>
+								<div class="group pb0">
+									<div class="right">
+										<span class="divide-list">
+											<span class="fs-14">2024-11-13 기준</span>
+											<span class="division h14 mx8"></span>
+											<span class="fs-14">자료제공: 제로인</span>
+										</span>
+									</div>
+								</div>
+							</div>
+							<div class="btn-wrap mt16">
+								<button type="button" class="btn-xsmall btn-outlined btn-round" data-micromodal-trigger="modal-popup01">기간별 수익률/기준가 보기</button>
+							</div>
+							<p class="description info body-small fc-typography-caption mt16">역외펀드의 경우, 데이터 제공업체로부터 제공받은 가장 최신의 수익률을 기반으로 안내하고 있으나 당일자 실제 수익률과는 차이가 있을 수 있습니다.</p>
+						</div>
+
+						<div class="stroke stroke4 stroke-fluid"></div>
+
+						<div class="fund-detail-info content-fluid">
+							<h4 class="headline-small">수수료 및 보수</h4>
+
+							<div class="table-layout">
+								<div class="tbody">
+									<div class="tr">
+										<div class="th">
+											<div class="group gap2 py0 j-start">
+												<div>선취 수수료</div>
+												<button type="button" class="d-flex" data-tippy="펀드 매수 시 지불하는 수수료입니다."><i class="icon-only icon-16 icon-tooltip bg-icon-gray_1"></i></button>
+											</div>
+
+										</div>
+										<div class="td">
+											납입 금액의 0.5%
+										</div>
+									</div>
+									<div class="tr">
+										<div class="th">총 보수</div>
+										<div class="td">연1.341%
+											<p class="fc-typography-caption fs-14 fw-400">(판매 0.325%, 운용 0.85%, 수탁 0.05%, 사무 0.02%, 기타 0.096%)</p>
+										</div>
+									</div>
+									<div class="tr">
+										<div class="th">
+											<div class="group gap2 py0 j-start">
+												<div>환매 수수료</div>
+												<button type="button" class="d-flex" data-tippy="계약기간 이전 중도에 펀드를 환매할 시 <br> 발생하는 수수료 입니다."><i class="icon-only icon-16 icon-tooltip bg-icon-gray_1"></i></button>
+
+											</div>
+										</div>
+										<div class="td">
+											없음
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+						<div class="stroke stroke4 stroke-fluid"></div>
+
+						<div class="content-fluid px0">
+							<button type="button" class="anchor chevron anchor-fluid" data-micromodal-trigger="modal-popup02"><strong class="title-medium px4">매매 기준일</strong></button>
+							<div class="stroke px0"></div>
+							<button type="button" class="anchor chevron anchor-fluid" data-micromodal-trigger="modal-popup03"><strong class="title-medium px4">투자설명서 및 약관</strong></button>
+							<div class="stroke px0"></div>
+							<button type="button" class="anchor chevron anchor-fluid" data-micromodal-trigger="modal-popup04"><strong class="title-medium px4">투자에 따른 위험</strong></button>
+							<div class="stroke px0"></div>
+							<button type="button" class="anchor chevron anchor-fluid" data-micromodal-trigger="modal-popup05"><strong class="title-medium px4">클래스 비교</strong></button>
+						</div>
+
+						<div class="stroke stroke4 stroke-fluid"></div>
+
+						<div class="fund-detail-info content-fluid">
+							<h4 class="headline-small">펀드 정보</h4>
+
+							<div class="stroke px0"></div>
+							<dl class="group pb0">
+								<dt class="fs-18 fw-400 px-4">펀드유형</dt>
+								<dd class="fs-18 fw-400 fc-status-info">주식형, 재간접투자</dd>
+							</dl>
+							<dl class="group pb0">
+								<dt class="fs-18 fw-400 px-4">투자 국가</dt>
+								<dd class="fs-18 fw-400 fc-status-info">글로벌</dd>
+							</dl>
+							<dl class="group pb0">
+								<dt class="fs-18 fw-400 px-4">펀드 설정일</dt>
+								<dd class="fs-18 fw-400 fc-status-info">2021-09-23</dd>
+							</dl>
+							<dl class="group pb0">
+								<dt class="fs-18 fw-400 px-4">펀드 섹터</dt>
+								<dd class="fs-18 fw-400 fc-status-info">글로벌주식</dd>
+							</dl>
+							<dl class="group">
+								<dt class="fs-18 fw-400 px-4">운용사</dt>
+								<dd class="fs-18 fw-400 fc-status-info">신한자산운용</dd>
+							</dl>
+							<div class="stroke px0"></div>
+
+						</div>
+
+						<div class="stroke stroke4 stroke-fluid"></div>
+
+						<div class="fund-detail-info content-fluid">
+							<h4 class="headline-small">유의사항</h4>
+
+							<ul class="dot-list p0 fc-typography-cpation">
+								<li>비예금상품은 원금손실이 발생할 수 있습니다.</li>
+								<li>과거수익률이 미래수익률을 보장하지 않습니다.</li>
+								<li>투자대상, 투자에 따른 위험, 위험등급, 수수료는 「금융소비자보호법」 제19조 제1항에서 규정하고 있는 중요한 사항입니다.</li>
+								<li>최근에 설정(운용 시작)되어 설정기간이 짧은 펀드는 기간별 수익률이 존재하지 않을 수 있습니다.</li>
+								<li>BM(벤치마크)은 제로인이 부여한 BM으로 투자설명서의 BM 또는 비교지수와 다를 수 있습니다.</li>
+								<li>제로인에서 제공하는 데이터 및 분석자료는 단순 정보제공을 목적으로 하며, 특정 펀드에 대한 투자를 권고하거나 거래를 목적으로 하지 않습니다.</li>
+								<li>제로인의 제공내용은 운용사의 공시 등 신뢰할만한 판단자료로 얻어진 것이나, 그 정확성이나 안전성을 당사가 보증하는 것은 아닙니다. 따라서 본 정보에 의존해 행해지는 행위로 인해 발생하는 결과에 대해 당사는 책임을 지지 않습니다.</li>
+								<li>제로인에서 제공하는 데이터 및 분석자료는 무단으로 배포하거나 재활용 할 수 없습니다.</li>
+							</ul>
+						</div>
+
+
+
+					</div>
+					<!-- //fund-detail -->
+
+				</div>
+				<!-- //content -->
+			</div>
+			<!-- //container -->
+
+
+		</div>
+		<!-- //content end -->
+		<!-- //main-inner -->
+
+		<div class="snackbar-content">
+			<div class="snackbar-content-inner">
+				<button type="button" class="snackbar-content-close" aria-label="팝업 닫기" data-snackbar-close><i class="ico-close-16"></i></button>
+				<strong class="block fs-15 fc-red-600 fw-500">행내한</strong>
+				<p class="fs-14 fc-typography-body ">본자료는 직원에게 상품 정보를 제공하기 위한 목적으로 외부로 유출되거나 투자 권유, 계약 체결 등 다른 용도로 활용되지 않도록 유의하시기 바랍니다.</p>
+			</div>
+
+		</div>
+
+
+	</main>
+	<!-- //main -->
+
+	<!-- micromodal -->
+	<div class="micromodal-slide micromodal-slide-bottom modal" id="modal-popup01">
+		<div class="modal__overlay" tabindex="-1" data-micromodal-close>
+			<div class="modal__container" role="dialog" aria-modal="true">
+				<div class="modal__header">
+					<strong class="modal__title title-large">기간별 기준가/수익률</strong>
+					<button type="button" class="modal__close" aria-label="팝업 닫기" data-micromodal-close></button>
+				</div>
+				<div class="modal__content">
+					<div class="content content-fluid">
+
+						<strong class="title-large py16 px24">3개월</strong>
+
+						<div class="table-col content-fluid overflow-visible px0">
+							<table class="column01-sticky">
+								<caption>기간별 기준가/수익률 3개월</caption>
+								<colgroup>
+									<col style="width:15%">
+									<col>
+									<col>
+									<col>
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">기준일</th>
+										<th scope="col">신한글로벌탄소중립솔루션증권투자신탁(H)주식</th>
+										<th scope="col">BM</th>
+										<th scope="col">신한글로벌탄소중립솔루션증권투자신탁(H)주식</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>2024-11-15</td>
+										<td>8.888 <br> <span class="fc-deepblue-600">-11.93%</span></td>
+										<td><span class="fc-red-600">5.72%</span></td>
+										<td><span class="fc-red-600">+5.72%</span></td>
+									</tr>
+									<tr>
+										<td>2024-11-15</td>
+										<td>8.888 <br> <span class="fc-deepblue-600">-11.93%</span></td>
+										<td><span class="fc-red-600">5.72%</span></td>
+										<td><span class="fc-deepblue-600">-5.72%</span></td>
+									</tr>
+									<tr>
+										<td>2024-11-15</td>
+										<td>8.888 <br> <span class="fc-deepblue-600">-11.93%</span></td>
+										<td><span class="fc-red-600">5.72%</span></td>
+										<td><span class="">0.00%</span></td>
+									</tr>
+								</tbody>
+
+							</table>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //micromodal -->
+
+
+	<!-- micromodal -->
+	<div class="micromodal-slide micromodal-slide-bottom modal" id="modal-popup02">
+		<div class="modal__overlay" tabindex="-1" data-micromodal-close>
+			<div class="modal__container" role="dialog" aria-modal="true">
+				<div class="modal__header">
+					<strong class="modal__title title-large">매매 기준일</strong>
+					<button type="button" class="modal__close" aria-label="팝업 닫기" data-micromodal-close></button>
+				</div>
+				<div class="modal__content">
+					<div class="content">
+
+						<strong class="title-large py16">매수 방법</strong>
+
+						<div class="box-gray fs-responsive">
+							<ul class="dot-list px0">
+								<li id="scnt1" style="display: none;"></li>
+								<li id="scnt2" style="display: none;"></li>
+								<li>
+									<table>
+										<tr>
+											<td class="nowrap vt" style="width:0;">외화펀드 매수신청 가능시간 : </td>
+											<td class="vt">영업일 9~15시</td>
+										</tr>
+									</table>
+								</li>
+							</ul>
+						</div>
+
+						<strong class="title-large py16">매수 방법</strong>
+
+						<div class="box-gray fs-responsive">
+							<ul class="dot-list px0">
+								<li id="rprh1">17시00분 이전 - 제02영업일 기준가, 제02영업일 출금</li>
+								<li id="rprh2" style="display: none;"></li>
+								<li>
+									<table>
+										<tr>
+											<td class="vt nowrap" style="width:0;">환매신청 가능시간 : </td>
+											<td class="vt">원화펀드 영업일 9~17시</td>
+										</tr>
+										<tr>
+											<td class="vt"></td>
+											<td class="vt">외화펀드 영업일 9~15시</td>
+										</tr>
+									</table>
+
+								</li>
+							</ul>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //micromodal -->
+
+
+	<!-- micromodal -->
+	<div class="micromodal-slide micromodal-slide-bottom modal" id="modal-popup03">
+		<div class="modal__overlay" tabindex="-1" data-micromodal-close>
+			<div class="modal__container" role="dialog" aria-modal="true">
+				<div class="modal__header">
+					<strong class="modal__title title-large">투자설명서 및 약관</strong>
+					<button type="button" class="modal__close" aria-label="팝업 닫기" data-micromodal-close></button>
+				</div>
+				<div class="modal__content">
+					<div class="content">
+
+						<div class="content-fluid px0">
+							<button type="button" class="anchor chevron anchor-fluid w100 py16" id="alert1"><strong class="title-medium fw-500" data-micromodal-trigger="modal-popup04">집합투자 규약</strong></button>
+							<button type="button" class="anchor chevron anchor-fluid w100 py16"><strong class="title-medium fw-500">투자설명서</strong></button>
+							<button type="button" class="anchor chevron anchor-fluid w100 py16"><strong class="title-medium fw-500">간이설명서</strong></button>
+							<button type="button" class="anchor chevron anchor-fluid w100 py16"><strong class="title-medium fw-500">자산운용보고서</strong></button>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //micromodal -->
+
+
+	<!-- micromodal -->
+	<div class="micromodal-slide micromodal-slide-bottom modal" id="modal-popup04">
+		<div class="modal__overlay" tabindex="-1" data-micromodal-close>
+			<div class="modal__container" role="dialog" aria-modal="true">
+				<div class="modal__header">
+					<strong class="modal__title title-large">투자에 따른 위험</strong>
+					<button type="button" class="modal__close" aria-label="팝업 닫기" data-micromodal-close></button>
+				</div>
+				<div class="modal__content">
+					<div class="content">
+
+						<p class="description error body-small fc-typography-caption">해당 펀드는 연금손실위험, 시장위험, 신용위험, 펀드해지위험이 있을 수 있으므로 신중하게 투자해 주세요.</p>
+
+						<strong class="title-large py16 px8 mt24">원금손실위험</strong>
+
+						<div class="box-gray">
+							<p class="body-medium fw-400">펀드는 운용 실적에 따라 텍스트가들어갑니다텍스트가들어갑니다텍스트가들어갑니다텍스트가들어갑니다텍스트가들어갑니다텍스트가들어갑니다텍스트가들어갑니다</p>
+						</div>
+
+						<strong class="title-large py16 px8 mt8">시장위험</strong>
+
+						<div class="box-gray">
+							<p class="body-medium fw-400">펀드는 운용 실적에 따라 텍스트가들어갑니다텍스트가들어갑니다텍스트가들어갑니다텍스트가들어갑니다텍스트가들어갑니다텍스트가들어갑니다텍스트가들어갑니다</p>
+						</div>
+
+						<strong class="title-large py16 px8 mt8">신용위험</strong>
+
+						<div class="box-gray">
+							<p class="body-medium fw-400">펀드는 운용 실적에 따라 텍스트가들어갑니다텍스트가들어갑니다텍스트가들어갑니다텍스트가들어갑니다텍스트가들어갑니다텍스트가들어갑니다텍스트가들어갑니다</p>
+						</div>
+
+						<strong class="title-large py16 px8 mt8">펀드해지위험</strong>
+
+						<div class="box-gray">
+							<p class="body-medium fw-400">펀드는 운용 실적에 따라 텍스트가들어갑니다텍스트가들어갑니다텍스트가들어갑니다텍스트가들어갑니다텍스트가들어갑니다텍스트가들어갑니다텍스트가들어갑니다</p>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //micromodal -->
+
+
+
+	<!-- micromodal -->
+	<div class="micromodal-slide micromodal-slide-bottom modal" id="modal-popup05">
+		<div class="modal__overlay" tabindex="-1" data-micromodal-close>
+			<div class="modal__container" role="dialog" aria-modal="true">
+				<div class="modal__header">
+					<strong class="modal__title title-large">클래스 비교</strong>
+					<button type="button" class="modal__close" aria-label="팝업 닫기" data-micromodal-close></button>
+				</div>
+				<div class="modal__content">
+					<div class="content">
+
+
+						<div class="table-col content-fluid overflow-visible px0 scroll-end">
+							<table class="column01-sticky">
+								<caption>클래스 비교</caption>
+								<colgroup>
+									<col style="">
+									<col style="">
+									<col style="">
+									<col style="">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">구분</th>
+										<th scope="col">총보수(년)</th>
+										<th scope="col">선취판매 수수료</th>
+										<th scope="col">환매 수수료</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>신한글로벌탄소중립솔루션 증권투자신탁(H)(주식)A1</td>
+										<td>1.341%</td>
+										<td>0.5%</td>
+										<td>90일 미만 이익금 기준 70%</td>
+									</tr>
+									<tr>
+										<td>신한글로벌탄소중립솔루션 증권투자신탁(H)(주식)A1</td>
+										<td>1.341%</td>
+										<td>0.5%</td>
+										<td>없음</td>
+									</tr>
+									<tr>
+										<td>신한글로벌탄소중립솔루션 증권투자신탁(H)(주식)A1</td>
+										<td>1.341%</td>
+										<td>0.5%</td>
+										<td>없음</td>
+									</tr>
+									<tr>
+										<td>신한글로벌탄소중립솔루션 증권투자신탁(H)(주식)A1</td>
+										<td>1.341%</td>
+										<td>없음</td>
+										<td>없음</td>
+									</tr>
+								</tbody>
+
+							</table>
+						</div>
+
+						<p class="description success body-small fc-typography-caption mt16">상세 수수료 정보는 투자설명서를 확인해주시기 바랍니다.</p>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //micromodal -->
+
+
+
+	<script>
+		var options1 = {
+			chart: {
+				type: 'donut',
+				height: 250,
+				toolbar: {
+					show: false,
+				}
+			},
+			series: [60.32, 30.64, 5.21],
+			labels: ['해외주식', '유동성', '해외채권'],
+			colors: ['#2658ED', '#64BFD4', '#D378F2'],
+			plotOptions: {
+				pie: {
+					startAngle: -90,
+					endAngle: 90,
+					offsetY: 10,
+					donut: {
+						size: '65%'
+					}
+				}
+			},
+			grid: {
+				padding: {
+					bottom: -80
+				}
+			},
+			legend: {
+				position: 'bottom',
+				fontSize: '15px',
+				onItemHover: {
+					highlightDataSeries: true
+				},
+				formatter: function(val, opts) {
+					return [val, "", opts.w.globals.series[opts.seriesIndex], ]
+				}
+			}
+		};
+
+		var chart1 = new ApexCharts(document.querySelector("#chart1"), options1);
+
+		document.addEventListener('aos:in:chart1', ({
+			detail
+		}) => {
+			chart1.render();
+		});
+	</script>
+	<script>
+		var options2 = {
+			series: [{
+					name: "신한글로벌탄소중립솔루션증권투자신탁(H)(주식)",
+					data: [10, 41, 35, 51, 49, 62, 69, 91, 148],
+
+				},
+				{
+					name: "BM",
+					data: [1, 32, 26, 42, 40, 53, 60, 82, 18]
+				},
+				{
+					name: "유형평균",
+					data: [100, 320, 260, 420, 400, 530, 600, 820, 180]
+				}
+			],
+			chart: {
+				height: 180,
+				type: 'line',
+				zoom: {
+					enabled: false
+				},
+				toolbar: {
+					show: false,
+				}
+			},
+			colors: ['#7163EE', '#F35E9C', '#1AA3C1'],
+			dataLabels: {
+				enabled: false
+			},
+			stroke: {
+				curve: 'smooth',
+				width: [2, 2]
+			},
+			markers: {
+				size: 4,
+			},
+			grid: {
+				row: {
+					// colors: ['#E9ECEF', 'transparent'], // takes an array which will be repeated on columns
+					// opacity: 0.5
+				},
+			},
+			xaxis: {
+				categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+			}
+		};
+
+		var chart2 = new ApexCharts(document.querySelector("#chart2"), options2);
+
+		document.addEventListener('aos:in:chart2', ({
+			detail
+		}) => {
+			chart2.render();
+		});
+
+		$('#alert1').click(function(event) {
+			toastr.alert(`<p class="fs-14 fw-500 mt-10">파일 크기나 네트워크 상태에 따라 60초 이상 걸릴 수 있습니다.</p> `, '<div class="file-attach-loading fs-16 fc-brandPrimary-blue400 gap6">파일 다운로드중입니다.</div>', {
+				"positionClass": ["toast-bottom-center", "toast-dimmed"],
+				"closeButton": true,
+				"timeOut": 0,
+				"tapToDismiss": false,
+				"extendedTimeOut": 10000000000,
+				"preventDuplicates": false,
+				"disableTimeOut": true,
+			});
+			setTimeout(function() {
+				toastr.clear()
+			}, 10000)
+		});
+	</script>
+	<style>
+		.apexcharts-legend-marker {
+			border-radius: 4px !important;
+		}
+
+		#chart1 .apexcharts-legend {
+			padding: 0;
+		}
+
+		#chart1 .apexcharts-legend.apx-legend-position-bottom.apexcharts-align-center,
+		#chart1 .apexcharts-legend.apx-legend-position-top.apexcharts-align-center {
+			flex-direction: column;
+		}
+
+		#chart2 .apexcharts-legend.apx-legend-position-bottom.apexcharts-align-center,
+		#chart2 .apexcharts-legend.apx-legend-position-top.apexcharts-align-center {
+			justify-content: flex-start;
+			flex-direction: column;
+		}
+	</style>
+
+</body>
+
+</html>

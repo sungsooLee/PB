@@ -1,0 +1,111 @@
+<div class="ui-guide">
+    <h1>AI</h1>
+    <p>AI 샘플입니다.</p>
+
+    <br>
+    <br>
+        						 
+    <div class="ui-guide-section">
+        <div class="ui-guide-box">
+            <h2>AI 종류 선택</h2>
+            <dl>
+                <dt></dt>
+                <dd>
+                    <div class="inp inp-large">
+                        <label>
+                            <input type="radio" name="rad001" value="get" checked>
+                            <span class="label-title">GET</span>
+                        </label>
+                    </div>
+                    <div class="inp inp-large">
+                        <label>
+                            <input type="radio" name="rad001" value="post">
+                            <span class="label-title">POST</span>
+                        </label>
+                    </div>
+                </dd></br>
+                <dd>
+                	<div id="getArea" >
+	                	<dl>
+	                	<dt>작성자 행번</dt>
+		                	<dd>
+			                	<div class="form">
+			                		<div class="input-wrap">
+			                            <input id="fst_db_rgs_id" type="text" placeholder="fst_db_rgs_id" title="input">
+			                        </div>
+			                	</div>
+		                	</dd>
+	                	</dl></br>
+	                	<dl>
+	                	<dt>게시분류 (B01 : 공지 / B02 : 안내)</dt>
+		                	<dd>
+			                	<div class="form">
+			                		<div class="input-wrap">
+			                            <input id="bltn_clf" type="text" placeholder="bltn_clf" title="input">
+			                        </div>
+			                	</div>
+		                	</dd>
+	                	</dl></br>
+	                	<dl>
+	                	<dt>유입채널코드 (C03 : PB WON)</dt>
+		                	<dd>
+			                	<div class="form">
+			                		<div class="input-wrap">
+			                            <input id="infw_chnl_dscd" type="text" placeholder="infw_chnl_dscd" title="input">
+			                        </div>
+			                	</div>
+		                	</dd>
+	                	</dl></br>
+	                	<dl>
+	                	<dt>사용유무( Y : 사용 / N : 미사용 )</dt>
+		                	<dd>
+			                	<div class="form">
+			                		<div class="input-wrap">
+			                            <input id="usg_en" type="text" placeholder="usg_en" title="input">
+			                        </div>
+			                	</div>
+		                	</dd>
+	                	</dl>
+                	</div>
+                	<div id="postArea" style="display:none;">
+                		<dl>
+	                	<dt>사용자 대화 이력</dt>
+		                	<dd>
+			                	<div class="form">
+			                		<div class="input-wrap">
+			                            <input id="chat_history" type="text" placeholder="chat_history" title="input">
+			                        </div>
+			                	</div>
+		                	</dd>
+	                	</dl></br>
+	                	<dl>
+	                	<dt>사용자 질의</dt>
+		                	<dd>
+			                	<div class="form">
+			                		<div class="input-wrap">
+			                            <input id="query" type="text" placeholder="query" title="input">
+			                        </div>
+			                	</div>
+		                	</dd>
+	                	</dl></br>
+	                	<dl>
+	                	<dt>스트리밍 처리 여부</dt>
+		                	<dd>
+			                	<div class="form">
+			                		<div class="input-wrap">
+			                            <input id="streaming" type="text" placeholder="streaming" title="input">
+			                        </div>
+			                	</div>
+		                	</dd>
+	                	</dl>
+                	</div>
+                </dd>
+            </dl>
+        </div>
+        
+        <br>
+        <br>
+
+        <button id="sendBtn" type="button" class="btn-large btn-primary">전송</button>
+    </div>
+</div>

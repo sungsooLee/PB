@@ -1,0 +1,63 @@
+
+<a href="javascript:void(0);" class="schedule-list" id="btnDetailpop">
+	<div class="schedule-title">
+		<input type="hidden" data-bind="mode"> 
+		<input type="hidden" data-bind="type">
+		<input type="hidden" data-bind="recurringYn">
+		<input type="hidden" data-bind="birthDscd"> <!-- 생일구분 -->
+		<input type="hidden" data-bind="basDt"> <!--  기준일자 -->
+		<input type="hidden" data-bind="basDtFormat"> <!--  기준일자(포맷) -->
+		<input type="hidden" data-bind="cusGdcd"> <!-- 고객등급코드 -->
+		<input type="hidden" data-bind="crmpAcvtActSrno"> <!-- 고객계좌번호 -->
+		<input type="hidden" data-bind="crmPrdNm"> <!--  상품명 -->
+		<input type="hidden" data-bind="actXprDt"> <!-- 만기일자 -->
+		<input type="hidden" data-bind="actXprDt2"> <!-- 만기일자 -->
+		<input type="hidden" data-bind="aplIrt"> <!-- 이율 -->
+		<input type="hidden" data-bind="kycReCnfScdDt"> <!--  kyc재확인예정일자 -->
+		
+		<i class="icon-only icon-24 icon-wallet bg-cyan-500" aria-label="수신만기" data-bind="isXpr"></i> 
+		<i class="icon-only icon-24 icon-birth bg-purple-600" aria-label="생일" data-bind="isBirth"></i>  
+		<i class="icon-only icon-24 icon-calendar" aria-label="개인일정" data-bind="isSchd"></i> 
+		<i class="icon-only icon-24 icon-calendar-repeat" aria-label="개인일정 반복" data-bind="isRepeatSchd"></i> 
+		<strong class="title-medium" data-bind="subject"></strong>
+	</div>
+	<div class="schedule-content">
+		<div class="schedule-detail">
+			<div data-bind="isTime">
+				<div class="schedule-detail-inner fc-typography-body">
+					<i class="icon-only icon-16 icon-time bg-icon-gray_1"></i> <span
+						data-bind="startTime"></span>~<span data-bind="endTime"></span>
+				</div>
+			</div>
+	
+			<div data-bind="isAlldayYn">
+				<div class="schedule-detail-inner fc-typography-body">
+					<i class="icon-only icon-16 icon-time bg-icon-gray_1"></i> 
+					<span>하루종일</span>
+				</div>
+			</div>
+
+			<div data-bind="isItcsNo">
+				<div class="schedule-detail-inner fc-typography-body">
+					<i class="icon-only icon-16 icon-user bg-icon-gray_1"></i>
+					<span data-bind="itemId"></span>
+				</div>
+			</div>
+			
+			<div data-bind="isAfcKrw">
+				<div class="schedule-detail-inner fc-typography-body">
+					<i class="icon-only icon-16 icon-won bg-black-88"></i>
+					<span data-bind="afcKrwBal"></span>
+				</div>
+			</div>
+			
+			<div data-bind="isLocation">
+				<div class="schedule-detail-inner">
+					<span class="division h12 mx6"></span> <i
+						class="icon-only icon-16 icon-location bg-icon-gray_1"></i> <span
+						data-bind="location"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+</a>

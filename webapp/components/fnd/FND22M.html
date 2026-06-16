@@ -1,0 +1,71 @@
+<!--
+/*************************************************************************
+* @ 서비스경로 : FND22M
+* @ 파일명      : FND22M.html 펀드 > 수익률 BEST
+* @ 작성자      : 90195654
+* @ 작성일      : 2024-12-26
+************************** 수정이력 ****************************************
+* 날짜                    작업자                 변경내용
+*_________________________________________________________________________
+* 2024-12-26       90195654                 최초작성
+*************************************************************************/
+-->
+<style>
+body {
+	background-color: var(--background-bg_lightGray);
+}
+</style>
+
+<!-- snackbar-content -->
+<div class="snackbar-content is-sticky">
+    <button type="button" class="fab fab-secondary fab-circle" aria-label="최상단으로 이동" id="gototop"><i class="ico-gototop"></i></button>
+</div>
+<!-- //snackbar-content -->
+
+<div class="fund-result" style="display:none;">
+
+	<!-- sort-wrap -->
+	<div class="sort-wrap py0 mb24">
+
+		<!-- sort-list -->
+		<button class="sort-list"
+			data-micromodal-trigger="modal-select-filter" aria-label="정렬" id="termBtn">
+			<span class="filter"> <span class="sort">3개월</span>
+			</span>
+		</button>
+		<!-- sort-list -->
+
+	</div>
+	<!-- sort-wrap -->
+
+	<!-- fund-card-list -->
+	<div class="fund-card-list mt24" id="fndList">
+		
+	</div>
+	<!-- //fund-card-list -->
+
+</div>
+
+<div class="division-center" style="display:none;" id="noResult">
+
+	<div class="no-result">
+		<i class="icon-only icon-48 icon-noresult bg-icon-gray_1"></i>
+		<p class="body-medium fw-400">검색 결과가 없습니다.</p>
+	</div>
+
+</div>
+
+<div class="content-padding"></div>
+
+<div class="bottom-btn" style="display:none;" id="compareBottm">
+	<div class="bottom-btn-title">
+		<strong class="title-medium">2개의 펀드를 담아 비교하세요.</strong>
+	</div>
+	<div class="btn-wrap btn-nowrap" id="compareList">
+		<button type="button" class="btn-xsmall btn-primary btn-round btn-border-dashed" name="deleteFnd" id="compare1Btn"><span></span><i class="ico-close-16"></i></button>
+		<button type="button" class="btn-xsmall btn-outlined btn-round btn-border-dashed" name="deleteFnd" id="compare2Btn"><i class="ico-add"></i><span>비교할 펀드 추가</span></button>
+	</div>
+	<div class="btn-wrap">
+		<button type="button" class="btn-medium btn-primary" aria-disabled="true" id="compare" disabled>비교하기</button>
+	</div>
+</div>

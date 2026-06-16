@@ -1,0 +1,92 @@
+<!--
+/*************************************************************************
+* @ 서비스경로 : IVINF30M
+* @ 파일명      : IVINF30M.html 투자정보 > 경제캘린더
+* @ 작성자      : 90195467
+* @ 작성일      : 2024-01-15
+************************** 수정이력 ****************************************
+* 날짜                    작업자                 변경내용
+*_________________________________________________________________________
+* 2024-12-26            이혜성                 최초작성
+*************************************************************************/
+-->
+<style>
+body {
+	background-color: var(--background-bg_lightGray);
+}
+
+/* .datepicker-wrap.datepicker-collapsed .ui-datepicker-calendar td.ui-datepicker-other-month span,
+.datepicker-wrap.datepicker-collapsed .ui-datepicker-calendar td.ui-datepicker-other-month a {
+	color: inherit;
+} */
+.datepicker-collapsed .ui-priority-secondary,
+.datepicker-collapsed .ui-widget-content .ui-priority-secondary,
+.datepicker-collapsed.ui-widget-header .ui-priority-secondary {
+	opacity:1;
+	font-weight:inherit;
+}
+/* .thisWeek td:not(.ui-datepicker-other-month) {
+background:red!important;} */
+</style>
+
+<!-- snackbar-content -->
+<div class="snackbar-content is-sticky">
+	<a href="#" class="fab fab-primary fab-square" aria-label="일정 검색" id="searchBtn"><i class="ico-search bg-icon-white"></i></a>
+</div>
+<!-- //snackbar-content -->
+
+<!-- datepicker-wrap -->
+<div class="datepicker-wrap datepicker-weekend content-fluid pt16 pb8 bg-surface-surface">
+
+	<!-- inp-group -->
+	<div class="inp-group gap16 px0">
+		<div class="inp inp-medium">
+			<label> <input type="checkbox" class="type-kr" id="chk04"
+				checked> <span class="label-title">한국</span>
+			</label>
+		</div>
+		<div class="inp inp-medium">
+			<label> <input type="checkbox" class="type-us" id="chk05"
+				checked> <span class="label-title">미국</span>
+			</label>
+		</div>
+		<div class="inp inp-medium">
+			<label> <input type="checkbox" class="type-cn"
+				id="chk06" checked> <span class="label-title">중국</span>
+			</label>
+		</div>
+		<div class="inp inp-medium">
+			<label> <input type="checkbox" class="type-jp"
+				id="chk07" checked> <span class="label-title">일본</span>
+			</label>
+		</div>
+		<div class="inp inp-medium">
+			<label> <input type="checkbox" class="type-eu"
+				id="chk08" checked> <span class="label-title">유럽</span>
+			</label>
+		</div>
+	</div>
+	<!-- //inp-group -->
+
+	<div aria-label="날짜 선택" class="datepicker-trigger"
+		id="datepicker_schedule"></div>
+
+
+	<div class="datepicker-arrow">
+		<button type="button" class="arrow-prev" id="arrow-prev" aria-label="이전 주"></button>
+		<button type="button" class="arrow-next" id="arrow-next" aria-label="다음 주"></button>
+	</div>
+
+	<div class="datepicker-unfold">
+		<button type="button" aria-label="달력 펼치기" id="openSchedule"></button>
+	</div>
+</div>
+<!-- //datepicker-wrap -->
+
+<!-- eco-section -->
+<div class="eco-section content-fluid pt40" id="listForm" style="display:none"></div>
+<!-- //eco-section -->
+<p class="description info body-small fs-14 fc-typography-caption fw-400 mt40">
+	지표 일정은 한국시간 기준입니다. <br> Bloomberg와 WM상품부의 칼럼을 참조합니다. <br>
+	일정은 월 1회, 세부 내용은 주 1회 업데이트 됩니다. <br> 중요도는 인베스팅닷컴 데이터를 참조합니다.
+</p>

@@ -1,0 +1,126 @@
+<!--
+/*************************************************************************
+* @ 서비스경로 : CRMPMNG30P
+* @ 파일명      : CRMPMNG30P.html  고객관리 > 통합고객번호 검색 
+* @ 작성자      : 90195654
+* @ 작성일      : 2024-12-26
+************************** 수정이력 ****************************************
+* 날짜                    작업자                 변경내용
+*_________________________________________________________________________
+* 2024-12-26       90195654                 최초작성
+*************************************************************************/
+-->
+<div class="content pb0">
+<!-- tab-content -->
+	<div class="tab-content tab-sticky mb32">
+		<div class="tablet-maxwidth tablet-maxwidth-fluid bg-background-bg_white">
+			<ul class="tab-list tab-col overflow-list" role="tablist">
+				<li class="tab tab-active" data-tab="1"><a role="tab">법인사업자번호</a></li>
+				<li class="tab" data-tab="2"><a role="tab">고객명</a></li>
+				<!-- <li class="tab" data-tab="3"><a role="tab">계좌번호</a></li> -->
+			</ul>
+		</div>
+	</div>
+	<!-- //tab-content -->
+
+
+	<div class="tablet-maxwidth tablet-maxwidth-fluid">
+
+		<div class="group-form-tablet" id="type1Div">
+            <!-- form -->
+            <div class="form" style="max-width:525px;">
+                <div class="label"></div>
+                <div class="input-wrap input-btn no-flex-wrap">
+                    <input type="number" placeholder="‘-’ 없이 숫자만 입력해주세요." aria-label="검색"
+                        id="companyNum" name="companyNum" maxlength="13">
+                    <button type="button" class="input-remove"
+                        aria-label="입력 내용 삭제" name="removeBtn"></button>
+                    <button type="button" class="input-search" aria-label="입력 내용 검색"
+                        name="doSearch_comp"></button>
+                </div>
+                <p class="validate-text" id="companyNumErr"></p>
+			</div>
+            <!-- //form -->
+        </div>
+
+        <div class="group-form-tablet" id="type2Div" style="display:none;">
+			<div class="group-form">
+				<div class="form">
+					<div class="inp-group">
+						<div class="inp inp-medium">
+							<label> <input type="radio" name="cusDscd" value="2"
+								checked> <span class="label-title nowrap">사업자</span>
+							</label>
+						</div>
+						<div class="inp inp-medium">
+							<label> <input type="radio" name="cusDscd" value="3">
+								<span class="label-title nowrap">법인</span>
+							</label>
+						</div>
+					</div>
+				</div>
+            </div>
+            <!-- form -->
+            <div class="form" style="margin-top: 0;max-width:525px;">
+                <div class="label"></div>
+                <div class="input-wrap input-btn">
+                    <input type="text" placeholder="2자 이상 입력해주세요." maxlength="10"
+                        aria-label="검색" id="custNm" name="custNm">
+                    <button type="button" class="input-remove"
+                        aria-label="입력 내용 삭제" name="removeBtn"></button>
+                    <button type="button" class="input-search" aria-label="입력 내용 검색"
+                        name="doSearch_comp"></button>
+                </div>
+                <p class="validate-text" id="custErr"></p>
+            </div>
+            <!-- //form -->
+        </div>
+
+        <div class="group-form-tablet" id="type3Div" style="display:none;">
+
+            <!-- form -->
+            <div class="form">
+                <div class="label"></div>
+                <div class="input-wrap input-btn">
+                    <input type="number" placeholder="‘-’ 없이 숫자만 입력해주세요." aria-label="검색"
+                        maxlength="12" id="accNo" name="accNo">
+                    <button type="button" class="input-remove"
+                        aria-label="입력 내용 삭제" name="removeBtn"></button>
+                    <button type="button" class="input-search" aria-label="입력 내용 검색"
+                        name="doSearch_comp"></button>
+                </div>
+                <p class="validate-text" id="accNoErr" ></p>
+            </div>
+            <!-- //form -->
+        </div>
+	</div>
+	<!-- division-center -->
+	<div id="com_search_result" class="division-center content-fluid bg-background-bg_lightGray px16 py40 mt16">
+	
+		<div class="section-tablet">
+			<!-- customer-card-list -->
+			<div class="customer-card-list">
+				<strong style="display:none;" class="search-result">검색결과</strong>
+				<div id="custCardList" class="tablet-grid tablet-grid-3">
+				
+				</div>
+	
+			</div>
+			<!-- //customer-card-list -->
+		</div>
+	
+	</div>
+	<!-- //division-center -->
+	
+	<!-- division-center -->
+	<div class="division-center content-fluid bg-background-bg_lightGray mt16" id="com_search_notfound" style="display: none;">
+	
+		<div class="no-result" >
+			<i class="icon-only icon-48 icon-noresult bg-icon-gray_1"></i>
+			<p class="body-medium fw-400">검색 결과가 없습니다.</p>
+		</div>
+	
+	</div>
+	<!-- //division-center -->
+	
+</div>

@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/resources/css/d2coding.css" />
+    <link rel="stylesheet" href="/resources/css/NanumGothic.css" />
+    <link rel="stylesheet" href="/resources/css/md-content.min.css" />
+    <link rel="stylesheet" href="../../resources/css/monokai_sublime.css" />
+  </head>
+
+  <body>
+    <div class="markdown-body">
+      <h1>
+        xAxis 속성이란 <em><strong>(xAxis properties)</strong></em>
+      </h1>
+      <blockquote>
+        <p>
+          X축에 대한 구성 옵션을 설정하는 속성입니다. 구성 옵션에 대한 정보는
+          아래와 같습니다.
+        </p>
+      </blockquote>
+      <h3>Info</h3>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>name</th>
+              <th>type</th>
+              <th>required(default)</th>
+              <th>description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>alternateGridColor</td>
+              <td><code>color</code></td>
+              <td><span class="optional">선택</span></td>
+              <td>그리드 라인의 교차 색상</td>
+            </tr>
+            <tr>
+              <td>categories</td>
+              <td><code>Array</code></td>
+              <td><span class="optional">선택</span></td>
+              <td>축레이블 설정</td>
+            </tr>
+            <tr>
+              <td>crosshair</td>
+              <td><code>boolean</code></td>
+              <td><span class="optional">선택(false)</span></td>
+              <td>포인트에 마우스 hover 시 십자 가이드라인 표시 여부</td>
+            </tr>
+            <tr>
+              <td>endOnTick</td>
+              <td><code>boolean</code></td>
+              <td><span class="optional">선택(false)</span></td>
+              <td>축의 마지막 점을 강제로 표시할지 여부</td>
+            </tr>
+            <tr>
+              <td>gridLineColor</td>
+              <td><code>color</code></td>
+              <td><span class="optional">선택(#262626)</span></td>
+              <td>그리드 라인의 색상</td>
+            </tr>
+            <tr>
+              <td>gridLineDashStyle</td>
+              <td><code>string</code></td>
+              <td><span class="optional">선택(solid)</span></td>
+              <td>그리드 라인의 종류</td>
+            </tr>
+            <tr>
+              <td>gridLineWidth</td>
+              <td><code>number</code></td>
+              <td><span class="optional">선택(0)</span></td>
+              <td>그리드 라인의 너비</td>
+            </tr>
+            <tr>
+              <td>gridZIndex</td>
+              <td><code>number</code></td>
+              <td><span class="optional">선택(1)</span></td>
+              <td>그리드 라인의 Z index</td>
+            </tr>
+            <tr>
+              <td>labels</td>
+              <td><code>object</code></td>
+              <td><span class="optional">선택</span></td>
+              <td>라벨 속성</td>
+            </tr>
+            <tr>
+              <td>lineColor</td>
+              <td><code>color</code></td>
+              <td><span class="optional">선택(#ccd6eb)</span></td>
+              <td>축 라인의 색상</td>
+            </tr>
+            <tr>
+              <td>lineWidth</td>
+              <td><code>number</code></td>
+              <td><span class="optional">선택(1)</span></td>
+              <td>축 라인의 너비</td>
+            </tr>
+            <tr>
+              <td>max</td>
+              <td><code>number</code></td>
+              <td><span class="optional">선택</span></td>
+              <td>축의 최댓값</td>
+            </tr>
+            <tr>
+              <td>min</td>
+              <td><code>number</code></td>
+              <td><span class="optional">선택</span></td>
+              <td>축의 최솟값</td>
+            </tr>
+            <tr>
+              <td>minorGridLineColor</td>
+              <td><code>color</code></td>
+              <td><span class="optional">선택(#f2f2f2)</span></td>
+              <td>보조 그리드 라인의 색상</td>
+            </tr>
+            <tr>
+              <td>minorGridLineDashStyle</td>
+              <td><code>string</code></td>
+              <td><span class="optional">선택(Solid)</span></td>
+              <td>보조 그리드 라인의 종류</td>
+            </tr>
+            <tr>
+              <td>minorGridLineWidth</td>
+              <td><code>number</code></td>
+              <td><span class="optional">선택(1)</span></td>
+              <td>보조 그리드 라인의 너비</td>
+            </tr>
+            <tr>
+              <td>minorTickColor</td>
+              <td><code>color</code></td>
+              <td><span class="optional">선택(#999999)</span></td>
+              <td>축에 표시할 보조 점의 색상</td>
+            </tr>
+            <tr>
+              <td>minorTickInterval</td>
+              <td><code>number</code> or <code>string</code></td>
+              <td><span class="optional">선택</span></td>
+              <td>축에 표시할 보조 점의 간격</td>
+            </tr>
+            <tr>
+              <td>minorTickLength</td>
+              <td><code>number</code></td>
+              <td><span class="optional">선택(2)</span></td>
+              <td>축에 표시할 보조 점의 길이</td>
+            </tr>
+            <tr>
+              <td>minorTickWidth</td>
+              <td><code>number</code></td>
+              <td><span class="optional">선택(0)</span></td>
+              <td>축에 표시할 보조 점의 너비</td>
+            </tr>
+            <tr>
+              <td>offset</td>
+              <td><code>number</code></td>
+              <td><span class="optional">선택(0)</span></td>
+              <td>기본 위치 기준으로 표시할 위치 값</td>
+            </tr>
+            <tr>
+              <td>opposite</td>
+              <td><code>boolean</code></td>
+              <td><span class="optional">선택(false)</span></td>
+              <td>상단에 축 표시 여부</td>
+            </tr>
+            <tr>
+              <td>plotBands</td>
+              <td><code>object</code></td>
+              <td><span class="optional">선택</span></td>
+              <td>플롯밴드 속성 (특정영역 하이라이팅)</td>
+            </tr>
+            <tr>
+              <td>reversed</td>
+              <td><code>boolean</code></td>
+              <td><span class="optional">선택(false)</span></td>
+              <td>축 반전 여부</td>
+            </tr>
+            <tr>
+              <td>showFirstLabel</td>
+              <td><code>boolean</code></td>
+              <td><span class="optional">선택(true)</span></td>
+              <td>첫번째 축 라벨여부 표시</td>
+            </tr>
+            <tr>
+              <td>showLastLabel</td>
+              <td><code>boolean</code></td>
+              <td><span class="optional">선택(true)</span></td>
+              <td>마지막 축 라벨여부 표시</td>
+            </tr>
+            <tr>
+              <td>startOnTick</td>
+              <td><code>boolean</code></td>
+              <td><span class="optional">선택(false)</span></td>
+              <td>축의 시작점을 강제로 표시할지 여부</td>
+            </tr>
+            <tr>
+              <td>tickInterval</td>
+              <td><code>number</code></td>
+              <td><span class="optional">선택</span></td>
+              <td>축에 표시할 눈금 간격</td>
+            </tr>
+            <tr>
+              <td>tickLength</td>
+              <td><code>number</code></td>
+              <td><span class="optional">선택(10)</span></td>
+              <td>축에 표시할 눈금 길이</td>
+            </tr>
+            <tr>
+              <td>tickPosition</td>
+              <td><code>number</code></td>
+              <td><span class="optional">선택(outside)</span></td>
+              <td>축에 표시할 눈금 위치</td>
+            </tr>
+            <tr>
+              <td>tickWidth</td>
+              <td><code>number</code></td>
+              <td><span class="optional">선택(1)</span></td>
+              <td>축에 표시한 눈금 너비</td>
+            </tr>
+            <tr>
+              <td>title</td>
+              <td><code>object</code></td>
+              <td><span class="optional">선택</span></td>
+              <td>축 제목 속성 (JSON 형식)</td>
+            </tr>
+            <tr>
+              <td>visible</td>
+              <td><code>boolean</code></td>
+              <td><span class="optional">선택(true)</span></td>
+              <td>축 보임 여부</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="../../resources/plugins/jquery/jquery.slim.min.js"></script>
+    <script src="../../resources/plugins/jquery/jquery.mark.min.js"></script>
+    <script src="../../resources/js/ibChart/md-content.js"></script>
+  </body>
+</html>

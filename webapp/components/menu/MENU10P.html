@@ -1,0 +1,78 @@
+<!--
+/*************************************************************************
+* @ 서비스경로 : MENU10P
+* @ 파일명      : MENU10P.html  [P] 전체 메뉴
+* @ 작성자      : 90196258
+* @ 작성일      : 2025-01-17
+************************** 수정이력 ****************************************
+* 날짜                    작업자                 변경내용
+*_________________________________________________________________________
+* 2025-01-17       90196258                 최초작성
+*************************************************************************/
+-->
+
+<!-- gnb -->
+<div class="gnb">
+	<div class="gnb-user-info">
+		<div class="gnb-user-name">
+			<i class="icon-only icon-26 icon-user2"></i>
+			<strong id="userNm"></span></strong>
+		</div>
+		<div class="gnb-login-date" id="loginDt"></div>
+	</div>
+	<div class="gnb-menu-search">
+		<div id="validId" class="form">
+			<div class="gnb-menu-search-close"><button id="btnSearchClose" type="button" aria-label="검색메뉴 닫기"></button></div>
+			<div class="input-wrap input-btn">
+				<input id="iptSearch" type="text" placeholder="메뉴를 검색해 보세요." aria-label="메뉴 검색">
+				<button id="btnDelete" type="button" class="input-remove" aria-label="입력 내용 삭제"></button>
+				<button id="btnSearch" type="button" class="input-search" aria-label="입력 내용 검색"></button>
+			</div>
+			<p id="validValue" class="validate-text"></p>
+		</div>
+		<div id="searchArea" class="gnb-menu-search-recent" style="display:none;">
+			<dl>
+				<dt>최근 검색어</dt>
+				<dd id="noSearchData">
+					<p class="body-small">최근 검색어가 없습니다. <br> '지수', '펀드' 등 단어로 메뉴를 검색해 볼 수 있습니다.</p>
+				</dd>
+				<dd id="searchData">
+				</dd>
+			</dl>
+		</div>
+		<div id="noResultArea" class="gnb-menu-search-result" style="display:none;">
+			<!-- division-center -->
+			<div class="division-center">
+
+				<div class="no-result">
+					<i class="icon-only icon-48 icon-noresult bg-icon-gray_1"></i>
+					<p class="body-medium fw-400">일치하는 메뉴가 없습니다.</p>
+				</div>
+			</div>
+			<!-- //division-center -->
+		</div>
+		<div id="resultArea" class="gnb-menu-search-result" style="display:none;">
+			<strong>메뉴</strong>
+			<ul id="resultData">
+			</ul>
+		</div>
+	</div>
+	<div id="rcmArea" class="gnb-figure-list">
+		<ul id="rcmAreaList">
+		</ul>
+		<div class="stroke stroke4"></div>
+	</div>
+	<div id="menuNavArea" class="gnb-menu-nav">
+		<div class="tab-content gnb-menu">
+			<ul class="tab-list tab-anchor overflow-list menu" role="tablist" id="menuTabList">
+				<li class="tab tab-active"><a role="tab" href="#gnb-list01"></a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="menuListArea" class="gnb-menu-list">
+	</div>
+	<div id="logOutArea" class="gnb-footer">
+		<button id="btnLogOut" type="button" class="btn-xsmall btn-outlined btn-round">로그아웃</button>
+	</div>
+</div>
+<!-- //gnb -->

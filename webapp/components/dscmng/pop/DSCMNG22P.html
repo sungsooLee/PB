@@ -1,0 +1,390 @@
+<!-- 
+/*************************************************************************
+* @ 서비스경로 : DSCMNG22P
+* @ 파일명      : DSCMNG22P 일정관리 > 영업 캘린더 > 일정 등록 > 반복 팝업
+* @ 작성자      : 90195467
+* @ 작성일      : 2024-12-26
+************************** 수정이력 ****************************************
+* 날짜                    작업자                 변경내용
+*_________________________________________________________________________
+* 2024-12-26            이혜성                 최초작성
+*************************************************************************/
+ -->
+ 
+<div class="content">
+	<div class="group-form">
+		<div class="group-title">
+			<strong class="title-medium">반복 주기</strong>
+		</div>
+		<div class="group-content">
+			<button class="select" data-micromodal-trigger="modal-select-list"
+				data-placeholder="선택하세요" id="sSel1">
+				<span id="selTxt">반복 없음</span>
+			</button> 
+		</div>
+
+		<!-- 매일 반복 -->
+		<div class="group-content" id="dayForm" style="display: none">
+			<div class="inp-group py24 gap16">
+				<div class="inp inp-medium inp-combi">
+					<label style="flex: 0"> <input type="radio"
+						name="dayRadio1" value="1" checked>
+					</label>
+					<div class="form" id="interval_dayForm">
+						<div class="label"></div>
+						<div class="input-wrap input-placeholder input-medium">
+							<input type="number" class="ac pr0" placeholder="1"
+								aria-label="일" value="1" id="interval_day">
+							<div class="visible-placeholder">일 마다</div>
+						</div>
+						<p class="validate-text" id="interval_dayValidTxt"></p>
+					</div>
+				</div>
+				<div class="inp inp-medium inp-combi">
+					<label style="flex: 0"> <input type="radio"
+						name="dayRadio1" value="2">
+					</label>
+					<div class="form">
+						<div class="label"></div>
+						<span class="label-title">매일(평일)</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //매일 반복 -->
+		<!-- 매주 반복 -->
+		<div class="group-content mt24 px8" id="weekForm" style="display: none">
+			<div class="form" id="interval_weekForm">
+				<div class="label"></div>
+					<div class="input-wrap input-placeholder input-medium">
+					<input type="number" class="ac pr0" placeholder="1" aria-label="주" value="1" id="interval_week">
+						<div class="visible-placeholder">주 마다</div>
+					</div>
+					<p class="validate-text" id="interval_weekValidTxt"></p>
+			</div>
+			<div class="label"></div>
+			<div class="group-title">
+				<strong class="title-medium fw-500 px6 py8">다음 요일에 반복</strong>
+			</div>
+			<div class="group-content">
+				<div class="form" id="weekDayForm">
+					<div class="label"></div>
+					<div class="inp-circle">
+						<input type="checkbox" name="weekDayCheck" class="sun" aria-label="일" value="Sunday">
+						<input type="checkbox" name="weekDayCheck" aria-label="월" value="Monday">
+						<input type="checkbox" name="weekDayCheck" aria-label="화" value="Tuesday">
+						<input type="checkbox" name="weekDayCheck" aria-label="수" value="Wednesday">
+						<input type="checkbox" name="weekDayCheck" aria-label="목" value="Thursday">
+						<input type="checkbox" name="weekDayCheck" aria-label="금" value="Friday">
+						<input type="checkbox" name="weekDayCheck" class="sat" aria-label="토" value="Saturday">
+					</div>
+					<p class="validate-text" id="weekDayValidateTxt"></p>
+				</div>
+			</div>
+		</div>
+		<!-- //매주 반복 -->
+
+		<!-- 매월 반복 -->
+		<div class="group-content" id="monthForm" style="display:none">
+			<div class="inp-group py24 gap16">
+				<div class="form" id="repeatMonthCountForm">
+					<div class="label"></div>
+					<div class="input-wrap input-placeholder input-medium">
+						<input type="number" class="ac pr0" placeholder="1" aria-label="월" value="1" id="repeatMonthCount">
+						<div class="visible-placeholder">개월 마다</div>
+					</div>
+					<p class="validate-text" id="repeatMonthCountValidTxt"></p>
+				</div>
+				<div class="inp inp-medium inp-combi">
+					<label style="flex: 0"> 
+						<input type="radio" name="monthRadio1" value="1" checked>
+					</label>
+					<div class="form" id="repeatMonthCount2Form">
+						<div class="label"></div>
+						<div class="input-wrap input-placeholder input-medium">
+							<input type="number" class="ac pr0" placeholder="1" aria-label="일" value="1" id="repeatMonthCount2">
+							<div class="visible-placeholder">일에</div>
+						</div>
+						<p class="validate-text" id="repeatMonthCount2ValidTxt"></p>
+					</div>
+				</div>
+				<div class="inp inp-medium inp-combi">
+					<label style="flex: 0"> 
+						<input type="radio" name="monthRadio1" value="2">
+					</label>
+					<div class="form">
+						<div class="label"></div>
+						<div class="input-wrap input-placeholder input-medium">
+							<div class="visible-placeholder">매월</div>
+								<button type="button" class="text-button ac" data-placeholder="첫째주 월요일" id="items2Text"></button>
+							</div>
+						</div>
+				</div>
+			</div>
+			<!-- 선택 시 활성화 -->
+			<div class="select-spinner" id="spinner02" style="display:none">
+				<section id="scroll-container2-1" class="scroll-container">
+					<label class="scroll-items">
+						<input type="radio" name="items2s1" class="blind" value="First">
+						<span>첫째주</span>
+					</label> 
+					<label class="scroll-items">
+						<input type="radio" name="items2s1" class="blind" value="Second">
+						<span>둘째주</span>
+					</label> 
+					<label class="scroll-items">
+						<input type="radio" name="items2s1" class="blind" value="Third">
+						<span>셋째주</span>
+					</label>
+					<label class="scroll-items">
+						<input type="radio" name="items2s1" class="blind" value="Fourth">
+						<span>넷째주</span>
+					</label> 
+					<label class="scroll-items">
+						<input type="radio" name="items2s1" class="blind" value="Last">
+						<span>마지막주</span>
+					</label>
+				</section>
+				<section id="scroll-container2-2" class="scroll-container">
+					<label class="scroll-items">
+						<input type="radio" name="items2s2" class="blind" value="Sunday">
+						<span>일요일</span>
+					</label> 
+					<label class="scroll-items">
+						<input type="radio" name="items2s2" class="blind" value="Monday">
+						<span>월요일</span>
+					</label> 
+					<label class="scroll-items">
+						<input type="radio" name="items2s2" class="blind" value="Tuesday">
+						<span>화요일</span>
+					</label>
+					<label class="scroll-items">
+						<input type="radio" name="items2s2" class="blind" value="Wednesday">
+						<span>수요일</span>
+					</label> 
+					<label class="scroll-items">
+						<input type="radio" name="items2s2" class="blind" value="Thursday">
+						<span>목요일</span>
+					</label> 
+					<label class="scroll-items">
+						<input type="radio" name="items2s2" class="blind" value="Friday">
+						<span>금요일</span>
+					</label>
+					<label class="scroll-items">
+						<input type="radio" name="items2s2" class="blind" value="Saturday">
+						<span>토요일</span>
+					</label>
+				</section>
+			</div>
+			<!-- //선택 시 활성화 -->
+
+		</div>
+		<!-- //매월 반복 -->
+
+		<!-- 매년 반복 -->
+		<div class="group-content" id="yearForm1" style="display: none">
+			<div class="inp-group py24 gap16">
+				<div class="inp inp-medium inp-combi">
+					<label style="flex:auto;"> 
+						<input type="radio" name="yearRadio1" value="1" checked>
+						<span class="label-title">매년 같은 날</span>
+					</label>
+					<div class="form" style="flex:0 0 173px;">
+						<div class="label"></div>
+						<div class="input-wrap input-datepicker input-medium">
+							<button type="button" data-placeholder="12월 7일" id="repeatYearDateText"></button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 선택 시 활성화 -->
+			<div class="datepicker-wrap">
+				<div id="datepicker_schedule03"></div>
+			</div>
+			<!-- //선택 시 활성화 -->
+		</div>
+		<div class="group-content" id="yearForm2" style="display: none">
+			<div class="inp-group py24 gap16">
+				<div class="inp inp-medium inp-combi">
+					<label style="flex: 0"> 
+						<input type="radio" name="yearRadio1" value="2">
+					</label>
+					<div class="form">
+						<div class="label"></div>
+						<div class="input-wrap input-placeholder input-medium">
+							<div class="visible-placeholder">매년</div>
+							<button type="button" class="text-button ac"
+								data-placeholder="12월 첫째쭈 일요일" id="items3Text"></button>
+						</div>
+						<p class="validate-text"></p>
+					</div>
+				</div>
+			</div>
+			<!-- 선택 시 활성화 -->
+			<div class="select-spinner" id="spinner03" style="display:none">
+				<section id="scroll-container3-1" class="scroll-container">
+					<label class="scroll-items">
+						<input type="radio" name="items3s1" class="blind" value="January">
+						<span>1</span>
+					</label> 
+					<label class="scroll-items">
+						<input type="radio" name="items3s1" class="blind" value="February">
+						<span>2</span>
+					</label> <label class="scroll-items">
+						<input type="radio" name="items3s1" class="blind" value="March">
+						<span>3</span>
+					</label> 
+					<label class="scroll-items">
+						<input type="radio" name="items3s1" class="blind" value="April">
+						<span>4</span>
+					</label> 
+					<label class="scroll-items">
+						<input type="radio" name="items3s1" class="blind" value="May">
+						<span>5</span>
+					</label> 
+					<label class="scroll-items">
+						<input type="radio" name="items3s1" class="blind" value="June">
+						<span>6</span>
+					</label> 
+					<label class="scroll-items">
+						<input type="radio" name="items3s1" class="blind" value="July">
+						<span>7</span>
+					</label> 
+					<label class="scroll-items">
+						<input type="radio" name="items3s1" class="blind" value="August">
+						<span>8</span>
+					</label> 
+					<label class="scroll-items">
+						<input type="radio" name="items3s1" class="blind" value="September">
+						<span>9</span>
+					</label> 
+					<label class="scroll-items">
+						<input type="radio" name="items3s1" class="blind" value="October">
+						<span>10</span>
+					</label> 
+					<label class="scroll-items">
+						<input type="radio" name="items3s1" class="blind" value="November">
+						<span>11</span>
+					</label> 
+					<label class="scroll-items">
+						<input type="radio" name="items3s1" class="blind" value="December">
+						<span>12</span>
+					</label>
+				</section>
+				<section class="scroll-container" style="flex: 0 0 10%;">
+					<label class="scroll-items"><input type="radio"
+						class="blind"><span>월</span></label>
+				</section>
+				<section id="scroll-container3-2" class="scroll-container">
+					<label class="scroll-items">
+						<input type="radio" name="items3s2" class="blind" value="First">
+						<span>첫째주</span>
+					</label> 
+					<label class="scroll-items">
+						<input type="radio" name="items3s2" class="blind" value="Second">
+						<span>둘째주</span>
+					</label> 
+					<label class="scroll-items">
+						<input type="radio" name="items3s2" class="blind" value="Third">
+						<span>셋째주</span></label>
+					<label class="scroll-items">
+						<input type="radio" name="items3s2" class="blind" value="Fourth">
+						<span>넷째주</span>
+					</label> 
+					<label class="scroll-items">
+						<input type="radio" name="items3s2" class="blind" value="Last">
+						<span>마지막주</span>
+					</label>
+				</section>
+				<section id="scroll-container3-3" class="scroll-container">
+					<label class="scroll-items">
+						<input type="radio" name="items3s3" class="blind" value="Sunday">
+						<span>일요일</span>
+					</label> 
+					<label class="scroll-items">
+						<input type="radio" name="items3s3" class="blind" value="Monday">
+						<span>월요일</span>
+					</label> 
+					<label class="scroll-items">
+						<input type="radio" name="items3s3" class="blind" value="Tuesday">
+						<span>화요일</span>
+					</label>
+					<label class="scroll-items">
+						<input type="radio" name="items3s3" class="blind" value="Wednesday">
+						<span>수요일</span>
+					</label> 
+					<label class="scroll-items">
+						<input type="radio" name="items3s3" class="blind" value="Thursday">
+						<span>목요일</span>
+					</label> 
+					<label class="scroll-items">
+						<input type="radio" name="items3s3" class="blind" value="Friday">
+						<span>금요일</span>
+					</label>
+					<label class="scroll-items">
+						<input type="radio" name="items3s3" class="blind" value="Saturday">
+						<span>토요일</span>
+					</label>
+				</section>
+			</div>
+			<!-- 선택 시 활성화 -->
+
+		</div>
+
+	</div>
+	<!-- //group-form -->
+
+	<div class="stroke stroke-fluid my16"></div>
+
+	<!-- group-form -->
+	<div class="group-form" id="repeatForm" style="display: none">
+		<div class="group-title">
+			<strong class="title-medium">반복 설정</strong>
+		</div>
+		<div class="group-content">
+			<div class="inp-group py24 gap0">
+				<div class="inp inp-medium inp-combi">
+					<label style="flex:auto;"> 
+						<input type="radio" name="repeatRadio1" value="3" checked> 
+						<span class="label-title">종료일 지정</span>
+					</label>
+					<div class="form" style="flex:0 0 173px;">
+						<div class="label">
+						</div>
+						<div class="input-wrap input-datepicker input-medium">
+							<button type="button" aria-label="날짜 선택" id="repeatSettingDateText">2024-01-01</button>
+						</div>
+					</div>
+				</div>
+				<div class="datepicker-wrap">
+					<div aria-label="날짜 선택" class="datepicker-trigger"
+						id="popDatepicker"></div>
+				</div>
+				<div class="inp inp-medium inp-combi">
+					<label style="flex:auto;">  
+						<input type="radio" name="repeatRadio1" value="2"> 
+						<span class="label-title">반복 횟수 지정</span>
+					</label>
+					<div class="form" id="repeatSettingCountForm" style="flex:0 0 140px;">
+						<div class="label"></div>
+						<div class="input-wrap input-placeholder input-medium">
+							<input type="number" class="ac pr0" placeholder="1" id="repeatSettingCount"
+								aria-label="회">
+							<div class="visible-placeholder">회</div>
+						</div>
+						<p class="validate-text" id="repeatSettingCountValidTxt"></p>
+					</div>
+				</div>
+				<div class="inp inp-medium inp-combi">
+					<label> 
+						<input type="radio" name="repeatRadio1" value="1">
+						<span class="label-title">지정 안함</span>
+					</label>
+				</div>
+			</div>
+		</div>
+		<!-- //매일 반복 -->
+	</div>
+	<div id="notRep" >
+	</div>
+</div>

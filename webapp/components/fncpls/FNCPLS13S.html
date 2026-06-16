@@ -1,0 +1,85 @@
+<!--
+/*************************************************************************
+* @ 서비스경로 : FNCPLS13S
+* @ 파일명      : FNCPLS13S.html  금융+ > 예적금계산기 > 적금계산 > 매월모으기
+* @ 작성자      : 90195654
+* @ 작성일      : 2024-12-26
+************************** 수정이력 ****************************************
+* 날짜                    작업자                 변경내용
+*_________________________________________________________________________
+* 2024-12-26       90195654                 최초작성
+*************************************************************************/
+-->
+<!-- tab-content -->
+<div class="tab-content tab-fluid tab-sticky">
+	<ul class="tab-list tab-col overflow-list" role="tablist">
+		<li class="tab"id="fncpls10s"><a role="tab">예금계산</a></li>
+		<li class="tab tab-active"><a role="tab">적금계산</a></li>
+	</ul>
+</div>
+<!-- //tab-content -->
+
+<!-- tab-content -->
+<div class="tab-content mt40">
+	<ul class="tab-list tab-button" role="tablist">
+		<li class="tab tab-active"><a role="tab">매월 모으기</a></li>
+		<li class="tab" id="fncpls16s"><a role="tab">목표금액 모으기</a></li>
+	</ul>
+</div>
+<!-- //tab-content -->
+
+
+<!-- form -->
+<div class="form mt40" id="keepMoneyForm">
+	<div class="label">
+		<strong class="title-medium">월 적립금액</strong> <span class="right" id="hangleAmt"></span>
+	</div>
+	<div class="input-wrap input-placeholder">
+		<input type="tel" name="keepMoney" id="keepMoney" maxlength="15" value="" class="ar" placeholder="0" aria-label="월 적립금액">
+		<button type="button" class="input-remove" name="delBtn"  aria-label="입력 내용 삭제"></button>
+		<div class="visible-placeholder">원</div>
+	</div>
+	<p class="validate-text">필수 항목 입니다.</p>
+	<div class="shortcut-button-wrap">
+		<button type="button" class="btn-xsmall btn-outlined btn-round" name="plusMoney" id="plus100" value="1000000">+100만</button>
+		<button type="button" class="btn-xsmall btn-outlined btn-round" name="plusMoney" id="plus100" value="500000">+50만</button>
+		<button type="button" class="btn-xsmall btn-outlined btn-round" name="plusMoney" id="plus100" value="100000">+10만</button>
+		<button type="button" class="btn-xsmall btn-outlined btn-round" name="plusMoney" id="plus100" value="50000">+5만</button>
+	</div>
+</div>
+<!-- //form -->
+
+<!-- form -->
+<div class="form mt40" id="keepMonthForm">
+	<div class="label">
+		<strong class="title-medium">적립기간</strong>
+	</div>
+	<div class="input-wrap input-placeholder">
+		<input type="tel" maxlength="3"  name="keepMonth" id="keepMonth" class="ar" placeholder="0" aria-label="적립기간">
+		<button type="button" class="input-remove" name="delBtn" aria-label="입력 내용 삭제"></button>
+		<div class="visible-placeholder">개월</div>
+	</div>
+	<p class="validate-text">필수 항목 입니다.</p>
+	<div class="shortcut-button-wrap">
+		<button type="button" class="btn-xsmall btn-outlined btn-round" name="plusMonth" id="mon6" value="6">+6개월</button>
+		<button type="button" class="btn-xsmall btn-outlined btn-round" name="plusMonth" id="mon12" value="12">+1년</button>
+		<button type="button" class="btn-xsmall btn-outlined btn-round" name="plusMonth" id="mon36" value="36">+3년</button>
+		<button type="button" class="btn-xsmall btn-outlined btn-round" name="plusMonth" id="mon60" value="60">+5년</button>
+	</div>
+</div>
+<!-- //form -->
+
+<!-- form -->
+<div class="form mt40" id="keepRateForm">
+	<div class="label">
+		<strong class="title-medium">예상금리</strong>
+	</div>
+	<div class="input-wrap input-placeholder">
+		<input  type="number" pattern="[0-9]*" inputmode="decimal" name="keepRate" id="keepRate" class="ar" placeholder="0" aria-label="예상금리">
+		<button type="button" class="input-remove" name="delBtn" aria-label="입력 내용 삭제"></button>
+		<div class="visible-placeholder">%</div>
+	</div>
+	<p class="validate-text">필수 항목 입니다.</p>
+</div>
+<!-- //form -->
+

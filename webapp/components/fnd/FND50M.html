@@ -1,0 +1,475 @@
+<!--
+/*************************************************************************
+* @ 서비스경로 : FND50M
+* @ 파일명      : FND50M.html 펀드 > 펀드 비교
+* @ 작성자      : 90195654
+* @ 작성일      : 2024-12-26
+************************** 수정이력 ****************************************
+* 날짜                    작업자                 변경내용
+*_________________________________________________________________________
+* 2024-12-26       90195654                 최초작성
+*************************************************************************/
+-->
+<style>
+body {
+	background-color: var(--background-bg_lightGray);
+}
+</style>
+
+<div class="fund-diff content-fluid px0">
+
+	<div class="fund-diff-title">
+		<div class="tags tags-small tags-deepGray tags-round" id="fnd1-tag">행내한</div>
+
+		<ul>
+			<li>
+				<div class="tags-wrap" id="fnd1-risk"></div>
+				<h2 class="title-medium" id="fnd1-prdKorlNm"></h2>
+				<div class="tags-bottom" id="fnd1-fndPrdKrdNm">
+				</div>
+			</li>
+			<li>
+				<div class="tags-wrap" id="fnd2-risk"></div>
+				<h2 class="title-medium" id="fnd2-prdKorlNm"></h2>
+				<div class="tags-bottom" id="fnd2-fndPrdKrdNm">
+				</div>
+			</li>
+		</ul>
+	</div>
+
+	<div class="fund-diff-detail mb-24">
+
+		<div class="fund-diff-inner">
+			<h3 class="title-large">기본정보</h3>
+			<div class="diff-table">
+				<table>
+					<caption>기본정보</caption>
+					<tbody>
+						<tr>
+							<th scope="col"><span class="blind fndNm1"></span>
+								<strong>상품특징</strong></th>
+							<th scope="col"><span class="blind fndNm2"></span>
+								<strong>상품특징</strong></th>
+						</tr>
+						<tr>
+							<td>
+								<p id="fnd1-fndAgrtTxt"></p>
+							</td>
+							<td>
+								<p id="fnd2-fndAgrtTxt"></p>
+							</td>
+						</tr>
+						<tr>
+							<th scope="col"><strong>설정금액</strong></th>
+							<th scope="col"><strong>설정금액</strong></th>
+						</tr>
+						<tr>
+							<td id="fnd1-fndEstAm"></td>
+							<td id="fnd2-fndEstAm"></td>
+						</tr>
+						<tr>
+							<th scope="col"><strong>총보수</strong></th>
+							<th scope="col"><strong>총보수</strong></th>
+						</tr>
+						<tr>
+							<td id="fnd1-totPfeRt"></td>
+							<td id="fnd2-totPfeRt"></td>
+						</tr>
+						<tr>
+							<th scope="col"><strong>선취수수료</strong></th>
+							<th scope="col"><strong>선취수수료</strong></th>
+						</tr>
+						<tr>
+							<td id="fnd1-pocpFee">없음</td>
+							<td id="fnd2-pocpFee">없음</td>
+						</tr>
+						<tr>
+							<th scope="col"><strong>환매 수수료</strong></th>
+							<th scope="col"><strong>환매 수수료</strong></th>
+						</tr>
+						<tr>
+							<td id="fnd1-rprhFee">없음</td>
+							<td id="fnd2-rprhFee">없음</td>
+						</tr>
+						<tr>
+							<th scope="col"><strong>기준가(전일대비)</strong></th>
+							<th scope="col"><strong>기준가(전일대비)</strong></th>
+						</tr>
+						<tr>
+							<td>
+								<dl class="price">
+									<dt id="fnd1-fndBasPr"></dt>
+									<dd id="fnd1-difAm">
+									</dd>
+								</dl>
+							</td>
+							<td>
+								<dl class="price">
+									<dt id="fnd2-fndBasPr"></dt>
+									<dd id="fnd2-difAm">
+									</dd>
+								</dl>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<div class="stroke stroke4"></div>
+
+		<div class="fund-diff-inner">
+			<h3 class="title-large">수익률 정보</h3>
+			<div class="diff-table">
+				<table>
+					<caption>수익률 정보</caption>
+					<tbody>
+						<tr>
+							<th scope="col"><span class="blind fndNm1"></span>
+								<strong>1개월</strong></th>
+							<th scope="col"><span class="blind fndNm2"></span>
+								<strong>1개월</strong></th>
+						</tr>
+						<tr>
+							<td id="fnd1-bmmPrftRt">-</td>
+							<td id="fnd2-bmmPrftRt">-</td>
+						</tr>
+						<tr>
+							<th scope="col"><strong>3개월</strong></th>
+							<th scope="col"><strong>3개월</strong></th>
+						</tr>
+						<tr>
+							<td id="fnd1-m3PrftRt">-</td>
+							<td id="fnd2-m3PrftRt">-</td>
+						</tr>
+						<tr>
+							<th scope="col"><strong>6개월</strong></th>
+							<th scope="col"><strong>6개월</strong></th>
+						</tr>
+						<tr>
+							<td id="fnd1-m6PrftRt">-</td>
+							<td id="fnd2-m6PrftRt">-</td>
+						</tr>
+						<tr>
+							<th scope="col"><strong>12개월</strong></th>
+							<th scope="col"><strong>12개월</strong></th>
+						</tr>
+						<tr>
+							<td id="fnd1-m12PrftRt">-</td>
+							<td id="fnd2-m12PrftRt">-</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<p class="body-caption ar mt24" id="prcBasDt"></p>
+
+			<div class="btn-wrap py0 mt24">
+				<button type="button" class="btn-xsmall btn-outlined btn-round"
+					data-micromodal-trigger="modal-diff" name="popup" value="fnd51p">수익률 추이</button>
+			</div>
+		</div>
+
+		<div class="stroke stroke4"></div>
+
+		<div class="fund-diff-inner">
+			<h3 class="title-large">지표 정보</h3>
+			<div class="diff-table">
+				<table>
+					<caption>지표 정보</caption>
+					<tbody>
+						<tr>
+							<th scope="col"><span class="blind fndNm1"></span>
+								<strong>표준 편차</strong></th>
+							<th scope="col"><span class="blind fndNm1"></span>
+								<strong>표준 편차</strong></th>
+						</tr>
+						<tr>
+							<td>
+								<dl class="group-list" id="fnd1-stdvNidx">
+								</dl>
+							</td>
+							<td>
+								<dl class="group-list" id="fnd2-stdvNidx">
+								</dl>
+							</td>
+						</tr>
+						<tr>
+							<th scope="col"><strong>샤프</strong></th>
+							<th scope="col"><strong>샤프</strong></th>
+						</tr>
+						<tr>
+							<td>
+								<dl class="group-list" id="fnd1-shprNidx">
+								</dl>
+							</td>
+							<td>
+								<dl class="group-list" id="fnd2-shprNidx">
+								</dl>
+							</td>
+						</tr>
+						<tr>
+							<th scope="col"><strong>베타</strong></th>
+							<th scope="col"><strong>베타</strong></th>
+						</tr>
+						<tr>
+
+							<td>
+								<dl class="group-list" id="fnd1-betaNidx">
+								</dl>
+							</td>
+							<td>
+								<dl class="group-list" id="fnd2-betaNidx">
+								</dl>
+							</td>
+						</tr>
+						<tr>
+							<th scope="col"><strong>1R</strong></th>
+							<th scope="col"><strong>1R</strong></th>
+						</tr>
+						<tr>
+
+							<td>
+								<dl class="group-list" id="fnd1-irNidx">
+								</dl>
+							</td>
+							<td>
+								<dl class="group-list" id="fnd2-irNidx">
+								</dl>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			
+			<div class="btn-wrap py0 mt24">
+				<button type="button" class="btn-xsmall btn-outlined btn-round"
+					data-micromodal-trigger="modal-diff" name="popup" value="fnd52p">자산구성 비교</button>
+			</div>
+		</div>
+
+		<div class="stroke stroke4"></div>
+
+		<div class="fund-diff-inner">
+			<h3 class="title-large">TOP5 종목 정보</h3>
+			<div class="diff-table">
+				<table>
+					<caption>TOP5 종목 정보</caption>
+					<tbody>
+						<tr>
+							<th scope="col"><span class="blind fndNm1"></span>
+								<strong>종목1</strong></th>
+							<th scope="col"><span class="blind fndNm2"></span>
+								<strong>종목1</strong></th>
+						</tr>
+						<tr>
+							<td>
+								<dl>
+									<dt id="fnd1-sec-nm1">-</dt>
+									<dd id="fnd1-sec-rt1">-</dd>
+								</dl>
+							</td>
+							<td>
+								<dl>
+									<dt id="fnd2-sec-nm1">-</dt>
+									<dd id="fnd2-sec-rt1">-</dd>
+								</dl>
+							</td>
+						</tr>
+						<tr>
+							<th scope="col"><strong>종목2</strong></th>
+							<th scope="col"><strong>종목2</strong></th>
+						</tr>
+						<tr>
+							<td>
+								<dl>
+									<dt id="fnd1-sec-nm2">-</dt>
+									<dd id="fnd1-sec-rt2">-</dd>
+								</dl>
+							</td>
+							<td>
+								<dl>
+									<dt id="fnd2-sec-nm2">-</dt>
+									<dd id="fnd2-sec-rt2">-</dd>
+								</dl>
+							</td>
+						</tr>
+						<tr>
+							<th scope="col"><strong>종목3</strong></th>
+							<th scope="col"><strong>종목3</strong></th>
+						</tr>
+						<tr>
+							<td>
+								<dl>
+									<dt id="fnd1-sec-nm3">-</dt>
+									<dd id="fnd1-sec-rt3">-</dd>
+								</dl>
+							</td>
+							<td>
+								<dl>
+									<dt id="fnd2-sec-nm3">-</dt>
+									<dd id="fnd2-sec-rt3">-</dd>
+								</dl>
+							</td>
+						</tr>
+						<tr>
+							<th scope="col"><strong>종목4</strong></th>
+							<th scope="col"><strong>종목4</strong></th>
+						</tr>
+						<tr>
+							<td>
+								<dl>
+									<dt id="fnd1-sec-nm4">-</dt>
+									<dd id="fnd1-sec-rt4">-</dd>
+								</dl>
+							</td>
+							<td>
+								<dl>
+									<dt id="fnd2-sec-nm4">-</dt>
+									<dd id="fnd2-sec-rt4">-</dd>
+								</dl>
+							</td>
+						</tr>
+						<tr>
+							<th scope="col"><strong>종목5</strong></th>
+							<th scope="col"><strong>종목5</strong></th>
+						</tr>
+						<tr>
+							<td>
+								<dl>
+									<dt id="fnd1-sec-nm5">-</dt>
+									<dd id="fnd1-sec-rt5">-</dd>
+								</dl>
+							</td>
+							<td>
+								<dl>
+									<dt id="fnd2-sec-nm5">-</dt>
+									<dd id="fnd2-sec-rt5">-</dd>
+								</dl>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+		</div>
+
+		<div class="stroke stroke4"></div>
+
+		<div class="fund-diff-inner">
+			<h3 class="title-large">TOP5 업종 정보</h3>
+			<div class="diff-table">
+				<table>
+					<caption>TOP5 업종 정보</caption>
+					<tbody>
+						<tr>
+							<th scope="col"><span class="blind fndNm1"></span>
+								<strong>업종1</strong></th>
+							<th scope="col"><span class="blind fndNm2"></span>
+								<strong>업종1</strong></th>
+						</tr>
+						<tr>
+							<td>
+								<dl>
+									<dt id="fnd1-bzct-nm1">-</dt>
+									<dd id="fnd1-bzct-rt1">-</dd>
+								</dl>
+							</td>
+							<td>
+								<dl>
+									<dt id="fnd2-bzct-nm1">-</dt>
+									<dd id="fnd2-bzct-rt1">-</dd>
+								</dl>
+							</td>
+						</tr>
+						<tr>
+							<th scope="col"><strong>업종2</strong></th>
+							<th scope="col"><strong>업종2</strong></th>
+						</tr>
+						<tr>
+							<td>
+								<dl>
+									<dt id="fnd1-bzct-nm2">-</dt>
+									<dd id="fnd1-bzct-rt2">-</dd>
+								</dl>
+							</td>
+							<td>
+								<dl>
+									<dt id="fnd2-bzct-nm2">-</dt>
+									<dd id="fnd2-bzct-rt2">-</dd>
+								</dl>
+							</td>
+						</tr>
+						<tr>
+							<th scope="col"><strong>업종3</strong></th>
+							<th scope="col"><strong>업종3</strong></th>
+						</tr>
+						<tr>
+							<td>
+								<dl>
+									<dt id="fnd1-bzct-nm3">-</dt>
+									<dd id="fnd1-bzct-rt3">-</dd>
+								</dl>
+							</td>
+							<td>
+								<dl>
+									<dt id="fnd2-bzct-nm3">-</dt>
+									<dd id="fnd2-bzct-rt3">-</dd>
+								</dl>
+							</td>
+						</tr>
+						<tr>
+							<th scope="col"><strong>업종4</strong></th>
+							<th scope="col"><strong>업종4</strong></th>
+						</tr>
+						<tr>
+							<td>
+								<dl>
+									<dt id="fnd1-bzct-nm4">-</dt>
+									<dd id="fnd1-bzct-rt4">-</dd>
+								</dl>
+							</td>
+							<td>
+								<dl>
+									<dt id="fnd2-bzct-nm4">-</dt>
+									<dd id="fnd2-bzct-rt4">-</dd>
+								</dl>
+							</td>
+						</tr>
+						<tr>
+							<th scope="col"><strong>업종5</strong></th>
+							<th scope="col"><strong>업종5</strong></th>
+						</tr>
+						<tr>
+							<td>
+								<dl>
+									<dt id="fnd1-bzct-nm5">-</dt>
+									<dd id="fnd1-bzct-rt5">-</dd>
+								</dl>
+							</td>
+							<td>
+								<dl>
+									<dt id="fnd2-bzct-nm5">-</dt>
+									<dd id="fnd2-bzct-rt5">-</dd>
+								</dl>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<p class="body-caption ac mt24">자료제공 : 제로인</p>
+
+			<ul class="dot-list p0 mt24">
+				<li>펀드 상품 특성에 따라 내용이 빈칸으로 표기될 수 있습니다. 자세한 내용은 투자설명서를 통해 확인할 수
+					있습니다.</li>
+				<li>본 리포트는 단순 펀드 정보 제공을 목적으로 하며, 특정 운용사나 펀드를 권고하거나 거래를 목적으로 하지
+					않습니다. 본 리포트의 내용은 운용사가 공시한 기준가, 운용내역 등 신뢰할 만한 판단자료로 얻어진 것이나 그 정확성이나
+					완전성을 우리은행이 보증하는 것은 아닙니다. <br/>또한 본 리포트의 수익률이 미래의 수익률을 보장하는 것은 아니며 동 자료를
+					통해 투자한 결과에 대해 우리은행은 어떠한 법적 책임도 지지 않음을 알려드립니다.</li>
+				<li>역외펀드는 외국의 자산운용 회사, 투자국의 휴일이 있는 경우 데이터 수신이 지연될 수 있습니다. 단순
+					참고자료로만 이용하여 주시기 바랍니다.</li>
+			</ul>
+		</div>
+
+	</div>
+</div>

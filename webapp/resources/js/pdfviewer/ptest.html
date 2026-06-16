@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>pdf test page</title>
+
+<!-- 아래 meta tag 는 있는것이 좋음 -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, user-scalable=yes">
+<meta name="google" content="notranslate">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- [필수] 아래두개 js 는 참조 필수. jquery 버전은 상관없음  -->
+<!-- <script type='text/javascript' src='/pdfviewer/rsc/build/jquery-1.11.1.js'></script>  -->
+<script type='text/javascript' src='/pdfviewer/rsc/build/jquery-3.4.1.min.js'></script>
+<script type='text/javascript' src='/pdfviewer/rsc/build/puser.js'></script>
+
+<link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+<style type="text/css">
+body {
+	overscroll-behavior-y: none;
+	margin : auto;
+	overflow: hidden;
+	height: 100%;
+}
+
+#bottomMenu{
+  position: fixed;
+  background-color: blue;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2rem;
+  display: flex;
+  opacity: 0.9;
+}
+#bottomButton{
+   margin: auto;
+}
+#bottomButton:hover{
+   color:white;
+}
+
+#pdfDiv {
+
+}
+</style>
+
+<script type='text/javascript'>
+//response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+//response.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+//$.support.cors = true; // 추가
+//$.get = $.ajax({type: 'GET'});
+
+	// div tag 로 호출 예제
+	function pDivView() {
+		var viewerUrl = "/pdfviewer/rsc/web/viewer.html"; 	 // !!! viewer.html 경로 !!!
+		var tmpPdfurl = $('#fileUrl').val(); 				// pdf 파일 url
+		var tmpDivName = 'pdfDiv'; 							// 출력되는 div tag id
+		var tmpPdfDesc = 'pdfDesc2'; 						// 웹접근성 용 대상 element id (메뉴중 페이지표시 부분)
+
+		var gif = viewerUrl.split('/rsc/web/')[0] + '/pdfviewer/rsc/web/imagesd/eploying.gif' ;
+
+	 	pDiv(viewerUrl, tmpPdfurl, tmpDivName, tmpPdfDesc);
+		//pDiv(viewerUrl, tmpPdfurl, tmpDivName, '') ;     	// pdfDesc2 가 공백시 웹접근성 처리하지 않음
+	}
+
+	$(document).ready(function() {
+
+		// pdf open 완료 event 샘플 //////////////////////////////////////////
+		window.addEventListener("message", processFn, false);
+		function processFn(event) {
+			var bla = event.data;
+			var tmpStr = bla.split(":")[0];
+			console.log('event=' + event.data);
+
+			if (tmpStr == 'P_EVENT') {
+				//console.log(event.data);
+				//console.log('pdf open 완료');
+				//console.log('pdfDesc2=' + $('#pdfDesc2').text() );  // 웹 접근성 용 pdf text
+			} else {
+				console.log('pdf open 실패');
+				console.log(event.data);
+			}
+
+			//PDFViewerApplication.eventBus.dispatch('pagenumberchanged',{"value": 1});
+		}
+
+		$('#bottomButton').click(function(){
+			alert("확인") ;
+		});
+
+	});
+
+	// 새창으로 호출 예제
+	function newWindow() {
+		var tmpPdfurl = $('#fileUrl').val(); // pdf url
+		var viewerUrl2 = "/pdfviewer/rsc/web/viewer_new.html";  // !!! viewer_new.html 경로 !!!
+		window.open(viewerUrl2 + '?file=' + encodeURIComponent( tmpPdfurl )) ;
+	}
+
+	// 새창으로 호출 예제 (특정 디렉토리에 있는 PDF 파일)
+	function newWindow2() {
+		var tmpPdfurl =  "/pdfviewer/jsp/pfileRead.jsp?pdfPath=C:/tmp/woori.pdf" ;
+		var viewerUrl2 = "/pdfviewer/rsc/web/viewer_new.html";  // !!! viewer_new.html 경로 !!!
+		window.open(viewerUrl2 + '?file=' + encodeURIComponent( tmpPdfurl )) ;
+	}
+
+
+
+	/* // pdf file download 예제
+	function pdfDownload() {
+		var puDownloadUrl = "/pdfviewer/jsp/pdfdownload.jsp";  // pdfdownload.jsp 위치 경로
+		var tmpStr = $('#fileUrl').val() ;
+		if(tmpStr.indexOf('http') == -1) {
+			var geturl = window.location ;
+			tmpStr = geturl.protocol + '//' + geturl.host + '/'  + tmpStr ;
+		}
+		var tmpFileName = "guide.pdf" ; // 저장될 pdf 파일 이름
+		var tmpPdfurl 	= puDownloadUrl + "?pdfurl=" +  tmpStr + "&fileName=" + tmpFileName ;
+
+		window.open(tmpPdfurl);
+	} */
+
+	/*
+	// local pdf file 조회 예제 ( /tmp/doc.pdf 위치에 파일이 있을경우)
+
+		var viewerUrl = "/pdfviewer/rsc/web/viewer.html"; 	// !!! viewer.html 경로 !!!
+		var tmpPdfurl = '/pdfviewer/jsp/pfileRead.jsp?pdfPath=/tmp/doc.pdf' ; 				// pdf 파일 url
+		var tmpDivName = 'pdfDiv'; 							// 출력되는 div tag id
+		var tmpPdfDesc = 'pdfDesc2'; 						// 웹접근성 용 대상 element id (메뉴중 페이지표시 부분)
+
+		pDiv(viewerUrl, tmpPdfurl, tmpDivName, tmpPdfDesc);
+	*/
+
+</script>
+
+</head>
+
+<body>
+
+	<div>
+		<b> pdfViewer sample Page <BR>
+		</b>
+		<table>
+			<tr>
+				<td>fileUrl :</td>
+				<td><input type="text" size="50" name="fileUrl" id="fileUrl" value="/pdfviewer/rsc/downloads/doc2.pdf"> <BR></td>
+			</tr>
+		</table>
+	</div>
+
+	<input type="button" onclick="pDivView();" value="실행"> PDF Div
+	Tag 에서 열기
+	<br>
+	<hr>
+
+
+	<!-- <input type="button" onclick="pdfDownload();" value="실행">
+	 PDF 파일 local 저장 <br><hr>
+	 -->
+
+ <input type="button" onclick="newWindow();" value="실행">
+ PDF 파일 새창 열기 <br><hr>
+
+	<!-- [필수] pdf 출력되는 div tag -->
+	<div id="pdfDiv"  style="width: 100%; height: calc(100% - 150px); overflow: hidden; border: 0px solid #b3b3b3;"></div>
+
+
+
+<!-- <div id="bottomMenu">
+<span id="bottomButton">확인</span>
+</div> -->
+
+</body>
+</html>

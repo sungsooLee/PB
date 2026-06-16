@@ -1,0 +1,229 @@
+<!--
+/*************************************************************************
+* @ 서비스경로 : DSCMNG21M
+* @ 파일명      : DSCMNG21M.html 일정관리 > 영업 캘린더 > 일정 등록
+* @ 작성자      : 90195467
+* @ 작성일      : 2024-12-26
+************************** 수정이력 ****************************************
+* 날짜                    작업자                 변경내용
+*_________________________________________________________________________
+* 2024-12-26            이혜성                 최초작성
+*************************************************************************/
+-->
+
+<div class="group-form mt16">
+	<div class="group-title">
+		<strong class="title-medium">제목 <i class="apos"
+			aria-label="필수 입력">*</i></strong>
+	</div>
+	<div class="group-content">
+		<div class="form" id="subJectForm">
+			<div class="label"></div>
+			<div class="input-wrap">
+				<input type="search" placeholder="제목을 입력하세요." aria-label="제목" id="subject" maxlength="30">
+			</div>
+			<p class="validate-text" id="subJectValidTxt"></p>
+		</div>
+	</div>
+</div>
+<!-- //group-form -->
+
+<!-- group-form -->
+<div class="group-form mt40">
+	<div class="group-title">
+		<strong class="title-medium">일시 <i class="apos"
+			aria-label="필수 입력">*</i></strong>
+		<div class="inp inp-toggle">
+			<label> <span class="label-title">하루종일</span> <input
+				type="checkbox" id="allDayYn">
+			</label>
+		</div>
+	</div>
+	<div class="group-content mt16">
+		<div class="schedule-regist">
+			<dl>
+				<dt>
+					<div class="tags tags-small tags-lightGray tags-round">시작</div>
+				</dt>
+				<dd>
+					<button type="button" class="schedule-regist-trigger_dscmng21"
+						data-anchor="dp01">
+						<span id="startFormatDay"></span>
+					</button>
+				</dd>
+				<dd>
+					<button type="button" class="schedule-regist-trigger_dscmng21"
+						data-anchor="dp02" id="allDayYnForm1">
+						<span id="startFormatAmpm"></span>
+						<span> </span>
+						<span id="startFormatHour"></span>
+						<span> </span>
+						<span id="startFormatMinutes"></span>
+					</button>
+				</dd>
+			</dl>
+			<div class="schedule-regist-picker">
+				<div class="schedule-regist-target" id="dp01">
+					<div class="datepicker-wrap">
+						<div id="datepicker_schedule01"></div>
+					</div>
+				</div>
+
+				<div class="schedule-regist-target" id="dp02" >
+					<div class="inp inp-toggle-text">
+						<input type="radio" name="startAmpm" aria-label="오전" value=2> <input
+							type="radio" name="startAmpm" aria-label="오후" value=1>
+					</div>
+					<div class="form mt24">
+						<div class="input-divide">
+							<div class="input-wrap">
+								<input type="number" placeholder="" id="startHour" maxlength="2">
+							</div>
+							<div class="bul">:</div>
+							<div class="input-wrap">
+								<input type="number" placeholder="" id="startMinutes" maxlength="2">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<dl>
+				<dt>
+					<div class="tags tags-small tags-lightGray tags-round">종료</div>
+				</dt>
+				<dd>
+					<button type="button" class="schedule-regist-trigger_dscmng21"
+						data-anchor="dp03">
+						<span id="endFormatDay"></span>
+					</button>
+				</dd>
+				<dd>
+					<button type="button" class="schedule-regist-trigger_dscmng21"
+						data-anchor="dp04" id="allDayYnForm2">
+						<span id="endFormatAmpm"></span> 
+						<span> </span>
+						<span id="endFormatHour"></span>
+						<span> </span>
+						<span id="endFormatMinutes"></span>
+					</button>
+				</dd>
+			</dl>
+
+			<div class="schedule-regist-picker">
+				<div class="schedule-regist-target" id="dp03">
+					<div class="datepicker-wrap">
+						<div id="datepicker_schedule02"></div>
+					</div>
+				</div>
+
+				<div class="schedule-regist-target" id="dp04">
+					<div class="inp inp-toggle-text">
+						<input type="radio" name="endAmpm" aria-label="오전" value=2> <input
+							type="radio" name="endAmpm" aria-label="오후" value=1>
+					</div>
+					<div class="form mt24">
+						<div class="input-divide">
+							<div class="input-wrap">
+								<input type="number" placeholder="" id="endHour" maxlength=2>
+							</div>
+							<div class="bul">:</div>
+							<div class="input-wrap">
+								<input type="number" placeholder="" id="endMinutes" maxlength=2>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //group-form -->
+
+<!-- group-form -->
+<div class="group-form mt40">
+	<div class="group-title">
+		<strong class="title-medium">장소</strong>
+	</div>
+	<div class="group-content">
+		<div class="form">
+			<div class="label"></div>
+			<div class="input-wrap">
+				<input type="search" placeholder="장소를 입력하세요." aria-label="장소" id="location" maxlength="30">
+			</div>
+			<p class="validate-text"></p>
+		</div>
+	</div>
+</div>
+<!-- //group-form -->
+
+<!-- group-form -->
+<div class="group-form mt40">
+	<div class="group-title">
+		<strong class="title-medium">반복</strong>
+	</div>
+	<div class="group-content">
+		<button type="button"
+			class="anchor chevron anchor-fluid anchor-border"
+			data-micromodal-trigger="modal-repeat" id="recurrenceBtn">
+			<span class="body-large fw-700" id="recurrenceTxt">반복없음</span>
+		</button>
+	</div>
+</div>
+<!-- //group-form -->
+
+<!-- group-form -->
+<div class="group-form mt40">
+	<div class="group-title">
+		<strong class="title-medium">공유</strong>
+	</div>
+	<div class="group-content">
+		<div class="form">
+			<div class="label"></div>
+			<div class="input-wrap input-btn-wrap" id="selPrlmForm">
+				<button type="button" class="btn-xsmall btn-outlined btn-round btn-border-dashed" id="prlmShareBtn"><i class="ico-add"></i>직원 추가</button>
+			</div>
+			<p class="validate-text"></p>
+		</div>
+	</div>
+</div>
+<!-- //group-form -->
+
+<!-- group-form -->
+<div class="group-form mt40">
+	<div class="group-title">
+		<strong class="title-medium">메모</strong>
+	</div>
+	<div class="group-content">
+		<div class="form">
+			<div class="input-wrap">
+				<textarea aria-label="메모" id="bodyText" maxlength="300"></textarea>
+			</div>
+			<div class="textarea-length" id="bodyTextCnt">0/300자</div>
+		</div>
+	</div>
+</div>
+<!-- //group-form -->
+
+
+<!-- group-form -->
+<!--  TODO 푸쉬 배치가 아직 정의되지 않아 임시로 가림 2025.04.03 -->
+<div class="group-form mt40">
+	<div class="group-title">
+		<strong class="title-medium">Push 알림</strong>
+	</div>
+	<div class="group-content">
+		<button type="button"
+			class="anchor chevron anchor-fluid anchor-border"
+			data-micromodal-trigger="modal-alarm" id="pushBtn">
+			<span class="body-large fw-700" id="psuhTxt">없음</span>
+		</button>
+	</div>
+</div>
+
+<!-- <div class="bottom-btn">
+	<div class="btn-wrap">
+		<button type="button" class="btn-large btn-outlined" id="cancelBtn">취소</button>
+		<button type="button" class="btn-large btn-primary" id="regBtn"><i class="ico-check"></i>저장</button>
+	</div>
+</div> -->

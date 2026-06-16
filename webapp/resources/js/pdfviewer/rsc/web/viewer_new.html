@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+  <head>
+    <title>pdf test page</title>
+    <meta charset="utf-8" />
+    <!-- 아래 meta tag 는 있는것이 좋음 -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=NO"
+    />
+    <meta name="google" content="notranslate" />
+
+    <!-- [필수] 아래두개 js 는 참조 필수. jquery 버전은 상관없음  -->
+    <!-- <script src="../../resources/js/common/NativeUtils.js" type="module"></script> -->
+    <script
+      type="text/javascript"
+      src="/resources/js/pdfviewer/rsc/build/jquery-1.11.1.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/resources/js/pdfviewer/rsc/build/puser.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="../../resources/js/common/EnvUtils.js"
+    ></script>
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon" />
+
+    <style type="text/css">
+      body {
+        overscroll-behavior-y: none;
+        margin: auto;
+        overflow: hidden;
+      }
+    </style>
+    <script type="module">
+      import NativeUtils from "../../resources/js/common/NativeUtils.js";
+
+      window.nativeUtils = NativeUtils;
+    </script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        var viewerUrl =
+          location.href.split("/rsc/web/")[0] + "/rsc/web/viewer_n.html";
+
+        pDivView();
+
+        function pDivView() {
+          var tmpPdfurl = getParam("file"); // pdf url
+          var tmpDivName = "pdfDiv"; // 출력되는 div tag id
+          var tmpPdfDesc = "pdfDesc2"; // 웹접근성 용 대상 element id
+          pDiv(viewerUrl, tmpPdfurl, tmpDivName, tmpPdfDesc); // 웹접근성 적용시 이 함수 사용.
+          //pDiv(viewerUrl, tmpPdfurl, tmpDivName, '') ;   			// 웹 접근성 사용안할 때 사용
+        }
+
+        // pdf open 완료 event 샘플 //////////////////////////////////////////
+        window.addEventListener("message", processFn, false);
+        function processFn(event) {
+          var bla = event.data;
+          var tmpStr = bla.split(":")[0];
+          console.log(event.data);
+
+          if (tmpStr == "P_EVENT") {
+            console.log("pdf open 완료");
+            //console.log('pdfDesc=' + $('#pdfDesc').text() );  // 웹 접근성 용 pdf text
+          } else {
+            console.log("pdf open 실패");
+            console.log(event.data);
+          }
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <input type="hidden" size="50" name="fileUrl" id="fileUrl" />
+
+    <!-- [필수] pdf 출력되는 div tag -->
+    <div id="pdfDiv" style="width: 100%; height: 100%; overflow: hidden"></div>
+
+    <br />
+
+    <!-- pdf 전체 text 내용이 삽입되는 div tag : 웹접근성 용도 예제 -->
+    <div id="pdfDesc"></div>
+
+    <br />
+  </body>
+</html>

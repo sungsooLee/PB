@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/resources/css/d2coding.css" />
+    <link rel="stylesheet" href="/resources/css/NanumGothic.css" />
+    <link rel="stylesheet" href="/resources/css/md-content.min.css" />
+    <link rel="stylesheet" href="../../resources/css/monokai_sublime.css" />
+  </head>
+
+  <body>
+    <div class="markdown-body">
+      <h1>데이터 구조</h1>
+      <p>
+        IBChart는 <code>XML</code>과 <code>JSON</code> 두가지 형식의 자료구조를
+        사용합니다.
+      </p>
+      <h2>데이터 XML</h2>
+      <p>조회 함수를 통해 읽어들이는 XML 전체 구조는 아래와 같습니다.</p>
+      <pre
+        class="hljs"
+      ><code><span class="hljs-meta">&lt;?xml version='1.0'?&gt;</span>
+&lt;![CDATA[
+&lt;IBCHART TYPE="" BACKGROUNDCOLOR='#CCFFCC' BORDERWIDTH='1' BORDERCOLOR='#0000FF' ZOOMTYPE='x' TITLE='타이틀' SUBTITLE='부제목' &gt;
+   &lt;ETC-DATA&gt;
+        &lt;ETC key="sname"&gt;홍길동&lt;/ETC&gt;
+        &lt;ETC key="age"&gt;20&lt;/ETC&gt;
+   &lt;/ETC-DATA&gt;
+   &lt;DATA&gt;
+         &lt;POINTSET AXISLABEL="1/4분기"&gt;
+              &lt;SERIES SERIESTYPE="line" SERIESNAME="중국"  SERIESCOLOR="blue" PointLabel="하나" POINTCOLOR="yellow"&gt;50&lt;/SERIES&gt;
+              &lt;SERIES SERIESTYPE="area" SERIESNAME="호주"  SERIESCOLOR="red" PointLabel="열하나" POINTCOLOR="block"&gt;48&lt;/SERIES&gt;
+              &lt;SERIES SERIESTYPE="spline" SERIESNAME="KOREA"  SERIESCOLOR="green" POINTNAME="스물하나" POINTCOLOR="#EECCFF"&gt;60&lt;/SERIES&gt;
+         &lt;/POINTSET&gt;
+         &lt;POINTSET AXISLABEL="2/4분기"&gt;
+              &lt;SERIES  POINTNAME="둘" POINTCOLOR=""&gt;22&lt;/SERIES&gt;
+              &lt;SERIES  POINTNAME="열둘" POINTCOLOR=" "&gt;13&lt;/SERIES&gt;
+              &lt;SERIES  POINTNAME="스물둘" POINTCOLOR=""&gt;16&lt;/SERIES&gt;
+         &lt;/POINTSET&gt;
+     &lt;/DATA&gt;
+&lt;/IBCHART&gt;
+]]&gt;
+</code></pre>
+      <ul>
+        <li>조회 XML 구성 요소</li>
+      </ul>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>name</th>
+              <th>required</th>
+              <th>description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>IBCHART</code></td>
+              <td><span class="required">필수</span></td>
+              <td>조회 데이터의 최상위 요소</td>
+            </tr>
+            <tr>
+              <td><code>DATA</code></td>
+              <td><span class="required">필수</span></td>
+              <td>조회 데이터의 시작 요소</td>
+            </tr>
+            <tr>
+              <td><code>POINTSET</code></td>
+              <td><span class="required">필수</span></td>
+              <td>포인트 집합</td>
+            </tr>
+            <tr>
+              <td><code>SERIES</code></td>
+              <td><span class="required">필수</span></td>
+              <td>시리즈 포인트</td>
+            </tr>
+            <tr>
+              <td>ETC-DATA</td>
+              <td><span class="optional">선택</span></td>
+              <td>기타 데이터의 설정 요소</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h2>데이터 JSON</h2>
+      <p>조회 함수를 통해 읽어들이는 JSON 전체 구조는 아래와 같습니다.</p>
+      <pre class="hljs"><code>{
+  <span class="hljs-attr">ibchart</span>: {
+    <span class="hljs-attr">backgroundColor</span>: <span class="hljs-string">"white"</span>,
+    <span class="hljs-attr">borderWidth</span>: <span class="hljs-string">"1"</span>,
+    <span class="hljs-attr">borderColor</span>: <span class="hljs-string">"#0000FF"</span>,
+    <span class="hljs-attr">zoomType</span>: <span class="hljs-string">"x"</span>,
+    <span class="hljs-attr">title</span>: <span class="hljs-string">"타이틀"</span>,
+    <span class="hljs-attr">subtitle</span>: <span class="hljs-string">"부제목"</span>,
+    <span class="hljs-attr">etcData</span>: [
+      {<span class="hljs-attr">key</span>:<span class="hljs-string">"sname"</span>,<span class="hljs-attr">value</span>:<span class="hljs-string">"홍길동"</span>},
+      {<span class="hljs-attr">key</span>:<span class="hljs-string">"age"</span>,<span class="hljs-attr">value</span>:<span class="hljs-string">"20"</span>}
+    ],
+    <span class="hljs-attr">data</span>: [{
+     <span class="hljs-attr">axisLabel</span>: <span class="hljs-string">"1/4분기"</span>,
+     <span class="hljs-attr">series</span>: [{
+         <span class="hljs-attr">seriesType</span>: <span class="hljs-string">"line"</span>,
+         <span class="hljs-attr">seriesName</span>: <span class="hljs-string">"중국"</span>,
+         <span class="hljs-attr">seriesColor</span>: <span class="hljs-string">"blue"</span>,
+         <span class="hljs-attr">pointName</span>: <span class="hljs-string">"하나"</span>,
+         <span class="hljs-attr">pointColor</span>: <span class="hljs-string">"yellow"</span>,
+         <span class="hljs-attr">value</span>: <span class="hljs-number">220</span>
+       },{
+         <span class="hljs-attr">seriesType</span>: <span class="hljs-string">"column"</span>,
+         <span class="hljs-attr">seriesName</span>: <span class="hljs-string">"호주"</span>,
+         <span class="hljs-attr">seriesColor</span>: <span class="hljs-string">"#DDDDFF"</span>,
+         <span class="hljs-attr">pointName</span>: <span class="hljs-string">"열하나"</span>,
+         <span class="hljs-attr">pointColor</span>: <span class="hljs-string">"#C6E2FF"</span>,
+         <span class="hljs-attr">value</span>: <span class="hljs-number">120</span>
+       },{
+        <span class="hljs-attr">seriesType</span>: <span class="hljs-string">"spline"</span>,
+        <span class="hljs-attr">seriesName</span>: <span class="hljs-string">"KOREA"</span>,
+        <span class="hljs-attr">seriesColor</span>: <span class="hljs-string">"green"</span>,
+        <span class="hljs-attr">sointName</span>: <span class="hljs-string">"스물하나"</span>,
+        <span class="hljs-attr">sointColor</span>: <span class="hljs-string">"#EECCFF"</span>,
+        <span class="hljs-attr">Value</span>: <span class="hljs-number">55</span>
+      }]
+    },{
+      <span class="hljs-attr">axisLabel</span>: <span class="hljs-string">"2/4분기"</span>,
+      <span class="hljs-attr">series</span>: [<span class="hljs-number">280</span>,<span class="hljs-number">256</span>,<span class="hljs-number">222</span>]
+    }]
+  }
+}
+</code></pre>
+      <ul>
+        <li>
+          <p>ETC-DATA가 아닌 <code>etcData</code> 임을 유의</p>
+        </li>
+        <li>
+          <p>
+            series 속성 안에서는 값만 나열할 수 있고, 값에 대한 속성을 명시할
+            때에는 <code>value</code> 속성을 사용
+          </p>
+        </li>
+        <li>
+          <p>조회 JSON 구성 요소</p>
+        </li>
+      </ul>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>name</th>
+              <th>required</th>
+              <th>description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>ibchart</code></td>
+              <td><span class="required">필수</span></td>
+              <td>조회 데이터의 최상위 요소</td>
+            </tr>
+            <tr>
+              <td><code>data</code></td>
+              <td><span class="required">필수</span></td>
+              <td>조회 데이터의 시작 요소</td>
+            </tr>
+            <tr>
+              <td><code>series</code></td>
+              <td><span class="required">필수</span></td>
+              <td>시리즈 포인트</td>
+            </tr>
+            <tr>
+              <td>etcData</td>
+              <td><span class="optional">선택</span></td>
+              <td>기타 데이터 설정 요소</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="../../resources/plugins/jquery/jquery.slim.min.js"></script>
+    <script src="../../resources/plugins/jquery/jquery.mark.min.js"></script>
+    <script src="../../resources/js/ibChart/md-content.js"></script>
+  </body>
+</html>

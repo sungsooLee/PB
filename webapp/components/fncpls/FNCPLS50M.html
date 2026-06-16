@@ -1,0 +1,193 @@
+<!--
+/*************************************************************************
+* @ 서비스경로 : FNCPLS50M
+* @ 파일명      : FNCPLS50M.html  금융+ > 실시간 환율조회 > 실시간 환율 조회
+* @ 작성자      : 90196258
+* @ 작성일      : 2024-11-25
+************************** 수정이력 ****************************************
+* 날짜                    작업자                 변경내용
+*_________________________________________________________________________
+* 2024-11-25       90196258                 최초작성
+*************************************************************************/
+-->
+<!-- form -->
+<div class="form py16">
+	<div class="label">
+		<strong class="title-medium">고시기준일</strong>
+	</div>
+	<div class="input-wrap input-datepicker">
+		<button id="btnDatePicker" type="button" aria-label="날짜 선택"></button>
+	</div>
+	<ul class="label-list px12 py8 mt8">
+		<li class="list01"><i aria-label="매매기준율"></i></li>
+		<li class="list02"><i aria-label="본지점매도율"></i></li>
+		<li class="list03"><i aria-label="본지점매입율"></i></li>
+	</ul>
+</div>
+<!-- //form -->
+
+<div class="exchange-list" style="background:var(--blue-100)">
+	<button id="exchangeAlim" class="flag1 flag-alim flag-fluid">
+		<strong>환율알림</strong>
+		<i id="exchangeAlimY" class="mlauto fc-status-alim-active" style="display:none;">알림받는 중</i>
+		<i id="exchangeAlimN" class="mlauto fc-status-alim-unactive">설정하기</i>
+	</button>
+</div>
+
+<div class="exchange-wrap content-fluid mb-24" id="sData" style="display:none">
+	<div class="caption-visible ar mb8">(단위: 원)</div>
+	<div class="exchange-list">
+		<button id="detailBtn" value="USD" class="flag flag-us flag-fluid" data-micromodal-trigger="modal-country"><strong>USD</strong><span>미국 달러</span></button>
+		<div class="stroke my16"></div>
+		<ul class="label-list">
+			<li class="list01"><i aria-label="매매기준율" id="USDrt"></i></li>
+			<li class="list02"><i aria-label="본지점매도율" id="USDioffSellRt"></i></li>
+			<li class="list03"><i aria-label="본지점매입율" id="USDioffBuyRt"></i></li>
+		</ul>
+	</div>
+	<div class="exchange-list">
+		<button id="detailBtn" value="JPY" class="flag flag-jp flag-fluid" data-micromodal-trigger="modal-country"><strong>JPY</strong><span>일본 100엔</span></button>
+		<div class="stroke my16"></div>
+		<ul class="label-list">
+			<li class="list01"><i aria-label="매매기준율" id="JPYrt"></i></li>
+			<li class="list02"><i aria-label="본지점매도율" id="JPYioffSellRt"></i></li>
+			<li class="list03"><i aria-label="본지점매입율" id="JPYioffBuyRt"></i></li>
+		</ul>
+	</div>
+	<div class="exchange-list">
+		<button id="detailBtn" value="EUR" class="flag flag-eu flag-fluid" data-micromodal-trigger="modal-country"><strong>EUR</strong><span>유럽 유로</span></button>
+		<div class="stroke my16"></div>
+		<ul class="label-list">
+			<li class="list01"><i aria-label="매매기준율" id="EURrt"></i></li>
+			<li class="list02"><i aria-label="본지점매도율" id="EURioffSellRt"></i></li>
+			<li class="list03"><i aria-label="본지점매입율" id="EURioffBuyRt"></i></li>
+		</ul>
+	</div>
+	<div class="exchange-list">
+		<button id="detailBtn" value="GBP" class="flag flag-gb flag-fluid" data-micromodal-trigger="modal-country"><strong>GBP</strong><span>영국 파운드</span></button>
+		<div class="stroke my16"></div>
+		<ul class="label-list">
+			<li class="list01"><i aria-label="매매기준율" id="GBPrt"></i></li>
+			<li class="list02"><i aria-label="본지점매도율" id="GBPioffSellRt"></i></li>
+			<li class="list03"><i aria-label="본지점매입율" id="GBPioffBuyRt"></i></li>
+		</ul>
+	</div>
+	<div class="exchange-list">
+		<button id="detailBtn" value="CAD" class="flag flag-ca flag-fluid" data-micromodal-trigger="modal-country"><strong>CAD</strong><span>캐나다 달러</span></button>
+		<div class="stroke my16"></div>
+		<ul class="label-list">
+			<li class="list01"><i aria-label="매매기준율" id="CADrt"></i></li>
+			<li class="list02"><i aria-label="본지점매도율" id="CADioffSellRt"></i></li>
+			<li class="list03"><i aria-label="본지점매입율" id="CADioffBuyRt"></i></li>
+		</ul>
+	</div>
+	<div class="exchange-list">
+		<button id="detailBtn" value="CHF" class="flag flag-ch flag-fluid" data-micromodal-trigger="modal-country"><strong>CHF</strong><span>스위스 프랑</span></button>
+		<div class="stroke my16"></div>
+		<ul class="label-list">
+			<li class="list01"><i aria-label="매매기준율" id="CHFrt"></i></li>
+			<li class="list02"><i aria-label="본지점매도율" id="CHFioffSellRt"></i></li>
+			<li class="list03"><i aria-label="본지점매입율" id="CHFioffBuyRt"></i></li>
+		</ul>
+	</div>
+	<div class="exchange-list">
+		<button id="detailBtn" value="HKD" class="flag flag-hk flag-fluid" data-micromodal-trigger="modal-country"><strong>HKD</strong><span>홍콩 달러</span></button>
+		<div class="stroke my16"></div>
+		<ul class="label-list">
+			<li class="list01"><i aria-label="매매기준율" id="HKDrt"></i></li>
+			<li class="list02"><i aria-label="본지점매도율" id="HKDioffSellRt"></i></li>
+			<li class="list03"><i aria-label="본지점매입율" id="HKDioffBuyRt"></i></li>
+		</ul>
+	</div>
+	<div class="exchange-list">
+		<button id="detailBtn" value="CNY" class="flag flag-cn flag-fluid" data-micromodal-trigger="modal-country"><strong>CNY</strong><span>중국 위안</span></button>
+		<div class="stroke my16"></div>
+		<ul class="label-list">
+			<li class="list01"><i aria-label="매매기준율" id="CNYrt"></i></li>
+			<li class="list02"><i aria-label="본지점매도율" id="CNYioffSellRt"></i></li>
+			<li class="list03"><i aria-label="본지점매입율" id="CNYioffBuyRt"></i></li>
+		</ul>
+	</div>
+	<div class="exchange-list">
+		<button id="detailBtn" value="THB" class="flag flag-th flag-fluid" data-micromodal-trigger="modal-country"><strong>THB</strong><span>태국 바트</span></button>
+		<div class="stroke my16"></div>
+		<ul class="label-list">
+			<li class="list01"><i aria-label="매매기준율" id="THBrt"></i></li>
+			<li class="list02"><i aria-label="본지점매도율" id="THBioffSellRt"></i></li>
+			<li class="list03"><i aria-label="본지점매입율" id="THBioffBuyRt"></i></li>
+		</ul>
+	</div>
+	<div class="exchange-list">
+		<button id="detailBtn" value="SEK" class="flag flag-se flag-fluid" data-micromodal-trigger="modal-country"><strong>SEK</strong><span>스웨덴 크로나</span></button>
+		<div class="stroke my16"></div>
+		<ul class="label-list">
+			<li class="list01"><i aria-label="매매기준율" id="SEKrt"></i></li>
+			<li class="list02"><i aria-label="본지점매도율" id="SEKioffSellRt"></i></li>
+			<li class="list03"><i aria-label="본지점매입율" id="SEKioffBuyRt"></i></li>
+		</ul>
+	</div>
+	<div class="exchange-list">
+		<button id="detailBtn" value="AUD" class="flag flag-au flag-fluid" data-micromodal-trigger="modal-country"><strong>AUD</strong><span>호주 달러</span></button>
+		<div class="stroke my16"></div>
+		<ul class="label-list">
+			<li class="list01"><i aria-label="매매기준율" id="AUDrt"></i></li>
+			<li class="list02"><i aria-label="본지점매도율" id="AUDioffSellRt"></i></li>
+			<li class="list03"><i aria-label="본지점매입율" id="AUDioffBuyRt"></i></li>
+		</ul>
+	</div>
+	<div class="exchange-list">
+		<button id="detailBtn" value="DKK" class="flag flag-dk flag-fluid" data-micromodal-trigger="modal-country"><strong>DKK</strong><span>덴마크 크로네</span></button>
+		<div class="stroke my16"></div>
+		<ul class="label-list">
+			<li class="list01"><i aria-label="매매기준율" id="DKKrt"></i></li>
+			<li class="list02"><i aria-label="본지점매도율" id="DKKioffSellRt"></i></li>
+			<li class="list03"><i aria-label="본지점매입율" id="DKKioffBuyRt"></i></li>
+		</ul>
+	</div>
+	<div class="exchange-list">
+		<button id="detailBtn" value="NOK" class="flag flag-no flag-fluid" data-micromodal-trigger="modal-country"><strong>NOK</strong><span>노르웨이 크로네</span></button>
+		<div class="stroke my16"></div>
+		<ul class="label-list">
+			<li class="list01"><i aria-label="매매기준율" id="NOKrt"></i></li>
+			<li class="list02"><i aria-label="본지점매도율" id="NOKioffSellRt"></i></li>
+			<li class="list03"><i aria-label="본지점매입율" id="NOKioffBuyRt"></i></li>
+		</ul>
+	</div>
+	<div class="exchange-list">
+		<button id="detailBtn" value="SGD" class="flag flag-sg flag-fluid" data-micromodal-trigger="modal-country"><strong>SGD</strong><span>싱가포르 달러</span></button>
+		<div class="stroke my16"></div>
+		<ul class="label-list">
+			<li class="list01"><i aria-label="매매기준율" id="SGDrt"></i></li>
+			<li class="list02"><i aria-label="본지점매도율" id="SGDioffSellRt"></i></li>
+			<li class="list03"><i aria-label="본지점매입율" id="SGDioffBuyRt"></i></li>
+		</ul>
+	</div>
+	<div class="exchange-list">
+		<button id="detailBtn" value="NZD" class="flag flag-nz flag-fluid" data-micromodal-trigger="modal-country"><strong>NZD</strong><span>뉴질랜드 달러</span></button>
+		<div class="stroke my16"></div>
+		<ul class="label-list">
+			<li class="list01"><i aria-label="매매기준율" id="NZDrt"></i></li>
+			<li class="list02"><i aria-label="본지점매도율" id="NZDioffSellRt"></i></li>
+			<li class="list03"><i aria-label="본지점매입율" id="NZDioffBuyRt"></i></li>
+		</ul>
+	</div>
+	<div class="exchange-list">
+		<button id="detailBtn" value="PHP" class="flag flag-ph flag-fluid" data-micromodal-trigger="modal-country"><strong>PHP</strong><span>필리핀 페소</span></button>
+		<div class="stroke my16"></div>
+		<ul class="label-list">
+			<li class="list01"><i aria-label="매매기준율" id="PHPrt"></i></li>
+			<li class="list02"><i aria-label="본지점매도율" id="PHPioffSellRt"></i></li>
+			<li class="list03"><i aria-label="본지점매입율" id="PHPioffBuyRt"></i></li>
+		</ul>
+	</div>
+	
+	<p class="description info body-small fc-typography-caption mt32">조회시점별 최신 고시회차를 반영하며, 고시기준일 선택 시 해당일의 최종 고시회차 정보를 볼 수 있습니다.</p>
+</div>
+<!-- division-center -->
+<div class="division-center" id="noData" style="display:none">
+	<div class="no-result">
+		<i class="icon-only icon-48 icon-noresult bg-icon-gray_1"></i>
+		<p class="body-medium fw-400">환율 정보는 영업일에만 제공하고 있습니다.</p>
+	</div>
+</div>
+<!-- //division-center -->

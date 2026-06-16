@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/resources/css/d2coding.css" />
+    <link rel="stylesheet" href="/resources/css/NanumGothic.css" />
+    <link rel="stylesheet" href="/resources/css/md-content.min.css" />
+    <link rel="stylesheet" href="../../resources/css/monokai_sublime.css" />
+  </head>
+
+  <body>
+    <div class="markdown-body">
+      <h1>
+        chart 속성이란 <em><strong>(chart properties)</strong></em>
+      </h1>
+      <blockquote>
+        <p>
+          차트의 기본 옵션을 설정 합니다. <br />
+          차트 기본 속성 설정은 <code>setOptions</code> 의 <code>chart</code>를
+          이용하여 차트의 기본 옵션을 정의 합니다.<br />
+          이 속성에서는 차트 유형, 차트의 배경색 등을 정의 할 수 있습니다.
+        </p>
+      </blockquote>
+      <h3>Info</h3>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>name</th>
+              <th>type</th>
+              <th>required(default)</th>
+              <th>description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>type</td>
+              <td><code>string</code></td>
+              <td><span class="optional">선택(line)</span></td>
+              <td>차트 유형</td>
+            </tr>
+            <tr>
+              <td>plotBackgroundColor</td>
+              <td><code>color</code></td>
+              <td><span class="optional">선택(undefined)</span></td>
+              <td>차트 영역의 배경색상</td>
+            </tr>
+            <tr>
+              <td>plotBorderColor</td>
+              <td><code>color</code></td>
+              <td><span class="optional">선택(#cccccc)</span></td>
+              <td>차트 영역의 border 색상</td>
+            </tr>
+            <tr>
+              <td>plotBorderWidth</td>
+              <td><code>number</code></td>
+              <td><span class="optional">선택(0)</span></td>
+              <td>차트 영역의 border 너비</td>
+            </tr>
+            <tr>
+              <td>plotShadow</td>
+              <td><code>boolean</code></td>
+              <td><span class="optional">선택(false)</span></td>
+              <td>차트 영역에 대한 그림자 표시 여부</td>
+            </tr>
+            <tr>
+              <td>inverted</td>
+              <td><code>boolean</code></td>
+              <td><span class="optional">선택(false)</span></td>
+              <td>X축과 Y축 반전 여부</td>
+            </tr>
+            <tr>
+              <td>polar</td>
+              <td><code>boolean</code></td>
+              <td><span class="optional">선택(false)</span></td>
+              <td>polar 차트 구성 여부</td>
+            </tr>
+            <tr>
+              <td>zoomType</td>
+              <td><code>string</code></td>
+              <td><span class="optional">선택(undefined)</span></td>
+              <td>마우스 드래그시 zoom 적용 방법 설정</td>
+            </tr>
+            <tr>
+              <td>backgroundColor</td>
+              <td><code>color</code></td>
+              <td><span class="optional">선택(#ffffff)</span></td>
+              <td>차트 컨테이너 영역의 배경색상</td>
+            </tr>
+            <tr>
+              <td>borderColor</td>
+              <td><code>color</code></td>
+              <td><span class="optional">선택(#334eff)</span></td>
+              <td>차트 컨테이너 영역의 border 색상</td>
+            </tr>
+            <tr>
+              <td>borderWidth</td>
+              <td><code>number</code></td>
+              <td><span class="optional">선택(0)</span></td>
+              <td>차트 컨테이너 영역의 border 너비</td>
+            </tr>
+            <tr>
+              <td>borderRadius</td>
+              <td><code>number</code></td>
+              <td><span class="optional">선택(0)</span></td>
+              <td>차트 컨테이너 영역에 대한 radius 적용 값</td>
+            </tr>
+            <tr>
+              <td>shadow</td>
+              <td><code>boolean</code></td>
+              <td><span class="optional">선택(false)</span></td>
+              <td>차트 컨테이너 영역에 대한 그림자 표시 여부</td>
+            </tr>
+            <tr>
+              <td>margin</td>
+              <td><code>number</code> or <code>Array</code></td>
+              <td><span class="optional">선택(undefined)</span></td>
+              <td>차트 컨테이너 영역에 대한 margin 값</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="../../resources/plugins/jquery/jquery.slim.min.js"></script>
+    <script src="../../resources/plugins/jquery/jquery.mark.min.js"></script>
+    <script src="../../resources/js/ibChart/md-content.js"></script>
+  </body>
+</html>

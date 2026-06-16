@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' href='/resources/css/d2coding.css' />
+    <link rel='stylesheet' href='/resources/css/NanumGothic.css' />
+    <link rel='stylesheet' href='../../assets/css/md-content.min.css' />
+    <link rel="stylesheet" href="../../assets/vendors/highlightjs/styles/monokai_sublime.css">
+</head>
+
+<body>
+    <div class="markdown-body">
+        <h1>IBLANG <em><strong>(static)</strong></em></h1>
+        <blockquote>
+            <p>사용자가 언어 설정을 할 수 있도록 언어 설정 상수를 제공합니다. </br>
+                한국어(언어코드 <code>kr</code>)를 기본으로 제공하고 다른 언어는 제공되는 언어 설정을 기준으로 번역하여 추가해서 사용할 수 있습니다. </br></p>
+        </blockquote>
+        <h3>Info</h3>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Properties</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>IBLANG.언어코드.chart</td>
+                        <td><code>object</code></td>
+                        <td>차트 표현에 사용되는 언어 설정</td>
+                    </tr>
+                    <tr>
+                        <td>IBLANG.언어코드.alert</td>
+                        <td><code>object</code></td>
+                        <td>데이터 오류나 사용자에게 경고 표시를 위한 언어 설정</td>
+                    </tr>
+                    <tr>
+                        <td>IBLANG.언어코드.text</td>
+                        <td><code>object</code></td>
+                        <td>chart, alert 외에 자유롭게 사용하는 문자열을 위한 언어 설정</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h2>chart</h2>
+        <ul>
+            <li>차트 표현에 사용되는 언어설정입니다.</li>
+            <li>속성명과 데이터 타입을 유지한 수정은 자유롭게 할 수 있습니다.</li>
+        </ul>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Properties</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>thousandsSep</td>
+                        <td>string</td>
+                        <td>천단위(1000) 구분자</td>
+                    </tr>
+                    <tr>
+                        <td>contextButtonTitle</td>
+                        <td>string</td>
+                        <td>보조메뉴</td>
+                    </tr>
+                    <tr>
+                        <td>decimalPoint</td>
+                        <td>string</td>
+                        <td>정수 구분자</td>
+                    </tr>
+                    <tr>
+                        <td>downloadJPEG</td>
+                        <td>string</td>
+                        <td>JPEG 다운로드</td>
+                    </tr>
+                    <tr>
+                        <td>downloadPDF</td>
+                        <td>string</td>
+                        <td>PDF 다운로드</td>
+                    </tr>
+                    <tr>
+                        <td>downloadPNG</td>
+                        <td>string</td>
+                        <td>PNG 다운로드</td>
+                    </tr>
+                    <tr>
+                        <td>downloadSVG</td>
+                        <td>string</td>
+                        <td>SVG 다운로드</td>
+                    </tr>
+                    <tr>
+                        <td>drillUpText</td>
+                        <td>string</td>
+                        <td>한 단계 위로</td>
+                    </tr>
+                    <tr>
+                        <td>invalidDate</td>
+                        <td>string</td>
+                        <td>인식불가 데이터</td>
+                    </tr>
+                    <tr>
+                        <td>loading</td>
+                        <td>string</td>
+                        <td>조회중</td>
+                    </tr>
+                    <tr>
+                        <td>noData</td>
+                        <td>string</td>
+                        <td>데이터 없음</td>
+                    </tr>
+                    <tr>
+                        <td>numericSymbols</td>
+                        <td>string</td>
+                        <td>숫자 축약</td>
+                    </tr>
+                    <tr>
+                        <td>printChart</td>
+                        <td>string</td>
+                        <td>프린트</td>
+                    </tr>
+                    <tr>
+                        <td>resetZoom</td>
+                        <td>string</td>
+                        <td>줌 아웃</td>
+                    </tr>
+                    <tr>
+                        <td>months</td>
+                        <td>string</td>
+                        <td>월</td>
+                    </tr>
+                    <tr>
+                        <td>shortMonths</td>
+                        <td>string</td>
+                        <td>짧은 월</td>
+                    </tr>
+                    <tr>
+                        <td>weekdays</td>
+                        <td>string</td>
+                        <td>주</td>
+                    </tr>
+                    <tr>
+                        <td>shortWeekdays</td>
+                        <td>string</td>
+                        <td>짧은 주</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h2>alert</h2>
+        <ul>
+            <li>데이터 오류나 사용자에게 경고를 알리는 언어 설정입니다.</li>
+            <li>속성명과 데이터 타입, ${숫자} 인자를 유지한 수정은 자유롭게 할 수 있습니다.</li>
+            <li><code>단, 속성이 하나라도 누락되면 오류가 발생 할 수 있습니다.</code></li>
+        </ul>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Properties</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>createIBChartId</td>
+                        <td>string</td>
+                        <td>차트 아이디 오류</td>
+                    </tr>
+                    <tr>
+                        <td>chartProperties</td>
+                        <td>string</td>
+                        <td>차트 속성 오류</td>
+                    </tr>
+                    <tr>
+                        <td>chartNoData</td>
+                        <td>string</td>
+                        <td>차트 데이터 없음</td>
+                    </tr>
+                    <tr>
+                        <td>chartData</td>
+                        <td>string</td>
+                        <td>차트 데이터 오류</td>
+                    </tr>
+                    <tr>
+                        <td>plugin</td>
+                        <td>string</td>
+                        <td>플러그인 오류</td>
+                    </tr>
+                    <tr>
+                        <td>pluginLoading</td>
+                        <td>string</td>
+                        <td>플러그인 로드 오류</td>
+                    </tr>
+                    <tr>
+                        <td>series</td>
+                        <td>string</td>
+                        <td>시리즈 오류</td>
+                    </tr>
+                    <tr>
+                        <td>noSeries</td>
+                        <td>string</td>
+                        <td>시리즈 인덱스 오류</td>
+                    </tr>
+                    <tr>
+                        <td>eventListenerType</td>
+                        <td>string</td>
+                        <td>이벤트 종류 오류</td>
+                    </tr>
+                    <tr>
+                        <td>eventListenerFunc</td>
+                        <td>string</td>
+                        <td>이벤트 핸들러 오류</td>
+                    </tr>
+                    <tr>
+                        <td>chartNoIndex</td>
+                        <td>string</td>
+                        <td>빈 차트 시리즈 인덱스 오류</td>
+                    </tr>
+                    <tr>
+                        <td>chartIndex</td>
+                        <td>string</td>
+                        <td>차트 시리즈 인덱스 오류</td>
+                    </tr>
+                    <tr>
+                        <td>variableRequired</td>
+                        <td>string</td>
+                        <td>필수값 오류</td>
+                    </tr>
+                    <tr>
+                        <td>variableInteger</td>
+                        <td>string</td>
+                        <td>정수 오류</td>
+                    </tr>
+                    <tr>
+                        <td>variableFloat</td>
+                        <td>string</td>
+                        <td>실수 오류</td>
+                    </tr>
+                    <tr>
+                        <td>variableString</td>
+                        <td>string</td>
+                        <td>문자열 오류</td>
+                    </tr>
+                    <tr>
+                        <td>variableLessThen</td>
+                        <td>string</td>
+                        <td>A가 B보다 클 때</td>
+                    </tr>
+                    <tr>
+                        <td>variableGreaterThen</td>
+                        <td>string</td>
+                        <td>A가 B보다 작을 때</td>
+                    </tr>
+                    <tr>
+                        <td>variableEpual</td>
+                        <td>string</td>
+                        <td>A와 B가 같지 않을 때</td>
+                    </tr>
+                    <tr>
+                        <td>noMessage</td>
+                        <td>string</td>
+                        <td>빈 메시지 오류</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h2>text</h2>
+        <ul>
+            <li>chart, alert 이외의 자유롭게 사용하는 문자열을 위한 언어 설정입니다.</li>
+            <li>자유롭게 수정이 가능하며 <code>getAlertText()</code> 함수를 이용하면 ${숫자} 인자를 쉽게 적용 할 수 있습니다.</li>
+        </ul>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Properties</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>legend</td>
+                        <td>string</td>
+                        <td>sheet2chart에서 사용될 legendTitle 기본값</td>
+                    </tr>
+                    <tr>
+                        <td>productName</td>
+                        <td>string</td>
+                        <td>getAlertText() 함수의 알림 머리말</td>
+                    </tr>
+                    <tr>
+                        <td>referenceSite</td>
+                        <td>string</td>
+                        <td>getAlertText() 함수의 알림 꼬리말</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="../../resources/plugins/jquery/jquery.slim.min.js"></script>
+    <script src="../../resources/plugins/jquery/jquery.mark.min.js"></script>
+    <script src="../../assets/js/md-content.js"></script>
+</body>
+
+</html>

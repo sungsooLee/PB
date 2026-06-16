@@ -1,0 +1,59 @@
+
+<!--
+/*************************************************************************
+* @ 서비스경로 : FND52P
+* @ 파일명      : 펀드 > 펀드 비교 > 자산ㄱ구성 비교
+* @ 화면ID 	: PBWFU069902	
+* @ 작성자      : 90195654
+* @ 작성일      : 2025-01-06
+************************** 수정이력 ****************************************
+* 날짜                    작업자                 변경내용
+*_________________________________________________________________________
+* 2025-01-06    90195654                 최초작성
+*************************************************************************/
+-->
+<div class="content">
+
+	<div class="chart-wrap mt16" id="chart">
+		<div id="chart3"></div>
+		<div class="group pb16 px24">
+			<div class="right">
+				<span class="divide-list"> <span class="fs-14">자료제공:
+						제로인</span>
+				</span>
+			</div>
+		</div>
+	</div>
+
+	<div class="table-col mt24">
+		<table>
+			<colgroup>
+				<col style="width: 25%;">
+				<col>
+				<col>
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col" class="fs-15 fc-typography-caption ar vt"><span
+						class="blind">분류</span></th>
+					<th scope="col" class="fs-15 fc-typography-caption ar vt" id="prdKorlNm1"></th>
+					<th scope="col" class="fs-15 fc-typography-caption ar vt" id="prdKorlNm2"></th>
+				</tr>
+			</thead>
+			<tbody id="list">
+			</tbody>
+		</table>
+	</div>
+
+	<!-- division-center -->
+	<div class="division-center" id="no-data" style="display:none;">
+
+		<div class="no-result">
+			<i class="icon-only icon-48 icon-noresult bg-icon-gray_1"></i>
+			<p class="body-medium fw-400">자산구성 비교정보가 존재하지 않습니다.</p>
+		</div>
+
+	</div>
+	<!-- //division-center -->
+
+</div>

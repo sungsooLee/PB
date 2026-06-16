@@ -1,0 +1,104 @@
+<!--
+/*************************************************************************
+* @ 서비스경로 : MENU14S
+* @ 파일명      : MENU14S.html  [P] 전체 메뉴 > 환율 알림 설정
+* @ 작성자      : 90196258
+* @ 작성일      : 2025-01-17
+************************** 수정이력 ****************************************
+* 날짜                    작업자                 변경내용
+*_________________________________________________________________________
+* 2025-01-17       90196258                 최초작성
+*************************************************************************/
+-->
+
+<!--p class="description info body-small fc-typography-caption fw-400 my16">알림이 오지 않는다면, 휴대폰의 설정&gt;알림&gt;WON Click에서 알림을 허용해주세요.</p-->
+
+<div class="exchange-wrap content-fluid mb-24">
+	<div class="inp-toggle-group">
+		<div class="inp inp-toggle">
+			<label class="p10">
+				<h2 class="title-large al">시간환율</h2>
+				<input type="checkbox" id="fncpls0001">
+			</label>
+		</div>
+	</div>
+	<div class="exchange-list p10" id="selectAlimDiv">
+		<button class="m5" style="width:100%;font-size:18px">
+			<span>통화선택</span>
+			<span id="selectAlim" class="mr10" style="font-size:18px;color:var(--status-active);float:right;">선택</span>
+			<span id="addAlim" class="mr10" style="font-size:18px;color:var(--status-active);float:right;display:none;">추가</span>
+		</button>
+		<span id='selectText' class="m5" style="font-size:15px;display:none;color:red">환율알림 대상 국가를 선택해주세요.</span>
+		<button id='USD' name="exlist" class="flag20 flag-us flag-fluid1 m5" style="display:none:;"><strong>미국 USD</strong><span id='USDtime'></span></button>
+		<button id='JPY' name="exlist" class="flag20 flag-jp flag-fluid1 m5" style="display:none:;"><strong>일본 JPY</strong><span id='JPYtime'></span></button>
+		<button id='EUR' name="exlist" class="flag20 flag-eu flag-fluid1 m5" style="display:none:;"><strong>유럽 EUR</strong><span id='EURtime'></span></button>
+		<button id='GBP' name="exlist" class="flag20 flag-gb flag-fluid1 m5" style="display:none;"><strong>영국 GBP</strong><span id='GBPtime'></span></button>
+		<button id="CAD" name="exlist" class="flag20 flag-ca flag-fluid1 m5" style="display:none;"><strong>캐나다 CAD</strong><span id='CADtime'></span></button>
+		<button id="CHF" name="exlist" class="flag20 flag-ch flag-fluid1 m5" style="display:none;"><strong>스위스 CHF</strong><span id='CHFtime'></span></button>
+		<button id="HKD" name="exlist" class="flag20 flag-hk flag-fluid1 m5" style="display:none;"><strong>홍콩 HKD</strong><span id='HKDtime'></span></button>
+		<button id="CNY" name="exlist" class="flag20 flag-cn flag-fluid1 m5" style="display:none;"><strong>중국 CNY</strong><span id='CNYtime'></span></button>
+		<button id="THB" name="exlist" class="flag20 flag-th flag-fluid1 m5" style="display:none;"><strong>태국 THB</strong><span id='THBtime'></span></button>
+		<button id="SEK" name="exlist" class="flag20 flag-se flag-fluid1 m5" style="display:none;"><strong>스웨덴 SEK</strong><span id='SEKtime'></span></button>
+		<button id="AUD" name="exlist" class="flag20 flag-au flag-fluid1 m5" style="display:none;"><strong>호주 AUD</strong><span id='AUDtime'></span></button>
+		<button id="DKK" name="exlist" class="flag20 flag-dk flag-fluid1 m5" style="display:none;"><strong>덴마크 DKK</strong><span id='DKKtime'></span></button>
+		<button id="NOK" name="exlist" class="flag20 flag-no flag-fluid1 m5" style="display:none:;"><strong>노르웨이 NOK</strong><span id='NOKtime'></span></button>
+		<button id="SGD" name="exlist" class="flag20 flag-sg flag-fluid1 m5" style="display:none:;"><strong>싱가포르 SGD</strong><span id='SGDtime'></span></button>
+		<button id="NZD" name="exlist" class="flag20 flag-nz flag-fluid1 m5" style="display:none;"><strong>뉴질랜드 NZD</strong><span id='NZDtime'></span></button>
+		<button id="PHP" name="exlist" class="flag20 flag-ph flag-fluid1 m5" style="display:none;"><strong>필리핀 PHP</strong><span id='PHPtime'></span></button>
+	</div>
+</div>
+
+<div class="exchange-wrap content-fluid mb-24">
+	<div class="inp-toggle-group">
+		<div class="inp inp-toggle">
+			<label class="p10">
+				<h2 class="title-large al">목표환율</h2>
+				<input type="checkbox" id="fncpls0002">
+			</label>
+		</div>
+	</div>
+	<div class="exchange-list p10" id="selectAlimDiv2">
+		<button class="m5" style="width:100%;font-size:18px">
+			<span>통화선택 및 설정</span>
+			<span id="selectAlim2" class="mr10" style="font-size:18px;color:var(--status-active);float:right;">선택</span>
+			<span id="addAlim2" class="mr10" style="font-size:18px;color:var(--status-active);float:right;display:none;">추가</span>
+		</button>
+		<span id='selectText2' class="m5" style="font-size:15px;display:none;color:red">환율알림 대상 국가를 선택해주세요.</span>
+		
+		<!-- button id='USD2' name="exlist2" class="flag20 flag-us flag-fluid2 m5 mb-5" style="display:none;"><strong>미국 USD</strong><span></span></button>
+		<span id='USDRange' name="exRange" class="ml30"></span>
+		<button id='JPY2' name="exlist2" class="flag20 flag-jp flag-fluid2 m5 mb-5" style="display:none;"><strong>일본 JPY</strong><span></span></button>
+		<span id='JPYRange' name="exRange" class="ml30" style="display:none;"></span>
+		<button id='EUR2' name="exlist2" class="flag20 flag-eu flag-fluid2 m5 mb-5" style="display:none;"><strong>유럽 EUR</strong><span></span></button>
+		<span id='EURRange' name="exRange" class="ml30" style="display:none;"></span>
+		<button id='GBP2' name="exlist2" class="flag20 flag-gb flag-fluid2 m5 mb-5" style="display:none;"><strong>영국 GBP</strong><span></span></button>
+		<span id='GBPRange' name="exRange" class="ml30" style="display:none;"></span>
+		<button id="CAD2" name="exlist2" class="flag20 flag-ca flag-fluid2 m5 mb-5" style="display:none;"><strong>캐나다 CAD</strong><span></span></button>
+		<span id='CADRange' name="exRange" class="ml30" style="display:none;"></span>
+		<button id="CHF2" name="exlist2" class="flag20 flag-ch flag-fluid2 m5 mb-5" style="display:none;"><strong>스위스 CHF</strong><span></span></button>
+		<span id='CHFRange' name="exRange" class="ml30" style="display:none;"></span>
+		<button id="HKD2" name="exlist2" class="flag20 flag-hk flag-fluid2 m5 mb-5" style="display:none;"><strong>홍콩 HKD</strong><span></span></button>
+		<span id='HKDRange' name="exRange" class="ml30" style="display:none;"></span>
+		<button id="CNY2" name="exlist2" class="flag20 flag-cn flag-fluid2 m5 mb-5" style="display:none;"><strong>중국 CNY</strong><span></span></button>
+		<span id='CNYRange' name="exRange" class="ml30" style="display:none;"></span>
+		<button id="THB2" name="exlist2" class="flag20 flag-th flag-fluid2 m5 mb-5" style="display:none;"><strong>태국 THB</strong><span></span></button>
+		<span id='THBRange' name="exRange" class="ml30" style="display:none;"></span>
+		<button id="SEK2" name="exlist2" class="flag20 flag-se flag-fluid2 m5 mb-5" style="display:none;"><strong>스웨덴 SEK</strong><span></span></button>
+		<span id='SEKRange' name="exRange" class="ml30" style="display:none;"></span>
+		<button id="AUD2" name="exlist2" class="flag20 flag-au flag-fluid2 m5 mb-5" style="display:none;"><strong>호주 AUD</strong><span></span></button>
+		<span id='AUDRange' name="exRange" class="ml30" style="display:none;"></span>
+		<button id="DKK2" name="exlist2" class="flag20 flag-dk flag-fluid2 m5 mb-5" style="display:none;"><strong>덴마크 DKK</strong><span></span></button>
+		<span id='DKKRange' name="exRange" class="ml30" style="display:none;"></span>
+		<button id="NOK2" name="exlist2" class="flag20 flag-no flag-fluid2 m5 mb-5" style="display:none;"><strong>노르웨이 NOK</strong><span></span></button>
+		<span id='NOKRange' name="exRange" class="ml30" style="display:none;"></span>
+		<button id="SGD2" name="exlist2" class="flag20 flag-sg flag-fluid2 m5 mb-5" style="display:none;"><strong>싱가포르 SGD</strong><span></span></button>
+		<span id='SGDRange' name="exRange" class="ml30" style="display:none;"></span>
+		<button id="NZD2" name="exlist2" class="flag20 flag-nz flag-fluid2 m5 mb-5" style="display:none;"><strong>뉴질랜드 NZD</strong><span></span></button>
+		<span id='NZDRange' name="exRange" class="ml30" style="display:none;"></span>
+		<button id="PHP2" name="exlist2" class="flag20 flag-ph flag-fluid2 m5 mb-5" style="display:none;"><strong>필리핀 PHP</strong><span></span></button>
+		<span id='PHPRange' name="exRange" class="ml30" style="display:none;"></span-->
+	</div>
+</div>
+
+<!-- 		$swal.fire02('Push 알림이 꺼져 있습니다. <br> 휴대폰의 설정->알림->RM/PB WON(가칭)에서 알림을 허용해주세요.', 'caution', '예', true, '아니요');
+ -->

@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/resources/css/d2coding.css" />
+    <link rel="stylesheet" href="/resources/css/NanumGothic.css" />
+    <link rel="stylesheet" href="/resources/css/md-content.min.css" />
+    <link rel="stylesheet" href="../../resources/css/monokai_sublime.css" />
+  </head>
+
+  <body>
+    <div class="markdown-body">
+      <h1>
+        colorSort <em><strong>(plotOptions properties)</strong></em>
+      </h1>
+      <blockquote>
+        <p>
+          Wordcloud 차트의 색 지정 방식을 설정하는 속성입니다.
+          <code>only wordcloud</code>
+        </p>
+      </blockquote>
+      <h3>Info</h3>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>name</th>
+              <th>type</th>
+              <th>required</th>
+              <th>description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>colorSort</td>
+              <td><code>string</code></td>
+              <td><span class="optional">선택(none)</span></td>
+              <td>색지정 방식</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Enum</h3>
+      <ul>
+        <li>colorSort</li>
+      </ul>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>value</th>
+              <th>description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>none</td>
+              <td>데이터 입력 순서</td>
+            </tr>
+            <tr>
+              <td>rank</td>
+              <td>입력된 데이터의 최댓값부터 내림차순</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Example</h3>
+      <pre
+        class="hljs"
+      ><code><span class="hljs-comment">//wordcloud 차트 설정</span>
+myChart.setOptions({
+	<span class="hljs-attr">chart</span>: {
+		<span class="hljs-attr">type</span>: <span class="hljs-string">"wordcloud"</span>
+	},
+	<span class="hljs-attr">plotOptions</span>: {
+		<span class="hljs-attr">wordcloud</span>: {
+			<span class="hljs-attr">colorSort</span>: <span class="hljs-string">"rank"</span>
+		}
+	}
+}, {
+	<span class="hljs-attr">append</span>: <span class="hljs-literal">false</span>
+});
+
+<span class="hljs-comment">//wordcloud 데이터 로드</span>
+myChart.loadSearchData({
+	<span class="hljs-string">"ibchart"</span>: {
+		<span class="hljs-string">"data"</span>: [{
+			<span class="hljs-string">"series"</span>: [{
+				<span class="hljs-string">"seriesName"</span>: <span class="hljs-string">"WordCloud"</span>,
+				<span class="hljs-string">"pointName"</span>: <span class="hljs-string">"IBLeaders"</span>,
+				<span class="hljs-string">"value"</span>: <span class="hljs-number">40</span>
+			}]
+		}, {
+			<span class="hljs-string">"series"</span>: [{
+				<span class="hljs-string">"pointName"</span>: <span class="hljs-string">"아이비리더스"</span>,
+				<span class="hljs-string">"value"</span>: <span class="hljs-number">50</span>
+			}]
+		}, {
+			<span class="hljs-string">"series"</span>: [{
+				<span class="hljs-string">"pointName"</span>: <span class="hljs-string">"IB Sheet 7"</span>,
+				<span class="hljs-string">"value"</span>: <span class="hljs-number">30</span>
+			}]
+		}, {
+			<span class="hljs-string">"series"</span>: [{
+				<span class="hljs-string">"pointName"</span>: <span class="hljs-string">"IBChart(H) 7"</span>,
+				<span class="hljs-string">"value"</span>: <span class="hljs-number">20</span>
+			}]
+		}]
+	}
+}, {
+	<span class="hljs-attr">append</span>: <span class="hljs-literal">true</span>
+});
+</code></pre>
+      <p>
+        <img src="..//resources/images/ibchart/ibchart-colorSort.png" alt="s" />
+      </p>
+      <h3>제공 버전</h3>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>version</th>
+              <th>desc</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>7.3.1.0</td>
+              <td>wordcloud 차트에만 적용가능</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="../../resources/plugins/jquery/jquery.slim.min.js"></script>
+    <script src="../../resources/plugins/jquery/jquery.mark.min.js"></script>
+    <script src="../../resources/js/ibChart/md-content.js"></script>
+  </body>
+</html>

@@ -1,0 +1,176 @@
+<style>
+	body[data-device="ios"] .layer-b .btn-box-bottom{bottom:-0.14rem;}
+</style>
+
+<div id="view-wrap" data-layout="sub" data-page-id="PBWFI030000" aria-hidden="false">
+	<div id="content">
+		<div class="cmm-form">
+			<p class="label"><span>대출원금</span></p>
+			<div class="input txt">
+				<input type="tel" maxlength="15" name="keepMoney" id="keepMoney" title="예치금액" class="t-right" placeholder="금액 입력" value=""  oninput="this.value = this.value.replace(/[^0-9]/g,'').replace(/\B(?=(\d{3})+(?!\d))/g, ',');">
+				<button type="button" name="deleteMoney" id="deleteMoney" class="btn-icon delete"><i class="icon-input-delete">X</i></button>
+				<em>원</em>
+			</div>
+			<div class="btn-num">
+				<button type="button" name="plusMoney" id="plus100" value="1000000"><span>+ 100만</span></button>
+				<button type="button" name="plusMoney" id="plus500" value="5000000"><span>+ 500만</span></button>
+				<button type="button" name="plusMoney" id="plus1000" value="10000000"><span>+ 1천만</span></button>
+				<button type="button" name="plusMoney" id="plus5000" value="50000000"><span>+ 5천만</span></button>
+			</div>
+		</div>
+
+		<div class="cmm-form">
+			<p class="label"><span>대출기간</span></p>
+			<div class="input txt">
+				<input type="tel" maxlength="3"  name="keepMonth" id="keepMonth" title="예치기간" class="t-right" placeholder="기간 입력"  value="" ;  oninput="this.value = this.value.replace(/[^0-9]/g,'').replace(/(\..*)\./g, '$1');">
+				<button type="button" name="deleteMonth" id="deleteMonth" class="btn-icon delete"><i class="icon-input-delete">X</i></button>
+				<em >개월</em>
+			</div>
+			<div class="btn-num">
+				<button type="button"  name="plusMonth" id="mon6" value="6"><span>+ 6개월</span></button>
+				<button type="button"  name="plusMonth" id="mon12" value="12"><span>+ 1년</span></button>
+				<button type="button"  name="plusMonth" id="mon36" value="36"><span>+ 3년</span></button>
+				<button type="button"  name="plusMonth" id="mon60" value="60"><span>+ 5년</span></button>
+			</div>
+		</div>
+
+		<div class="cmm-form">
+			<p class="label"><span>거치기간</span></p>
+			<div class="input txt">
+				<input type="tel" maxlength="3"  name="keepMonth2" id="keepMonth2" title="거치기간" class="t-right" placeholder="기간 입력"  value=""  oninput="this.value = this.value.replace(/[^0-9]/g,'').replace(/(\..*)\./g, '$1');">
+				<button type="button" name="deleteMonth2" id="deleteMonth2" class="btn-icon delete"><i class="icon-input-delete">X</i></button>
+				<em>개월</em>
+			</div>
+		</div>
+		<div class="cmm-form">
+			<p class="label"><span>대출금리</span></p>
+			<div class="input txt">
+				<input type="number" name="keepRate" id="keepRate" title="예상금리" class="t-right" placeholder="금리 입력" />
+				<button type="button" name="deleteRate" id="deleteRate" class="btn-icon delete"><i class="icon-input-delete">삭제</i></button>
+				<em>%</em>
+			</div>
+		</div>
+		<div class="btn-box">
+			<button type="button" id="search_btn" class="btn-bg-s blue"  data-layer-open="RMMBC03R004"><span>조회</span></button>
+		</div>
+	</div>
+</div>
+
+<div id="RMMBC03R004" class="layer-b bg" data-layout="layer" aria-hidden="true">
+	<div class="inner">
+		<div class="header">
+			<h1>대출계산기</h1>
+			<button type="button" id="close" name="close" class="btn-icon" data-layer-close="true"><i class="icon-close">닫기</i></button>
+		</div>
+		<div class="content">
+			<div class="cmm-tab-box">
+				<ul role="tablist">
+					<li><a role="tab" id="tab01" href="javascript:void(0)" aria-selected="true"><span>만기일시</span></a></li>
+					<li><a role="tab" id="tab02" href="javascript:void(0)" aria-selected="false"><span>원리금균등</span></a></li>
+					<li><a role="tab" id="tab03" href="javascript:void(0)" aria-selected="false"><span>원금균등</span></a></li>
+				</ul>
+			</div>
+
+			<div class="list-text" >
+				<div id="tab01Div" class="list-text" style="display: none;>
+					<ul class="list">
+						<li>
+							<div class="box">
+								<dl>
+									<dt>대출원금</dt>
+									<dd><em id="areaA1"></em></dd>
+									<dt>대출기간</dt>
+									<dd><em id="areaA2"></em></dd>
+									<dt>거치기간</dt>
+									<dd id="areaA3">- 개월</dd>
+									<dt>대출금리</dt>
+									<dd><em id="areaA4"></em></dd>
+									<dt>월납입액</dt>
+									<dd><em id="areaA5"></em></dd>
+									<dt>총이자</dt>
+									<dd><em id="areaA6"></em></dd>
+									<dt>총 상환금액</dt>
+									<dd><em id="areaA7"></em></dd>
+								</dl>
+							</div>
+						</li>
+						<li id="areaHtmlA">
+						</li>
+					</ul>
+					<hr class="h10"> <!-- 20221212 Tobe -->
+				</div>
+
+				<div id="tab02Div" class="list-text" style="display: none;>
+					<ul class="list">
+						<li>
+							<div class="box">
+								<dl>
+									<dt>대출원금</dt>
+									<dd><em id="areaB1"></em></dd>
+									<dt>대출기간</dt>
+									<dd><em id="areaB2"></em></dd>
+									<dt>거치기간</dt>
+									<dd id="areaB3">- 개월 </dd>
+									<dt>대출금리</dt>
+									<dd><em id="areaB4"></em></dd>
+									<dt>월납입액</dt>
+									<dd><em id="areaB5"></em></dd>
+									<dt>총이자</dt>
+									<dd><em id="areaB6"></em></dd>
+									<dt>총 상환금액</dt>
+									<dd><em id="areaB7"></em></dd>
+								</dl>
+							</div>
+						</li>
+						<li id="areaHtmlB">
+						</li>
+					</ul>
+					<hr class="h10"> <!-- 20221212 Tobe -->
+				</div>
+
+				<div id="tab03Div" class="list-text" style="display: none;>
+					<ul class="list">
+						<li>
+							<div class="box">
+								<dl>
+									<dt>대출원금</dt>
+									<dd><em id="areaC1"></em></dd>
+									<dt>대출기간</dt>
+									<dd><em id="areaC2"></em></dd>
+									<dt>거치기간</dt>
+									<dd id="areaC3">- 개월</dd>
+									<dt>대출금리</dt>
+									<dd><em id="areaC4"></em></dd>
+									<dt>월납입액</dt>
+									<dd><em id="areaC5"></em></dd>
+									<dt>총이자</dt>
+									<dd><em id="areaC6"></em></dd>
+									<dt>총 상환금액</dt>
+									<dd><em id="areaC7"></em></dd>
+								</dl>
+							</div>
+						</li>
+						<li id="areaHtmlC">
+						</li>
+					</ul>
+					<hr class="h10"> <!-- 20221212 Tobe -->
+				</div>
+			</div>
+
+				<div class="t-center"> <!-- 20221212 Tobe -->
+					<button type="button" class="btn-icon shadow" id="moveUp"><i class="icon-top-btn" style=""></i></button>
+				</div> <!-- 20221212 Tobe -->
+
+		</div>
+		<div class="btn-box-bottom">
+			<div class="btn">
+				<button type="button" id="close" name="close" class="btn-bg-m blue" data-layer-close="true"><span>확인</span></button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+	// Name
+</script>

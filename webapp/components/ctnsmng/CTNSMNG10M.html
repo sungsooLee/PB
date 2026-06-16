@@ -1,0 +1,127 @@
+<!--
+/*************************************************************************
+* @ 서비스경로 : CTNSMNG10M
+* @ 파일명      : CTNSMNG10M.html  포탈게기글 연동
+* @ 작성자      : 90194834
+* @ 작성일      : 2025-04-29
+************************** 수정이력 ****************************************
+* 날짜                    작업자                 변경내용
+*_________________________________________________________________________
+* 2025-04-29       90194834                 최초작성
+*************************************************************************/
+-->
+<style>
+	.btn-floating {
+		z-index: 10;
+	}
+</style>
+
+<div id="view-wrap" data-layout="sub" data-page-id="list" aria-hidden="false">
+	<div id="content">
+		<div class="list-text">
+			<div class="top">
+				<div class="f-left">
+					<span class="total">총 <b id="totalCount">0</b>건
+					</span>
+				</div>
+				<button type="button" class="btn-text-s" data-action="action-search" data-layer-open="searchLayer">
+					<i class="icon-setting"></i><span>조건조회</span>
+				</button>
+			</div>
+			<ul class="list" id="dataBody">
+			</ul>
+		</div>
+		<div class="btn-floating">
+			<button type="button" class="more" id="registBtn">
+				<span>${blbrNm} 등록</span>
+			</button>
+		</div>
+	</div>
+</div>
+
+<div style=display:none;>
+	<ul class="list" id="wtemplate">
+		<li w-template>
+			<a href="#" class="link">
+				<span class="tit" w-data="Title"></span>
+				<span class="date">
+					<em w-data="RegisterName"></em>
+					<i class="icon-bar"></i>
+					<em w-data="ReserveDate"></em>
+					<i class="icon-bar"></i>
+					<em w-data="HitCount"></em>
+					<i class="icon-bar"></i>
+					<em w-data="CommentCount"></em>
+				</span>
+				<i class="icon-next"></i>
+			</a>
+			<p class="cmm-data-none" style="display: none">
+				<i class="icon-info-bb"></i><span>조회된 내용이 없습니다.
+			</p>
+		</li>
+	</ul>
+</div>
+
+<div id="searchLayer" class="layer-bottom" data-layout="layer" aria-hidden="true">
+	<div class="inner">
+		<div class="header">
+			<h1>조건조회</h1>
+			<button type="button" class="btn-icon" data-layer-close="true"><i class="icon-close">닫기</i></button>
+		</div>
+		<div class="content">
+			<form name="form" id="form">
+				
+				<input type="hidden" name="blbrNm"		id="blbrNm"		value="" >
+				<input type="hidden" name="blbrType"	id="blbrType"	value="" >
+				<input type="hidden" name="blbrCtgr""	id="blbrCtgr"	value="" >
+				<input type="hidden" name="currPageNo"	id="currPageNo" value="">
+				<input type="hidden" id="next_hidden" value="">
+				
+				<div class="cmm-form">
+					<p class="label"><span>주제구분</span></p>
+					<div class="select">
+						<button type="button" title="주제구분" aria-expanded="false" class="end" value="0"><span>전체</span></button>
+						<div class="view">
+							<div class="select-option">
+								<div class="s-header">
+									<button type="button" class="btn-icon"><i class="icon-close">닫기</i></button>
+								</div>
+								<div class="s-content">
+									<button type="button" class="option" aria-selected="true"	name="btnCtgry"		><span>전체</span></button>
+									<button typqqe="button" class="option" aria-selected="false" name="btnCtgry" value="Q"><span>질문</span></button>
+									<button type="button" class="option" aria-selected="false" name="btnCtgry" value="I"><span>정보</span></button>
+									<button type="button" class="option" aria-selected="false" name="btnCtgry" value="S"><span>건의</span></button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="cmm-form">
+					<div class="input" style="!important;">
+						<input type="text" name="searchKeyWord" id="searchKeyWord" title="제목 검색어 입력" placeholder="제목 검색어 입력"  maxlength="15">
+						<button type="button" id="delete_btn" class="btn-icon delete"><i class="icon-input-delete">삭제</i></button>
+					</div>
+				</div>
+				<div class="cmm-form">
+					<p class="label"><span>등록기간</span></p>
+					<div class="flex range">
+						<div class="input from">
+							<input id="startDt" name="inquiryDateFrom" type="text" title="시작일" placeholder="시작일" readonly="readonly" aria-hidden="true">
+							<button id="btnStartDt" type="button" class="btn-icon date"><i class="icon-calendar">날짜선택</i></button>
+						</div>
+						<em class="unit">~</em>
+						<div class="input to">
+							<input id="endDt" name="inquiryDateTo" type="text" title="종료일" placeholder="종료일" readonly="readonly" aria-hidden="true">
+							<button id="btnEndDt" type="button" class="btn-icon date"><i class="icon-calendar">날짜선택</i></button>
+						</div>
+					</div>
+				</div>
+				<hr class="h30">
+				<div class="btn-box">
+					<button type="button" class="btn-bg-s blue" id="btnSearch"><span>조회</span></button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<button type="button" class="btn-icon dim" data-layer-close="true"><span>닫기</span></button>
+</div>

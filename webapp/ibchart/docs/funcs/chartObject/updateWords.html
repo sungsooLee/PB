@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/resources/css/d2coding.css" />
+    <link rel="stylesheet" href="/resources/css/NanumGothic.css" />
+    <link rel="stylesheet" href="/resources/css/md-content.min.css" />
+    <link rel="stylesheet" href="../../resources/css/monokai_sublime.css" />
+  </head>
+
+  <body>
+    <div class="markdown-body">
+      <h1>
+        updateWords <em><strong>(ChartObject method)</strong></em>
+      </h1>
+      <blockquote>
+        <p>wordcloud에 사용되는 단어를 업데이트합니다.</p>
+      </blockquote>
+      <h3>Syntax</h3>
+      <pre class="hljs"><code>{ibchart}.updateWords();
+</code></pre>
+      <h3>Returns</h3>
+      <p>
+        <em><strong>none</strong></em>
+      </p>
+      <h3>Example</h3>
+      <pre class="hljs"><code>myChart.setOptions({
+  <span class="hljs-attr">plotOptions</span>: {
+    <span class="hljs-attr">wordcloud</span>: {
+        <span class="hljs-attr">rotation</span>: [<span class="hljs-number">-45</span>,<span class="hljs-number">90</span>], <span class="hljs-comment">// default : [0,90]</span>
+        orientation: <span class="hljs-number">3</span>, <span class="hljs-comment">// default : 1</span>
+        colorIterate: <span class="hljs-literal">false</span>, <span class="hljs-comment">// default : true</span>
+        colorSort: <span class="hljs-string">"rank"</span>, <span class="hljs-comment">// "rank", "none" default: "none"</span>
+        scaleType: <span class="hljs-string">"log"</span>, <span class="hljs-comment">// "log", "sqrt", "linear" default: "none"</span>
+        placeType: <span class="hljs-string">"random"</span>, <span class="hljs-comment">// "random", "linear" default: "linear"</span>
+        spiralType: <span class="hljs-string">"rectangular"</span>, <span class="hljs-comment">// "rectangular", "archimedean" default : "archimedean"</span>
+        valueRange: <span class="hljs-string">"responsive"</span>, <span class="hljs-comment">// "responsive", [#,#] default: [15,60]</span>
+        style: {
+            <span class="hljs-attr">fontFamily</span>: <span class="hljs-string">"나눔고딕"</span>, <span class="hljs-comment">// default: "Lucida Grande"</span>
+            fontWeight: <span class="hljs-string">"bold"</span>, <span class="hljs-comment">// default: "bold"</span>
+            fontPadding: <span class="hljs-number">0.2</span> <span class="hljs-comment">// default: 1</span>
+        }
+    }
+  }
+}, {
+  <span class="hljs-attr">append</span>: <span class="hljs-literal">true</span>  <span class="hljs-comment">// 이미 설정된 차트 속성은 유지</span>
+});
+
+myChart.updateWords();  <span class="hljs-comment">// plotOptions와 series(단어 데이터)만 업데이트</span>
+</code></pre>
+      <h3>Since</h3>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>version</th>
+              <th>desc</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>7.3.1.0</td>
+              <td>setSize 메소드 추가</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="../../resources/plugins/jquery/jquery.slim.min.js"></script>
+    <script src="../../resources/plugins/jquery/jquery.mark.min.js"></script>
+    <script src="../../resources/js/ibChart/md-content.js"></script>
+  </body>
+</html>

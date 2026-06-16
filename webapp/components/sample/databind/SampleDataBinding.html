@@ -1,0 +1,71 @@
+<div class="ui-guide">
+    <h1>데이터 바인딩</h1>
+    <p>데이터 바인딩 예제 입니다.</p>
+
+    <div class="ui-guide-section">
+        <div class="ui-guide-box">
+            <h2>Input</h2>
+            <hr>
+            <dl>
+                <dt>Default</dt>
+                <dd>
+                    <div class="form">
+                        <div class="input-wrap">
+                            <input id="input1" type="text"  data-bind="inputVal1" placeholder="Placeholder" title="input">
+                            <button type="button" class="input-remove" name="fieldBtn" aria-label="입력 내용 삭제"></button>
+                        </div>
+                        <button id="btn1"  type="button"  name='dataBindBtn' class="btn-large btn-primary">값 변환</button>
+                    </div>
+                </dd>
+            </dl>
+            <dl>
+                <dt>Value</dt>
+                <dd>
+                    <div class="form">
+                        <div class="input-wrap">
+                            <input id="input2" type="text" data-bind="inputVal2" placeholder="Placeholder" value="Text" title="input">
+                            <button type="button" class="input-remove" name="fieldBtn" aria-label="입력 내용 삭제"></button>
+                        </div>
+                        <button id="btn2"  type="button" name='dataBindBtn' class="btn-large btn-primary">값 변환</button>
+                    </div>
+                </dd>
+            </dl>
+            <dl>
+                <dt>Readonly</dt>
+                <dd>
+                    <div class="form">
+                        <div class="input-wrap">
+                            <input id="input3" type="text" data-bind="inputVal3" readonly placeholder="Placeholder" value="Readonly" title="input">
+                            <button type="button" class="input-remove" name="fieldBtn" aria-label="입력 내용 삭제"></button>
+                        </div>
+                        <button id="btn3"  type="button"  name='dataBindBtn' class="btn-large btn-primary">값 변환</button>
+                    </div>
+                </dd>
+            </dl>
+            <dl>
+                <dt>Disabled</dt>
+                <dd>
+                    <div class="form">
+                        <div class="input-wrap">
+                            <input id="input4" type="text" data-bind="inputVal4" disabled placeholder="Placeholder" value="Disabled" title="input">
+                            <button type="button" class="input-remove" name="fieldBtn" aria-label="입력 내용 삭제"></button>
+                        </div>
+                        <button id="btn4"  type="button"  name='dataBindBtn' class="btn-large btn-primary">값 변환</button>
+                    </div>
+                </dd>
+            </dl>
+            <dl>
+                <dt>Textarea</dt>
+                <dd>
+                    <div class="form">
+                        <div class="input-wrap">
+                            <textarea id="input5" title="메모"></textarea>
+                        </div>
+                        <div class="textarea-length">0/300자</div>
+                        <button id="btn5"  type="button"  name='dataBindBtn' class="btn-large btn-primary">값 변환</button>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>

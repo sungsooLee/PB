@@ -1,0 +1,75 @@
+<!--
+/*************************************************************************
+* @ 서비스경로 : IVINF10S
+* @ 파일명      : IVINF10S.html 투자정보 - 서브메인
+* @ 화면ID		: PBWMA020000
+* @ 작성자      : 90194835
+* @ 작성일      : 2025-01-10
+************************** 수정이력 ****************************************
+* 날짜                    작업자                 변경내용
+*_________________________________________________________________________
+* 2025-01-10            윤은정                 최초작성
+*************************************************************************/
+-->
+
+<style>
+  body {
+    background-color: var(--background-bg_lightGray);
+  }
+</style>
+
+<!-- main-stock-section -->
+<div class="main-stock-section content-fluid py32">
+  <div class="main-section-title">
+    <strong class="headline-small">나의 관심 지수</strong>
+    <a href="javascript:void(0);" aria-label="설정" id="btnSetUp">
+      <i class="icon-only icon-24 icon-setting bg-icon-gray_2"></i>
+    </a>
+  </div>
+  <div class="main-stock-list mt24">
+    <div class="main-stock-nodata" id="cncrNoData" style="display: none">
+      <div class="title-medium">
+        나의 관심 지수를 등록하고 <br />
+        메인에서 조회하세요.
+      </div>
+      <a
+        href="javascript:void(0);"
+        class="btn-medium btn-primary btn-round"
+        id="btnIvinf20s"
+        >지수 찾기<i class="ico-chevron bg-icon-white"></i
+      ></a>
+    </div>
+    <ul class="overflow-list" id="cncrData"></ul>
+  </div>
+
+  <div class="main-stock-banner">
+    <a href="javascript:void(0);" id="btnAI">
+      <picture>
+        <source srcset="../../resources/images/PBWMA/image_stock01.png" />
+        <img src="../../resources/images/PBWMA/image_stock01.png" alt="" />
+      </picture>
+    </a>
+  </div>
+</div>
+<!-- //main-fund-section -->
+
+<!-- main-economy-section -->
+<div class="main-economy-section">
+  <div class="main-section-title">
+    <strong class="headline-small">오늘의 경제 캘린더</strong>
+    <a href="javascript:void(0);" class="anchor chevron fs-15" id="btnEcono"
+      >전체보기</a
+    >
+  </div>
+  <div class="main-economy-list eco-wrap" id="ivinfContainer"></div>
+</div>
+<!-- //main-economy-section -->
+
+<div class="btn-wrap bg-transparent py0">
+  <a href="javascript:void(0);" class="goto-news" id="btnVoice"
+    ><span
+      ><i class="icon-only icon-24 icon-radio bg-icon-white"></i>오늘의 금융뉴스
+      라디오 듣기</span
+    ></a
+  >
+</div>

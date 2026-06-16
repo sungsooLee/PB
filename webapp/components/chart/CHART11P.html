@@ -1,0 +1,33 @@
+<!--
+/*************************************************************************
+* @ 서비스경로 : CHART11P
+* @ 파일명      : CHART11P.html 차트 > 펀드/지수 비교 > [P]수익률 비교
+* @ 화면ID		: PBWCH009901
+* @ 작성자      : 90194835
+* @ 작성일      : 2025-02-06
+************************** 수정이력 ****************************************
+* 날짜                    작업자                 변경내용
+*_________________________________________________________________________
+* 2025-02-06            윤은정                 최초작성
+*************************************************************************/
+-->
+
+<div class="content"><!--  content-fluid -->
+
+	<strong class="title-large py16 px24" id="strTxt"></strong>
+
+	<div class="tab-content">
+		<ul class="tab-list tab-col overflow-list" role="tablist">
+			<li class="tab tab-active"><a href="javascript:void(0);" data-controls="tab-subpanel01" name="subTab" value="1">수익률</a></li>
+			<li class="tab"><a href="javascript:void(0);" data-controls="tab-subpanel02" name="subTab" value="2">기준가</a></li>
+		</ul>
+		<div id="tab-subpanel01" class="tabpanel tab-active">
+			<h3 class="blind">수익률</h3>
+			<div id="tab1Container"></div>
+		</div>
+		<div id="tab-subpanel02" class="tabpanel">
+			<h3 class="blind">기준가</h3>
+			<div id="tab2Container"></div>
+		</div>
+	</div>
+</div>

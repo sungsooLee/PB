@@ -1,0 +1,28 @@
+<div class="business-card-customer">
+	<button id="detailRowData">
+		<strong class="title-medium" data-bind="nmcrNm">김성민</strong>
+		<span class="divide-list">
+			<span data-bind="nmcrDepNm">디지털공통개발부 UI/UX팀</span>
+			<span class="division h14 mx8" data-bind="dataDiv"></span>
+			<span data-bind="nmcrDtsNm">과장</span>
+		</span>
+		<span class="company-name" data-bind="nmcrComNm">파인너츠</span>
+		<span class="tags tags-small tags-lightBlue" data-bind="favtUsgYn"><i class="icon-only icon-15 icon-keyman"></i>키맨</span>
+		<span class="tags tags-small tags-lightCyan" data-bind="nmcrShrgYn"><i class="icon-only icon-15 icon-privacy"></i>나만보기</span>
+	</button>
+	<figure>
+		<div class="due-date">
+			<strong class="body-small" data-bind="expyDtYn">만료일</strong>
+			<span data-bind="nmcrExpyDt">2024.11.26</span>
+			<div class="tags tags-small tags-lightBlue" data-bind="dDay">D-30</div>
+			<div data-bind="cls" style="display: none;"></div>
+		</div>
+		<div class="thumb thumb-nodata">
+			<button type="button" class="btn-xsmall btn-black btn-round" id="btnExpyMod" data-bind="expyMod">연장하기</button>
+			<picture>
+				<source srcset="">
+				<img src="" alt="" data-bind="filePath">
+			</picture>
+		</div>
+	</figure>
+</div>

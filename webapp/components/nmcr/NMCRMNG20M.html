@@ -1,0 +1,90 @@
+<!--
+/*************************************************************************
+* @ 서비스경로 : NMCRMNG20M
+* @ 파일명      : NMCRMNG20M.html 고객명함 관리 - 지점 명함첩 - 목록
+* @ 화면ID 	 : PBWBU030000
+* @ 작성자      : 90194835
+* @ 작성일      : 2024-12-04
+************************** 수정이력 ****************************************
+* 날짜                    작업자                 변경내용
+*_________________________________________________________________________
+* 2024-12-04            윤은정                 최초작성
+*************************************************************************/
+-->
+
+
+<div id="nmcrData">
+	<!-- sort-wrap -->
+	<div class="sort-wrap">
+		<div class="section-tablet">
+
+			
+			<!-- sticky-content -->
+			<div class="sticky-sentinal"></div>
+			<div class="sticky-content content-fluid">
+				<div class="sticky-content-inner">
+					<!-- form -->
+					<div class="form form-inner-btn form-filter" id="keywordChk">
+						<div class="label"></div>
+						<div class="input-wrap input-btn">
+							<input type="text" placeholder="이름, 회사명으로 검색" title="검색" id="keyword" data-bind="keyword">
+							<button type="button" class="input-remove" aria-label="입력 내용 삭제"></button>
+							<button type="button" class="input-search" aria-label="입력 내용 검색" id="btnSearch"></button>
+						</div>
+						<p class="validate-text" id="keywordMsg"></p>
+
+						<!-- sort-list -->
+						<button class="filter-combination" data-micromodal-trigger="modal-select-filter" aria-label="정렬" id="searchOpen">
+							<span class="btn-border">
+								<i class="ico-sorting"></i>
+							</span>
+							<span class="sort-list">
+								<span class="filter">
+									<span id="selGroupNm">전체</span>
+									<i class="badge ml0" id="totalCnt">3</i>
+								</span>
+								<span class="division mx8"></span>
+								<span class="sort" id="sortNm">최신순</button>
+							</span>
+						</button>
+						<!-- sort-list -->
+					</div>
+					<!-- //form -->
+
+				</div>
+
+			</div>
+
+			<!-- sort-wrap -->
+	
+			<div id="listContainer" class="business-card-customer-list">
+			</div>
+			
+			<div class="division-center" id="nmcrNoSearch" style="display: none;">
+				<div class="no-result">
+					<i class="icon-only icon-48 icon-noresult bg-icon-gray_1"></i>
+					<p class="body-medium fw-400">검색 결과가 없습니다.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</div>
+<div id="nmcrNoData" style="display: none;">
+	
+	<!-- division-center -->
+	<div class="division-center" id="nmcrSave">
+		<!-- init-regist -->
+		<div class="init-regist">
+			<picture>
+				<source srcset="../../resources/images/PBWBU/init_business_card.svg">
+				<img src="../../resources/images/PBWBU/init_business_card.svg" alt="">
+			</picture>
+			<p class="body-large ac fc-typography-gray">지점에 공유된 고객 명함이 없습니다. <br> 고객 명함을 공유해 보세요.</p>
+		</div>
+		<!-- //init-regist -->
+	</div>
+	<!-- //division-center -->
+
+	<!-- //content -->
+</div>

@@ -1,0 +1,163 @@
+<!--
+/*************************************************************************
+* @ 서비스경로 : CRMPMNG43M
+* @ 파일명      : CRMPMNG43M.html  고객관리 > 기업정보조회 > 기업신용
+* @ 작성자      : 90195654
+* @ 작성일      : 2024-12-26
+************************** 수정이력 ****************************************
+* 날짜                    작업자                 변경내용
+*_________________________________________________________________________
+* 2024-12-26       90195654                 최초작성
+*************************************************************************/
+-->
+<style>
+body {
+	background-color: var(--background-bg_lightGray);
+}
+</style>
+
+<!-- customer-card-list -->
+<div class="customer-info-list mb-24">
+
+	<div class="customer-info-title">
+		<strong class="headline-large ac" id="cmm-tit1"></strong>
+		<div class="tag-wrap">
+			<div class="tags tags-medium tags-white" id="cmm-txt2"></div>
+		</div>
+	</div>
+
+	<!-- tab-content -->
+	<div class="tab-content tab-fluid tab-sticky">
+		<ul class="tab-list tab-col overflow-list px24" id="tabList" role="tablist">
+			<li class="tab"><a role="tab" name="tab" data-link="crmpmng42m" href="javascript:void(0);">기업일반</a></li>
+			<li class="tab tab-active"><a role="tab" name="tab" data-link="crmpmng43m" href="javascript:void(0);">기업신용</a></li>
+			<li class="tab"><a role="tab" name="tab" data-link="crmpmng44m" href="javascript:void(0);">재무정보</a></li>
+			<li class="tab"><a role="tab" name="tab" data-link="crmpmng45m" href="javascript:void(0);">종합의견</a></li>
+			<li class="tab"><a role="tab" name="tab" data-link="crmpmng46m" href="javascript:void(0);">연혁</a></li>
+			<li class="tab"><a role="tab" name="tab" data-link="crmpmng47m" href="javascript:void(0);">경영진현황</a></li>
+			<li class="tab"><a role="tab" name="tab" data-link="crmpmng48m" href="javascript:void(0);">거래처현황</a></li>
+			<li class="tab"><a role="tab" name="tab" data-link="crmpmng49m" href="javascript:void(0);">주요주주현황</a></li>
+		</ul>
+	</div>
+	<!-- //tab-content -->
+
+	<div class="tablet-maxwidth tablet-maxwidth-fluid bg-background-bg_white">
+		<a id="tab-prev" class="ui-tab ui-tab-prev" aria-label="이전 탭"></a>
+		<a id="tab-next" class="ui-tab ui-tab-next" aria-label="다음 탭"></a>
+		<!-- customer-contribution-list -->
+		<div class="customer-contribution-list content-fluid px0">
+			<!-- customer-contribution -->
+			<div class="box">
+				<h2 class="headline-small">기업 등급</h2>
+
+				<div class="grade-wrap mt24">
+					<div class="grade-circle" id="cr-grd-cr" >
+						<div class="rate" id="cr-grd-nm"></div>
+					</div>
+					<dl>
+						<div class="list">
+							<dt>평가일자</dt>
+							<dd id="evl-dt"></dd>
+						</div>
+						<div class="list">
+							<dt>결산기준일</dt>
+							<dd id="sttl-base-dd"></dd>
+						</div>
+						<div class="list">
+							<dt>등급구분</dt>
+							<dd id="grd-cls-nm"></dd>
+						</div>
+					</dl>
+				</div>
+
+				<h3 class="title-medium mt32">기업 등급 이력</h3>
+
+				<div class="table-col content-fluid overflow-visible px0 mt24 mx-24">
+					<table>
+						<caption>기업 등급 이력</caption>
+						<thead>
+							<tr>
+								<th scope="col">신용등급</th>
+								<th scope="col">평가(산출)일자</th>
+								<th scope="col">결산기준일</th>
+								<th scope="col">등급구분</th>
+							</tr>
+						</thead>
+						<tbody id="gradHist">
+						</tbody>
+					</table>
+				</div>
+
+			</div>
+			<!-- //customer-contribution -->
+
+			<!-- customer-contribution -->
+			<div class="box">
+				<h2 class="headline-small">기타 신용정보</h2>
+				<div class="caption-visible mt24">(단위: 천원)</div>
+				<div class="table-col">
+					<table>
+						<caption>기타 신용정보</caption>
+						<thead>
+							<tr>
+								<th scope="col">구분</th>
+								<th scope="col">건수</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row" class="al">채무불이행</th>
+								<td class="ar" id="kfb-bad-cnt"></td>
+							</tr>
+							<tr>
+								<th scope="row" class="al">당좌거래정지</th>
+								<td class="ar" id="kfb-fin-tx-cnt"></td>
+							</tr>
+							<tr>
+								<th scope="row" class="al">법정관리/회의</th>
+								<td class="ar" id="workout-cnt"></td>
+							</tr>
+							<tr>
+								<th scope="row" class="al">카드발급/당좌개설</th>
+								<td class="ar" id="dshovd-cnt"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!-- //customer-contribution -->
+
+			<div class="stroke stroke4"></div>
+
+			<!-- customer-contribution -->
+			<div class="box">
+				<h2 class="headline-small">휴폐업 정보</h2>
+				<div class="caption-visible mt24">(단위: 명)</div>
+				<div class="table-col">
+					<table>
+						<caption>휴폐업 정보</caption>
+						<thead>
+							<tr>
+								<th scope="col">기준일자</th>
+								<th scope="col">휴폐업상태</th>
+								<th scope="col">발생일자</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td id="base-dt"></td>
+								<td id="lqdt-cls"></td>
+								<td id="lqdt-dt"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!-- //customer-contribution -->
+
+		</div>
+		<!-- //customer-contribution-list -->
+	</div>
+
+</div>
+<!-- //customer-card-list -->

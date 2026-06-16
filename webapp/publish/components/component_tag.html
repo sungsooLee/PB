@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <title>자산관리 영업지원 App</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0, user-scalable=no"
+    />
+
+    <script src="../../resources/plugins/jquery/jquery.min.js"></script>
+
+    <!-- [plugins] -->
+    <!-- micromodal -->
+    <link
+      rel="stylesheet"
+      href="../../resources/plugins/micromodal/0.4.10/micromodal.css"
+    />
+    <script src="../../resources/plugins/micromodal/0.4.10/micromodal.min.js"></script>
+    <!-- sortable -->
+    <script src="../../resources/plugins/sortable/1.15.2/Sortable.min.js"></script>
+    <!-- sweetalert2 -->
+    <link
+      rel="stylesheet"
+      href="../../resources/plugins/sweetalert2/11.11.0/sweetalert2.min.css"
+    />
+    <script src="../../resources/plugins/sweetalert2/11.11.0/sweetalert2.min.js"></script>
+    <!-- swiper -->
+    <link
+      rel="stylesheet"
+      href="../../resources/plugins/swiper/11.1.1/swiper-bundle.min.css"
+    />
+    <script src="../../resources/plugins/swiper/11.1.1/swiper-bundle.min.js"></script>
+    <!-- tippy -->
+    <script src="../../resources/plugins/popper.js/2.11.8/umd/popper.min.js"></script>
+    <script src="../../resources/plugins/popper.js/2.11.8/umd/tippy-bundle.umd.min.js"></script>
+    <!-- toastr -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../resources/plugins/toastr/2.1.4/toastr.min.css"
+    />
+    <script src="../../resources/plugins/toastr/2.1.4/toastr.min.js"></script>
+    <!-- jquery-ui -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../resources/plugins/jquery-ui/jquery-ui.css"
+    />
+    <script src="../../resources/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- pinch-zoom -->
+    <script src="../../resources/plugins/pinch-zoom/pinch-zoom.umd.js"></script>
+    <!-- apexcharts -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../resources/plugins/apexcharts/3.50.0/apexcharts.css"
+    />
+    <script src="../../resources/plugins/apexcharts/3.50.0/apexcharts.min.js"></script>
+    <!-- AOS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../resources/plugins/aos/3.0.0-beta.6/aos.css"
+    />
+    <script src="../../resources/plugins/aos/3.0.0-beta.6/aos.js"></script>
+    <!-- jquery-ui-monthpicker-master -->
+    <script src="../../resources/plugins/jquery-ui-monthpicker-master/monthpicker.js"></script>
+    <!-- jquery-touchSwipe -->
+    <script src="../../resources/plugins/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <!-- //[plugins] -->
+
+    <!-- ui source -->
+    <link rel="stylesheet" href="../../resources/css/ui-fonts.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-variable.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-default.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-layout.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-style.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-content.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-bscard.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-plugins.css" />
+
+    <link rel="stylesheet" href="../../resources/css/ui-skeletone.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-mediaquery.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-guide.css" />
+
+    <script src="../../resources/js/ui-script.js"></script>
+    <script src="../../resources/js/ui-temp.js"></script>
+    <!-- 개발서버에서 include 제외해주세요 -->
+    <!-- //ui source -->
+    <style>
+      .ui-guide .guide-column-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="ui-guide content">
+      <h1>Tags</h1>
+
+      <div class="ui-guide-section">
+        <div class="ui-guide-box">
+          <h2>Tags <span>Type</span></h2>
+          <div class="guide-column-list">
+            <div class="tags tags-small tags-black-80">레이블</div>
+            <div class="tags tags-small tags-round tags-black-80">레이블</div>
+          </div>
+        </div>
+        <hr />
+        <div class="ui-guide-box">
+          <h2>Small <span>23</span></h2>
+          <div class="guide-column-list">
+            <div class="tags tags-small tags-lightBlue">tags-lightBlue</div>
+            <div class="tags tags-small tags-lightGray">tags-lightGray</div>
+            <div class="tags tags-small tags-lightCyan">tags-lightCyan</div>
+            <div class="tags tags-small tags-lightViolet">tags-lightViolet</div>
+            <div class="tags tags-small tags-lightPurple">tags-lightPurple</div>
+            <div class="tags tags-small tags-lightRed">tags-lightRed</div>
+            <div class="tags tags-small tags-lightYellow">tags-lightYellow</div>
+            <div class="tags tags-small tags-lightPink">tags-lightPink</div>
+            <div class="tags tags-small tags-cn">tags-cn</div>
+            <div class="tags tags-small tags-red-100">tags-red-100</div>
+            <div class="tags tags-small tags-jp">tags-jp</div>
+            <div class="tags tags-small tags-FFF4EB">tags-FFF4EB</div>
+            <div class="tags tags-small tags-green-50">tags-green-50</div>
+            <div class="tags tags-small tags-disabled_bg">tags-disabled_bg</div>
+            <div class="tags tags-small tags-deepGray">tags-deepGray</div>
+            <div class="tags tags-small tags-gray">tags-gray</div>
+            <div class="tags tags-small tags-deepBlue">tags-deepBlue</div>
+            <div class="tags tags-small tags-deepBlue50">tags-deepBlue50</div>
+            <div class="tags tags-small tags-eu">tags-eu</div>
+            <div class="tags tags-small tags-surface50">tags-surface50</div>
+            <div class="tags tags-small tags-white">tags-white</div>
+            <div class="tags tags-small tags-kr">tags-gray800</div>
+          </div>
+        </div>
+        <hr />
+        <div class="ui-guide-box">
+          <h2>Medium <span>32</span></h2>
+          <div class="guide-column-list">
+            <div class="tags tags-medium tags-lightGray">레이블</div>
+            <div class="tags tags-medium tags-black-80">레이블</div>
+            <div class="tags tags-medium tags-white">레이블</div>
+            <div class="tags tags-medium tags-lightBlue">레이블</div>
+            <div class="tags tags-medium tags-blue">레이블</div>
+            <div class="tags tags-medium tags-lightCyan">레이블</div>
+            <div class="tags tags-medium tags-cyan">레이블</div>
+            <div class="tags tags-medium tags-lightPurple">레이블</div>
+            <div class="tags tags-medium tags-purple">레이블</div>
+            <div class="tags tags-medium tags-E6E2F2">레이블</div>
+            <div class="tags tags-medium tags-violet">레이블</div>
+            <div class="tags tags-medium tags-lightRed">레이블</div>
+            <div class="tags tags-medium tags-red">레이블</div>
+            <div class="tags tags-medium tags-lightYellow">레이블</div>
+            <div class="tags tags-medium tags-yellow">레이블</div>
+            <div class="tags tags-medium tags-lightPink">레이블</div>
+            <div class="tags tags-medium tags-pink">레이블</div>
+            <div class="tags tags-medium tags-green-50">레이블</div>
+            <div class="tags tags-medium tags-green-300">레이블</div>
+            <div class="tags tags-medium tags-red-100">레이블</div>
+            <div class="tags tags-medium tags-red-800">레이블</div>
+            <div class="tags tags-medium tags-FFF4EB">레이블</div>
+            <div class="tags tags-medium tags-F3773D">레이블</div>
+            <div class="tags tags-medium tags-disabled_bg">레이블</div>
+          </div>
+        </div>
+        <hr />
+        <div class="ui-guide-box">
+          <h2>Large <span>38</span></h2>
+          <div class="guide-column-list">
+            <div class="tags tags-large tags-lightGray">레이블</div>
+            <div class="tags tags-large tags-black-80">레이블</div>
+            <div class="tags tags-large tags-white">레이블</div>
+            <div class="tags tags-large tags-lightBlue">레이블</div>
+            <div class="tags tags-large tags-blue">레이블</div>
+            <div class="tags tags-large tags-lightCyan">레이블</div>
+            <div class="tags tags-large tags-cyan">레이블</div>
+            <div class="tags tags-large tags-lightPurple">레이블</div>
+            <div class="tags tags-large tags-purple">레이블</div>
+            <div class="tags tags-large tags-E6E2F2">레이블</div>
+            <div class="tags tags-large tags-violet">레이블</div>
+            <div class="tags tags-large tags-lightRed">레이블</div>
+            <div class="tags tags-large tags-red">레이블</div>
+            <div class="tags tags-large tags-lightYellow">레이블</div>
+            <div class="tags tags-large tags-yellow">레이블</div>
+            <div class="tags tags-large tags-lightPink">레이블</div>
+            <div class="tags tags-large tags-pink">레이블</div>
+            <div class="tags tags-large tags-green-50">레이블</div>
+            <div class="tags tags-large tags-green-300">레이블</div>
+            <div class="tags tags-large tags-red-100">레이블</div>
+            <div class="tags tags-large tags-red-800">레이블</div>
+            <div class="tags tags-large tags-FFF4EB">레이블</div>
+            <div class="tags tags-large tags-F3773D">레이블</div>
+            <div class="tags tags-large tags-disabled_bg">레이블</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+<!--
+/*************************************************************************
+* @ 서비스경로 : CRMPMNG30M
+* @ 파일명      : CRMPMNG30M.html  고객관리 > 고객기여도 조회
+* @ 작성자      : 90195654
+* @ 작성일      : 2024-12-26
+************************** 수정이력 ****************************************
+* 날짜                    작업자                 변경내용
+*_________________________________________________________________________
+* 2024-12-26       90195654                 최초작성
+*************************************************************************/
+-->
+
+<div class="tablet-maxwidth">
+	<div class="group-form-flex mt16">
+		<div class="group-form">
+			<div class="group-title">
+				<strong class="title-medium">통합고객번호 <i class="apos"
+					aria-label="필수 입력">*</i></strong>
+			</div>
+			<div class="group-content">
+				<div class="form" id="itcsnoValForm">
+					<div class="input-wrap input-btn">
+						<input type=text id="itcsno_val" value="" aria-label="통합고객번호" placeholder="기업고객 검색" readonly>
+						<button type="button" class="input-remove"
+							aria-label="입력 내용 삭제"></button>
+						<button type="button" class="input-search"
+							id="cust_search_btn" aria-label="입력 내용 검색"></button>
+					</div>
+					<p class="validate-text"></p>
+				</div>
+			</div>
+		</div>
+		<!-- group-form -->
+		<div class="group-form">
+			<div class="group-title">
+				<strong class="title-medium">대상기간</strong>
+			</div>
+			<div class="group-content">
+				<div class="form" id="dateForm">
+					<div class="input-wrap input-datepicker">
+						<button type="button" aria-label="대상기간 시작일" id="start_btn"></button>
+						<div class="bul">-</div>
+						<button type="button" aria-label="대상기간 종료일"  id="end_btn"></button>
+					</div>
+					<p class="validate-text"></p>
+				</div>
+			</div>
+		</div>
+		<!-- //group-form -->
+	</div>
+	<!-- //group-form -->
+	
+	
+	
+	<!-- group-form -->
+	<div class="group-form mt40">
+		<div class="group-title">
+			<strong class="title-medium">처리구분</strong>
+		</div>
+		<div class="group-content">
+			<div class="form">
+				<div class="inp-group">
+					<div class="inp inp-medium">
+						<label> <input type="radio" name="prcDis" value="2"
+							checked="checked"> <span class="label-title">전점 동일인</span>
+						</label>
+					</div>
+					<div class="inp inp-medium">
+						<label> <input type="radio" name="prcDis" value="1">
+							<span class="label-title">자점 동일인</span>
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //group-form -->
+	
+	
+	<input type="hidden" id="start_day">
+	<input type="hidden" id="end_day"> 
+</div>

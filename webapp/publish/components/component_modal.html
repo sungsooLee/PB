@@ -1,0 +1,609 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <title>자산관리 영업지원 App</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0, user-scalable=no"
+    />
+
+    <script src="../../resources/plugins/jquery/jquery.min.js"></script>
+
+    <!-- [plugins] -->
+    <!-- micromodal -->
+    <link
+      rel="stylesheet"
+      href="../../resources/plugins/micromodal/0.4.10/micromodal.css"
+    />
+    <script src="../../resources/plugins/micromodal/0.4.10/micromodal.min.js"></script>
+    <!-- sortable -->
+    <script src="../../resources/plugins/sortable/1.15.2/Sortable.min.js"></script>
+    <!-- sweetalert2 -->
+    <link
+      rel="stylesheet"
+      href="../../resources/plugins/sweetalert2/11.11.0/sweetalert2.min.css"
+    />
+    <script src="../../resources/plugins/sweetalert2/11.11.0/sweetalert2.min.js"></script>
+    <!-- swiper -->
+    <link
+      rel="stylesheet"
+      href="../../resources/plugins/swiper/11.1.1/swiper-bundle.min.css"
+    />
+    <script src="../../resources/plugins/swiper/11.1.1/swiper-bundle.min.js"></script>
+    <!-- tippy -->
+    <script src="../../resources/plugins/popper.js/2.11.8/umd/popper.min.js"></script>
+    <script src="../../resources/plugins/popper.js/2.11.8/umd/tippy-bundle.umd.min.js"></script>
+    <!-- toastr -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../resources/plugins/toastr/2.1.4/toastr.min.css"
+    />
+    <script src="../../resources/plugins/toastr/2.1.4/toastr.min.js"></script>
+    <!-- jquery-ui -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../resources/plugins/jquery-ui/jquery-ui.css"
+    />
+    <script src="../../resources/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- pinch-zoom -->
+    <script src="../../resources/plugins/pinch-zoom/pinch-zoom.umd.js"></script>
+    <!-- apexcharts -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../resources/plugins/apexcharts/3.50.0/apexcharts.css"
+    />
+    <script src="../../resources/plugins/apexcharts/3.50.0/apexcharts.min.js"></script>
+    <!-- AOS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../resources/plugins/aos/3.0.0-beta.6/aos.css"
+    />
+    <script src="../../resources/plugins/aos/3.0.0-beta.6/aos.js"></script>
+    <!-- jquery-ui-monthpicker-master -->
+    <script src="../../resources/plugins/jquery-ui-monthpicker-master/monthpicker.js"></script>
+    <!-- jquery-touchSwipe -->
+    <script src="../../resources/plugins/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <!-- //[plugins] -->
+
+    <!-- ui source -->
+    <link rel="stylesheet" href="../../resources/css/ui-fonts.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-variable.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-default.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-layout.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-style.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-content.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-bscard.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-plugins.css" />
+
+    <link rel="stylesheet" href="../../resources/css/ui-skeletone.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-mediaquery.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-guide.css" />
+
+    <script src="../../resources/js/ui-script.js"></script>
+    <script src="../../resources/js/ui-temp.js"></script>
+    <!-- 개발서버에서 include 제외해주세요 -->
+    <!-- //ui source -->
+  </head>
+
+  <body>
+    <div class="ui-guide content">
+      <h1>Modal</h1>
+      <div class="ui-guide-section">
+        <div class="guide-column-list">
+          <a
+            href="#"
+            class="btn-large btn-outlined"
+            data-micromodal-trigger="modal-layout"
+            >modal-layout</a
+          >
+          <button
+            class="btn-large btn-outlined"
+            data-micromodal-trigger="modal-select"
+          >
+            modal-select
+          </button>
+          <button
+            class="btn-large btn-outlined"
+            data-micromodal-trigger="modal-select-filter"
+          >
+            modal-select-filter
+          </button>
+          <button
+            class="btn-large btn-outlined"
+            data-micromodal-trigger="modal-alert1"
+          >
+            modal-alert1 (prevent close)
+          </button>
+          <button
+            class="btn-large btn-outlined"
+            data-micromodal-trigger="modal-alert2"
+          >
+            modal-alert2 (text only)
+          </button>
+          <button
+            class="btn-large btn-outlined"
+            data-micromodal-trigger="modal-alert3"
+          >
+            modal-alert3 (text title)
+          </button>
+          <button
+            class="btn-large btn-outlined"
+            data-micromodal-trigger="modal-alert4"
+          >
+            modal-alert4 (two buttons)
+          </button>
+          <button
+            type="button"
+            class="anchor chevron anchor-fluid"
+            data-micromodal-trigger="modal-popup-exFee"
+          >
+            <strong class="title-medium px4">당발송금수수료</strong>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- micromodal -->
+    <div
+      class="micromodal-slide micromodal-slide-bottom modal"
+      id="modal-layout"
+    >
+      <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+        <div class="modal__container" role="dialog" aria-modal="true">
+          <div class="modal__header">
+            <strong class="modal__title title-large">명함 순서 설정</strong>
+            <button
+              type="button"
+              class="modal__close"
+              aria-label="팝업 닫기"
+              data-micromodal-close
+            ></button>
+          </div>
+          <div class="modal__content">
+            <div class="content">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
+              necessitatibus autem consequatur iusto delectus facere, corporis
+              ut culpa atque, omnis placeat dolorem rem repellendus eligendi
+              tempore, reprehenderit neque alias sequi.
+            </div>
+          </div>
+          <div class="modal__footer">
+            <!-- bottom-btn -->
+            <div class="bottom-btn">
+              <div class="btn-wrap">
+                <button
+                  type="button"
+                  class="btn-large btn-primary"
+                  data-micromodal-trigger="modal-select"
+                >
+                  저장
+                </button>
+              </div>
+            </div>
+            <!-- //bottom-btn -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //micromodal -->
+
+    <!-- micromodal -->
+    <div
+      class="micromodal-slide micromodal-slide-bottom modal"
+      id="modal-select"
+    >
+      <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+        <div class="modal__container" role="dialog" aria-modal="true">
+          <div class="modal__header modal__header__alert">
+            <strong class="modal__title title-large">필터</strong>
+            <button
+              type="button"
+              class="modal__close"
+              aria-label="팝업 닫기"
+              data-micromodal-close
+            ></button>
+          </div>
+          <div class="modal__content">
+            <div class="content content-fluid">
+              <div class="select-option">
+                <ul>
+                  <li class="select-all">
+                    <button type="button">
+                      <span>전체</span><i class="badge">10</i>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button">
+                      <span>키맨</span><i class="badge">2</i>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button">
+                      <span>내가 등록한 명함</span><i class="badge">5</i>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button">
+                      <span
+                        >내가 등록한 명함 내가 등록한 명함 내가 등록한 명함 내가
+                        등록한 명함</span
+                      ><i class="badge">5</i>
+                    </button>
+                  </li>
+                  <li class="select-active">
+                    <button type="button" aria-label="선택됨">
+                      <span>PB 1팀</span><i class="badge">3</i>
+                    </button>
+                  </li>
+                  <li class="select-active">
+                    <button type="button" aria-label="선택됨">
+                      <span
+                        >내가 등록한 명함 내가 등록한 명함 내가 등록한 명함 내가
+                        등록한 명함</span
+                      ><i class="badge">3</i>
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //micromodal -->
+
+    <!-- micromodal -->
+    <div
+      class="micromodal-slide micromodal-slide-bottom modal"
+      id="modal-select-filter"
+    >
+      <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+        <div class="modal__container" role="dialog" aria-modal="true">
+          <div class="modal__header modal__header__alert">
+            <button
+              type="button"
+              class="modal__close"
+              aria-label="팝업 닫기"
+              data-micromodal-close
+            ></button>
+          </div>
+          <div class="modal__content">
+            <div class="content content-fluid">
+              <div class="select-option">
+                <strong class="title-large">필터</strong>
+                <ul>
+                  <li class="select-all">
+                    <button type="button">
+                      <span>전체</span><i class="badge">10</i>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button">
+                      <span>키맨</span><i class="badge">2</i>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button">
+                      <span>내가 등록한 명함</span><i class="badge">5</i>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button">
+                      <span
+                        >내가 등록한 명함 내가 등록한 명함 내가 등록한 명함 내가
+                        등록한 명함</span
+                      ><i class="badge">5</i>
+                    </button>
+                  </li>
+                  <li class="select-active">
+                    <button type="button" aria-label="선택됨">
+                      <span>PB 1팀</span><i class="badge">3</i>
+                    </button>
+                  </li>
+                </ul>
+                <div class="stroke stroke4"></div>
+                <strong class="title-large">정렬</strong>
+                <ul>
+                  <li class="select-active">
+                    <button type="button" aria-label="선택됨">
+                      <span>최신순</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button"><span>이름순</span></button>
+                  </li>
+                  <li>
+                    <button type="button"><span>회사명순</span></button>
+                  </li>
+                  <li>
+                    <button type="button"><span>만료일</span></button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="modal__footer">
+            <!-- bottom-btn -->
+            <div class="bottom-btn">
+              <div class="btn-wrap">
+                <button
+                  type="button"
+                  class="btn-large btn-primary"
+                  data-micromodal-close=""
+                >
+                  저장
+                </button>
+              </div>
+            </div>
+            <!-- //bottom-btn -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //micromodal -->
+
+    <!-- micromodal -->
+    <div
+      class="micromodal-slide micromodal-slide-bottom modal"
+      id="modal-alert1"
+    >
+      <div class="modal__overlay" tabindex="-1">
+        <div class="modal__container" role="dialog" aria-modal="true">
+          <div class="modal__header modal__header__alert"></div>
+          <div class="modal__content modal__content__alert">
+            <div class="content">
+              <p class="body-large">
+                텍스트 텍스트 텍스트 텍스트 텍스트 텍스트 텍스트 텍스트 텍스트
+                텍스트 텍스트 텍스트 텍스트 텍스트 텍스트 텍스트 텍스트 텍스트
+              </p>
+            </div>
+          </div>
+          <div class="modal__footer modal__footer_alert">
+            <!-- bottom-btn -->
+            <div class="bottom-btn">
+              <div class="btn-wrap">
+                <button
+                  type="button"
+                  class="btn-large btn-primary"
+                  data-micromodal-close
+                >
+                  저장
+                </button>
+              </div>
+            </div>
+            <!-- //bottom-btn -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //micromodal -->
+
+    <!-- micromodal -->
+    <div
+      class="micromodal-slide micromodal-slide-bottom modal"
+      id="modal-alert2"
+    >
+      <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+        <div class="modal__container" role="dialog" aria-modal="true">
+          <div class="modal__header modal__header__alert">
+            <strong class="modal__title title-large"></strong>
+            <button
+              type="button"
+              class="modal__close"
+              aria-label="팝업 닫기"
+              data-micromodal-close
+            ></button>
+          </div>
+          <div class="modal__content modal__content__alert">
+            <div class="content">
+              <p class="body-large">
+                텍스트 텍스트 텍스트 텍스트 텍스트 텍스트 텍스트 텍스트 텍스트
+                텍스트 텍스트 텍스트 텍스트 텍스트 텍스트 텍스트 텍스트 텍스트
+              </p>
+            </div>
+          </div>
+          <div class="modal__footer modal__footer_alert">
+            <!-- bottom-btn -->
+            <div class="bottom-btn">
+              <div class="btn-wrap">
+                <button
+                  type="button"
+                  class="btn-large btn-primary"
+                  data-micromodal-close
+                >
+                  저장
+                </button>
+              </div>
+            </div>
+            <!-- //bottom-btn -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //micromodal -->
+
+    <!-- micromodal -->
+    <div
+      class="micromodal-slide micromodal-slide-bottom modal"
+      id="modal-alert3"
+    >
+      <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+        <div class="modal__container" role="dialog" aria-modal="true">
+          <div class="modal__header modal__header__alert">
+            <strong class="modal__title title-large">타이틀명</strong>
+            <button
+              type="button"
+              class="modal__close"
+              aria-label="팝업 닫기"
+              data-micromodal-close
+            ></button>
+          </div>
+          <div class="modal__content modal__content__alert">
+            <div class="content">
+              <p class="body-large">
+                텍스트 텍스트 텍스트 텍스트 텍스트 텍스트 텍스트 텍스트 텍스트
+                텍스트 텍스트 텍스트 텍스트 텍스트 텍스트 텍스트 텍스트 텍스트
+              </p>
+            </div>
+          </div>
+          <div class="modal__footer modal__footer_alert">
+            <!-- bottom-btn -->
+            <div class="bottom-btn">
+              <div class="btn-wrap">
+                <button
+                  type="button"
+                  class="btn-large btn-primary"
+                  data-micromodal-close
+                >
+                  저장
+                </button>
+              </div>
+            </div>
+            <!-- //bottom-btn -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //micromodal -->
+
+    <!-- micromodal -->
+    <div
+      class="micromodal-slide micromodal-slide-bottom modal"
+      id="modal-alert4"
+    >
+      <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+        <div class="modal__container" role="dialog" aria-modal="true">
+          <div class="modal__header modal__header__alert">
+            <strong class="modal__title title-large">타이틀명</strong>
+            <button
+              type="button"
+              class="modal__close"
+              aria-label="팝업 닫기"
+              data-micromodal-close
+            ></button>
+          </div>
+          <div class="modal__content modal__content__alert">
+            <div class="content">
+              <p class="body-large">
+                텍스트 텍스트 텍스트 텍스트 텍스트 텍스트 텍스트 텍스트 텍스트
+                텍스트 텍스트 텍스트 텍스트 텍스트 텍스트 텍스트 텍스트 텍스트
+              </p>
+            </div>
+          </div>
+          <div class="modal__footer modal__footer_alert">
+            <!-- bottom-btn -->
+            <div class="bottom-btn">
+              <div class="btn-wrap">
+                <button
+                  type="button"
+                  class="btn-large btn-outlined"
+                  data-micromodal-close
+                >
+                  저장
+                </button>
+                <button
+                  type="button"
+                  class="btn-large btn-primary"
+                  data-micromodal-close
+                >
+                  저장
+                </button>
+              </div>
+            </div>
+            <!-- //bottom-btn -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //micromodal -->
+
+    <!-- micromodal -->
+    <div
+      class="micromodal-slide micromodal-slide-bottom modal"
+      id="modal-popup-exFee"
+    >
+      <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+        <div class="modal__container" role="dialog" aria-modal="true">
+          <div class="modal__header">
+            <strong class="modal__title title-large"
+              >당발송금 수수료 안내</strong
+            >
+            <button
+              type="button"
+              class="modal__close"
+              aria-label="팝업 닫기"
+              data-micromodal-close
+            ></button>
+          </div>
+          <div class="modal__content">
+            <div class="content">
+              <div class="table-col">
+                <table>
+                  <caption>
+                    당발송금 수수료 안내
+                  </caption>
+                  <colgroup>
+                    <col style="" />
+                    <col style="" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">송금액</th>
+                      <th scope="col">수수료</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>USD500 상당액 이하</td>
+                      <td>5,000 원</td>
+                    </tr>
+                    <tr>
+                      <td>USD500 상당액 초과 ~ USD2,000 상당액 이하</td>
+                      <td>10,000 원</td>
+                    </tr>
+                    <tr>
+                      <td>USD2,000 상당액 초과 ~ USD5,000 상당액 이하</td>
+                      <td>15,000 원</td>
+                    </tr>
+                    <tr>
+                      <td>USD5,000 상당액 초과 ~ USD20,000 상당액 이하</td>
+                      <td>15,000 원</td>
+                    </tr>
+                    <tr>
+                      <td>USD20,000 상당액 초과</td>
+                      <td>20,000 원</td>
+                    </tr>
+                    <tr>
+                      <td>CRS 및 WEFAS 송금수표 발행시</td>
+                      <td>건당 USD5 상당액 추가징수</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        인터넷뱅킹 또는 영업점에서 국외점포로 바로바로
+                        해외송금시
+                      </td>
+                      <td>건당 2,000원 상당액 추가징수</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p
+                class="description success body-small fc-typography-caption mt16"
+              >
+                인터넷/WON 뱅킹을 통한 송금시 우리가족우대서비스에 따라 Family
+                등급 이상은 당발송금수수료 면제
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //micromodal -->
+  </body>
+</html>

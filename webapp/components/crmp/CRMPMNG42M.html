@@ -1,0 +1,335 @@
+<!--
+/*************************************************************************
+* @ 서비스경로 : CRMPMNG42M
+* @ 파일명      : CRMPMNG42M.html  고객관리 > 기업정보조회 > 기업일반
+* @ 작성자      : 90195654
+* @ 작성일      : 2024-12-26
+************************** 수정이력 ****************************************
+* 날짜                    작업자                 변경내용
+*_________________________________________________________________________
+* 2024-12-26       90195654                 최초작성
+*************************************************************************/
+-->
+<style>
+	body {
+		background-color: var(--background-bg_lightGray);
+	}
+</style>
+
+<!-- customer-card-list -->
+<div class="customer-info-list">
+
+	<div class="customer-info-title">
+		<strong class="headline-large ac" id="cmm-tit1"></strong>
+		<div class="tag-wrap">
+			<div class="tags tags-medium tags-white" id="cmm-txt2"></div>
+		</div>
+	</div>
+
+	<!-- tab-content -->
+	<div class="tab-content tab-fluid tab-sticky">
+		<ul class="tab-list tab-col overflow-list px24" id="tabList" role="tablist">
+			<li class="tab tab-active"><a role="tab" name="tab" data-link="crmpmng42m" href="javascript:void(0);">기업일반</a></li>
+			<li class="tab"><a role="tab" name="tab" data-link="crmpmng43m" href="javascript:void(0);">기업신용</a></li>
+			<li class="tab"><a role="tab" name="tab" data-link="crmpmng44m" href="javascript:void(0);">재무정보</a></li>
+			<li class="tab"><a role="tab" name="tab" data-link="crmpmng45m" href="javascript:void(0);">종합의견</a></li>
+			<li class="tab"><a role="tab" name="tab" data-link="crmpmng46m" href="javascript:void(0);">연혁</a></li>
+			<li class="tab"><a role="tab" name="tab" data-link="crmpmng47m" href="javascript:void(0);">경영진현황</a></li>
+			<li class="tab"><a role="tab" name="tab" data-link="crmpmng48m" href="javascript:void(0);">거래처현황</a></li>
+			<li class="tab"><a role="tab" name="tab" data-link="crmpmng49m" href="javascript:void(0);">주요주주현황</a></li>
+		</ul>
+	</div>
+	<!-- //tab-content -->
+
+	<div class="tablet-maxwidth tablet-maxwidth-fluid bg-background-bg_white">
+		<a id="tab-prev" class="ui-tab ui-tab-prev" aria-label="이전 탭"></a>
+		<a id="tab-next" class="ui-tab ui-tab-next" aria-label="다음 탭"></a>
+		<!-- customer-contribution-list -->
+		<div class="customer-contribution-list content-fluid px0">
+			<!-- customer-contribution -->
+			<div class="box">
+				<h2 class="headline-small">기업 프로필</h2>
+				<div class="table-row mt24">
+					<table>
+						<caption>기업 프로필</caption>
+						<tbody>
+							<tr>
+								<th scope="row">기업명</th>
+								<td id="enp-nm-trd"></td>
+							</tr>
+							<tr>
+								<th scope="row">기업영문명</th>
+								<td id="enp-nm-eng"></td>
+							</tr>
+							<tr>
+								<th scope="row">법인(주민)번호</th>
+								<td id="cono-pid"></td>
+							</tr>
+							<tr>
+								<th scope="row">사업자번호</th>
+								<td id="bzno"></td>
+							</tr>
+							<tr>
+								<th scope="row">대표자명</th>
+								<td><button class="anchor underline fc-status-active" data-micromodal-trigger="modal-popup01" id="reper-nm"></button></td>
+							</tr>
+							<tr>
+								<th scope="row">설립일</th>
+								<td id="estb-dt"></td>
+							</tr>
+							<tr>
+								<th scope="row">기업규모</th>
+								<td id="enp-sze"></td>
+							</tr>
+							<tr>
+								<th scope="row">기업형태</th>
+								<td id="enp-fcd"></td>
+							</tr>
+							<tr>
+								<th scope="row">기업공개</th>
+								<td id="ipo-cd"></td>
+							</tr>
+							<tr>
+								<th scope="row">기업공개일자</th>
+								<td id="lstn-dt"></td>
+							</tr>
+							<tr>
+								<th scope="row">결산월</th>
+								<td id="acct-eddt"></td>
+							</tr>
+							<tr>
+								<th scope="row">그룹</th>
+								<td id="grp-nm"></td>
+							</tr>
+							<tr>
+								<th scope="row">업종명</th>
+								<td id="bzc"></td>
+							</tr>
+							<tr>
+								<th scope="row">주요상품</th>
+								<td id="mpd"></td>
+							</tr>
+							<tr>
+								<th scope="row">주소</th>
+								<td id="loc-addra"></td>
+							</tr>
+							<tr>
+								<th scope="row">전화</th>
+								<td id="tel-no"></td>
+							</tr>
+							<tr>
+								<th scope="row">팩스</th>
+								<td id="fax-no"></td>
+							</tr>
+							<tr>
+								<th scope="row">홈페이지</th>
+								<td id="hpage-url"></td>
+							</tr>
+							<tr>
+								<th scope="row">전자우편</th>
+								<td id="email"></td>
+							</tr>
+							<tr>
+								<th scope="row">정부및공공기관구분</th>
+								<td id="pubi-fcd"></td>
+							</tr>
+							<tr>
+								<th scope="row">주거래은행</th>
+								<td id="mtx-bnk-nm"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!-- //customer-contribution -->
+
+			<div class="stroke stroke4"></div>
+
+
+			<!-- customer-contribution -->
+			<div class="box">
+				<h2 class="headline-small">주요 주주</h2>
+				<div class="caption-visible mt24">(단위: 천원)</div>
+				<div class="table-col">
+					<table>
+						<caption>주요 주주</caption>
+						<thead>
+							<tr>
+								<th scope="col">주요 주주</th>
+								<th scope="col">지분율</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr id="sthr1">
+								<th scope="row" class="al" id="sthr-nm1"></th>
+								<td class="ar" id="sthr-eqrt1"></td>
+							</tr>
+							<tr id="sthr2">
+								<th scope="row" class="al" id="sthr-nm2"></th>
+								<td class="ar" id="sthr-eqrt2"></td>
+							</tr>
+							<tr id="sthr3">
+								<th scope="row" class="al" id="sthr-nm3"></th>
+								<td class="ar" id="sthr-eqrt3"></td>
+							</tr>
+							<tr style="display: none;" id="sthr-no-data">
+								<td colspan="2">
+									<p class="description caution body-small d-inflex">조회 데이터가 없습니다.</p>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!-- //customer-contribution -->
+
+			<div class="stroke stroke4"></div>
+
+			<!-- customer-contribution -->
+			<div class="box">
+				<h2 class="headline-small">종업원 현황</h2>
+				<div class="caption-visible mt24">(단위: 명)</div>
+				<div class="table-col">
+					<table>
+						<caption>종업원 현황</caption>
+						<thead>
+							<tr>
+								<th scope="col">구분</th>
+								<th scope="col">계</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row" class="al">합계</th>
+								<td class="ar" id="emst-count"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!-- //customer-contribution -->
+
+			<div class="stroke stroke4"></div>
+
+			<!-- customer-contribution -->
+			<div class="box">
+				<h2 class="headline-small">관계회사</h2>
+				<div class="caption-visible mt24">(단위: 천원)</div>
+				<div class="table-col">
+					<table>
+						<caption>관계회사</caption>
+						<thead>
+							<tr>
+								<th scope="col">관계회사</th>
+								<th scope="col">출자비율</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr id="renp1">
+								<th scope="row" class="al" id="renp-nm1"></th>
+								<td class="ar" id="renp-eqrt1"></td>
+							</tr>
+							<tr id="renp2">
+								<th scope="row" class="al" id="renp-nm2"></th>
+								<td class="ar" id="renp-eqrt2"></td>
+							</tr>
+							<tr id="renp3">
+								<th scope="row" class="al" id="renp-nm3"></th>
+								<td class="ar" id="renp-eqrt3"></td>
+							</tr>
+							<tr style="display: none;" id="renp-no-data">
+								<td colspan="2">
+									<p class="description caution body-small d-inflex">조회 데이터가 없습니다.</p>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!-- //customer-contribution -->
+
+			<div class="stroke stroke4"></div>
+
+			<!-- customer-contribution -->
+			<div class="box">
+				<h2 class="headline-small">주요 구매처</h2>
+				<div class="caption-visible mt24">(단위: %)</div>
+				<div class="table-col">
+					<table>
+						<caption>주요 구매처</caption>
+						<thead>
+							<tr>
+								<th scope="col">주요구매처</th>
+								<th scope="col">거래비중</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr id="cust1">
+								<th scope="row" class="al" id="cust-nm1"></th>
+								<td class="ar" id="cust-rt1"></td>
+							</tr>
+							<tr id="cust2">
+								<th scope="row" class="al" id="cust-nm2"></th>
+								<td class="ar" id="cust-rt2"></td>
+							</tr>
+							<tr id="cust3">
+								<th scope="row" class="al" id="cust-nm3"></th>
+								<td class="ar" id="cust-rt3"></td>
+							</tr>
+							<tr style="display: none;" id="cust-no-data">
+								<td colspan="2">
+									<p class="description caution body-small d-inflex">조회 데이터가 없습니다.</p>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!-- //customer-contribution -->
+			
+			<div class="stroke stroke4"></div>
+
+			<!-- customer-contribution -->
+			<div class="box">
+				<h2 class="headline-small">주요 판매처</h2>
+				<div class="caption-visible mt24">(단위: %)</div>
+				<div class="table-col">
+					<table>
+						<caption>주요 주요 판매처</caption>
+						<thead>
+							<tr>
+								<th scope="col">주요판매처</th>
+								<th scope="col">거래비중</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr id="supp1">
+								<th scope="row" class="al" id="supp-nm1"></th>
+								<td class="ar" id="supp-rt1"></td>
+							</tr>
+							<tr id="supp2">
+								<th scope="row" class="al" id="supp-nm2"></th>
+								<td class="ar" id="supp-rt2"></td>
+							</tr>
+							<tr id="supp3">
+								<th scope="row" class="al" id="supp-nm3"></th>
+								<td class="ar" id="supp-rt3"></td>
+							</tr>
+							<tr style="display: none;" id="supp-no-data">
+								<td colspan="2">
+									<p class="description caution body-small d-inflex">조회 데이터가 없습니다.</p>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!-- //customer-contribution -->
+
+		</div>
+		<!-- //customer-contribution-list -->
+	</div>
+
+</div>
+<!-- //customer-card-list -->
+

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/resources/css/d2coding.css" />
+    <link rel="stylesheet" href="/resources/css/NanumGothic.css" />
+    <link rel="stylesheet" href="/resources/css/md-content.min.css" />
+    <link rel="stylesheet" href="../../resources/css/monokai_sublime.css" />
+  </head>
+
+  <body>
+    <div class="markdown-body">
+      <h1>
+        시리즈 관련기능 3 <em><strong>(chartSkill)</strong></em>
+      </h1>
+      <blockquote>
+        <p>
+          시리즈 관련기능 <code>막대 그라데이션</code> 을 구현 할 수 있습니다.
+        </p>
+      </blockquote>
+      <h3>Example</h3>
+      <pre
+        class="hljs"
+      ><code><span class="hljs-keyword">var</span> LightenColor = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">color, percent</span>) </span>{
+  <span class="hljs-keyword">var</span> num = <span class="hljs-built_in">parseInt</span>(color.replace(<span class="hljs-string">"#"</span>,<span class="hljs-string">""</span>), <span class="hljs-number">16</span>),
+  amt = <span class="hljs-built_in">Math</span>.round(<span class="hljs-number">2.55</span> * percent),
+  R = (num &gt;&gt; <span class="hljs-number">16</span>) + amt,
+  B = (num &gt;&gt; <span class="hljs-number">8</span> &amp; <span class="hljs-number">0x00FF</span>) + amt,
+  G = (num &amp; <span class="hljs-number">0x0000FF</span>) + amt;
+
+    <span class="hljs-keyword">return</span> <span class="hljs-string">"#"</span> + (<span class="hljs-number">0x1000000</span> + (R &lt; <span class="hljs-number">255</span> ? R &lt; <span class="hljs-number">1</span> ? <span class="hljs-number">0</span> : R : <span class="hljs-number">255</span>) * <span class="hljs-number">0x10000</span> + (B &lt; <span class="hljs-number">255</span> ? B &lt; <span class="hljs-number">1</span> ? <span class="hljs-number">0</span> : B : <span class="hljs-number">255</span>) * <span class="hljs-number">0x100</span> +)
+  (G &lt; <span class="hljs-number">255</span> ? G &lt; <span class="hljs-number">1</span> ? <span class="hljs-number">0</span> : G : <span class="hljs-number">255</span>)).toString(<span class="hljs-number">16</span>).slice(<span class="hljs-number">1</span>);
+};
+
+<span class="hljs-keyword">var</span> defaultColors = myChart.getOptions().colors; <span class="hljs-comment">//기본 컬러 값</span>
+<span class="hljs-keyword">var</span> gradientColors = [];
+
+<span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i =<span class="hljs-number">0</span>; i &lt; defaultColors.length; i++){
+  gradientColors[i] = {
+    <span class="hljs-attr">radialGradient</span>: {
+      <span class="hljs-attr">cx</span>: <span class="hljs-number">0.5</span>,
+      <span class="hljs-attr">cy</span>: <span class="hljs-number">0.3</span>,
+      <span class="hljs-attr">r</span>: <span class="hljs-number">0.7</span>
+    },
+    <span class="hljs-comment">// 그라데이션 단계</span>
+    stop: [
+      [<span class="hljs-number">0</span>, defaultColors[i]],
+      [<span class="hljs-number">1</span>, LightenColor(defaultColors[i], <span class="hljs-number">30</span>)] <span class="hljs-comment">//brighton</span>
+    ]
+  }
+  myChart.setOptions({
+    <span class="hljs-attr">colors</span>: gradientColors,
+    <span class="hljs-attr">chart</span>: {
+    <span class="hljs-attr">type</span>: <span class="hljs-string">'column'</span>,
+            <span class="hljs-attr">plotBorderColor</span>: <span class="hljs-string">'#346691'</span>,
+            <span class="hljs-attr">plotBorderWidth</span>: <span class="hljs-number">2</span>
+    },
+        <span class="hljs-attr">xAxis</span>: {
+        <span class="hljs-attr">categories</span>: [<span class="hljs-string">'Jan'</span>, <span class="hljs-string">'Feb'</span>, <span class="hljs-string">'Mar'</span>, <span class="hljs-string">'Apr'</span>, <span class="hljs-string">'May'</span>, <span class="hljs-string">'Jun'</span>, <span class="hljs-string">'Jul'</span>, <span class="hljs-string">'Aug'</span>, <span class="hljs-string">'Sep'</span>, <span class="hljs-string">'Oct'</span>,<span class="hljs-string">'Nov'</span>, <span class="hljs-string">'Dec'</span>]
+    },
+    <span class="hljs-attr">series</span>: [{
+        <span class="hljs-attr">data</span>: [<span class="hljs-number">29.9</span>, <span class="hljs-number">71.5</span>, <span class="hljs-number">106.4</span>, <span class="hljs-number">129.2</span>, <span class="hljs-number">144.0</span>, <span class="hljs-number">176.0</span>, <span class="hljs-number">135.6</span>, <span class="hljs-number">148.5</span>, <span class="hljs-number">216.4</span>, <span class="hljs-number">194.1</span>, <span class="hljs-number">95.6</span>, <span class="hljs-number">54.4</span>]
+    }]
+    }, {
+    <span class="hljs-attr">append</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">redraw</span>: <span class="hljs-literal">true</span>
+  }
+);
+</code></pre>
+      <p>
+        <img src="..//resources/images/ibchart/ibchart-series3.png" alt="s" />
+      </p>
+      <h3>Since</h3>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>version</th>
+              <th>desc</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>7.3.0.0</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="../../resources/plugins/jquery/jquery.slim.min.js"></script>
+    <script src="../../resources/plugins/jquery/jquery.mark.min.js"></script>
+    <script src="../../resources/js/ibChart/md-content.js"></script>
+  </body>
+</html>

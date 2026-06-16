@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/resources/css/d2coding.css" />
+    <link rel="stylesheet" href="/resources/css/NanumGothic.css" />
+    <link rel="stylesheet" href="/resources/css/md-content.min.css" />
+    <link rel="stylesheet" href="../../resources/css/monokai_sublime.css" />
+  </head>
+
+  <body>
+    <div class="markdown-body">
+      <h1>
+        Solid gauge chart <em><strong>(special Chart)</strong></em>
+      </h1>
+      <blockquote>
+        <p>
+          Solid gauge 차트를 표현합니다. <code>highcharts-more.js 필요</code>
+          <code>modules/solid-gauge.js 필요</code>
+        </p>
+      </blockquote>
+      <h3>Example</h3>
+      <pre class="hljs"><code><span class="hljs-comment">// 시작 데이터</span>
+<span class="hljs-keyword">var</span> orgVal = <span class="hljs-number">80</span>;
+
+myChart.setOptions({
+  <span class="hljs-attr">chart</span>:{
+    <span class="hljs-attr">type</span>:<span class="hljs-string">'solidgauge'</span>
+  },
+  <span class="hljs-attr">pane</span>: {
+    <span class="hljs-attr">startAngle</span>: <span class="hljs-number">-90</span>, <span class="hljs-comment">// 게이지 바 시작 각도</span>
+    endAngle: <span class="hljs-number">90</span>, <span class="hljs-comment">// 게이지 바 종료 각도</span>
+  },
+  <span class="hljs-attr">yAxis</span>: {
+    <span class="hljs-attr">min</span>: <span class="hljs-number">0</span>, <span class="hljs-comment">// 게이지 바 시작 값</span>
+    max: <span class="hljs-number">200</span>, <span class="hljs-comment">// 게이지 바 종료 값</span>
+  },
+  <span class="hljs-attr">series</span>: [{
+    <span class="hljs-attr">data</span>: [orgVal]
+  }]
+},{
+  <span class="hljs-attr">append</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">redraw</span>: <span class="hljs-literal">true</span>
+});
+
+<span class="hljs-comment">// 1.5초마다 동적으로 랜덤 데이터 삽입하는 구문</span>
+<span class="hljs-keyword">var</span> series = myChart.series(<span class="hljs-number">0</span>);
+<span class="hljs-keyword">this</span>.refreshInterval = setInterval(
+  (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">let</span> newVal,
+    inc;
+    inc = <span class="hljs-built_in">Math</span>.round((<span class="hljs-built_in">Math</span>.random() - <span class="hljs-number">0.5</span>) * <span class="hljs-number">100</span>);
+    newVal = orgVal + inc;
+    <span class="hljs-keyword">if</span> (newVal &lt; <span class="hljs-number">0</span> || newVal &gt; <span class="hljs-number">200</span>) {
+        newVal = orgVal - inc;
+    }
+    <span class="hljs-keyword">if</span> (series != <span class="hljs-number">-1</span>) series.setData([newVal], {<span class="hljs-attr">append</span>:<span class="hljs-literal">false</span>, <span class="hljs-attr">redraw</span>:<span class="hljs-literal">true</span>});
+  }).bind(<span class="hljs-keyword">this</span>),
+  <span class="hljs-number">1500</span>
+);
+</code></pre>
+      <p>
+        <img
+          src="..//resources/images/ibchart/ibchart-solidgauge.png"
+          alt="s"
+        />
+      </p>
+      <h3>Since</h3>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>version</th>
+              <th>desc</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>7.3.0.0</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="../../resources/plugins/jquery/jquery.slim.min.js"></script>
+    <script src="../../resources/plugins/jquery/jquery.mark.min.js"></script>
+    <script src="../../resources/js/ibChart/md-content.js"></script>
+  </body>
+</html>

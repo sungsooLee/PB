@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/resources/css/d2coding.css" />
+    <link rel="stylesheet" href="/resources/css/NanumGothic.css" />
+    <link rel="stylesheet" href="/resources/css/md-content.min.css" />
+    <link rel="stylesheet" href="../../resources/css/monokai_sublime.css" />
+  </head>
+
+  <body>
+    <div class="markdown-body">
+      <h1>
+        도넛 안에 타이틀 넣는 기능 <em><strong>(chartSkill)</strong></em>
+      </h1>
+      <blockquote>
+        <p>도넛형 차트 내 타이틀을 넣을 수 있습니다.</p>
+      </blockquote>
+      <h3>Example</h3>
+      <pre class="hljs"><code>myChart.setOptions({
+  <span class="hljs-attr">colors</span>: [<span class="hljs-string">'#DDDF00'</span>,<span class="hljs-string">'#24CBE5'</span>,<span class="hljs-string">'#64E572'</span>,<span class="hljs-string">'#FF9655'</span>,<span class="hljs-string">'#FFF263'</span>]
+  chart:{
+      <span class="hljs-attr">type</span>:<span class="hljs-string">'pie'</span>
+  },
+  <span class="hljs-attr">title</span>:{
+    <span class="hljs-attr">text</span>: <span class="hljs-string">"title"</span>,
+    <span class="hljs-attr">align</span>: <span class="hljs-string">"center"</span>,
+    <span class="hljs-attr">verticalAlign</span>: <span class="hljs-string">"middle"</span>
+  },
+  <span class="hljs-attr">plotOptions</span>: {
+    <span class="hljs-attr">pie</span>:{
+      <span class="hljs-attr">dataLabels</span>: {
+        <span class="hljs-attr">enabled</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">distance</span>: <span class="hljs-number">-50</span>,
+      }
+    }
+  },
+  <span class="hljs-attr">series</span>: [{
+    <span class="hljs-attr">innerSize</span>: <span class="hljs-string">"50%"</span>,
+    <span class="hljs-attr">data</span> : [
+      [<span class="hljs-string">"축구"</span>, <span class="hljs-number">44</span>]
+      [<span class="hljs-string">"농구"</span>, <span class="hljs-number">26</span>],
+      [<span class="hljs-string">"배구"</span>, <span class="hljs-number">20</span>],
+      [<span class="hljs-string">"야구"</span>, <span class="hljs-number">3</span>],
+    ]
+  }]
+},{
+  <span class="hljs-attr">append</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">redraw</span>: <span class="hljs-literal">true</span>
+});
+</code></pre>
+      <p>
+        <img
+          src="..//resources/images/ibchart/ibchart-donutTitle.png"
+          alt="s"
+        />
+      </p>
+      <h3>Since</h3>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>version</th>
+              <th>desc</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>7.3.0.0</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="../../resources/plugins/jquery/jquery.slim.min.js"></script>
+    <script src="../../resources/plugins/jquery/jquery.mark.min.js"></script>
+    <script src="../../resources/js/ibChart/md-content.js"></script>
+  </body>
+</html>

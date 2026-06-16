@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/resources/css/d2coding.css" />
+    <link rel="stylesheet" href="/resources/css/NanumGothic.css" />
+    <link rel="stylesheet" href="/resources/css/md-content.min.css" />
+    <link rel="stylesheet" href="../../resources/css/monokai_sublime.css" />
+  </head>
+
+  <body>
+    <div class="markdown-body">
+      <h1>
+        levels <em><strong>(plotOptions properties)</strong></em>
+      </h1>
+      <blockquote>
+        <p>데이터 레벨 별 속성을 지정합니다.<br /></p>
+      </blockquote>
+      <h3>Info</h3>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>name</th>
+              <th>type</th>
+              <th>required</th>
+              <th>description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>levels</td>
+              <td><code>object</code></td>
+              <td><span class="optional">선택</span></td>
+              <td>데이터 레벨 별 속성 지정</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <ul>
+        <li>levels Info</li>
+      </ul>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>name</th>
+              <th>type</th>
+              <th>required</th>
+              <th>description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>level</td>
+              <td><code>number</code></td>
+              <td><span class="optional">필수</span></td>
+              <td>
+                속성을 설정할 레벨 지정 (1부터 시작해서 자식마다 +1 됩니다.)
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a
+                  href="#"
+                  onclick="
+                    window.event.preventDefault();
+                    window.event.stopPropagation();
+                    gotoByURL('docs/props/plotOptions/layoutAlgorithm.html');
+                  "
+                  >layoutAlgorithm</a
+                >
+              </td>
+              <td><code>string</code></td>
+              <td><span class="optional">선택</span></td>
+              <td>배치 알고리즘 설정</td>
+            </tr>
+            <tr>
+              <td>borderColor</td>
+              <td><code>color</code></td>
+              <td><span class="optional">선택</span></td>
+              <td>테두리 색상</td>
+            </tr>
+            <tr>
+              <td>borderWidth</td>
+              <td><code>number</code></td>
+              <td><span class="optional">선택</span></td>
+              <td>테두리 너비</td>
+            </tr>
+            <tr>
+              <td>color</td>
+              <td><code>color</code></td>
+              <td><span class="optional">선택</span></td>
+              <td>
+                색상<br />참고 : <code>colors</code> 나
+                <code>colorAxis</code> 속성이 우선됩니다.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a
+                  href="#"
+                  onclick="
+                    window.event.preventDefault();
+                    window.event.stopPropagation();
+                    gotoByURL('docs/props/plotOptions/dataLabels.html');
+                  "
+                  >dataLabels</a
+                >
+              </td>
+              <td><code>object</code></td>
+              <td><span class="optional">선택</span></td>
+              <td>데이터 레이블 설정</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Example</h3>
+      <pre class="hljs"><code>myChart.setOptions({
+  <span class="hljs-attr">chart</span>: {
+    <span class="hljs-attr">type</span>: <span class="hljs-string">"treemap"</span>
+  },
+  <span class="hljs-attr">plotOptions</span>: {
+    <span class="hljs-attr">treemap</span>: {
+     <span class="hljs-attr">levels</span>: [ <span class="hljs-comment">// 레벨 별 속성 설정</span>
+        {
+          <span class="hljs-attr">level</span>: <span class="hljs-number">2</span>,
+          <span class="hljs-attr">dataLabels</span>: {
+            <span class="hljs-attr">enabled</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-attr">color</span>: <span class="hljs-string">"#ffffff"</span>
+          }
+        },
+        {
+          <span class="hljs-attr">level</span>: <span class="hljs-number">1</span>,
+          <span class="hljs-attr">borderWidth</span>: <span class="hljs-number">8</span>,
+          <span class="hljs-attr">dataLabels</span>: {
+            <span class="hljs-attr">enabled</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-attr">backgroundColor</span>: <span class="hljs-string">"#ffffff"</span>
+          }
+        },
+     ]
+   }
+ },
+  <span class="hljs-attr">series</span>: [{
+    <span class="hljs-attr">data</span> : [
+      {
+        <span class="hljs-attr">id</span>: <span class="hljs-string">'0.0'</span>, <span class="hljs-comment">// level : 1</span>
+        parent: <span class="hljs-string">''</span>,
+        <span class="hljs-attr">value</span> : <span class="hljs-number">30</span>,
+        <span class="hljs-attr">name</span>: <span class="hljs-string">'A'</span>
+      },
+      {
+        <span class="hljs-attr">id</span>: <span class="hljs-string">'1.1'</span>, <span class="hljs-comment">// level : 2</span>
+        parent: <span class="hljs-string">'0.0'</span>,
+        <span class="hljs-attr">value</span> : <span class="hljs-number">20</span>,
+        <span class="hljs-attr">name</span>: <span class="hljs-string">'a-1'</span>
+      },
+      {
+        <span class="hljs-attr">id</span>: <span class="hljs-string">'1.2'</span>, <span class="hljs-comment">// level : 2</span>
+        parent: <span class="hljs-string">'0.0'</span>,
+        <span class="hljs-attr">value</span> : <span class="hljs-number">10</span>,
+        <span class="hljs-attr">name</span>: <span class="hljs-string">'a-2'</span>
+      },
+      {
+        <span class="hljs-attr">id</span>: <span class="hljs-string">'0.1'</span>, <span class="hljs-comment">// level : 1</span>
+        parent: <span class="hljs-string">''</span>,
+        <span class="hljs-attr">value</span> : <span class="hljs-number">10</span>,
+        <span class="hljs-attr">name</span>: <span class="hljs-string">'B'</span>
+      },{
+        <span class="hljs-attr">id</span>: <span class="hljs-string">'2.1'</span>, <span class="hljs-comment">// level : 2</span>
+        parent: <span class="hljs-string">'0.1'</span>,
+        <span class="hljs-attr">value</span> : <span class="hljs-number">10</span>,
+        <span class="hljs-attr">name</span>: <span class="hljs-string">'b-1'</span>
+      }
+    ]
+  }]
+}, {
+  <span class="hljs-attr">append</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">redraw</span>: <span class="hljs-literal">true</span>
+});
+</code></pre>
+      <h3>제공 버전</h3>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>version</th>
+              <th>desc</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>7.3.0.0</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="../../resources/plugins/jquery/jquery.slim.min.js"></script>
+    <script src="../../resources/plugins/jquery/jquery.mark.min.js"></script>
+    <script src="../../resources/js/ibChart/md-content.js"></script>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<div class="ui-guide">
+    <h1>FileUpload Sample</h1>
+    <p>파일 업로드를 제공합니다.</p>
+
+    <br/>
+
+    <br/>
+
+    <div class="ui-guide-section">
+        <div class="ui-guide-box">
+            <h2>파일명은 서버에서 생성</h2>
+            <br/>
+            <dl>
+                <dt></dt>
+                <dd>
+                    <div class="form">
+                        <div class="input-wrap">
+                            <input id="fileNm" type="text" data-bind="fileNm" placeholder="파일명"
+                                   title="input"/>
+                            <button type="button" class="input-remove" name="input1Btn"
+                                    aria-label="입력 내용 삭제"></button>
+                        </div>
+                        <br/>
+                        <div class="input-wrap">
+                            <input id="filePath" type="text" data-bind="filePath" placeholder="파일경로"
+                                   title="input"/>
+                            <button type="button" class="input-remove" name="input1Btn"
+                                    aria-label="입력 내용 삭제"></button>
+                        </div>
+                        <br/>
+                        <div action="/upload" class="dropzone dropzone-attach-app"></div>
+                        <br/>
+                        <button id="myBtn" type="button" name='dataBindBtn' class="btn-large btn-primary">
+                            업로드 진행
+                        </button>
+
+                        <textarea aria-label="결과값" id="resultData" data-bind="resultData"></textarea>
+                    </div>
+                </dd>
+            </dl>
+            <hr>
+        </div>
+    </div>
+</div>
+
+<input type="file" name="file" id="fileInput" accept="image/jpeg, image/jpg, image/png, .zip" multiple>

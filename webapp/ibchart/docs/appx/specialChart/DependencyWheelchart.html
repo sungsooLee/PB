@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/resources/css/d2coding.css" />
+    <link rel="stylesheet" href="/resources/css/NanumGothic.css" />
+    <link rel="stylesheet" href="/resources/css/md-content.min.css" />
+    <link rel="stylesheet" href="../../resources/css/monokai_sublime.css" />
+  </head>
+
+  <body>
+    <div class="markdown-body">
+      <h1>
+        Dependency wheel chart <em><strong>(special Chart)</strong></em>
+      </h1>
+      <blockquote>
+        <p>
+          Dependency wheel 차트를 표현합니다.
+          <code>modules/sankey.js 필요</code>
+          <code>modules/dependency-wheel.js 필요</code>
+        </p>
+      </blockquote>
+      <h3>Example</h3>
+      <pre class="hljs"><code>myChart.setOptions({
+  <span class="hljs-attr">chart</span>: {
+    <span class="hljs-attr">type</span>: <span class="hljs-string">'dependencywheel'</span>,
+    
+  },
+  <span class="hljs-attr">plotOptions</span>: {
+    <span class="hljs-attr">series</span>: {
+      <span class="hljs-attr">dataLabels</span>: {
+        <span class="hljs-attr">color</span>: <span class="hljs-string">'#000000'</span>,
+        <span class="hljs-attr">textPath</span>: {
+          <span class="hljs-attr">enabled</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">// 마커의 모양을 따라서 데이터 라벨 표시</span>
+          attributes: {
+            <span class="hljs-attr">dy</span>: <span class="hljs-number">5</span> <span class="hljs-comment">// textPath 의 y축 조절</span>
+          }
+        },
+        <span class="hljs-attr">distance</span>: <span class="hljs-number">10</span> <span class="hljs-comment">// 중심 기준으로 떨어질 정도</span>
+      },
+      <span class="hljs-attr">size</span>: <span class="hljs-string">'95%'</span> <span class="hljs-comment">// 시리즈가 화면에 꽉차서 데이터 라벨이 잘리는 것을 방지</span>
+    }
+  },
+  <span class="hljs-attr">series</span>: [{
+    <span class="hljs-comment">// from 에서 to 까지 weight 만큼</span>
+	<span class="hljs-string">'keys'</span>: [<span class="hljs-string">'from'</span>,<span class="hljs-string">'to'</span>,<span class="hljs-string">'weight'</span>], <span class="hljs-comment">// Dependency wheel 에서 해당 코드 선언 필수</span>
+	<span class="hljs-string">'data'</span>: [
+        [<span class="hljs-string">'한국'</span>,<span class="hljs-string">'중국'</span>,<span class="hljs-number">6225</span>], [<span class="hljs-string">'한국'</span>,<span class="hljs-string">'홍콩'</span>,<span class="hljs-number">5287</span>], [<span class="hljs-string">'한국'</span>,<span class="hljs-string">'베트남'</span>,<span class="hljs-number">1628</span>], [<span class="hljs-string">'한국'</span>,<span class="hljs-string">'대만'</span>,<span class="hljs-number">1084</span>], [<span class="hljs-string">'한국'</span>,<span class="hljs-string">'인도'</span>,<span class="hljs-number">301</span>], [<span class="hljs-string">'한국'</span>,<span class="hljs-string">'말레이시아'</span>,<span class="hljs-number">170</span>], [<span class="hljs-string">'한국'</span>,<span class="hljs-string">'일본'</span>,<span class="hljs-number">95</span>], [<span class="hljs-string">'한국'</span>,<span class="hljs-string">'미국'</span>,<span class="hljs-number">62</span>], [<span class="hljs-string">'한국'</span>,<span class="hljs-string">'싱가포르'</span>,<span class="hljs-number">38</span>], 
+		[<span class="hljs-string">'미국'</span>,<span class="hljs-string">'대만'</span>,<span class="hljs-number">477</span>], [<span class="hljs-string">'미국'</span>,<span class="hljs-string">'싱가포르'</span>,<span class="hljs-number">342</span>], [<span class="hljs-string">'미국'</span>,<span class="hljs-string">'홍콩'</span>,<span class="hljs-number">189</span>], [<span class="hljs-string">'미국'</span>,<span class="hljs-string">'베트남'</span>,<span class="hljs-number">54</span>], [<span class="hljs-string">'미국'</span>,<span class="hljs-string">'말레이시아'</span>,<span class="hljs-number">64</span>], [<span class="hljs-string">'미국'</span>,<span class="hljs-string">'중국'</span>,<span class="hljs-number">41</span>], [<span class="hljs-string">'미국'</span>,<span class="hljs-string">'한국'</span>,<span class="hljs-number">15</span>], [<span class="hljs-string">'미국'</span>,<span class="hljs-string">'일본'</span>,<span class="hljs-number">14</span>], [<span class="hljs-string">'미국'</span>,<span class="hljs-string">'인도'</span>,<span class="hljs-number">11</span>], 
+		[<span class="hljs-string">'싱가포르'</span>,<span class="hljs-string">'홍콩'</span>,<span class="hljs-number">438</span>], [<span class="hljs-string">'싱가포르'</span>,<span class="hljs-string">'대만'</span>,<span class="hljs-number">216</span>], [<span class="hljs-string">'싱가포르'</span>,<span class="hljs-string">'한국'</span>,<span class="hljs-number">119</span>], [<span class="hljs-string">'싱가포르'</span>,<span class="hljs-string">'중국'</span>,<span class="hljs-number">110</span>], [<span class="hljs-string">'싱가포르'</span>,<span class="hljs-string">'미국'</span>,<span class="hljs-number">44</span>], [<span class="hljs-string">'싱가포르'</span>,<span class="hljs-string">'일본'</span>,<span class="hljs-number">30</span>], [<span class="hljs-string">'싱가포르'</span>,<span class="hljs-string">'베트남'</span>,<span class="hljs-number">22</span>], [<span class="hljs-string">'싱가포르'</span>,<span class="hljs-string">'인도'</span>,<span class="hljs-number">13</span>], 
+		[<span class="hljs-string">'홍콩'</span>,<span class="hljs-string">'대만'</span>,<span class="hljs-number">2969</span>], [<span class="hljs-string">'홍콩'</span>,<span class="hljs-string">'인도'</span>,<span class="hljs-number">2230</span>], [<span class="hljs-string">'홍콩'</span>,<span class="hljs-string">'한국'</span>,<span class="hljs-number">894</span>], [<span class="hljs-string">'홍콩'</span>,<span class="hljs-string">'베트남'</span>,<span class="hljs-number">555</span>], [<span class="hljs-string">'홍콩'</span>,<span class="hljs-string">'싱가포르'</span>,<span class="hljs-number">171</span>], [<span class="hljs-string">'홍콩'</span>,<span class="hljs-string">'미국'</span>,<span class="hljs-number">111</span>], [<span class="hljs-string">'홍콩'</span>,<span class="hljs-string">'말레이시아'</span>,<span class="hljs-number">26</span>], [<span class="hljs-string">'홍콩'</span>,<span class="hljs-string">'일본'</span>,<span class="hljs-number">46</span>], 
+		[<span class="hljs-string">'대만'</span>,<span class="hljs-string">'싱가포르'</span>,<span class="hljs-number">594</span>], [<span class="hljs-string">'대만'</span>,<span class="hljs-string">'중국'</span>,<span class="hljs-number">575</span>], [<span class="hljs-string">'대만'</span>,<span class="hljs-string">'홍콩'</span>,<span class="hljs-number">264</span>], [<span class="hljs-string">'대만'</span>,<span class="hljs-string">'일본'</span>,<span class="hljs-number">104</span>], [<span class="hljs-string">'대만'</span>,<span class="hljs-string">'미국'</span>,<span class="hljs-number">22</span>], [<span class="hljs-string">'대만'</span>,<span class="hljs-string">'말레이시아'</span>,<span class="hljs-number">79</span>], [<span class="hljs-string">'대만'</span>,<span class="hljs-string">'한국'</span>,<span class="hljs-number">11</span>], [<span class="hljs-string">'대만'</span>,<span class="hljs-string">'베트남'</span>,<span class="hljs-number">12</span>], 
+		[<span class="hljs-string">'일본'</span>,<span class="hljs-string">'대만'</span>,<span class="hljs-number">1487</span>], [<span class="hljs-string">'일본'</span>,<span class="hljs-string">'중국'</span>,<span class="hljs-number">847</span>], [<span class="hljs-string">'일본'</span>,<span class="hljs-string">'홍콩'</span>,<span class="hljs-number">46</span>], [<span class="hljs-string">'일본'</span>,<span class="hljs-string">'말레이시아'</span>,<span class="hljs-number">195</span>], [<span class="hljs-string">'일본'</span>,<span class="hljs-string">'싱가포르'</span>,<span class="hljs-number">22</span>], [<span class="hljs-string">'일본'</span>,<span class="hljs-string">'베트남'</span>,<span class="hljs-number">19</span>], [<span class="hljs-string">'일본'</span>,<span class="hljs-string">'미국'</span>,<span class="hljs-number">15</span>], 
+		[<span class="hljs-string">'베트남'</span>,<span class="hljs-string">'한국'</span>,<span class="hljs-number">36</span>], [<span class="hljs-string">'베트남'</span>,<span class="hljs-string">'인도'</span>,<span class="hljs-number">26</span>], [<span class="hljs-string">'베트남'</span>,<span class="hljs-string">'싱가포르'</span>,<span class="hljs-number">23</span>], [<span class="hljs-string">'말레이시아'</span>,<span class="hljs-string">'싱가포르'</span>,<span class="hljs-number">151</span>], [<span class="hljs-string">'말레이시아'</span>,<span class="hljs-string">'대만'</span>,<span class="hljs-number">79</span>], [<span class="hljs-string">'말레이시아'</span>,<span class="hljs-string">'중국'</span>,<span class="hljs-number">43</span>], [<span class="hljs-string">'말레이시아'</span>,<span class="hljs-string">'미국'</span>,<span class="hljs-number">27</span>], [<span class="hljs-string">'말레이시아'</span>,<span class="hljs-string">'홍콩'</span>,<span class="hljs-number">18</span>], 
+		[<span class="hljs-string">'중국'</span>,<span class="hljs-string">'홍콩'</span>,<span class="hljs-number">5207</span>], [<span class="hljs-string">'중국'</span>,<span class="hljs-string">'한국'</span>,<span class="hljs-number">4521</span>], [<span class="hljs-string">'중국'</span>,<span class="hljs-string">'인도'</span>,<span class="hljs-number">399</span>], [<span class="hljs-string">'중국'</span>,<span class="hljs-string">'대만'</span>,<span class="hljs-number">2572</span>], [<span class="hljs-string">'중국'</span>,<span class="hljs-string">'베트남'</span>,<span class="hljs-number">1607</span>], [<span class="hljs-string">'중국'</span>,<span class="hljs-string">'말레이시아'</span>,<span class="hljs-number">996</span>], [<span class="hljs-string">'중국'</span>,<span class="hljs-string">'싱가포르'</span>,<span class="hljs-number">158</span>], [<span class="hljs-string">'중국'</span>,<span class="hljs-string">'미국'</span>,<span class="hljs-number">92</span>], 
+		[<span class="hljs-string">'인도'</span>,<span class="hljs-string">'베트남'</span>,<span class="hljs-number">16</span>], [<span class="hljs-string">'인도'</span>,<span class="hljs-string">'홍콩'</span>,<span class="hljs-number">12</span>] 	
+	]}]
+},
+{
+  <span class="hljs-attr">append</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">redraw</span>: <span class="hljs-literal">true</span>
+});
+</code></pre>
+      <p>
+        <img
+          src="..//resources/images/ibchart/ibchart-dependencywheel.png"
+          alt="s"
+        />
+      </p>
+      <h3>Since</h3>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>version</th>
+              <th>desc</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>7.3.0.0</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="../../resources/plugins/jquery/jquery.slim.min.js"></script>
+    <script src="../../resources/plugins/jquery/jquery.mark.min.js"></script>
+    <script src="../../resources/js/ibChart/md-content.js"></script>
+  </body>
+</html>

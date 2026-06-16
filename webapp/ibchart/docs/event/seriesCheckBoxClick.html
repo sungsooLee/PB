@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' href='/resources/css/d2coding.css' />
+    <link rel='stylesheet' href='/resources/css/NanumGothic.css' />
+    <link rel='stylesheet' href='../../assets/css/md-content.min.css' />
+    <link rel="stylesheet" href="../../assets/vendors/highlightjs/styles/monokai_sublime.css">
+</head>
+
+<body>
+    <div class="markdown-body">
+        <h1>seriesCheckBoxClick <em><strong>(event)</strong></em></h1>
+        <blockquote>
+            <p>시리즈의 체크박스를 클릭 하는 시점에 발생하는 이벤트입니다.</p>
+        </blockquote>
+        <h3>Info</h3>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Required</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>event</td>
+                        <td><code>object</code></td>
+                        <td><span class='optional'>선택</span></td>
+                        <td>이벤트 인자 객체</td>
+                    </tr>
+                    <tr>
+                        <td>type</td>
+                        <td><code>string</code></td>
+                        <td><span class='optional'>선택(click)</span></td>
+                        <td>이벤트 타입</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h3>Context Info</h3>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Required</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>this</td>
+                        <td><code>object</code></td>
+                        <td><span class='optional'>선택</span></td>
+                        <td>시리즈 속성</td>
+                    </tr>
+                    <tr>
+                        <td>this.<hi>name</td>
+                        <td><code>string</code></td>
+                        <td><span class='optional'>선택</span></td>
+                        <td>시리즈명</td>
+                    </tr>
+                    <tr>
+                        <td>this.index</td>
+                        <td><code>number</code></td>
+                        <td><span class='optional'>선택</span></td>
+                        <td>시리즈 인덱스</td>
+                    </tr>
+                    <tr>
+                        <td>this.data</td>
+                        <td><code>array</code></td>
+                        <td><span class='optional'>선택</span></td>
+                        <td>시리즈의 데이터</td>
+                    </tr>
+                    <tr>
+                        <td>this.xData</td>
+                        <td><code>array</code></td>
+                        <td><span class='optional'>선택</span></td>
+                        <td>시리즈의 x축 데이터</td>
+                    </tr>
+                    <tr>
+                        <td>this.yData</td>
+                        <td><code>array</code></td>
+                        <td><span class='optional'>선택</span></td>
+                        <td>시리즈의 y축 데이터</td>
+                    </tr>
+                    <tr>
+                        <td>this.dataMax</td>
+                        <td><code>number</code></td>
+                        <td><span class='optional'>선택</span></td>
+                        <td>시리즈의 데이터에서 최대 값</td>
+                    </tr>
+                    <tr>
+                        <td>this.dataMin</td>
+                        <td><code>number</code></td>
+                        <td><span class='optional'>선택</span></td>
+                        <td>시리즈의 데이터에서 최소 값</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h3>Example</h3>
+        <pre class="hljs"><code>myChart.setEvents({
+  <span class="hljs-attr">seriesCheckBoxClick</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"seriesCheckBoxClick"</span>);
+  }
+});
+
+myChart.setEventListener(<span class="hljs-string">"seriesCheckBoxClick"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>)</span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"seriesCheckBoxClick"</span>);
+});
+
+myChart.setOptions({
+  <span class="hljs-attr">events</span> : {
+    <span class="hljs-attr">seriesCheckBoxClick</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) </span>{
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"seriesCheckBoxClick"</span>);
+    }
+  }
+})
+</code></pre>
+        <h3>Since</h3>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>version</th>
+                        <th>desc</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>7.3.0.0</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="../../resources/plugins/jquery/jquery.slim.min.js"></script>
+    <script src="../../resources/plugins/jquery/jquery.mark.min.js"></script>
+    <script src="../../assets/js/md-content.js"></script>
+</body>
+
+</html>

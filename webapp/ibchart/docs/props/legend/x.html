@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/resources/css/d2coding.css" />
+    <link rel="stylesheet" href="/resources/css/NanumGothic.css" />
+    <link rel="stylesheet" href="/resources/css/md-content.min.css" />
+    <link rel="stylesheet" href="../../resources/css/monokai_sublime.css" />
+  </head>
+
+  <body>
+    <div class="markdown-body">
+      <h1>
+        x <em><strong>(legend properties)</strong></em>
+      </h1>
+      <blockquote>
+        <p>
+          범례의 좌우 포지션 이동값을 설정합니다.<br />
+          음수는 왼쪽, 양수는 오른쪽으로 이동합니다.
+        </p>
+      </blockquote>
+      <h3>Info</h3>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>name</th>
+              <th>type</th>
+              <th>required (default)</th>
+              <th>description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>x</td>
+              <td><code>number</code></td>
+              <td><span class="optional">선택(0)</span></td>
+              <td>좌우 포지션 이동 값</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Example</h3>
+      <pre class="hljs"><code>myChart.setOptions({
+  <span class="hljs-attr">chart</span>: {
+    <span class="hljs-attr">type</span>: <span class="hljs-string">"column"</span>
+  },
+  <span class="hljs-attr">legend</span>: {
+    <span class="hljs-attr">align</span>: <span class="hljs-string">"left"</span>,
+    <span class="hljs-attr">x</span>: <span class="hljs-number">57</span>  <span class="hljs-comment">// 좌우 포지션 이동 값</span>
+  },
+  <span class="hljs-attr">series</span>: [{
+    <span class="hljs-attr">name</span>: <span class="hljs-string">"서울"</span>,
+    <span class="hljs-attr">data</span> : [<span class="hljs-number">60</span>,<span class="hljs-number">40</span>,<span class="hljs-number">20</span>,<span class="hljs-number">80</span>]
+  },{
+    <span class="hljs-attr">name</span>: <span class="hljs-string">"인천"</span>,
+    <span class="hljs-attr">data</span> : [<span class="hljs-number">30</span>,<span class="hljs-number">50</span>,<span class="hljs-number">90</span>,<span class="hljs-number">70</span>]
+  },{
+    <span class="hljs-attr">name</span>: <span class="hljs-string">"부산"</span>,
+    <span class="hljs-attr">data</span> : [<span class="hljs-number">40</span>,<span class="hljs-number">70</span>,<span class="hljs-number">30</span>,<span class="hljs-number">60</span>]
+  }]
+}, {
+  <span class="hljs-attr">append</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">redraw</span>: <span class="hljs-literal">true</span>
+});
+</code></pre>
+      <h3>제공 버전</h3>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>version</th>
+              <th>desc</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>7.3.0.0</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="../../resources/plugins/jquery/jquery.slim.min.js"></script>
+    <script src="../../resources/plugins/jquery/jquery.mark.min.js"></script>
+    <script src="../../resources/js/ibChart/md-content.js"></script>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<!--
+/*************************************************************************
+* @ 서비스경로 : MNG01M
+* @ 파일명      : MNG01M.html 관리 > 고객명함 메모 관리 > 목록
+* @ 화면ID		: PBWAD000000
+* @ 작성자      : 90194835
+* @ 작성일      : 2025-01-17
+************************** 수정이력 ****************************************
+* 날짜                    작업자                 변경내용
+*_________________________________________________________________________
+* 2025-01-17            윤은정                 최초작성
+*************************************************************************/
+-->
+
+
+<!-- group-form -->
+<div class="group-form mt16">
+	<div class="group-title">
+		<strong class="title-medium">수정 기간</strong>
+	</div>
+	<div class="group-content">
+		<div class="form" id="dateChk">
+			<div class="label"></div>
+			<div class="input-wrap input-datepicker">
+				<button type="button" aria-label="대상기간 시작일" data-micromodal-trigger="modal-datepicker1" data-bind="stdDt" id="stdDt"></button>
+				<div class="bul">-</div>
+				<button type="button" aria-label="대상기간 종료일" data-micromodal-trigger="modal-datepicker2" data-bind="endDt" id="endDt"></button>
+			</div>
+			<p class="validate-text" id="dateMsg"></p>
+		</div>
+	</div>
+</div>
+<!-- //group-form -->
+
+<!-- group-form -->
+<div class="group-form mt16">
+	<div class="group-content">
+		<div class="form">
+			<button class="select" data-placeholder="선택하세요" id="btnItems"><span>등록자</span></button>
+		</div>
+	</div>
+	<div class="group-content">
+        <div class="form" id="keywordChk">
+            <div class="label"></div>
+            <div class="input-wrap">
+                <input type="text" placeholder="검색어 입력" aria-label="검색어" id="keyword" data-bind="keyword">
+                <button type="button" class="input-remove" aria-label="입력 내용 삭제"></button>
+            </div>
+            <p class="validate-text" id="keywordMsg"></p>
+        </div>
+        <p class="description info body-small fc-typography-caption mt8">등록자, 고객명, 회사는 정확히 일치하는 결과만 검색됩니다.</p>
+	</div>
+</div>
+<!-- //group-form -->
+
+<div class="btn-wrap">
+	<button type="button" class="btn-medium btn-primary" id="btnSearch"><i class="ico-search"></i>검색</button>
+</div>
+
+<div id="yesData"> 
+<!-- memo-list -->
+	<div class="memo-list mt16" id="listContainer">
+	</div>
+</div>
+<!-- //memo-list -->
+
+<!-- division-center -->
+<div class="division-center" id="noData" style="display: none;">
+
+	<div class="no-result">
+		<i class="icon-only icon-48 icon-noresult bg-icon-gray_1"></i>
+		<p class="body-medium fw-400">등록된 메모가 없습니다.</p>
+	</div>
+
+</div>
+<!-- //division-center -->

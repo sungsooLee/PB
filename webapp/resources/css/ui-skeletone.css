@@ -1,0 +1,55 @@
+@charset "utf-8";
+
+@keyframes shine {
+    to {background-position-x:-200%;}
+}
+
+.content.loading .stock-index-core {}
+.content.loading .stock-index-core ul {}
+.content.loading .stock-index-core ul li {}
+.content.loading .stock-index-core ul li:not(:last-child):after {}
+.content.loading .stock-index-core dl {padding:0 10px;}
+.content.loading .stock-index-core dl dt {height:15px;background:linear-gradient(120deg, #e5e5e5 30%, #f0f0f0 38%, #f0f0f0 40%, #e5e5e5 48%);border-radius:5px;background-size:200% 100%;-webkit-animation:1.5s shine linear infinite;animation:1.5s shine linear infinite;}
+.content.loading .stock-index-core dl dd {height:37px;background:linear-gradient(120deg, #e5e5e5 30%, #f0f0f0 38%, #f0f0f0 40%, #e5e5e5 48%);border-radius:5px;background-size:200% 100%;-webkit-animation:1.5s shine linear infinite;animation:1.5s shine linear infinite;}
+.content.loading .stock-index-core dl dd:last-child {height:23px;}
+
+.content.loading .stock-index-list a > * {flex:auto;}
+.content.loading .stock-index-list dl dt {height:15px;background:linear-gradient(120deg, #e5e5e5 30%, #f0f0f0 38%, #f0f0f0 40%, #e5e5e5 48%);border-radius:5px;background-size:200% 100%;-webkit-animation:1.5s shine linear infinite;animation:1.5s shine linear infinite;}
+.content.loading .stock-index-list dl dd {height:18px;background:linear-gradient(120deg, #e5e5e5 30%, #f0f0f0 38%, #f0f0f0 40%, #e5e5e5 48%);border-radius:5px;background-size:200% 100%;-webkit-animation:1.5s shine linear infinite;animation:1.5s shine linear infinite;}
+.content.loading .stock-index-list a > div {height:23px;background:linear-gradient(120deg, #e5e5e5 30%, #f0f0f0 38%, #f0f0f0 40%, #e5e5e5 48%);border-radius:5px;background-size:200% 100%;-webkit-animation:1.5s shine linear infinite;animation:1.5s shine linear infinite;}
+.content.loading .stock-index-list .stock-remove {height:15px;}
+
+.content.loading .stock-index-list.content-fluid a {padding:24px;box-shadow:none;border-radius:0;}
+.content.loading .stock-index-list.content-fluid dl {}
+.content.loading .stock-index-list.content-fluid dl dt {height:18px;}
+.content.loading .stock-index-list.content-fluid dl dd {height:23px;}
+
+/* .content.loading .visual-headline span {height:27px;background:linear-gradient(120deg, #e5e5e5 30%, #f0f0f0 38%, #f0f0f0 40%, #e5e5e5 48%);border-radius:5px;background-size:200% 100%;-webkit-animation:1.5s shine linear infinite;animation:1.5s shine linear infinite;} */
+/* .content.loading .visual-headline strong {height:90px;background:linear-gradient(120deg, #e5e5e5 30%, #f0f0f0 38%, #f0f0f0 40%, #e5e5e5 48%);border-radius:5px;background-size:200% 100%;-webkit-animation:1.5s shine linear infinite;animation:1.5s shine linear infinite;} */
+.content.loading .main-schedule-title .today strong {background:linear-gradient(120deg, #e5e5e5 30%, #f0f0f0 38%, #f0f0f0 40%, #e5e5e5 48%);border-radius:5px;background-size:200% 100%;-webkit-animation:1.5s shine linear infinite;animation:1.5s shine linear infinite;}
+.content.loading .main-schedule-title .today {flex:1 1 100%;}
+.content.loading .main-schedule-title .today .date {height:26px;flex:1 1 100%;background:linear-gradient(120deg, #e5e5e5 30%, #f0f0f0 38%, #f0f0f0 40%, #e5e5e5 48%);border-radius:5px;background-size:200% 100%;-webkit-animation:1.5s shine linear infinite;animation:1.5s shine linear infinite;}
+.content.loading .main-schedule-week ul li {background:linear-gradient(120deg, #e5e5e5 30%, #f0f0f0 38%, #f0f0f0 40%, #e5e5e5 48%);border-radius:5px;background-size:200% 100%;-webkit-animation:1.5s shine linear infinite;animation:1.5s shine linear infinite;}
+.content.loading .main-schedule-list ul li a .tag-wrap {height:24px;flex:0 0 25%;background:linear-gradient(120deg, #e5e5e5 30%, #f0f0f0 38%, #f0f0f0 40%, #e5e5e5 48%);border-radius:5px;background-size:200% 100%;-webkit-animation:1.5s shine linear infinite;animation:1.5s shine linear infinite;}
+.content.loading .main-schedule-list ul li a .schedule-title {flex:1 1 75%;background:linear-gradient(120deg, #e5e5e5 30%, #f0f0f0 38%, #f0f0f0 40%, #e5e5e5 48%);border-radius:5px;background-size:200% 100%;-webkit-animation:1.5s shine linear infinite;animation:1.5s shine linear infinite;}
+.content.loading .main-schedule-list .anchor.chevron.chevron-down {height:23px;width:50%;background:linear-gradient(120deg, #e5e5e5 30%, #f0f0f0 38%, #f0f0f0 40%, #e5e5e5 48%);border-radius:5px;background-size:200% 100%;-webkit-animation:1.5s shine linear infinite;animation:1.5s shine linear infinite;}
+.content.loading .main-schedule-list .anchor.chevron.chevron-down:after {display:none;}
+
+.content.loading .main-section-title {}
+
+.content.loading .main-stock-list ul li a {padding:24px;min-width:143px;}
+.content.loading .main-stock-list dl dt {height:18px;background:linear-gradient(120deg, #e5e5e5 30%, #f0f0f0 38%, #f0f0f0 40%, #e5e5e5 48%);border-radius:5px;background-size:200% 100%;-webkit-animation:1.5s shine linear infinite;animation:1.5s shine linear infinite;}
+.content.loading .main-stock-list dl dd strong {height:18px;background:linear-gradient(120deg, #e5e5e5 30%, #f0f0f0 38%, #f0f0f0 40%, #e5e5e5 48%);border-radius:5px;background-size:200% 100%;-webkit-animation:1.5s shine linear infinite;animation:1.5s shine linear infinite;}
+.content.loading .main-stock-list dl dd .stock {height:15px;background:linear-gradient(120deg, #e5e5e5 30%, #f0f0f0 38%, #f0f0f0 40%, #e5e5e5 48%);border-radius:5px;background-size:200% 100%;-webkit-animation:1.5s shine linear infinite;animation:1.5s shine linear infinite;}
+.content.loading .main-stock-list dl dd:last-child {height:23px;background:linear-gradient(120deg, #e5e5e5 30%, #f0f0f0 38%, #f0f0f0 40%, #e5e5e5 48%);border-radius:5px;background-size:200% 100%;-webkit-animation:1.5s shine linear infinite;animation:1.5s shine linear infinite;}
+
+.content.loading .chart-wrap {position:relative;}
+.content.loading .chart-wrap:after {content:'';position:absolute;left:0;top:0;width:100%;height:100%;background:linear-gradient(120deg, #e5e5e5 30%, #f0f0f0 38%, #f0f0f0 40%, #e5e5e5 48%);border-radius:5px;background-size:200% 100%;-webkit-animation:1.5s shine linear infinite;animation:1.5s shine linear infinite;}
+
+.content.loading .eco-list .eco-title .tags-small {height:24px;flex:0 0 25%;background:linear-gradient(120deg, #e5e5e5 30%, #f0f0f0 38%, #f0f0f0 40%, #e5e5e5 48%);border-radius:5px;background-size:200% 100%;-webkit-animation:1.5s shine linear infinite;animation:1.5s shine linear infinite;}
+.content.loading .eco-list .eco-title .title-medium {height:27px;flex:0 0 75%;background:linear-gradient(120deg, #e5e5e5 30%, #f0f0f0 38%, #f0f0f0 40%, #e5e5e5 48%);border-radius:5px;background-size:200% 100%;-webkit-animation:1.5s shine linear infinite;animation:1.5s shine linear infinite;}
+.content.loading .eco-list .eco-content dl {height:21px;background:linear-gradient(120deg, #e5e5e5 30%, #f0f0f0 38%, #f0f0f0 40%, #e5e5e5 48%);border-radius:5px;background-size:200% 100%;-webkit-animation:1.5s shine linear infinite;animation:1.5s shine linear infinite;}
+
+.content.loading .exchange-list button.flag-fluid {height:36px;background:linear-gradient(120deg, #e5e5e5 30%, #f0f0f0 38%, #f0f0f0 40%, #e5e5e5 48%);border-radius:5px;background-size:200% 100%;-webkit-animation:1.5s shine linear infinite;animation:1.5s shine linear infinite;}
+.content.loading .exchange-list button.flag-fluid:after {display:none;}
+.content.loading .exchange-list .label-list {height:14px;background:linear-gradient(120deg, #e5e5e5 30%, #f0f0f0 38%, #f0f0f0 40%, #e5e5e5 48%);border-radius:5px;background-size:200% 100%;-webkit-animation:1.5s shine linear infinite;animation:1.5s shine linear infinite;}

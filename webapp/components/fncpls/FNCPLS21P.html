@@ -1,0 +1,69 @@
+<!--
+/*************************************************************************
+* @ 서비스경로 : FNCPL21P
+* @ 파일명      : FNCPL21P.html  금융+ > 대출계산기 > [P]검색 결과 > [T]만기일시
+* @ 작성자      : 90196258
+* @ 작성일      : 2024-11-26
+************************** 수정이력 ****************************************
+* 날짜                    작업자                 변경내용
+*_________________________________________________________________________
+* 2024-11-26       90196258                 최초작성
+*************************************************************************/
+-->
+
+<div class="content">
+	<!-- tab-content -->
+	<div class="tab-content tab-sticky">
+		<ul class="tab-list tab-col overflow-list" role="tablist">
+			<li class="tab tab-active" id="tab01"><a role="tab" href="javascript:void(0)">만기일시</a></li>
+			<li class="tab" id="tab02"><a role="tab" href="javascript:void(0)">원리금균등</a></li>
+			<li class="tab" id="tab03"><a role="tab" href="javascript:void(0)">원금균등</a></li>
+		</ul>
+	</div>
+	<!-- //tab-content -->
+	
+	<div class="content-fluid px0">
+		<div class="loan-calculator">
+			<dl class="loan-status">
+				<div class="list">
+					<dt>대출원금</dt>
+					<dd id="popKeepMoney"></dd>
+				</div>
+				<div class="list">
+					<dt>대출기간</dt>
+					<dd id="popkeepMonth"></dd>
+				</div>
+				<div class="list">
+					<dt>거치기간</dt>
+					<dd id="popkeepMonth2">- 개월</dd>
+				</div>
+				<div class="list">
+					<dt>대출금리</dt>
+					<dd id="popKeepRate"></dd>
+				</div>
+			</dl>
+			<div class="stroke stroke-dashed my24"></div>
+			<dl class="loan-payment">
+				<div class="list">
+					<dt>월납입액</dt>
+					<dd id="mmPidAm"></dd>
+				</div>
+				<div class="list">
+					<dt>총이자</dt>
+					<dd id="lnintAm"></dd>
+				</div>
+			</dl>
+			<div class="stroke stroke-dashed my24"></div>
+			<dl class="loan-total">
+				<div class="list">
+		
+					<dt><i class="icon-only icon-24 icon-won bg-black-88"></i>총 상환금액</dt>
+					<dd id="rpyAm"><span></span></dd>
+				</div>
+			</dl>
+		</div>
+		
+		<div class="loan-monthly-list" id="rpySQList">
+		</div>
+	</div>
+</div>

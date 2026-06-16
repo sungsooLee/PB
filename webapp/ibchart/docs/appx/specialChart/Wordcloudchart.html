@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/resources/css/d2coding.css" />
+    <link rel="stylesheet" href="/resources/css/NanumGothic.css" />
+    <link rel="stylesheet" href="/resources/css/md-content.min.css" />
+    <link rel="stylesheet" href="../../resources/css/monokai_sublime.css" />
+  </head>
+
+  <body>
+    <div class="markdown-body">
+      <h1>
+        Wordcloud chart <em><strong>(special Chart)</strong></em>
+      </h1>
+      <blockquote>
+        <p>
+          WordCloud 차트는 가중치(값)에 따라 단어의 크기, 위치, 색을 지정하고
+          단어를 시각적으로 표현하는 차트입니다. <br />
+          단일 시리즈이며 그 한 개의 시리즈에 단어와 가중치 데이터로 구성되어
+          있습니다. <br />
+          <code>제약사항</code> 차트를 생성할때, <code>opt.plugin</code>값을
+          <code>d3</code>로 설정하고 사용해야 하고 <code>opt.width</code>와
+          <code>opt.height</code>값은 <code>300px</code>이상으로만 설정해야
+          합니다.(※너무 작을경우 차트가 표현될 수 없음) <code>%</code>로
+          설정되었을때 부모의 <code>너비</code> / <code>높이</code>가
+          <code>300px</code> 보다 작게 값을 설정하지 않도록 해야 합니다.
+        </p>
+      </blockquote>
+      <h3>Example</h3>
+      <pre
+        class="hljs"
+      ><code><span class="hljs-comment">//wordcloud 차트 생성</span>
+createIBChart(chart,<span class="hljs-string">"myChart"</span>, {
+	<span class="hljs-attr">width</span>: <span class="hljs-string">"500px"</span>,
+	<span class="hljs-attr">height</span>: <span class="hljs-string">"500px"</span>,
+	<span class="hljs-attr">plugin</span>: <span class="hljs-string">"d3"</span>
+});
+
+<span class="hljs-comment">//wordcloud 차트 설정</span>
+myChart.setOptions({
+	<span class="hljs-attr">chart</span>: {
+		<span class="hljs-attr">type</span>: <span class="hljs-string">"wordcloud"</span>
+	}
+}, {
+	<span class="hljs-attr">append</span>: <span class="hljs-literal">false</span>
+});
+
+<span class="hljs-comment">//wordcloud 데이터 로드</span>
+myChart.loadSearchData({
+	<span class="hljs-string">"ibchart"</span>: {
+		<span class="hljs-string">"data"</span>: [{
+			<span class="hljs-string">"series"</span>: [{
+				<span class="hljs-string">"seriesName"</span>: <span class="hljs-string">"WordCloud"</span>,
+				<span class="hljs-string">"pointName"</span>: <span class="hljs-string">"IBLeaders"</span>,
+				<span class="hljs-string">"value"</span>: <span class="hljs-number">50</span>
+			}]
+		}, {
+			<span class="hljs-string">"series"</span>: [{
+				<span class="hljs-string">"pointName"</span>: <span class="hljs-string">"javascript"</span>,
+				<span class="hljs-string">"value"</span>: <span class="hljs-number">40</span>
+			}]
+		}, {
+			<span class="hljs-string">"series"</span>: [{
+				<span class="hljs-string">"pointName"</span>: <span class="hljs-string">"D3.js"</span>,
+				<span class="hljs-string">"value"</span>: <span class="hljs-number">15</span>
+			}]
+		}, {
+			<span class="hljs-string">"series"</span>: [{
+				<span class="hljs-string">"pointName"</span>: <span class="hljs-string">"웹표준"</span>,
+				<span class="hljs-string">"value"</span>: <span class="hljs-number">30</span>
+			}]
+		}, {
+			<span class="hljs-string">"series"</span>: [{
+				<span class="hljs-string">"pointName"</span>: <span class="hljs-string">"CrossBrowsing"</span>,
+				<span class="hljs-string">"value"</span>: <span class="hljs-number">30</span>
+			}]
+		}, {
+			<span class="hljs-string">"series"</span>: [{
+				<span class="hljs-string">"pointName"</span>: <span class="hljs-string">"Front-end"</span>,
+				<span class="hljs-string">"value"</span>: <span class="hljs-number">30</span>
+			}]
+		}, {
+			<span class="hljs-string">"series"</span>: [{
+				<span class="hljs-string">"pointName"</span>: <span class="hljs-string">"Back-end"</span>,
+				<span class="hljs-string">"value"</span>: <span class="hljs-number">30</span>
+			}]
+		}, {
+			<span class="hljs-string">"series"</span>: [{
+				<span class="hljs-string">"pointName"</span>: <span class="hljs-string">"ECMAScript"</span>,
+				<span class="hljs-string">"value"</span>: <span class="hljs-number">20</span>
+			}]
+		}, {
+			<span class="hljs-string">"series"</span>: [{
+				<span class="hljs-string">"pointName"</span>: <span class="hljs-string">"Web"</span>,
+				<span class="hljs-string">"value"</span>: <span class="hljs-number">15</span>
+			}]
+		}, {
+			<span class="hljs-string">"series"</span>: [{
+				<span class="hljs-string">"pointName"</span>: <span class="hljs-string">"C++"</span>,
+				<span class="hljs-string">"value"</span>: <span class="hljs-number">20</span>
+			}]
+		}, {
+			<span class="hljs-string">"series"</span>: [{
+				<span class="hljs-string">"pointName"</span>: <span class="hljs-string">"C#"</span>,
+				<span class="hljs-string">"value"</span>: <span class="hljs-number">25</span>
+			}]
+		}, {
+			<span class="hljs-string">"series"</span>: [{
+				<span class="hljs-string">"pointName"</span>: <span class="hljs-string">"JAVA"</span>,
+				<span class="hljs-string">"value"</span>: <span class="hljs-number">38</span>
+			}]
+		}, {
+			<span class="hljs-string">"series"</span>: [{
+				<span class="hljs-string">"pointName"</span>: <span class="hljs-string">"HTML"</span>,
+				<span class="hljs-string">"value"</span>: <span class="hljs-number">40</span>
+			}]
+		}, {
+			<span class="hljs-string">"series"</span>: [{
+				<span class="hljs-string">"pointName"</span>: <span class="hljs-string">"AngularJS"</span>,
+				<span class="hljs-string">"value"</span>: <span class="hljs-number">30</span>
+			}]
+		}, {
+			<span class="hljs-string">"series"</span>: [{
+				<span class="hljs-string">"pointName"</span>: <span class="hljs-string">"jQuery"</span>,
+				<span class="hljs-string">"value"</span>: <span class="hljs-number">35</span>
+			}]
+		}, {
+			<span class="hljs-string">"series"</span>: [{
+				<span class="hljs-string">"pointName"</span>: <span class="hljs-string">"CSS"</span>,
+				<span class="hljs-string">"value"</span>: <span class="hljs-number">32</span>
+			}]
+		}, {
+			<span class="hljs-string">"series"</span>: [{
+				<span class="hljs-string">"pointName"</span>: <span class="hljs-string">"솔루션"</span>,
+				<span class="hljs-string">"value"</span>: <span class="hljs-number">45</span>
+			}]
+		}, {
+			<span class="hljs-string">"series"</span>: [{
+				<span class="hljs-string">"pointName"</span>: <span class="hljs-string">"Solution"</span>,
+				<span class="hljs-string">"value"</span>: <span class="hljs-number">45</span>
+			}]
+		}, {
+			<span class="hljs-string">"series"</span>: [{
+				<span class="hljs-string">"pointName"</span>: <span class="hljs-string">"Language"</span>,
+				<span class="hljs-string">"value"</span>: <span class="hljs-number">15</span>
+			}]
+		}, {
+			<span class="hljs-string">"series"</span>: [{
+				<span class="hljs-string">"pointName"</span>: <span class="hljs-string">"Support"</span>,
+				<span class="hljs-string">"value"</span>: <span class="hljs-number">15</span>
+			}]
+		}, {
+			<span class="hljs-string">"series"</span>: [{
+				<span class="hljs-string">"pointName"</span>: <span class="hljs-string">"IBSheet 7"</span>,
+				<span class="hljs-string">"value"</span>: <span class="hljs-number">25</span>
+			}]
+		}, {
+			<span class="hljs-string">"series"</span>: [{
+				<span class="hljs-string">"pointName"</span>: <span class="hljs-string">"IBSheet(H) 7"</span>,
+				<span class="hljs-string">"value"</span>: <span class="hljs-number">24</span>
+			}]
+		}, {
+			<span class="hljs-string">"series"</span>: [{
+				<span class="hljs-string">"pointName"</span>: <span class="hljs-string">"IBChart(H) 7"</span>,
+				<span class="hljs-string">"value"</span>: <span class="hljs-number">20</span>
+			}]
+		}, {
+			<span class="hljs-string">"series"</span>: [{
+				<span class="hljs-string">"pointName"</span>: <span class="hljs-string">"IBMultiCombo(H) 7"</span>,
+				<span class="hljs-string">"value"</span>: <span class="hljs-number">17</span>
+			}]
+		}, {
+			<span class="hljs-string">"series"</span>: [{
+				<span class="hljs-string">"pointName"</span>: <span class="hljs-string">"IBUpload(H) 7"</span>,
+				<span class="hljs-string">"value"</span>: <span class="hljs-number">17</span>
+			}]
+		}, {
+			<span class="hljs-string">"series"</span>: [{
+				<span class="hljs-string">"pointName"</span>: <span class="hljs-string">"IBMDITab(H) 7"</span>,
+				<span class="hljs-string">"value"</span>: <span class="hljs-number">17</span>
+			}]
+		}, {
+			<span class="hljs-string">"series"</span>: [{
+				<span class="hljs-string">"pointName"</span>: <span class="hljs-string">"IBMaskEdit(H) 7"</span>,
+				<span class="hljs-string">"value"</span>: <span class="hljs-number">17</span>
+			}]
+		}]
+	}
+}, {
+	<span class="hljs-attr">append</span>: <span class="hljs-literal">true</span>
+});
+</code></pre>
+      <p>
+        <img src="..//resources/images/ibchart/ibchart-wordcloud.png" alt="s" />
+      </p>
+      <h3>Since</h3>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>version</th>
+              <th>desc</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>7.3.0.0</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="../../resources/plugins/jquery/jquery.slim.min.js"></script>
+    <script src="../../resources/plugins/jquery/jquery.mark.min.js"></script>
+    <script src="../../resources/js/ibChart/md-content.js"></script>
+  </body>
+</html>

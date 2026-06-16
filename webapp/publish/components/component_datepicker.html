@@ -1,0 +1,639 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <title>자산관리 영업지원 App</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0, user-scalable=no"
+    />
+
+    <script src="../../resources/plugins/jquery/jquery.min.js"></script>
+
+    <!-- [plugins] -->
+    <!-- micromodal -->
+    <link
+      rel="stylesheet"
+      href="../../resources/plugins/micromodal/0.4.10/micromodal.css"
+    />
+    <script src="../../resources/plugins/micromodal/0.4.10/micromodal.min.js"></script>
+    <!-- sortable -->
+    <script src="../../resources/plugins/sortable/1.15.2/Sortable.min.js"></script>
+    <!-- sweetalert2 -->
+    <link
+      rel="stylesheet"
+      href="../../resources/plugins/sweetalert2/11.11.0/sweetalert2.min.css"
+    />
+    <script src="../../resources/plugins/sweetalert2/11.11.0/sweetalert2.min.js"></script>
+    <!-- swiper -->
+    <link
+      rel="stylesheet"
+      href="../../resources/plugins/swiper/11.1.1/swiper-bundle.min.css"
+    />
+    <script src="../../resources/plugins/swiper/11.1.1/swiper-bundle.min.js"></script>
+    <!-- tippy -->
+    <script src="../../resources/plugins/popper.js/2.11.8/umd/popper.min.js"></script>
+    <script src="../../resources/plugins/popper.js/2.11.8/umd/tippy-bundle.umd.min.js"></script>
+    <!-- toastr -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../resources/plugins/toastr/2.1.4/toastr.min.css"
+    />
+    <script src="../../resources/plugins/toastr/2.1.4/toastr.min.js"></script>
+    <!-- jquery-ui -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../resources/plugins/jquery-ui/jquery-ui.css"
+    />
+    <script src="../../resources/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- pinch-zoom -->
+    <script src="../../resources/plugins/pinch-zoom/pinch-zoom.umd.js"></script>
+    <!-- apexcharts -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../resources/plugins/apexcharts/3.50.0/apexcharts.css"
+    />
+    <script src="../../resources/plugins/apexcharts/3.50.0/apexcharts.min.js"></script>
+    <!-- AOS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../resources/plugins/aos/3.0.0-beta.6/aos.css"
+    />
+    <script src="../../resources/plugins/aos/3.0.0-beta.6/aos.js"></script>
+    <!-- jquery-ui-monthpicker-master -->
+    <script src="../../resources/plugins/jquery-ui-monthpicker-master/monthpicker.js"></script>
+    <!-- jquery-touchSwipe -->
+    <script src="../../resources/plugins/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <!-- //[plugins] -->
+
+    <!-- ui source -->
+    <link rel="stylesheet" href="../../resources/css/ui-fonts.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-variable.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-default.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-layout.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-style.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-content.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-bscard.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-plugins.css" />
+
+    <link rel="stylesheet" href="../../resources/css/ui-skeletone.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-mediaquery.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-guide.css" />
+
+    <script src="../../resources/js/ui-script.js"></script>
+    <script src="../../resources/js/ui-temp.js"></script>
+    <!-- 개발서버에서 include 제외해주세요 -->
+    <!-- //ui source -->
+  </head>
+
+  <body>
+    <div class="ui-guide content">
+      <h1>Modal</h1>
+      <div class="ui-guide-section">
+        <h2>Year</h2>
+        <div class="guide-column-list">
+          <div class="input-wrap input-datepicker">
+            <button
+              type="button"
+              aria-label="대상기간 시작일"
+              data-micromodal-trigger="modal-datepicker-month1"
+            >
+              2023-11
+            </button>
+            <div class="bul">-</div>
+            <button
+              type="button"
+              aria-label="대상기간 종료일"
+              data-micromodal-trigger="modal-datepicker-month2"
+            >
+              2024-10
+            </button>
+          </div>
+        </div>
+      </div>
+      <hr />
+
+      <div class="ui-guide-section">
+        <h2>datepicker</h2>
+        <div class="guide-column-list">
+          <div class="input-wrap input-datepicker">
+            <button
+              type="button"
+              aria-label="날짜 선택"
+              data-micromodal-trigger="modal-datepicker"
+            ></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="ui-guide-section">
+        <h2>datepicker inline</h2>
+        <div class="guide-column-list">
+          <div class="datepicker-wrap">
+            <div
+              aria-label="날짜 선택"
+              class="datepicker-trigger"
+              id="datepicker_schedule"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- micromodal -->
+    <div
+      class="micromodal-slide micromodal-slide-bottom modal"
+      id="modal-datepicker-month1"
+      aria-hidden="true"
+    >
+      <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+        <div class="modal__container" role="dialog" aria-modal="true">
+          <div class="modal__header modal__header__alert">
+            <strong class="modal__title title-large"></strong>
+            <button
+              type="button"
+              class="modal__close"
+              aria-label="팝업 닫기"
+              data-micromodal-close
+            ></button>
+          </div>
+          <div class="modal__content">
+            <div class="content">
+              <div class="datepicker-wrap datepicker-wrap-month">
+                <div class="datepicker-trigger" id="datepicker_month1"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //micromodal -->
+
+    <!-- micromodal -->
+    <div
+      class="micromodal-slide micromodal-slide-bottom modal"
+      id="modal-datepicker-month2"
+      aria-hidden="true"
+    >
+      <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+        <div class="modal__container" role="dialog" aria-modal="true">
+          <div class="modal__header modal__header__alert">
+            <strong class="modal__title title-large"></strong>
+            <button
+              type="button"
+              class="modal__close"
+              aria-label="팝업 닫기"
+              data-micromodal-close
+            ></button>
+          </div>
+          <div class="modal__content">
+            <div class="content">
+              <div class="datepicker-wrap datepicker-wrap-month">
+                <div class="datepicker-trigger" id="datepicker_month2"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //micromodal -->
+
+    <!-- micromodal -->
+    <div
+      class="micromodal-slide micromodal-slide-bottom modal"
+      id="modal-datepicker"
+      aria-hidden="true"
+    >
+      <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+        <div class="modal__container" role="dialog" aria-modal="true">
+          <div class="modal__header modal__header__alert">
+            <strong class="modal__title title-large"></strong>
+            <button
+              type="button"
+              class="modal__close"
+              aria-label="팝업 닫기"
+              data-micromodal-close
+            ></button>
+          </div>
+          <div class="modal__content">
+            <div class="content">
+              <div class="datepicker-wrap">
+                <div class="datepicker-trigger" id="datepicker"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //micromodal -->
+
+    <script>
+      const modalTrigger = document.querySelector(
+        '[data-micromodal-trigger="modal-datepicker"]',
+      );
+
+      modalTrigger.addEventListener("click", function (event) {
+        MicroModal.show("modal-datepicker", {
+          // openTrigger: 'data-custom-open', // [3]
+          // closeTrigger: 'data-custom-close', // [4]
+          // openClass: 'is-open', // [5]
+          disableScroll: true, // [6]
+          disableFocus: true, // [7]
+          awaitOpenAnimation: true, // [8]
+          awaitCloseAnimation: true, // [9]
+          // debugMode: true // [10]
+          onShow: function (modalPopup) {
+            $("#datepicker").datepicker({
+              dateFormat: "yy-mm-dd",
+              prevText: "이전 달",
+              nextText: "다음 달",
+              monthNames: [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "10",
+                "11",
+                "12",
+              ],
+              monthNamesShort: [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "10",
+                "11",
+                "12",
+              ],
+              dayNames: ["일", "월", "화", "수", "목", "금", "토"],
+              dayNamesShort: ["일", "월", "화", "수", "목", "금", "토"],
+              dayNamesMin: ["일", "월", "화", "수", "목", "금", "토"],
+              showMonthAfterYear: true,
+              yearSuffix: ".",
+              // minDate: 0,
+
+              closeText: "닫기",
+              showOtherMonths: true,
+              onSelect: function (input, date) {
+                MicroModal.close("modal-datepicker");
+                modalTrigger.innerText = input;
+              },
+            });
+          },
+          onClose: function (modalPopup) {
+            // console.log($(".jquery-datepicker").datepicker("refresh"))
+          },
+        });
+      });
+    </script>
+
+    <script>
+      const monthTrigger1 = document.querySelector(
+        '[data-micromodal-trigger="modal-datepicker-month1"]',
+      );
+      monthTrigger1.addEventListener("click", function (event) {
+        MicroModal.show("modal-datepicker-month1", {
+          // openTrigger: 'data-custom-open', // [3]
+          // closeTrigger: 'data-custom-close', // [4]
+          // openClass: 'is-open', // [5]
+          disableScroll: true, // [6]
+          disableFocus: true, // [7]
+          awaitOpenAnimation: true, // [8]
+          awaitCloseAnimation: true, // [9]
+          // debugMode: true // [10]
+          onShow: function () {
+            $("#datepicker_month1").monthpicker({
+              dateFormat: "yy-mm",
+              prevText: "이전 달",
+              nextText: "다음 달",
+              monthNames: [
+                "1월",
+                "2월",
+                "3월",
+                "4월",
+                "5월",
+                "6월",
+                "7월",
+                "8월",
+                "9월",
+                "10월",
+                "11월",
+                "12월",
+              ],
+              monthNamesShort: [
+                "1월",
+                "2월",
+                "3월",
+                "4월",
+                "5월",
+                "6월",
+                "7월",
+                "8월",
+                "9월",
+                "10월",
+                "11월",
+                "12월",
+              ],
+              showMonthAfterYear: true,
+              showButtonPanel: false,
+              closeText: "닫기",
+              onSelect: function (input, date) {
+                MicroModal.close("modal-datepicker-month1");
+                monthTrigger1.innerText = input;
+              },
+            });
+          },
+          onClose: function () {
+            // $("#datepicker_month").datepicker("destroy")
+          },
+        });
+      });
+
+      const monthTrigger2 = document.querySelector(
+        '[data-micromodal-trigger="modal-datepicker-month2"]',
+      );
+      monthTrigger2.addEventListener("click", function (event) {
+        MicroModal.show("modal-datepicker-month2", {
+          // openTrigger: 'data-custom-open', // [3]
+          // closeTrigger: 'data-custom-close', // [4]
+          // openClass: 'is-open', // [5]
+          disableScroll: true, // [6]
+          disableFocus: true, // [7]
+          awaitOpenAnimation: true, // [8]
+          awaitCloseAnimation: true, // [9]
+          // debugMode: true // [10]
+          onShow: function () {
+            $("#datepicker_month2").monthpicker({
+              dateFormat: "yy-mm",
+              prevText: "이전 달",
+              nextText: "다음 달",
+              monthNames: [
+                "1월",
+                "2월",
+                "3월",
+                "4월",
+                "5월",
+                "6월",
+                "7월",
+                "8월",
+                "9월",
+                "10월",
+                "11월",
+                "12월",
+              ],
+              monthNamesShort: [
+                "1월",
+                "2월",
+                "3월",
+                "4월",
+                "5월",
+                "6월",
+                "7월",
+                "8월",
+                "9월",
+                "10월",
+                "11월",
+                "12월",
+              ],
+              showMonthAfterYear: true,
+              showButtonPanel: false,
+              closeText: "닫기",
+              onSelect: function (input, date) {
+                MicroModal.close("modal-datepicker-month2");
+                monthTrigger2.innerText = input;
+              },
+            });
+          },
+          onClose: function () {
+            // $("#datepicker_month").datepicker("destroy")
+          },
+        });
+      });
+    </script>
+
+    <script>
+      $(function () {
+        const schedule01 = [
+          "2024-12-15",
+          "2024-12-16",
+          "2024-12-17",
+          "2024-12-19",
+        ]; // 개인 일정
+        const schedule02 = [
+          "2024-12-15",
+          "2024-12-16",
+          "2024-12-18",
+          "2024-12-20",
+        ]; // 고객 생일
+        const schedule03 = [
+          "2024-12-15",
+          "2024-12-17",
+          "2024-12-18",
+          "2024-12-21",
+        ]; // 수신 만기
+        let today = new Date();
+
+        let year = today.getFullYear(); // 년도
+        let month = today.getMonth() + 1; // 월
+        let date = today.getDate(); // 날짜
+        let day = today.getDay(); // 요일
+        let destinyToday = year + "-" + month + "-" + date;
+
+        $("#datepicker_schedule").datepicker({
+          dateFormat: "yy-mm-dd",
+          prevText: "이전 달",
+          nextText: "다음 달",
+          monthNames: [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+          ],
+          monthNamesShort: [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+          ],
+          dayNames: ["일", "월", "화", "수", "목", "금", "토"],
+          dayNamesShort: ["일", "월", "화", "수", "목", "금", "토"],
+          dayNamesMin: ["일", "월", "화", "수", "목", "금", "토"],
+          showMonthAfterYear: true,
+          yearSuffix: ".",
+          // minDate: 0,
+
+          closeText: "닫기",
+          showOtherMonths: true,
+          maxDate: new Date(destinyToday),
+          onSelect: function (date, dp) {},
+          onChangeMonthYear: function (year, month, dp) {},
+          beforeShowDay: function (date) {
+            var formattedDate = $.datepicker.formatDate("yy-mm-dd", date);
+
+            if (
+              schedule01.indexOf(formattedDate) !== -1 &&
+              schedule02.indexOf(formattedDate) !== -1 &&
+              schedule03.indexOf(formattedDate) !== -1
+            ) {
+              return [true, "schedule_01 schedule_02 schedule_03"];
+            }
+            if (
+              schedule01.indexOf(formattedDate) !== -1 &&
+              schedule03.indexOf(formattedDate) !== -1
+            ) {
+              return [true, "schedule_01 schedule_03"];
+            }
+            if (
+              schedule01.indexOf(formattedDate) !== -1 &&
+              schedule02.indexOf(formattedDate) !== -1
+            ) {
+              return [true, "schedule_01 schedule_02"];
+            }
+            if (
+              schedule02.indexOf(formattedDate) !== -1 &&
+              schedule03.indexOf(formattedDate) !== -1
+            ) {
+              return [true, "schedule_02 schedule_03"];
+            }
+            if (schedule01.indexOf(formattedDate) !== -1) {
+              return [true, "schedule_01"];
+            }
+            if (schedule02.indexOf(formattedDate) !== -1) {
+              return [true, "schedule_02"];
+            }
+            if (schedule03.indexOf(formattedDate) !== -1) {
+              return [true, "schedule_03"];
+            }
+            return [true, ""];
+          },
+          onUpdateDatepicker: function () {
+            addTags();
+          },
+        });
+
+        function addTags() {
+          const datepickerWrap = document.querySelectorAll(
+            ".ui-datepicker-calendar td a",
+          );
+          datepickerWrap.forEach(function (div) {
+            const scheduleWrap = document.createElement("div");
+            scheduleWrap.classList.add("schedule-wrap");
+            div.appendChild(scheduleWrap);
+          });
+
+          //개인 일정
+          const schedule_01 = document.querySelectorAll(
+            ".schedule_01 .schedule-wrap",
+          );
+          schedule_01.forEach(function (item) {
+            item.insertAdjacentHTML(
+              "beforeend",
+              '<div class="sc-label label01" aria-label="개인 일정"></div>',
+            );
+          });
+
+          //고객 생일
+          const schedul_02 = document.querySelectorAll(
+            ".schedule_02 .schedule-wrap",
+          );
+          schedul_02.forEach(function (item) {
+            item.insertAdjacentHTML(
+              "beforeend",
+              '<div class="sc-label label02 aria-label="고객 생일"></div>',
+            );
+          });
+
+          //수신 만기
+          const schedul_03 = document.querySelectorAll(
+            ".schedule_03 .schedule-wrap",
+          );
+          schedul_03.forEach(function (item) {
+            item.insertAdjacentHTML(
+              "beforeend",
+              '<div class="sc-label label03" aria-label="수신 만기"></div>',
+            );
+          });
+        }
+
+        $(document).on("click", ".ui-datepicker-next", function () {
+          $("body")
+            .find(".datepicker-wrap")
+            .find(".ui-datepicker:visible table")
+            .hide(
+              "slide",
+              {
+                direction: "left",
+              },
+              1,
+            )
+            .show(
+              "slide",
+              {
+                direction: "right",
+              },
+              250,
+            );
+        });
+
+        $(document).on("click", ".ui-datepicker-prev", function () {
+          $("body")
+            .find(".datepicker-wrap")
+            .find(".ui-datepicker:visible table")
+            .hide(
+              "slide",
+              {
+                direction: "right",
+              },
+              1,
+            )
+            .show(
+              "slide",
+              {
+                direction: "left",
+              },
+              250,
+            );
+        });
+
+        $(".datepicker-wrap").swipe({
+          swipeLeft: function () {
+            $(this).find("[data-handler='next']").trigger("click");
+          },
+          swipeRight: function () {
+            $(this).find("[data-handler='prev']").trigger("click");
+          },
+        });
+      });
+    </script>
+  </body>
+</html>

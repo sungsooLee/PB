@@ -1,0 +1,754 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <title>자산관리 영업지원 App</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0, user-scalable=no"
+    />
+
+    <script src="../../resources/plugins/jquery/jquery.min.js"></script>
+
+    <!-- [plugins] -->
+    <!-- micromodal -->
+    <link
+      rel="stylesheet"
+      href="../../resources/plugins/micromodal/0.4.10/micromodal.css"
+    />
+    <script src="../../resources/plugins/micromodal/0.4.10/micromodal.min.js"></script>
+    <!-- sortable -->
+    <script src="../../resources/plugins/sortable/1.15.2/Sortable.min.js"></script>
+    <!-- sweetalert2 -->
+    <link
+      rel="stylesheet"
+      href="../../resources/plugins/sweetalert2/11.11.0/sweetalert2.min.css"
+    />
+    <script src="../../resources/plugins/sweetalert2/11.11.0/sweetalert2.min.js"></script>
+    <!-- swiper -->
+    <link
+      rel="stylesheet"
+      href="../../resources/plugins/swiper/11.1.1/swiper-bundle.min.css"
+    />
+    <script src="../../resources/plugins/swiper/11.1.1/swiper-bundle.min.js"></script>
+    <!-- tippy -->
+    <script src="../../resources/plugins/popper.js/2.11.8/umd/popper.min.js"></script>
+    <script src="../../resources/plugins/popper.js/2.11.8/umd/tippy-bundle.umd.min.js"></script>
+    <!-- toastr -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../resources/plugins/toastr/2.1.4/toastr.min.css"
+    />
+    <script src="../../resources/plugins/toastr/2.1.4/toastr.min.js"></script>
+    <!-- jquery-ui -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../resources/plugins/jquery-ui/jquery-ui.css"
+    />
+    <script src="../../resources/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- pinch-zoom -->
+    <script src="../../resources/plugins/pinch-zoom/pinch-zoom.umd.js"></script>
+    <!-- apexcharts -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../resources/plugins/apexcharts/3.50.0/apexcharts.css"
+    />
+    <script src="../../resources/plugins/apexcharts/3.50.0/apexcharts.min.js"></script>
+    <!-- AOS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../resources/plugins/aos/3.0.0-beta.6/aos.css"
+    />
+    <script src="../../resources/plugins/aos/3.0.0-beta.6/aos.js"></script>
+    <!-- jquery-ui-monthpicker-master -->
+    <script src="../../resources/plugins/jquery-ui-monthpicker-master/monthpicker.js"></script>
+    <!-- jquery-touchSwipe -->
+    <script src="../../resources/plugins/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <!-- //[plugins] -->
+
+    <link rel="stylesheet" href="../../resources/css/ui-fonts.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-variable.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-default.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-layout.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-style.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-content.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-bscard.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-plugins.css" />
+
+    <link rel="stylesheet" href="../../resources/css/ui-skeletone.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-mediaquery.css" />
+    <script src="../../resources/js/ui-script.js"></script>
+    <script src="../../resources/js/ui-temp.js"></script>
+    <!-- 개발서버에서 include 제외해주세요 -->
+    <!-- //ui source -->
+  </head>
+
+  <body>
+    <!-- main -->
+    <main>
+      <!-- header -->
+      <header>
+        <div class="main-header">
+          <div class="left">
+            <button type="button" class="header-btn" aria-label="뒤로 가기">
+              <i class="i-back"></i>
+            </button>
+          </div>
+          <div class="center">
+            <h1>펀드 찾기</h1>
+          </div>
+          <div class="right">
+            <button type="button" class="header-btn" aria-label="관심 펀드">
+              <i class="i-favorite"></i>
+            </button>
+            <button type="button" class="header-btn" aria-label="메뉴 열기">
+              <i class="i-menu"></i>
+            </button>
+          </div>
+        </div>
+      </header>
+      <!-- //header -->
+
+      <!-- main-inner -->
+      <!-- content start -->
+      <div class="main-inner">
+        <!-- container -->
+        <div id="container">
+          <!-- content -->
+          <div class="content">
+            <!-- sticky-content -->
+            <div class="sticky-sentinal"></div>
+            <div class="sticky-content content-fluid">
+              <div class="sticky-content-inner">
+                <!-- form -->
+                <div class="form form-invalid">
+                  <div class="label"></div>
+                  <div class="input-wrap input-placeholder input-select">
+                    <button
+                      class="select"
+                      data-micromodal-trigger="modal-select-list"
+                      data-placeholder="선택하세요"
+                    >
+                      <span>선택</span>
+                    </button>
+                    <input
+                      type="text"
+                      placeholder="검색어를 입력해해 보세요."
+                      aria-label="검색"
+                    />
+                    <button
+                      type="button"
+                      class="input-remove"
+                      aria-label="입력 내용 삭제"
+                    ></button>
+                    <button
+                      type="button"
+                      class="input-search"
+                      aria-label="입력 내용 검색"
+                    ></button>
+                  </div>
+                  <p class="validate-text"></p>
+                </div>
+                <!-- //form -->
+              </div>
+            </div>
+            <!-- //sticky-content -->
+
+            <!-- group-form -->
+            <div class="group-form py16">
+              <div class="group-title">
+                <strong class="title-medium fw-500">최근 검색어</strong>
+              </div>
+              <div class="group-content content-fluid px0 mt14">
+                <ul class="d-flex overflow-list px16">
+                  <li>
+                    <div class="btn-xsmall btn-outlined btn-round">
+                      <button class="btn-inner">반도체</button>
+                      <button aria-label="검색어 삭제">
+                        <i class="ico-close-16"></i>
+                      </button>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="btn-xsmall btn-outlined btn-round">
+                      <button class="btn-inner">배당</button>
+                      <button aria-label="검색어 삭제">
+                        <i class="ico-close-16"></i>
+                      </button>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="btn-xsmall btn-outlined btn-round">
+                      <button class="btn-inner">레버리지</button>
+                      <button aria-label="검색어 삭제">
+                        <i class="ico-close-16"></i>
+                      </button>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="btn-xsmall btn-outlined btn-round">
+                      <button class="btn-inner">키워드</button>
+                      <button aria-label="검색어 삭제">
+                        <i class="ico-close-16"></i>
+                      </button>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="btn-xsmall btn-outlined btn-round">
+                      <button class="btn-inner">키워드</button>
+                      <button aria-label="검색어 삭제">
+                        <i class="ico-close-16"></i>
+                      </button>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="btn-xsmall btn-outlined btn-round">
+                      <button class="btn-inner">키워드</button>
+                      <button aria-label="검색어 삭제">
+                        <i class="ico-close-16"></i>
+                      </button>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="btn-xsmall btn-outlined btn-round">
+                      <button class="btn-inner">키워드</button>
+                      <button aria-label="검색어 삭제">
+                        <i class="ico-close-16"></i>
+                      </button>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="btn-xsmall btn-outlined btn-round">
+                      <button class="btn-inner">키워드</button>
+                      <button aria-label="검색어 삭제">
+                        <i class="ico-close-16"></i>
+                      </button>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="btn-xsmall btn-outlined btn-round">
+                      <button class="btn-inner">키워드</button>
+                      <button aria-label="검색어 삭제">
+                        <i class="ico-close-16"></i>
+                      </button>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="btn-xsmall btn-outlined btn-round">
+                      <button class="btn-inner">키워드</button>
+                      <button aria-label="검색어 삭제">
+                        <i class="ico-close-16"></i>
+                      </button>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="btn-xsmall btn-outlined btn-round">
+                      <button class="btn-inner">키워드</button>
+                      <button aria-label="검색어 삭제">
+                        <i class="ico-close-16"></i>
+                      </button>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="btn-xsmall btn-outlined btn-round">
+                      <button class="btn-inner">키워드</button>
+                      <button aria-label="검색어 삭제">
+                        <i class="ico-close-16"></i>
+                      </button>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="btn-xsmall btn-outlined btn-round">
+                      <button class="btn-inner">키워드</button>
+                      <button aria-label="검색어 삭제">
+                        <i class="ico-close-16"></i>
+                      </button>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="btn-xsmall btn-outlined btn-round">
+                      <button class="btn-inner">키워드</button>
+                      <button aria-label="검색어 삭제">
+                        <i class="ico-close-16"></i>
+                      </button>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- //group-form -->
+
+            <!-- figure-list -->
+            <div class="figure-list py16">
+              <ul class="flex-wrap">
+                <li>
+                  <a href="#">
+                    <figure>
+                      <picture>
+                        <source
+                          srcset="
+                            ../../resources/images/PBWFU/ico-fig-list01.svg
+                          "
+                        />
+                        <img
+                          src="../../resources/images/PBWFU/ico-fig-list01.svg"
+                          alt=""
+                        />
+                      </picture>
+                      <figcaption>전체 펀드</figcaption>
+                    </figure>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <figure>
+                      <picture>
+                        <source
+                          srcset="
+                            ../../resources/images/PBWFU/ico-fig-list02.svg
+                          "
+                        />
+                        <img
+                          src="../../resources/images/PBWFU/ico-fig-list02.svg"
+                          alt=""
+                        />
+                      </picture>
+                      <figcaption>수익률 BEST</figcaption>
+                    </figure>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <figure>
+                      <picture>
+                        <source
+                          srcset="
+                            ../../resources/images/PBWFU/ico-fig-list03.svg
+                          "
+                        />
+                        <img
+                          src="../../resources/images/PBWFU/ico-fig-list03.svg"
+                          alt=""
+                        />
+                      </picture>
+                      <figcaption>판매 BEST</figcaption>
+                    </figure>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <figure>
+                      <picture>
+                        <source
+                          srcset="
+                            ../../resources/images/PBWFU/ico-fig-list04.svg
+                          "
+                        />
+                        <img
+                          src="../../resources/images/PBWFU/ico-fig-list04.svg"
+                          alt=""
+                        />
+                      </picture>
+                      <figcaption>이달의 추천</figcaption>
+                    </figure>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!-- //figure-list -->
+
+            <!-- group-form -->
+            <div class="group-form mt16 mb-24">
+              <div class="group-title py16">
+                <strong class="headline-small inner-ico"
+                  ><i class="ico-keyword bg-yellow-500"></i>추천 키워드</strong
+                >
+              </div>
+              <div class="group-content content-fluid px0">
+                <!-- Swiper -->
+                <div class="swiper keyword-swiper">
+                  <div
+                    class="swiper-pagination swiper-pagination-tab overflow-list px24"
+                  ></div>
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="keyword-list">
+                        <button type="button">
+                          <span>텍스트</span>
+                          <span class="rise" aria-label="상승">0.0%</span>
+                        </button>
+                        <button type="button">
+                          <span>부동산/리즈</span>
+                        </button>
+                        <button type="button">
+                          <span>유틸리티/인프라</span>
+                        </button>
+                        <button type="button">
+                          <span>반도체</span>
+                        </button>
+                        <button type="button">
+                          <span>로봇</span>
+                        </button>
+                        <button type="button">
+                          <span>전기차/배터리</span>
+                        </button>
+                        <button type="button">
+                          <span>우주/항공</span>
+                        </button>
+                        <button type="button">
+                          <span>친환경/탄소중립</span>
+                        </button>
+                        <button type="button">
+                          <i class="flag flag-kr"></i>
+                          <span>한국</span>
+                        </button>
+                        <button type="button">
+                          <i class="flag flag-us"></i>
+                          <span>미국</span>
+                        </button>
+                        <button type="button">
+                          <i class="flag flag-europe"></i>
+                          <span>유럽</span>
+                        </button>
+                        <button type="button">
+                          <i class="flag flag-jp"></i>
+                          <span>일본</span>
+                        </button>
+                        <button type="button">
+                          <i class="flag flag-cn"></i>
+                          <span>중국</span>
+                        </button>
+                        <button type="button">
+                          <i class="flag flag-in"></i>
+                          <span>인도</span>
+                        </button>
+                        <button type="button">
+                          <i class="flag flag-vn"></i>
+                          <span>베트남</span>
+                        </button>
+                        <button type="button">
+                          <i class="flag flag-asia"></i>
+                          <span>아시아/태평양</span>
+                        </button>
+                        <button type="button">
+                          <i class="flag flag-south-america"></i>
+                          <span>브라질/남미</span>
+                        </button>
+                        <button type="button">
+                          <i class="flag flag-global"></i>
+                          <span>글로벌</span>
+                        </button>
+                        <button type="button">
+                          <i class="flag flag-emerging"></i>
+                          <span>이머징/신흥국</span>
+                        </button>
+                        <button type="button">
+                          <i class="flag flag-foreign"></i>
+                          <span>해외</span>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="keyword-list">
+                        <button type="button">
+                          <span>텍스트</span>
+                          <span class="rise" aria-label="상승">0.0%</span>
+                        </button>
+                        <button type="button" class="fw-700">
+                          <span>텍스트</span>
+                          <span class="rise" aria-label="상승">0.0%</span>
+                        </button>
+                        <button type="button">
+                          <span>텍스트</span>
+                          <span class="fall" aria-label="하락">0.0%</span>
+                        </button>
+                        <button type="button" class="fw-700">
+                          <span>텍스트</span>
+                          <span class="fall" aria-label="하락">0.0%</span>
+                        </button>
+                        <button type="button">
+                          <span>텍스트</span>
+                          <span class="steady" aria-label="보합">0.00%</span>
+                        </button>
+                        <button type="button">
+                          <span>IT/정보기술</span>
+                        </button>
+                        <button type="button">
+                          <span>에너지/원유</span>
+                        </button>
+                        <button type="button">
+                          <span>소재/광물</span>
+                        </button>
+                        <button type="button">
+                          <span>소비재</span>
+                        </button>
+                        <button type="button">
+                          <span>헬스케어</span>
+                        </button>
+                        <button type="button">
+                          <span>금융</span>
+                        </button>
+                        <button type="button">
+                          <span>부동산/리즈</span>
+                        </button>
+                        <button type="button">
+                          <span>유틸리티/인프라</span>
+                        </button>
+                        <button type="button">
+                          <span>반도체</span>
+                        </button>
+                        <button type="button">
+                          <span>로봇</span>
+                        </button>
+                        <button type="button">
+                          <span>전기차/배터리</span>
+                        </button>
+                        <button type="button">
+                          <span>우주/항공</span>
+                        </button>
+                        <button type="button">
+                          <span>친환경/탄소중립</span>
+                        </button>
+                        <button type="button">
+                          <i class="flag flag-kr"></i>
+                          <span>한국</span>
+                        </button>
+                        <button type="button">
+                          <i class="flag flag-us"></i>
+                          <span>미국</span>
+                        </button>
+                        <button type="button">
+                          <i class="flag flag-europe"></i>
+                          <span>유럽</span>
+                        </button>
+                        <button type="button">
+                          <i class="flag flag-jp"></i>
+                          <span>일본</span>
+                        </button>
+                        <button type="button">
+                          <i class="flag flag-cn"></i>
+                          <span>중국</span>
+                        </button>
+                        <button type="button">
+                          <i class="flag flag-in"></i>
+                          <span>인도</span>
+                        </button>
+                        <button type="button">
+                          <i class="flag flag-vn"></i>
+                          <span>베트남</span>
+                        </button>
+                        <button type="button">
+                          <i class="flag flag-asia"></i>
+                          <span>아시아/태평양</span>
+                        </button>
+                        <button type="button">
+                          <i class="flag flag-south-america"></i>
+                          <span>브라질/남미</span>
+                        </button>
+                        <button type="button">
+                          <i class="flag flag-global"></i>
+                          <span>글로벌</span>
+                        </button>
+                        <button type="button">
+                          <i class="flag flag-emerging"></i>
+                          <span>이머징/신흥국</span>
+                        </button>
+                        <button type="button">
+                          <i class="flag flag-foreign"></i>
+                          <span>해외</span>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="keyword-list">
+                        <button type="button">
+                          <span>텍스트</span>
+                          <span class="rise" aria-label="상승">0.0%</span>
+                        </button>
+                        <button type="button" class="fw-700">
+                          <span>텍스트</span>
+                          <span class="rise" aria-label="상승">0.0%</span>
+                        </button>
+                        <button type="button">
+                          <span>텍스트</span>
+                          <span class="fall" aria-label="하락">0.0%</span>
+                        </button>
+                        <button type="button" class="fw-700">
+                          <span>텍스트</span>
+                          <span class="fall" aria-label="하락">0.0%</span>
+                        </button>
+                        <button type="button">
+                          <span>텍스트</span>
+                          <span class="steady" aria-label="보합">0.00%</span>
+                        </button>
+                        <button type="button">
+                          <span>IT/정보기술</span>
+                        </button>
+                        <button type="button">
+                          <span>에너지/원유</span>
+                        </button>
+                        <button type="button">
+                          <span>소재/광물</span>
+                        </button>
+                        <button type="button">
+                          <span>소비재</span>
+                        </button>
+                        <button type="button">
+                          <span>헬스케어</span>
+                        </button>
+                        <button type="button">
+                          <span>금융</span>
+                        </button>
+                        <button type="button">
+                          <span>부동산/리즈</span>
+                        </button>
+                        <button type="button">
+                          <span>유틸리티/인프라</span>
+                        </button>
+                        <button type="button">
+                          <span>반도체</span>
+                        </button>
+                        <button type="button">
+                          <span>로봇</span>
+                        </button>
+                        <button type="button">
+                          <span>전기차/배터리</span>
+                        </button>
+                        <button type="button">
+                          <span>우주/항공</span>
+                        </button>
+                        <button type="button">
+                          <span>친환경/탄소중립</span>
+                        </button>
+                        <button type="button">
+                          <i class="flag flag-kr"></i>
+                          <span>한국</span>
+                        </button>
+                        <button type="button">
+                          <i class="flag flag-us"></i>
+                          <span>미국</span>
+                        </button>
+                        <button type="button">
+                          <i class="flag flag-europe"></i>
+                          <span>유럽</span>
+                        </button>
+                        <button type="button">
+                          <i class="flag flag-jp"></i>
+                          <span>일본</span>
+                        </button>
+                        <button type="button">
+                          <i class="flag flag-cn"></i>
+                          <span>중국</span>
+                        </button>
+                        <button type="button">
+                          <i class="flag flag-in"></i>
+                          <span>인도</span>
+                        </button>
+                        <button type="button">
+                          <i class="flag flag-vn"></i>
+                          <span>베트남</span>
+                        </button>
+                        <button type="button">
+                          <i class="flag flag-asia"></i>
+                          <span>아시아/태평양</span>
+                        </button>
+                        <button type="button">
+                          <i class="flag flag-south-america"></i>
+                          <span>브라질/남미</span>
+                        </button>
+                        <button type="button">
+                          <i class="flag flag-global"></i>
+                          <span>글로벌</span>
+                        </button>
+                        <button type="button">
+                          <i class="flag flag-emerging"></i>
+                          <span>이머징/신흥국</span>
+                        </button>
+                        <button type="button">
+                          <i class="flag flag-foreign"></i>
+                          <span>해외</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- tab-content -->
+              </div>
+            </div>
+            <!-- //group-form -->
+          </div>
+          <!-- //content -->
+        </div>
+        <!-- //container -->
+      </div>
+      <!-- //content end -->
+      <!-- //main-inner -->
+    </main>
+    <!-- //main -->
+
+    <!-- micromodal -->
+    <div
+      class="micromodal-slide micromodal-slide-select modal"
+      id="modal-select-list"
+    >
+      <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+        <div class="modal__container" role="dialog" aria-modal="true">
+          <div class="modal__header modal__header__alert">
+            <button
+              type="button"
+              class="modal__close"
+              aria-label="팝업 닫기"
+              data-micromodal-close=""
+            ></button>
+          </div>
+          <div class="modal__content">
+            <div class="content content-fluid">
+              <div class="select-option">
+                <ul>
+                  <li>
+                    <button
+                      type="button"
+                      data-micromodal-close
+                      onclick="console.log(1)"
+                    >
+                      <span>키워드</span>
+                    </button>
+                  </li>
+                  <li class="select-active">
+                    <button
+                      type="button"
+                      aria-label="선택됨"
+                      data-micromodal-close
+                      onclick="console.log(1)"
+                    >
+                      <span>펀드명</span>
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //micromodal -->
+
+    <script>
+      const tab = ["수익률 BEST", "섹터", "국가"];
+      var swiper = new Swiper(".keyword-swiper", {
+        autoHeight: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+          renderBullet: function (index, className) {
+            return `<span class="${className}"><button>${tab[index]}</button></span>`;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

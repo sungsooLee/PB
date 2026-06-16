@@ -1,0 +1,72 @@
+<!--
+/*************************************************************************
+* @ 서비스경로 : CHART10M
+* @ 파일명      : CHART10M.html 차트 > 펀드/지수 비교
+* @ 화면ID		: PBWCH000000
+* @ 작성자      : 90194835
+* @ 작성일      : 2025-01-21
+************************** 수정이력 ****************************************
+* 날짜                    작업자                 변경내용
+*_________________________________________________________________________
+* 2025-01-21            윤은정                 최초작성
+*************************************************************************/
+-->
+
+<!-- sticky-content -->
+<!-- <div class="sticky-sentinal"></div> -->
+<!-- <div class="sticky-content content-fluid"> -->
+<!-- 	<div class="sticky-content-inner"> -->
+		<!-- form -->
+<!-- 		<div class="form"> -->
+<!-- 			<div class="label"></div> -->
+<!-- 			<div class="input-wrap disabled"> -->
+<!-- 				<input type="text" placeholder="비교할 펀드, 지수를 검색해 보세요." aria-label="검색" id="inSearch" readonly="readonly"> -->
+<!-- 				<button type="button" class="input-remove" aria-label="입력 내용 삭제"></button> -->
+<!-- 				<button type="button" class="input-search" aria-label="입력 내용 검색" id="btnSearch"></button> -->
+<!-- 			</div> -->
+<!-- 			<p class="validate-text"></p> -->
+<!-- 		</div> -->
+		<!-- //form -->
+<!-- 	</div> -->
+<!-- </div> -->
+<!-- //sticky-content -->
+
+<!-- snackbar-content -->
+<div class="snackbar-content is-sticky">
+	<button id="btnSearch" class="fab fab-primary fab-square fab-text"><i class="ico-search bg-icon-white"></i><strong>상품/지수 담기</strong></button>
+</div>
+<!-- //snackbar-content -->
+
+<div class="chart-diff pt40">
+	<strong class="title-small ac">펀드 vs ETF vs 지수, 차트로 비교하세요!</strong>
+	<!-- tab-content -->
+	<div class="tab-content mt24">
+		<ul class="tab-list tab-button" role="tablist">
+			<li class="tab"><button role="tab" name="tmTab" value="1">1개월</button></li>
+			<li class="tab tab-active"><button role="tab" name="tmTab" value="2">3개월</button></li>
+			<li class="tab"><button role="tab" name="tmTab" value="3">6개월</button></li>
+			<li class="tab"><button role="tab" name="tmTab" value="4">1년</button></li>
+			<li class="tab"><button role="tab" name="tmTab" value="5">3년</button></li>
+		</ul>
+	</div>
+	<!-- //tab-content -->
+	<div class="chart-wrap mt24">
+		<div id="ch10Chart"></div>
+		
+		<div class="group pb16 px24">
+			<div class="right">
+				<span class="divide-list">
+<!-- 					<span class="fs-14" id="basicDate"></span> -->
+<!-- 					<span class="division h14 mx8"></span> -->
+<!-- 					<span class="fs-14">자료제공: 제로인</span> -->
+				</span>
+			</div>
+		</div>
+	</div>
+
+	<div class="btn-wrap my16">
+		<button type="button" class="btn-xsmall btn-outlined btn-round" id="btnOpenView">기간별 수익률/기준가 보기</button>
+	</div>
+
+	<p class="description info body-small fc-typography-caption mt16">역외펀드의 경우, 데이터 제공업체로부터 제공받은 가장 최신의 수익률을 기반으로 안내하고 있으나 당일자 실제 수익률과는 차이가 있을 수 있습니다.</p>
+</div>

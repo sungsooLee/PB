@@ -1,0 +1,92 @@
+
+<!--
+/*************************************************************************
+* @ 서비스경로 : ETF51P
+* @ 파일명      : ETF > ETF 비교 > 수익률 추이
+* @ 화면ID 	: PBWFU069901	
+* @ 작성자      : 90195654
+* @ 작성일      : 2025-01-06
+************************** 수정이력 ****************************************
+* 날짜                    작업자                 변경내용
+*_________________________________________________________________________
+* 2025-01-06    90195654                 최초작성
+*************************************************************************/
+-->
+<div class="content">
+
+	<!-- tab-content -->
+	<div class="tab-content">
+		<ul class="tab-list tab-button" role="tablist" id="tabList">
+			<li class="tab"><a name="ptrtTerm" data-term="1" role="tab" >1개월</a></li>
+			<li class="tab tab-active"><a name="ptrtTerm" data-term="3" role="tab">3개월</a></li>
+			<li class="tab"><a name="ptrtTerm" data-term="6" role="tab">6개월</a></li>
+			<li class="tab"><a name="ptrtTerm" data-term="12" role="tab">12개월</a></li>
+		</ul>
+	</div>
+	<!-- //tab-content -->
+
+	<div class="chart-wrap mt24">
+		<div id="chart2"></div>
+		<div class="group pb16 px24">
+			<div class="right">
+				<span class="divide-list"> <span class="fs-14" id="prcBasDt2"></span> <span class="division h14 mx8"></span> <span class="fs-14">자료제공:
+						제로인</span>
+				</span>
+			</div>
+		</div>
+	</div>
+
+	<!-- tab-content -->
+	<div class="tab-content">
+		<ul class="tab-list tab-col overflow-list" role="tablist" id="tabList2">
+			<li class="tab tab-active"><a name="type" role="tab" data-type="ptrt">수익률</a></li>
+			<li class="tab"><a role="tab" name="type" data-type="fndBasPr">기준가</a></li>
+		</ul>
+	</div>
+	<!-- //tab-content -->
+
+	<div class="table-col mt24" id="ptrtDiv">
+		<table>
+			<colgroup>
+				<col style="width: 35%;">
+				<col>
+				<col>
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col" class="fs-15 fc-typography-caption ar vt">기준일</th>
+					<th scope="col" class="fs-15 fc-typography-caption ar vt fndNm1"></th>
+					<th scope="col" class="fs-15 fc-typography-caption ar vt fndNm2"></th>
+				</tr>
+			</thead>
+			<tbody id="ptrtList">
+				
+			</tbody>
+		</table>
+	</div>
+	
+	<div class="table-col mt24" id="fndBasPrDiv" style="display:none;">
+		<table>
+			<colgroup>
+				<col style="width: 35%;">
+				<col>
+				<col>
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col" class="fs-15 fc-typography-caption ar vt">기준일</th>
+					<th scope="col" class="fs-15 fc-typography-caption ar vt fndNm1"></th>
+					<th scope="col" class="fs-15 fc-typography-caption ar vt fndNm2"></th>
+				</tr>
+			</thead>
+			<tbody id="fndBasPrList">
+				
+			</tbody>
+		</table>
+	</div>
+
+	
+
+	
+
+</div>

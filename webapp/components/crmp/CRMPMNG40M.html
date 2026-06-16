@@ -1,0 +1,73 @@
+<!--
+/*************************************************************************
+* @ 서비스경로 : CRMPMNG40M
+* @ 파일명      : CRMPMNG40M.html  고객관리 > 기업정보조회 
+* @ 작성자      : 90195654
+* @ 작성일      : 2024-12-26
+************************** 수정이력 ****************************************
+* 날짜                    작업자                 변경내용
+*_________________________________________________________________________
+* 2024-12-26       90195654                 최초작성
+*************************************************************************/
+-->
+<div class="tablet-maxwidth">
+	<!-- group-form -->
+	<div class="group-form mt16">
+		<div class="group-title">
+			<strong class="title-medium">검색대상</strong>
+		</div>
+		<div class="group-content group-content-flex">
+			<div class="form">
+				<button class="select" data-micromodal-trigger="modal-select-list"
+					data-placeholder="선택하세요" id="selBtn">
+					<span id="selTxt">기업명</span>
+				</button>
+			</div>
+			<div class="form" id="searchForm">
+				<div class="input-wrap">
+					<input type="search" id="searchText" name="searchText"
+						placeholder="검색어를 2자 이상 입력해주세요." aria-label="검색대상">
+				</div>
+				<p class="validate-text" id="searchTextErr"></p>
+			</div>
+		</div>
+	</div>
+	<!-- //group-form -->
+	
+	<div class="stroke my24"></div>
+	
+	
+	<!-- group-form -->
+	<div class="group-form">
+		<div class="group-content group-content-flex">
+			<div class="form">
+				<button type="button"
+					class="anchor chevron anchor-fluid anchor-border" id="businessBtn"
+					data-micromodal-trigger="modal-job">
+					<span class="body-large fw-700">업종 전체</span>
+				</button>
+			</div>
+			<div class="form">
+				<button type="button"
+					class="anchor chevron anchor-fluid anchor-border" id="regionBtn">
+					<span class="body-large fw-700">지역 전체</span>
+				</button>
+			</div>
+		</div>
+	</div>
+	<!-- //group-form -->
+	
+	
+	<!-- group-form -->
+	<div class="group-form mt40 py16">
+		<div class="group-title">
+			<strong class="title-medium fw-500">최근 조회 기업</strong>
+		</div>
+		<div class="group-content mt12">
+			<ul class="overflow-list content-fluid" id="referenceWordList">
+			</ul>
+		</div>
+	</div>
+	
+	<!-- //group-form -->
+</div>

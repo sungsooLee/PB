@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <title>자산관리 영업지원 App</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0, user-scalable=no"
+    />
+
+    <script src="../../resources/plugins/jquery/jquery.min.js"></script>
+
+    <!-- [plugins] -->
+    <!-- micromodal -->
+    <link
+      rel="stylesheet"
+      href="../../resources/plugins/micromodal/0.4.10/micromodal.css"
+    />
+    <script src="../../resources/plugins/micromodal/0.4.10/micromodal.min.js"></script>
+    <!-- sortable -->
+    <script src="../../resources/plugins/sortable/1.15.2/Sortable.min.js"></script>
+    <!-- sweetalert2 -->
+    <link
+      rel="stylesheet"
+      href="../../resources/plugins/sweetalert2/11.11.0/sweetalert2.min.css"
+    />
+    <script src="../../resources/plugins/sweetalert2/11.11.0/sweetalert2.min.js"></script>
+    <!-- swiper -->
+    <link
+      rel="stylesheet"
+      href="../../resources/plugins/swiper/11.1.1/swiper-bundle.min.css"
+    />
+    <script src="../../resources/plugins/swiper/11.1.1/swiper-bundle.min.js"></script>
+    <!-- tippy -->
+    <script src="../../resources/plugins/popper.js/2.11.8/umd/popper.min.js"></script>
+    <script src="../../resources/plugins/popper.js/2.11.8/umd/tippy-bundle.umd.min.js"></script>
+    <!-- toastr -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../resources/plugins/toastr/2.1.4/toastr.min.css"
+    />
+    <script src="../../resources/plugins/toastr/2.1.4/toastr.min.js"></script>
+    <!-- jquery-ui -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../resources/plugins/jquery-ui/jquery-ui.css"
+    />
+    <script src="../../resources/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- pinch-zoom -->
+    <script src="../../resources/plugins/pinch-zoom/pinch-zoom.umd.js"></script>
+    <!-- apexcharts -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../resources/plugins/apexcharts/3.50.0/apexcharts.css"
+    />
+    <script src="../../resources/plugins/apexcharts/3.50.0/apexcharts.min.js"></script>
+    <!-- AOS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../resources/plugins/aos/3.0.0-beta.6/aos.css"
+    />
+    <script src="../../resources/plugins/aos/3.0.0-beta.6/aos.js"></script>
+    <!-- jquery-ui-monthpicker-master -->
+    <script src="../../resources/plugins/jquery-ui-monthpicker-master/monthpicker.js"></script>
+    <!-- jquery-touchSwipe -->
+    <script src="../../resources/plugins/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <!-- //[plugins] -->
+
+    <!-- ui source -->
+    <link rel="stylesheet" href="../../resources/css/ui-fonts.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-variable.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-default.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-layout.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-style.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-content.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-bscard.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-plugins.css" />
+
+    <link rel="stylesheet" href="../../resources/css/ui-skeletone.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-mediaquery.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-guide.css" />
+
+    <script src="../../resources/js/ui-script.js"></script>
+    <script src="../../resources/js/ui-temp.js"></script>
+    <!-- 개발서버에서 include 제외해주세요 -->
+    <!-- //ui source -->
+  </head>
+
+  <body>
+    <div class="ui-guide content">
+      <h1>Card Style</h1>
+
+      <div class="ui-guide-section">
+        <div class="ui-guide-box">
+          <h2>Card Select</h2>
+          <!-- card-select -->
+          <div class="card-select">
+            <div class="inp inp-large">
+              <span class="tags tags-medium tags-black-80">A타입</span>
+              <label><input type="radio" name="rad001" /></label>
+              <!-- bs-card-wrap -->
+              <div class="bs-card-wrap">
+                <div class="bs-card">
+                  <div class="bs-typeA">
+                    <div class="top">
+                      <div class="left">
+                        <picture>
+                          <source
+                            srcset="
+                              ../../resources/images/bs_card/bs_a_top_logo01.svg
+                            "
+                          />
+                          <img
+                            src="../../resources/images/bs_card/bs_a_top_logo01.svg"
+                            alt="우리 마음속 첫번째 금융"
+                          />
+                        </picture>
+                      </div>
+                      <div class="right">
+                        <picture>
+                          <source
+                            srcset="../../resources/images/bs_card/bs_a_aff.svg"
+                          />
+                          <img
+                            src="../../resources/images/bs_card/bs_a_aff.svg"
+                            alt="우리금융그룹"
+                          />
+                        </picture>
+                      </div>
+                    </div>
+                    <div class="line">
+                      <picture>
+                        <source
+                          srcset="../../resources/images/bs_card/bs_a_line.svg"
+                        />
+                        <img
+                          src="../../resources/images/bs_card/bs_a_line.svg"
+                          alt=""
+                        />
+                      </picture>
+                    </div>
+                    <div class="center">
+                      <div class="title">
+                        <div class="left">
+                          <picture>
+                            <source
+                              srcset="
+                                ../../resources/images/bs_card/bs_a_center_logo01.svg
+                              "
+                            />
+                            <img
+                              src="../../resources/images/bs_card/bs_a_center_logo01.svg"
+                              alt="우리금융그룹"
+                            />
+                          </picture>
+                        </div>
+                        <div class="right">
+                          <dl>
+                            <dt>김우리</dt>
+                            <dd>직위/호칭</dd>
+                            <dd>소속</dd>
+                          </dl>
+                        </div>
+                      </div>
+                      <div class="info">
+                        <div class="left">
+                          <div class="location">
+                            04632 서울특별시 중구 소공로 51
+                          </div>
+                          <div class="email">woori@woorifg.com</div>
+                        </div>
+                        <div class="right">
+                          <div class="contact">
+                            <div class="row">
+                              <div class="th">Mobile</div>
+                              <div class="td">010.1234.5678</div>
+                            </div>
+                            <div class="row">
+                              <div class="th">Tel</div>
+                              <div class="td">02.1234.5678</div>
+                            </div>
+                            <div class="row">
+                              <div class="th">내선</div>
+                              <div class="td">123</div>
+                            </div>
+                            <div class="row">
+                              <div class="th">Fax</div>
+                              <div class="td">0505.001.6161</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="bottom">
+                      <ul>
+                        <li>CFP(국제공인재무설계사)</li>
+                        <li>신용위험분석사(CRA)2차</li>
+                        <li>신용위험분석사(CRA)1차</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- //bs-card-wrap -->
+            </div>
+          </div>
+          <!-- //card-select -->
+        </div>
+
+        <hr />
+
+        <div class="ui-guide-box">
+          <h2>Business Card</h2>
+
+          <!-- business-card-customer -->
+          <div class="business-card-customer-list">
+            <div class="business-card-customer">
+              <button>
+                <strong class="title-medium">김성민</strong>
+                <span class="divide-list">
+                  <span>디지털공통개발부 UI/UX팀</span>
+                  <span class="division h14 mx8"></span>
+                  <span>과장</span>
+                </span>
+                <span class="company-name">파인너츠</span>
+                <span class="tags tags-small tags-lightBlue"
+                  ><i class="icon-only icon-15 icon-keyman"></i>키맨</span
+                >
+              </button>
+              <figure>
+                <div class="due-date">
+                  <strong class="body-small">만료일</strong>
+                  <span>2024.11.26</span>
+                </div>
+                <div class="thumb thumb-nodata">
+                  <!-- <button type="button" class="btn-xsmall btn-black btn-round">연장하기</button> -->
+                  <picture>
+                    <source
+                      srcset="
+                        ../../resources/images/PBWBU/ico_business_card_empty.svg
+                      "
+                    />
+                    <img
+                      src="../../resources/images/PBWBU/ico_business_card_empty.svg"
+                      alt=""
+                    />
+                  </picture>
+                </div>
+              </figure>
+            </div>
+            <div class="business-card-customer">
+              <button>
+                <strong class="title-medium">이름</strong>
+                <span class="divide-list">
+                  <span>부서명</span>
+                  <span class="division h14 mx8"></span>
+                  <span>직책</span>
+                </span>
+                <span class="company-name">회사명</span>
+              </button>
+              <figure>
+                <div class="due-date">
+                  <strong class="body-small">만료일</strong>
+                  <div class="tags tags-small tags-lightBlue">D-30</div>
+                </div>
+                <div class="thumb">
+                  <button
+                    type="button"
+                    class="btn-xsmall btn-black btn-round"
+                    onclick="toastr.success(``, '연장되었습니다.')"
+                  >
+                    연장하기
+                  </button>
+                  <picture>
+                    <source srcset="../../resources/@temp/thumb_w.png" />
+                    <img src="../../resources/@temp/thumb_w.png" alt="" />
+                  </picture>
+                </div>
+              </figure>
+            </div>
+          </div>
+          <!-- //business-card-customer -->
+        </div>
+        <hr />
+
+        <div class="ui-guide-box">
+          <h2>Fund Card</h2>
+          <!-- fund-card-list -->
+          <div class="fund-card-list">
+            <div class="fund-card" data-toggle="toggle-wrap">
+              <div class="clip clip-recommend">추천</div>
+              <div class="tag-wrap">
+                <div class="tags tags-small tags-lightRed">#높은위험</div>
+                <div class="tags tags-small tags-lightYellow">
+                  #원금손실가능
+                </div>
+              </div>
+              <a href="#" class="fund-title headline-small"
+                >피델리티글로벌배당인컴증권자투자신탁(주식-재간접형)</a
+              >
+              <div class="divide-list">
+                <span class="divide01">글로벌</span>
+                <div class="division h14 mx8"></div>
+                <span class="divide02">계열사</span>
+              </div>
+              <dl class="expect-list">
+                <div class="list">
+                  <dt>1개월</dt>
+                  <dd>-888.88%</dd>
+                </div>
+                <div class="list rise">
+                  <dt>3개월</dt>
+                  <dd>+888.88%</dd>
+                </div>
+                <div class="list">
+                  <dt>6개월</dt>
+                  <dd>-888.88%</dd>
+                </div>
+                <div class="list">
+                  <dt>12개월</dt>
+                  <dd>-888.88%</dd>
+                </div>
+              </dl>
+              <dl class="expect-reason">
+                <dt>추천사유</dt>
+                <dd>
+                  텍스트가 들어갑니다 텍스트가 들어갑니다 텍스트가 들어갑니다
+                  텍스트가 들어갑니다
+                </dd>
+              </dl>
+              <div class="compare-btn-wrap">
+                <button
+                  type="button"
+                  class="btn-small btn-secondary btn-round"
+                  data-toggle="toggle-trigger"
+                  data-switch-before="btn-secondary"
+                  data-switch-after="btn-primary"
+                >
+                  비교담기
+                  <i
+                    class="ico-compare"
+                    data-switch-inner="true"
+                    data-switch-inner-before="ico-compare"
+                    data-switch-inner-after="ico-check"
+                  ></i>
+                  <span class="toggle-off blind">선택</span>
+                  <span class="toggle-on blind">선택해제</span>
+                </button>
+              </div>
+              <div class="favorite-btn-wrap" data-toggle="toggle-wrap">
+                <button type="button" data-toggle="toggle-trigger">
+                  <i
+                    class="icon-only icon-36 icon-fav"
+                    data-switch-inner="true"
+                    data-switch-inner-before="icon-fav"
+                    data-switch-inner-after="icon-fav-active"
+                  ></i>
+                  <span class="toggle-off blind">관심펀드 등록</span>
+                  <span class="toggle-on blind">관심펀드 등록해제</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- //fund-card-list -->
+        </div>
+        <hr />
+
+        <div class="ui-guide-box">
+          <h2>Schedule Section</h2>
+
+          <div class="schedule-section">
+            <a href="#" class="schedule-list">
+              <div class="schedule-title">
+                <i
+                  class="icon-only icon-24 icon-birth bg-purple-600"
+                  aria-label="생일"
+                ></i>
+                <strong class="title-medium">홍길동 생일</strong>
+              </div>
+              <div class="schedule-content">
+                <div class="schedule-detail">
+                  <div class="schedule-detail-inner">
+                    <i class="icon-only icon-16 icon-user bg-icon-gray_1"></i>
+                    16842121654866
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="schedule-list">
+              <div class="schedule-title">
+                <i
+                  class="icon-only icon-24 icon-wallet bg-cyan-500"
+                  aria-label="수신만기"
+                ></i>
+                <strong class="title-medium">홍길동 수신만기</strong>
+              </div>
+              <div class="schedule-content">
+                <div class="schedule-detail">
+                  <div class="schedule-detail-inner">
+                    <i class="icon-only icon-16 icon-won bg-black-88"></i>
+                    1,000,000,000,000원
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="schedule-list">
+              <div class="schedule-title">
+                <i
+                  class="icon-only icon-24 icon-birth bg-purple-600"
+                  aria-label="생일"
+                ></i>
+                <strong class="title-medium">홍길동 생일</strong>
+              </div>
+              <div class="schedule-content">
+                <div class="schedule-detail">
+                  <div class="schedule-detail-inner">
+                    <i class="icon-only icon-16 icon-user bg-icon-gray_1"></i>
+                    16842121654866
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="schedule-list">
+              <div class="schedule-title">
+                <i
+                  class="icon-only icon-24 icon-calendar"
+                  aria-label="개인일정"
+                ></i>
+                <strong class="title-medium"
+                  >일정 제목이 길어질 경우에는 이렇게 노출됩니다.</strong
+                >
+              </div>
+              <div class="schedule-content">
+                <div class="schedule-detail">
+                  <div class="schedule-detail-inner fc-typography-body">
+                    <i class="icon-only icon-16 icon-time bg-icon-gray_1"></i>
+                    하루종일
+                  </div>
+                  <span class="division h12 mx6"></span>
+                  <div class="schedule-detail-inner">
+                    <i
+                      class="icon-only icon-16 icon-location bg-icon-gray_1"
+                    ></i>
+                    12층 3번 회의실
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="schedule-list">
+              <div class="schedule-title">
+                <i
+                  class="icon-only icon-24 icon-calendar-repeat"
+                  aria-label="개인일정 반복"
+                ></i>
+                <strong class="title-medium">일정 제목</strong>
+              </div>
+              <div class="schedule-content">
+                <div class="schedule-detail">
+                  <div class="schedule-detail-inner">
+                    <i class="icon-only icon-16 icon-time bg-icon-gray_1"></i>
+                    오후 2:00 - 오후 4:30
+                  </div>
+                  <span class="division h12 mx6"></span>
+                  <div class="schedule-detail-inner">
+                    <i
+                      class="icon-only icon-16 icon-location bg-icon-gray_1"
+                    ></i>
+                    12층 3번 회의실
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

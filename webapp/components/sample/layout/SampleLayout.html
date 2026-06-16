@@ -1,0 +1,83 @@
+<div class="ui-guide">
+  <h1>Layout</h1>
+  <p>Layout의 하단 버튼영역을 보이게 하기 위해서는 ComponentPath 내에 LayoutInfo에 ModuleInfo와 동일한 클래스명으로
+     버튼 정보를 등록하여야 합니다.</p>
+
+  <hr/>
+
+  <div class="code">
+		<pre>
+            <code class="sql">
+  (예시)
+        // btn1Label : 왼쪽 버튼 , btn2Label : 오른쪽 버튼
+        export const LayoutInfo = {
+           sample : {btn1Label : '초기화', btn2Label : '등록', btn1Class : 'btn-outline', btn2Class : 'btn-primary', iconClass : 'ico-add'}
+        }
+            </code>
+        </pre>
+  </div>
+
+  <hr/>
+
+  <p>버튼의 이벤트는 각 화면에서 this.registerCallback 함수를 통해 등록합니다.</p>
+
+  <hr/>
+
+  <div class="code">
+		<pre>
+            <code class="sql">
+  (예시)
+          // 왼쪽 버튼 이벤트 등록
+          this.registerCallback('touchend', $$('#layoutBtn1'), () => console.log('btn1Click') );
+
+          // 오른쪽 버튼 이벤트 등록
+          this.registerCallback('touchend', $$('#layoutBtn2'), () => console.log('btn2Click') );
+            </code>
+        </pre>
+  </div>
+
+  <hr/>
+
+  <p style="color:red"> ※※아래 샘플은 레이아웃이 변경되는 형태를 보이기 위함입니다.<br>
+    실제 코드는 샘플과 같이 작성하지 않습니다.※※</p>
+
+  <hr/>
+  <div class="ui-guide-section">
+    <div class="ui-guide-box">
+      <h2>레이아웃 선택</h2>
+      <dl>
+        <dt></dt>
+        <dd>
+          <div class="inp inp-large">
+            <label>
+              <input type="radio" name="rad001" value="basic" checked>
+              <span class="label-title">Basic</span>
+            </label>
+          </div>
+          <div class="inp inp-large">
+            <label>
+              <input type="radio" name="rad001" value="single">
+              <span class="label-title">Single</span>
+            </label>
+          </div>
+          <div class="inp inp-large">
+            <label>
+              <input type="radio" name="rad001" value="LayoutWithBottom">
+              <span class="label-title">Bottom</span>
+            </label>
+          </div>
+            <div class="inp inp-large">
+                <label>
+                    <input type="radio" name="rad001" value="main">
+                    <span class="label-title">Main</span>
+                </label>
+            </div>
+        </dd>
+      </dl>
+      <hr>
+      <div class="cont">
+        <button id="btn" type="button" class="btn-large btn-primary">레이아웃 변경</button>
+      </div>
+    </div>
+  </div>
+</div>

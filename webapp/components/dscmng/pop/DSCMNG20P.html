@@ -1,0 +1,140 @@
+<!-- 
+/*************************************************************************
+* @ 서비스경로 : DSCMNG20P
+* @ 파일명      : DSCMNG20P 일정관리 > 영업 캘린더 > 개인일정 상세
+* @ 작성자      : 90195467
+* @ 작성일      : 2024-12-26
+************************** 수정이력 ****************************************
+* 날짜                    작업자                 변경내용
+*_________________________________________________________________________
+* 2024-12-26            이혜성                 최초작성
+*************************************************************************/
+ -->
+<div class="content">
+
+	<div class="schedule-section-title content-fluid">
+		<i class="icon-only icon-24 icon-calendar" aria-label="개인일정" id="alldayNicon"></i>
+		<!-- 반복일 경우 -->
+		<i class="icon-only icon-24 icon-calendar-repeat" aria-label="개인일정 반복" id="alldayYicon"></i>
+		<!-- //반복일 경우 -->
+		<strong class="headline-medium" id="subject"></strong>
+	</div>
+
+	<div class="stroke"></div>
+
+	<!-- group-form -->
+	<div class="group-form mt32">
+		<div class="group-title">
+			<strong class="title-medium">일시 <i class="apos" aria-label="필수 입력">*</i></strong>
+			<div class="inp inp-toggle">
+				<!-- <label> 
+					<span class="label-title">하루종일</span> 
+					<input type="checkbox" onclick="return false;" id="alldayYn">
+				</label> -->
+			</div>
+		</div>
+		<div class="group-content mt16">
+			<div class="schedule-regist">
+				<dl>
+					<dt>
+						<div class="tags tags-small tags-lightGray tags-round">시작</div>
+					</dt>
+					<dd>
+						<div class="schedule-regist-trigger">
+							<span id="startDate"></span>
+						</div>
+					</dd>
+					<dd>
+						<div class="schedule-regist-trigger" id="startTime"></div>
+					</dd>
+				</dl>
+				<dl>
+					<dt>
+						<div class="tags tags-small tags-lightGray tags-round">종료</div>
+					</dt>
+					<dd>
+						<div class="schedule-regist-trigger">
+							<span id="endDate"></span>
+						</div>
+					</dd>
+					<dd>
+						<div class="schedule-regist-trigger" id="endTime"></div>
+					</dd>
+				</dl>
+			</div>
+		</div>
+	</div>
+	<!-- //group-form -->
+
+	<!-- group-form -->
+	<div class="group-form mt40" id="locationForm">
+		<div class="group-title">
+			<strong class="title-medium">장소</strong>
+		</div>
+		<div class="group-content">
+			<div class="d-flex a-center gap8 px4">
+				<div class="body-large" id="location"></div>
+			</div>
+		</div>
+	</div>
+	<!-- //group-form -->
+
+	<!-- group-form -->
+	<div class="group-form mt40" id="recForm">
+		<div class="group-title">
+			<strong class="title-medium">반복</strong>
+		</div>
+		<div class="group-content">
+			<div class="d-flex a-center gap8 px4">
+				<div class="body-large" id="recTxt"></div>
+			</div>
+		</div>
+	</div>
+	<!-- //group-form -->
+
+	<!-- group-form -->
+	<div class="group-form mt40" id="recForm2">
+		<div class="group-title">
+			<strong class="title-medium">공유</strong>
+		</div>
+
+		<!-- 직원 선택 후 -->
+		<div class="group-content">
+			<div class="form">
+				<div class="label"></div>
+				<div class="input-wrap input-btn-wrap" id="recRaForm">
+					
+				</div>
+				<p class="validate-text"></p>
+			</div>
+		</div>
+	</div>
+	<!-- //group-form -->
+
+	<!-- group-form -->
+	<div class="group-form mt40" id="bodyForm">
+		<div class="group-title">
+			<strong class="title-medium">메모</strong>
+		</div>
+		<div class="group-content">
+			<div class="d-flex a-center gap8 px4">
+				<div class="body-large" id="body"></div>
+			</div>
+		</div>
+	</div>
+	<!-- //group-form -->
+
+	<!-- group-form -->
+	<div class="group-form mt40" id="pushForm">
+		<div class="group-title">
+			<strong class="title-medium">Push 알림</strong>
+		</div>
+		<div class="group-content">
+			<div class="d-flex a-center gap8 px4">
+				<div class="body-large" id="pushInfo"></div>
+			</div>
+		</div>
+	</div>
+	<!-- //group-form -->
+
+</div>

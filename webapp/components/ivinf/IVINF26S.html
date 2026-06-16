@@ -1,0 +1,87 @@
+<!--
+/*************************************************************************
+* @ 서비스경로 : IVINF26S
+* @ 파일명      : IVINF26S.html 투자정보 - 종합 주요지수 - 섹터지수 - 목록
+* @ 화면ID		: PBWIV060000
+* @ 작성자      : 90194835
+* @ 작성일      : 2025-01-02
+************************** 수정이력 ****************************************
+* 날짜                    작업자                 변경내용
+*_________________________________________________________________________
+* 2025-01-02            윤은정                 최초작성
+*************************************************************************/
+-->
+
+
+<!-- tab-content -->
+<div class="tab-content tab-fluid tab-sticky">
+	<ul class="tab-list tab-col overflow-list px24" role="tablist">
+		<li class="tab"><a role="tab" href="javascript:void(0);" name="ivinfTab" data-id="ivinf20s">주요지수</a></li>
+		<li class="tab"><a role="tab" href="javascript:void(0);" name="ivinfTab" data-id="ivinf22s">주가지수</a></li>
+		<li class="tab"><a role="tab" href="javascript:void(0);" name="ivinfTab" data-id="ivinf23s">채권금리</a></li>
+		<li class="tab"><a role="tab" href="javascript:void(0);" name="ivinfTab" data-id="ivinf24s">환율/원자재</a></li>
+		<li class="tab"><a role="tab" href="javascript:void(0);" name="ivinfTab" data-id="ivinf25s">경제지표</a></li>
+		<li class="tab tab-active"><a role="tab" href="javascript:void(0);" name="ivinfTab" data-id="ivinf26s">섹터지수</a></li>
+		<li class="tab"><a role="tab" href="javascript:void(0);" name="ivinfTab" data-id="ivinf27s">관심지수</a></li>
+	</ul>
+</div>
+<!-- //tab-content -->
+
+<div class="stock-index">
+	<div class="body-caption px4 ar mt16"><span id="basDt"></span> 기준</div>
+	<div class="stock-index-list">
+		<h2 class="headline-small ac mt40">섹터지수</h2>
+		
+		<div class="px0 mt24 mb40 content-fluid">
+			<div class="table-col overflow-visible">
+				<table class="column01-sticky">
+					<caption></caption>
+					<thead>
+						<tr>
+							<th scope="col">지표명</th>
+							<th scope="col">1W</th>
+							<th scope="col">1M</th>
+							<th scope="col">3M</th>
+							<th scope="col">6M</th>
+							<th scope="col">YTD</th>
+							<th scope="col">1Y</th>
+						</tr>
+					</thead>
+					<tbody id="listContainer">
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div id="noDataContainer"></div>
+		
+		<div class="stroke stroke4 content-fluid"></div>
+		<h2 class="headline-small ac mt40" id="strInfo">지표별 수익률</h2>
+
+		<!-- tab-content -->
+		<div class="tab-content mt32">
+			<ul class="tab-list tab-button" role="tablist">
+				<li class="tab tab-active"><button role="tab" name="tmSel" value="1">1주일</button></li>
+				<li class="tab"><button role="tab" name="tmSel" value="2">1개월</button></li>
+				<li class="tab"><button role="tab" name="tmSel" value="3">3개월</button></li>
+				<li class="tab"><button role="tab" name="tmSel" value="4">6개월</button></li>
+				<li class="tab"><button role="tab" name="tmSel" value="5">1년</button></li>
+			</ul>
+		</div>
+		<!-- //tab-content -->
+
+		<div class="chart-wrap mt10 bg-transparent">
+<!-- 			<div style="height:180px;"> -->
+			<div id="ivinf26sChart"></div>
+<!-- 				<div id="chart2" data-aos data-aos-id="chart2"></div> -->
+<!-- 			</div> -->
+			
+			<div class="group pb0 mt32">
+				<div class="right">
+					<span class="divide-list">
+						<span class="fs-14">자료제공: 제로인</span>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

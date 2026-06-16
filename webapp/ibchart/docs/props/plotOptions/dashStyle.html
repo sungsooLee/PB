@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/resources/css/d2coding.css" />
+    <link rel="stylesheet" href="/resources/css/NanumGothic.css" />
+    <link rel="stylesheet" href="/resources/css/md-content.min.css" />
+    <link rel="stylesheet" href="../../resources/css/monokai_sublime.css" />
+  </head>
+
+  <body>
+    <div class="markdown-body">
+      <h1>
+        dashStyle <em><strong>(plotOptions properties)</strong></em>
+      </h1>
+      <blockquote>
+        <p>차트 선의 종류를 설정 합니다.</p>
+      </blockquote>
+      <h3>Info</h3>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>name</th>
+              <th>type</th>
+              <th>required</th>
+              <th>description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>dashStyle</td>
+              <td><code>string</code></td>
+              <td><span class="optional">선택(Solid)</span></td>
+              <td>선의 종류</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Enum</h3>
+      <ul>
+        <li>dashStyle</li>
+      </ul>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>value</th>
+              <th>description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Solid</td>
+              <td>실선</td>
+            </tr>
+            <tr>
+              <td>ShortDash</td>
+              <td>짧은 대쉬선</td>
+            </tr>
+            <tr>
+              <td>ShortDot</td>
+              <td>짧은 점선</td>
+            </tr>
+            <tr>
+              <td>ShortDashDot</td>
+              <td>짧은 대쉬+점</td>
+            </tr>
+            <tr>
+              <td>ShortDashDotDot</td>
+              <td>짧은 대쉬+점+점</td>
+            </tr>
+            <tr>
+              <td>Dot</td>
+              <td>점선</td>
+            </tr>
+            <tr>
+              <td>Dash</td>
+              <td>대쉬선</td>
+            </tr>
+            <tr>
+              <td>LongDash</td>
+              <td>긴 대쉬선</td>
+            </tr>
+            <tr>
+              <td>DashDot</td>
+              <td>대쉬+점</td>
+            </tr>
+            <tr>
+              <td>LongDashDot</td>
+              <td>긴 대쉬+점</td>
+            </tr>
+            <tr>
+              <td>LongDashDotDot</td>
+              <td>긴 대쉬+점+점</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Example</h3>
+      <pre class="hljs"><code>myChart.setOptions({
+  <span class="hljs-attr">plotOptions</span>: {
+    <span class="hljs-attr">line</span>: {
+      <span class="hljs-attr">dashStyle</span>:<span class="hljs-string">"LongDash"</span> <span class="hljs-comment">// 선 종류 설정</span>
+   }
+ },
+ <span class="hljs-attr">series</span>: [{
+    <span class="hljs-attr">name</span> : <span class="hljs-string">"서울"</span>,
+    <span class="hljs-attr">data</span> : [<span class="hljs-number">60</span>,<span class="hljs-number">40</span>,<span class="hljs-number">20</span>,<span class="hljs-number">80</span>]
+ },{
+    <span class="hljs-attr">name</span> : <span class="hljs-string">"인천"</span>,
+    <span class="hljs-attr">data</span> : [<span class="hljs-number">30</span>,<span class="hljs-number">50</span>,<span class="hljs-number">90</span>,<span class="hljs-number">70</span>]
+ },{
+    <span class="hljs-attr">name</span> : <span class="hljs-string">"부산"</span>,
+    <span class="hljs-attr">data</span> : [<span class="hljs-number">40</span>,<span class="hljs-number">70</span>,<span class="hljs-number">30</span>,<span class="hljs-number">60</span>]
+ }]
+}, {
+  <span class="hljs-attr">append</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">redraw</span>: <span class="hljs-literal">true</span>
+});
+</code></pre>
+      <p>
+        <img src="..//resources/images/ibchart/ibchart-dashStyle.png" alt="s" />
+      </p>
+      <h3>제공 버전</h3>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>version</th>
+              <th>desc</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>7.3.0.0</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="../../resources/plugins/jquery/jquery.slim.min.js"></script>
+    <script src="../../resources/plugins/jquery/jquery.mark.min.js"></script>
+    <script src="../../resources/js/ibChart/md-content.js"></script>
+  </body>
+</html>

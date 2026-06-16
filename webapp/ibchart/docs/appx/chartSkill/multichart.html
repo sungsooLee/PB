@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/resources/css/d2coding.css" />
+    <link rel="stylesheet" href="/resources/css/NanumGothic.css" />
+    <link rel="stylesheet" href="/resources/css/md-content.min.css" />
+    <link rel="stylesheet" href="../../resources/css/monokai_sublime.css" />
+  </head>
+
+  <body>
+    <div class="markdown-body">
+      <h1>
+        멀티 차트 표현 기능 <em><strong>(chartSkill)</strong></em>
+      </h1>
+      <blockquote>
+        <p>여러가지의 형태를 한 차트에 표현 할 수 있습니다.</p>
+      </blockquote>
+      <h3>Example</h3>
+      <pre class="hljs"><code>myChart.setOptions({
+  <span class="hljs-attr">chart</span>:{
+    <span class="hljs-attr">type</span>:<span class="hljs-string">'column'</span>
+  },
+  <span class="hljs-attr">xAxis</span>: {
+    <span class="hljs-attr">categories</span>:[<span class="hljs-string">"서울"</span>,<span class="hljs-string">"대전"</span>,<span class="hljs-string">"대구"</span>,<span class="hljs-string">"부산"</span>,<span class="hljs-string">"광주"</span>,<span class="hljs-string">"인천"</span>]
+  },
+  <span class="hljs-attr">series</span>: [{
+    <span class="hljs-attr">type</span>: <span class="hljs-string">"line"</span>,
+    <span class="hljs-attr">zIndex</span>: <span class="hljs-number">3</span>,  <span class="hljs-comment">// z-layer index</span>
+    name : <span class="hljs-string">"축구"</span>,
+    <span class="hljs-attr">data</span> : [<span class="hljs-number">10</span>,<span class="hljs-number">32</span>,<span class="hljs-number">15</span>,<span class="hljs-number">53</span>,<span class="hljs-number">18</span>,<span class="hljs-number">22</span>]
+  },{
+    <span class="hljs-attr">type</span>: <span class="hljs-string">"spline"</span>,
+    <span class="hljs-attr">zIndex</span>: <span class="hljs-number">4</span>,
+    <span class="hljs-attr">name</span> : <span class="hljs-string">"농구"</span>,
+    <span class="hljs-attr">data</span> : [<span class="hljs-number">15</span>,<span class="hljs-number">40</span>,<span class="hljs-number">30</span>,<span class="hljs-number">60</span>,<span class="hljs-number">10</span>,<span class="hljs-number">8</span>]
+  },{
+    <span class="hljs-attr">type</span>: <span class="hljs-string">"column"</span>,
+    <span class="hljs-attr">zIndex</span>: <span class="hljs-number">2</span>,
+    <span class="hljs-attr">name</span> : <span class="hljs-string">"야구"</span>,
+    <span class="hljs-attr">data</span> : [<span class="hljs-number">30</span>,<span class="hljs-number">25</span>,<span class="hljs-number">40</span>,<span class="hljs-number">10</span>,<span class="hljs-number">21</span>,<span class="hljs-number">89</span>]
+  },{
+    <span class="hljs-attr">type</span>: <span class="hljs-string">"area"</span>,
+    <span class="hljs-attr">zIndex</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">name</span> : <span class="hljs-string">"배구"</span>,
+    <span class="hljs-attr">data</span> : [<span class="hljs-number">28</span>,<span class="hljs-number">10</span>,<span class="hljs-number">70</span>,<span class="hljs-number">40</span>,<span class="hljs-number">60</span>,<span class="hljs-number">89</span>]
+  }]
+},{
+  <span class="hljs-attr">append</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">redraw</span>: <span class="hljs-literal">true</span>
+});
+</code></pre>
+      <p>
+        <img
+          src="..//resources/images/ibchart/ibchart-multichart.png"
+          alt="s"
+        />
+      </p>
+      <h3>Since</h3>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>version</th>
+              <th>desc</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>7.3.0.0</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="../../resources/plugins/jquery/jquery.slim.min.js"></script>
+    <script src="../../resources/plugins/jquery/jquery.mark.min.js"></script>
+    <script src="../../resources/js/ibChart/md-content.js"></script>
+  </body>
+</html>

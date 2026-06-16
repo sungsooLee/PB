@@ -1,0 +1,384 @@
+<!--
+/*************************************************************************
+* @ 서비스경로 : CRMPMNG44M
+* @ 파일명      : CRMPMNG44M.html  고객관리 > 기업정보조회 > 재무정보
+* @ 작성자      : 90195654
+* @ 작성일      : 2024-12-26
+************************** 수정이력 ****************************************
+* 날짜                    작업자                 변경내용
+*_________________________________________________________________________
+* 2024-12-26       90195654                 최초작성
+*************************************************************************/
+-->
+<style>
+body {
+	background-color: var(--background-bg_lightGray);
+}
+</style>
+
+<!-- customer-card-list -->
+<div class="customer-info-list mb-24">
+
+	<div class="customer-info-title">
+		<strong class="headline-large ac" id="cmm-tit1"></strong>
+		<div class="tag-wrap">
+			<div class="tags tags-medium tags-white" id="cmm-txt2"></div>
+		</div>
+	</div>
+
+	<!-- tab-content -->
+	<div class="tab-content tab-fluid tab-sticky">
+		<ul class="tab-list tab-col overflow-list px24" id="tabList" role="tablist">
+			<li class="tab"><a role="tab" name="tab" data-link="crmpmng42m" href="javascript:void(0);">기업일반</a></li>
+			<li class="tab"><a role="tab" name="tab" data-link="crmpmng43m" href="javascript:void(0);">기업신용</a></li>
+			<li class="tab tab-active"><a role="tab" name="tab" data-link="crmpmng44m" href="javascript:void(0);">재무정보</a></li>
+			<li class="tab"><a role="tab" name="tab" data-link="crmpmng45m" href="javascript:void(0);">종합의견</a></li>
+			<li class="tab"><a role="tab" name="tab" data-link="crmpmng46m" href="javascript:void(0);">연혁</a></li>
+			<li class="tab"><a role="tab" name="tab" data-link="crmpmng47m" href="javascript:void(0);">경영진현황</a></li>
+			<li class="tab"><a role="tab" name="tab" data-link="crmpmng48m" href="javascript:void(0);">거래처현황</a></li>
+			<li class="tab"><a role="tab" name="tab" data-link="crmpmng49m" href="javascript:void(0);">주요주주현황</a></li>
+		</ul>
+	</div>
+	<!-- //tab-content -->
+
+	<div class="tablet-maxwidth tablet-maxwidth-fluid bg-background-bg_white">
+		<a id="tab-prev" class="ui-tab ui-tab-prev" aria-label="이전 탭"></a>
+		<a id="tab-next" class="ui-tab ui-tab-next" aria-label="다음 탭"></a>
+		<!-- customer-contribution-list -->
+		<div class="customer-contribution-list content-fluid px0">
+
+			<!-- customer-contribution -->
+			<div class="box">
+				<h2 class="headline-small">요약 재무상태표</h2>
+				<div class="caption-visible mt24">(단위: 백만원)</div>
+				<div class="table-col content-fluid overflow-visible px0 mx-24">
+					<table class="column01-sticky">
+						<caption>요약 재무상태표</caption>
+						<thead>
+							<tr>
+								<th scope="col">구분</th>
+								<th scope="col" class="fs-acct-dt"></th>
+								<th scope="col" class="fs1-acct-dt"></th>
+								<th scope="col" class="fs2-acct-dt"></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">유동자산</th>
+								<td id="fs-val1"></td>
+								<td id="fs1-val1"></td>
+								<td id="fs2-val1"></td>
+							</tr>
+							<tr>
+								<th scope="row">비유동자산</th>
+								<td id="fs-val2"></td>
+								<td id="fs1-val2"></td>
+								<td id="fs2-val2"></td>
+							</tr>
+							<tr>
+								<th scope="row">자산총계</th>
+								<td id="fs-val3"></td>
+								<td id="fs1-val3"></td>
+								<td id="fs2-val3"></td>
+							</tr>
+							<tr>
+								<th scope="row">유동부채</th>
+								<td id="fs-val4"></td>
+								<td id="fs1-val4"></td>
+								<td id="fs2-val4"></td>
+							</tr>
+							<tr>
+								<th scope="row">비유동부채</th>
+								<td id="fs-val5"></td>
+								<td id="fs1-val5"></td>
+								<td id="fs2-val5"></td>
+							</tr>
+							<tr>
+								<th scope="row">부채총계</th>
+								<td id="fs-val6"></td>
+								<td id="fs1-val6"></td>
+								<td id="fs2-val6"></td>
+							</tr>
+							<tr>
+								<th scope="row">자본금</th>
+								<td id="fs-val7"></td>
+								<td id="fs1-val7"></td>
+								<td id="fs2-val7"></td>
+							</tr>
+							<tr>
+								<th scope="row">자본금총계</th>
+								<td id="fs-val8"></td>
+								<td id="fs1-val8"></td>
+								<td id="fs2-val8"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!-- //customer-contribution -->
+
+			<div class="stroke stroke4"></div>
+
+			<!-- customer-contribution -->
+			<div class="box">
+				<h2 class="headline-small">요약 손익계산서</h2>
+				<div class="caption-visible mt24">(단위: 백만원)</div>
+				<div class="table-col content-fluid overflow-visible px0 mx-24">
+					<table class="column01-sticky">
+						<caption>요약 손익계산서</caption>
+						<thead>
+							<tr>
+								<th scope="col">구분</th>
+								<th scope="col" class="fs-acct-dt"></th>
+								<th scope="col" class="fs1-acct-dt"></th>
+								<th scope="col" class="fs2-acct-dt"></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">매출액</th>
+								<td id="fs-val9"></td>
+								<td id="fs1-val9"></td>
+								<td id="fs2-val9"></td>
+							</tr>
+							<tr>
+								<th scope="row">매출총이익</th>
+								<td id="fs-val10"></td>
+								<td id="fs1-val10"></td>
+								<td id="fs2-val10"></td>
+							</tr>
+							<tr>
+								<th scope="row">영업이익</th>
+								<td id="fs-val11"></td>
+								<td id="fs1-val11"></td>
+								<td id="fs2-val11"></td>
+							</tr>
+							<tr>
+								<th scope="row">영업외수익</th>
+								<td id="fs-val12"></td>
+								<td id="fs1-val12"></td>
+								<td id="fs2-val12"></td>
+							</tr>
+							<tr>
+								<th scope="row">법인세비용 차감전순손익</th>
+								<td id="fs-val14"></td>
+								<td id="fs1-val14"></td>
+								<td id="fs2-val14"></td>
+							</tr>
+							<tr>
+								<th scope="row">법인세비용</th>
+								<td id="fs-val15"></td>
+								<td id="fs1-val15"></td>
+								<td id="fs2-val15"></td>
+							</tr>
+							<tr>
+								<th scope="row">당기순이익</th>
+								<td id="fs-val16"></td>
+								<td id="fs1-val16"></td>
+								<td id="fs2-val16"></td>
+							</tr>
+							<tr>
+								<th scope="row">이익잉여금</th>
+								<td id="fs-val17"></td>
+								<td id="fs1-val17"></td>
+								<td id="fs2-val17"></td>
+							</tr>
+							<tr>
+								<th scope="row">매출원가</th>
+								<td id="fs-val18"></td>
+								<td id="fs1-val18"></td>
+								<td id="fs2-val18"></td>
+							</tr>
+							<tr>
+								<th scope="row">이자비용</th>
+								<td id="fs-val19"></td>
+								<td id="fs1-val19"></td>
+								<td id="fs2-val19"></td>
+							</tr>
+							<tr>
+								<th scope="row">경상개발비</th>
+								<td id="fs-val20"></td>
+								<td id="fs1-val20"></td>
+								<td id="fs2-val20"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!-- //customer-contribution -->
+
+			<div class="stroke stroke4"></div>
+
+			<!-- customer-contribution -->
+			<div class="box">
+				<h2 class="headline-small">요약 재무비율</h2>
+				<div class="caption-visible mt24">(단위: 백만원)</div>
+				<div class="table-col content-fluid overflow-visible px0 mx-24">
+					<table class="column01-sticky">
+						<caption>요약 재무비율</caption>
+						<thead>
+							<tr>
+								<th scope="col">구분</th>
+								<th scope="col" class="fs-acct-dt"></th>
+								<th scope="col" class="fs1-acct-dt"></th>
+								<th scope="col" class="fs2-acct-dt"></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">총자산증가율</th>
+								<td id="fr-val1"></td>
+								<td id="fr1-val1"></td>
+								<td id="fr2-val1"></td>
+							</tr>
+							<tr>
+								<th scope="row">매출액증가율</th>
+								<td id="fr-val2"></td>
+								<td id="fr1-val2"></td>
+								<td id="fr2-val2"></td>
+							</tr>
+							<tr>
+								<th scope="row">순이익증가율</th>
+								<td id="fr-val3"></td>
+								<td id="fr1-val3"></td>
+								<td id="fr2-val3"></td>
+							</tr>
+							<tr>
+								<th scope="row">영업이익률</th>
+								<td id="fr-val4"></td>
+								<td id="fr1-val4"></td>
+								<td id="fr2-val4"></td>
+							</tr>
+							<tr>
+								<th scope="row">ROE</th>
+								<td id="fr-val5"></td>
+								<td id="fr1-val5"></td>
+								<td id="fr2-val5"></td>
+							</tr>
+							<tr>
+								<th scope="row">ROIC</th>
+								<td id="fr-val6"></td>
+								<td id="fr1-val6"></td>
+								<td id="fr2-val6"></td>
+							</tr>
+							<tr>
+								<th scope="row">부채비율</th>
+								<td id="fr-val7"></td>
+								<td id="fr1-val7"></td>
+								<td id="fr2-val7"></td>
+							</tr>
+							<tr>
+								<th scope="row">이자보상배수</th>
+								<td id="fr-val8"></td>
+								<td id="fr1-val8"></td>
+								<td id="fr2-val8"></td>
+							</tr>
+							<tr>
+								<th scope="row">차입금의존도</th>
+								<td id="fr-val9"></td>
+								<td id="fr1-val9"></td>
+								<td id="fr2-val9"></td>
+							</tr>
+							<tr>
+								<th scope="row">매출채권회전율</th>
+								<td id="fr-val10"></td>
+								<td id="fr1-val10"></td>
+								<td id="fr2-val10"></td>
+							</tr>
+							<tr>
+								<th scope="row">재고자산회전율</th>
+								<td id="fr-val11"></td>
+								<td id="fr1-val11"></td>
+								<td id="fr2-val11"></td>
+							</tr>
+							<tr>
+								<th scope="row">총자본회전율</th>
+								<td id="fr-val12"></td>
+								<td id="fr1-val12"></td>
+								<td id="fr2-val12"></td>
+							</tr>
+							<tr>
+								<th scope="row">자기자본비율</th>
+								<td id="fr-val13"></td>
+								<td id="fr1-val13"></td>
+								<td id="fr2-val13"></td>
+							</tr>
+							<tr>
+								<th scope="row">당기순이익률</th>
+								<td id="fr-val14"></td>
+								<td id="fr1-val14"></td>
+								<td id="fr2-val14"></td>
+							</tr>
+							<tr>
+								<th scope="row">유동비율</th>
+								<td id="fr-val15"></td>
+								<td id="fr1-val15"></td>
+								<td id="fr2-val15"></td>
+							</tr>
+							<tr>
+								<th scope="row">부가가치율</th>
+								<td id="fr-val16"></td>
+								<td id="fr1-val16"></td>
+								<td id="fr2-val16"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!-- //customer-contribution -->
+
+			<div class="stroke stroke4"></div>
+
+			<!-- customer-contribution -->
+			<div class="box">
+				<h2 class="headline-small">요약 현금흐름 분석</h2>
+				<div class="caption-visible mt24">(단위: 백만원)</div>
+				<div class="table-col content-fluid overflow-visible px0 mx-24">
+					<table class="column01-sticky">
+						<caption>요약 현금흐름 분석</caption>
+						<thead>
+							<tr>
+								<th scope="col">구분</th>
+								<th scope="col" class="fs-acct-dt"></th>
+								<th scope="col" class="fs1-acct-dt"></th>
+								<th scope="col" class="fs2-acct-dt"></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">현금영업이익</th>
+								<td id="cf-anal1"></td>
+								<td id="cf1-anal1"></td>
+								<td id="cf2-anal1"></td>
+							</tr>
+							<tr>
+								<th scope="row">경상활동후의 현금흐름</th>
+								<td id="cf-anal2"></td>
+								<td id="cf1-anal2"></td>
+								<td id="cf2-anal2"></td>
+							</tr>
+							<tr>
+								<th scope="row">투자활동후의 현금흐름</th>
+								<td id="cf-anal3"></td>
+								<td id="cf1-anal3"></td>
+								<td id="cf2-anal3"></td>
+							</tr>
+							<tr>
+								<th scope="row">현금흐름등급</th>
+								<td id="cf-anal4"></td>
+								<td id="cf1-anal4"></td>
+								<td id="cf2-anal4"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<p class="description info body-small mt24 fc-typography-caption">재무기준
+					: 일반기업회계기준(k-GAAP)</p>
+			</div>
+			<!-- //customer-contribution -->
+
+		</div>
+		<!-- //customer-contribution-list -->
+	</div>
+</div>
+<!-- //customer-card-list -->

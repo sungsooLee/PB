@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/resources/css/d2coding.css" />
+    <link rel="stylesheet" href="/resources/css/NanumGothic.css" />
+    <link rel="stylesheet" href="/resources/css/md-content.min.css" />
+    <link rel="stylesheet" href="../../resources/css/monokai_sublime.css" />
+  </head>
+
+  <body>
+    <div class="markdown-body">
+      <h1>
+        Spline Update <em><strong>(special Chart)</strong></em>
+      </h1>
+      <blockquote>
+        <p>Spline차트에서 데이터를 실시간으로 업데이트합니다.</p>
+      </blockquote>
+      <h3>Example</h3>
+      <pre class="hljs"><code>
+<span class="hljs-keyword">var</span> options = {
+    <span class="hljs-attr">chart</span>: {
+      <span class="hljs-attr">type</span>: <span class="hljs-string">'spline'</span>,
+    }
+}
+myChart.setOptions(options, {<span class="hljs-attr">append</span> : <span class="hljs-literal">true</span>, <span class="hljs-attr">redraw</span>:<span class="hljs-literal">true</span>});
+<span class="hljs-keyword">var</span> series = myChart.series(<span class="hljs-number">0</span>);
+<span class="hljs-comment">// 최대 표현 갯수 지정</span>
+<span class="hljs-keyword">var</span> maxDataPoints = <span class="hljs-number">20</span>;
+<span class="hljs-comment">// interval을 활용하여 데이터를 업데이트</span>
+<span class="hljs-keyword">this</span>.refreshInterval = setInterval(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">var</span> x = (<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()).getTime(), <span class="hljs-comment">// 현재시간</span>
+      y = <span class="hljs-built_in">Math</span>.random(); <span class="hljs-comment">//랜덤 데이터</span>
+  <span class="hljs-keyword">var</span> isRedraw = series.getData().length &gt;= maxDataPoints;
+  <span class="hljs-keyword">if</span> (series != <span class="hljs-number">-1</span>) series.addPoint([x, y], {<span class="hljs-attr">append</span>:<span class="hljs-literal">true</span>, <span class="hljs-attr">redraw</span>:isRedraw});
+  <span class="hljs-keyword">if</span> (series.getData().length &gt; maxDataPoints) {
+    <span class="hljs-comment">// 최대 갯수를 넘어가면 첫번째 데이터 삭제</span>
+    series.getData()[<span class="hljs-number">0</span>].remove();
+  }
+}, <span class="hljs-number">1000</span>);
+
+<span class="hljs-comment">/** Highcharts에서는 addPoint 이벤트에서 데이터 업데이트 후 pulse효과를 주고있음.
+ * 그러나 현재 IBChart에서는 addPoint 이벤트가 존재하지 않음.
+ * addPoint 이벤트가 추가 되기 전까지는 Highchart의 addPoint를 활용.
+ **/</span>
+Highcharts.addEvent(Highcharts.Series, <span class="hljs-string">'addPoint'</span>, e =&gt; {
+  <span class="hljs-keyword">const</span> point = e.point,
+      series = e.target;
+
+  <span class="hljs-keyword">if</span> (!series.pulse) {
+      series.pulse = series.chart.renderer.circle()
+          .add(series.markerGroup);
+  }
+
+  setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+      series.pulse
+          .attr({
+              <span class="hljs-attr">x</span>: series.xAxis.toPixels(point.x, <span class="hljs-literal">true</span>),
+              <span class="hljs-attr">y</span>: series.yAxis.toPixels(point.y, <span class="hljs-literal">true</span>),
+              <span class="hljs-attr">r</span>: series.options.marker.radius,
+              <span class="hljs-attr">opacity</span>: <span class="hljs-number">1</span>,
+              <span class="hljs-attr">fill</span>: series.color
+          })
+          .animate({
+              <span class="hljs-attr">r</span>: <span class="hljs-number">20</span>,
+              <span class="hljs-attr">opacity</span>: <span class="hljs-number">0</span>
+          }, {
+              <span class="hljs-attr">duration</span>: <span class="hljs-number">1000</span>
+          });
+  }, <span class="hljs-number">1</span>);
+});
+</code></pre>
+      <p>
+        <img
+          src="..//resources/images/ibchart/ibchart-spline-update.png"
+          alt="s"
+        />
+      </p>
+      <h3>Since</h3>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>version</th>
+              <th>desc</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>7.3.0.0</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="../../resources/plugins/jquery/jquery.slim.min.js"></script>
+    <script src="../../resources/plugins/jquery/jquery.mark.min.js"></script>
+    <script src="../../resources/js/ibChart/md-content.js"></script>
+  </body>
+</html>

@@ -1,0 +1,133 @@
+<!--
+/*************************************************************************
+* @ 서비스경로 : FND10M
+* @ 파일명      : FND10M.html 펀드 > 펀드찾기
+* @ 작성자      : 90195654
+* @ 작성일      : 2024-12-26
+************************** 수정이력 ****************************************
+* 날짜                    작업자                 변경내용
+*_________________________________________________________________________
+* 2024-12-26       90195654                 최초작성
+*************************************************************************/
+-->
+<!-- sticky-content -->
+<div class="sticky-sentinal"></div>
+<div class="sticky-content content-fluid">
+  <div class="sticky-content-inner">
+    <!-- form -->
+    <div class="form" id="fndSearchForm">
+      <div class="label"></div>
+      <div class="input-wrap input-placeholder input-select">
+        <button class="select" id="selBtn" data-placeholder="선택하세요">
+          <span id="selTxt">펀드명</span>
+        </button>
+        <input
+          type="search"
+          placeholder="검색어 입력"
+          aria-label="검색"
+          id="searchTxt"
+          autocomplete="off"
+        />
+        <button
+          type="button"
+          class="input-search"
+          id="fndSearch"
+          aria-label="입력 내용 검색"
+        ></button>
+      </div>
+      <p class="validate-text"></p>
+    </div>
+    <!-- //form -->
+  </div>
+</div>
+<!-- //sticky-content -->
+
+<!-- group-form -->
+<div class="group-form py16">
+  <div class="group-title">
+    <strong class="title-medium fw-500">최근 검색어</strong>
+  </div>
+  <div class="group-content content-fluid px0 mt14">
+    <ul class="d-flex overflow-list px16" id="referenceWordList"></ul>
+  </div>
+</div>
+<!-- //group-form -->
+
+<!-- figure-list -->
+<div class="figure-list py16">
+  <ul class="flex-wrap">
+    <li>
+      <a name="link" data-link="fnd12s">
+        <figure>
+          <picture>
+            <source srcset="../../resources/images/PBWFU/ico-fig-list01.svg" />
+            <img src="../../resources/images/PBWFU/ico-fig-list01.svg" alt="" />
+          </picture>
+          <figcaption>전체 펀드</figcaption>
+        </figure>
+      </a>
+    </li>
+    <li>
+      <a name="link" data-link="fnd22m">
+        <figure>
+          <picture>
+            <source srcset="../../resources/images/PBWFU/ico-fig-list02.svg" />
+            <img src="../../resources/images/PBWFU/ico-fig-list02.svg" alt="" />
+          </picture>
+          <figcaption>수익률 BEST</figcaption>
+        </figure>
+      </a>
+    </li>
+    <li>
+      <a name="link" data-link="fnd21m">
+        <figure>
+          <picture>
+            <source srcset="../../resources/images/PBWFU/ico-fig-list03.svg" />
+            <img src="../../resources/images/PBWFU/ico-fig-list03.svg" alt="" />
+          </picture>
+          <figcaption>판매 BEST</figcaption>
+        </figure>
+      </a>
+    </li>
+    <li>
+      <a name="link" data-link="fnd23m">
+        <figure>
+          <picture>
+            <source srcset="../../resources/images/PBWFU/ico-fig-list04.svg" />
+            <img src="../../resources/images/PBWFU/ico-fig-list04.svg" alt="" />
+          </picture>
+          <figcaption>이달의 추천</figcaption>
+        </figure>
+      </a>
+    </li>
+  </ul>
+</div>
+<!-- //figure-list -->
+
+<!-- group-form -->
+<div class="group-form mt16 mb-24">
+  <div class="group-title py16">
+    <strong class="headline-small inner-ico"
+      ><i class="ico-keyword bg-yellow-500"></i>추천 키워드</strong
+    >
+  </div>
+  <div class="group-content content-fluid px0">
+    <div class="swiper keyword-swiper">
+      <div
+        class="swiper-pagination swiper-pagination-tab overflow-list px24"
+      ></div>
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="keyword-list" id="ptrtList"></div>
+        </div>
+        <div class="swiper-slide">
+          <div class="keyword-list" id="sectorList"></div>
+        </div>
+        <div class="swiper-slide">
+          <div class="keyword-list" id="countryList"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- //group-form -->

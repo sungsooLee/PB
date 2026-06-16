@@ -1,0 +1,95 @@
+<!--
+/*************************************************************************
+* @ 서비스경로 : IVINF32M
+* @ 파일명      : IVINF32M.html 투자정보 > 경제캘린더 > 검색
+* @ 작성자      : 90195467
+* @ 작성일      : 2024-01-15
+************************** 수정이력 ****************************************
+* 날짜                    작업자                 변경내용
+*_________________________________________________________________________
+* 2024-12-26            이혜성                 최초작성
+*************************************************************************/
+-->
+
+<style>
+body {
+	background-color: var(--background-bg_lightGray);
+}
+</style>
+
+	<!-- sticky-content -->
+	<div class="content-fluid bg-surface-surface">
+		<div class="group-form mt24">
+			<div class="group-content">
+				<!-- form -->
+				<div class="form" id="searchForm1">
+					<div class="label"></div>
+					<div class="input-wrap input-datepicker">
+						<button type="button" aria-label="대상기간 시작일"
+							data-micromodal-trigger="modal-datepicker1" id="searchStartBtn"></button>
+						<div class="bul">-</div>
+						<button type="button" aria-label="대상기간 종료일"
+							data-micromodal-trigger="modal-datepicker2" id="searchEndBtn"></button>
+					</div>
+					<p class="validate-text" id="validDate"></p>
+				</div>
+			<!-- 	<div class="form">
+					<div class="label"></div>
+					<div class="input-wrap input-btn">
+						<input type="text" placeholder="검색어를 2자 이상 입력해 주세요." aria-label="검색" id="searchKeyword">
+						<button type="button" class="input-remove" aria-label="입력 내용 삭제" id="delSearchBtn"></button>
+						<button type="button" class="input-search" aria-label="입력 내용 검색" id="searchBtn"></button>
+					</div>
+					<p class="validate-text"></p>
+				</div> -->
+				<!-- //form -->
+			</div>
+		</div>
+		<div class="group-form mt24">
+			<div class="group-content">
+				<div class="form" id="searchForm2">
+					<div class="label"></div>
+					<div class="input-wrap">
+						<input type="text" placeholder="검색어를 2자 이상 입력해 주세요." aria-label="일정 검색" id="searchKeyword">
+						<button type="button" class="input-remove" aria-label="입력 내용 삭제"  id="delSearchBtn"></button>
+					</div>
+					<p class="validate-text" id="validKeyword"></p>
+				</div>
+			</div>
+		</div>
+        <!-- group-form -->
+        <!--
+        <div class="group-form mt24">
+            <div class="group-title">
+                <strong class="title-medium">중요도</strong>
+            </div>
+            <div class="group-content">
+                <div class="form">
+                    <div class="label"></div>
+                    <div class="inp inp-board">
+                        <input type="checkbox" class="fc-brandPrimary-blue400" checked aria-label="&#9733;&#9733;&#9733;">
+                        <input type="checkbox" class="fc-brandPrimary-blue400" checked aria-label="&#9733;&#9733;">
+                        <input type="checkbox" class="fc-brandPrimary-blue400" checked aria-label="&#9733;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        -->
+        <!-- //group-form -->
+		<div class="btn-wrap pt40 pb24">
+			<button type="button" class="btn-medium btn-primary"  id="searchBtn"><i class="ico-search"></i>검색</button>
+		</div>
+	</div>
+	<!-- //sticky-content -->
+	<!-- eco-section -->
+	<div class="eco-section content-fluid pt40" id="dataForm">
+
+	</div>
+	
+	<div class="division-center content-fluid bg-background-bg_lightGray pb24" id="noDataForm" style="display:none">
+		<div class="no-result">
+			<i class="icon-only icon-48 icon-noresult bg-icon-gray_1"></i>
+			<p class="body-medium fw-400">검색 결과가 없습니다.</p>
+		</div>
+	</div>
+	<!-- //eco-section -->

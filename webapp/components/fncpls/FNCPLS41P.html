@@ -1,0 +1,97 @@
+<!--
+/*************************************************************************
+* @ 서비스경로 : FNCPL41P
+* @ 파일명      : FNCPL41P.html  금융+ > 환율계산기 > [P] 환율우대율 선택
+* @ 작성자      : 90196258
+* @ 작성일      : 2025-01-10
+************************** 수정이력 ****************************************
+* 날짜                    작업자                 변경내용
+*_________________________________________________________________________
+* 2025-01-10       90196258                 최초작성
+*************************************************************************/
+-->
+
+<div class="content">
+
+	<!-- group-form -->
+	<div class="group-form">
+		<div class="group-title py16 px8">
+			<strong class="title-large px0">우대율 선택</strong>
+		</div>
+		<div class="group-content mt0">
+			<div class="inp-round">
+				<div class="inp">
+					<label>
+						<input type="radio" name="rad001" aria-label="없음" value=''>
+					</label>
+				</div>
+				<div class="inp">
+					<label>
+						<input type="radio" name="rad001" aria-label="90%" value='90'>
+					</label>
+				</div>
+				<div class="inp">
+					<label>
+						<input type="radio" name="rad001" aria-label="80%" value='80'>
+					</label>
+				</div>
+				<div class="inp">
+					<label>
+						<input type="radio" name="rad001" aria-label="70%" value='70'>
+					</label>
+				</div>
+				<div class="inp">
+					<label>
+						<input type="radio" name="rad001" aria-label="60%" value='60'>
+					</label>
+				</div>
+				<div class="inp">
+					<label>
+						<input type="radio" name="rad001" aria-label="50%" value='50'>
+					</label>
+				</div>
+				<div class="inp">
+					<label>
+						<input type="radio" name="rad001" aria-label="40%" value='40'>
+					</label>
+				</div>
+				<div class="inp">
+					<label>
+						<input type="radio" name="rad001" aria-label="30%" value='30'>
+					</label>
+				</div>
+				<div class="inp">
+					<label>
+						<input type="radio" name="rad001" aria-label="20%" value='20'>
+					</label>
+				</div>
+				<div class="inp">
+					<label>
+						<input type="radio" name="rad001" aria-label="10%" value='10'>
+					</label>
+				</div>
+				<div class="inp">
+					<label>
+						<input type="radio" name="rad001" aria-label="직접 입력" value='ipt' checked>
+					</label>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //group-form -->
+
+	<!-- group-form -->
+	<div class="group-form mt24" id="iptPrmeRtArea">
+		<div class="group-content mt0">
+			<div class="form">
+				<div class="input-wrap input-placeholder">
+					<input id="iptPrmeRt" type="number" class="ar" placeholder="우대율 입력" aria-label="우대율 직접 입력" maxlength="3" value="" pattern="[0-9]*" inputmode="decimal">
+					<button type="button" class="input-remove" aria-label="입력 내용 삭제"></button>
+					<div class="visible-placeholder">%</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //group-form -->
+
+</div>

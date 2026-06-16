@@ -1,0 +1,82 @@
+<!--
+/*************************************************************************
+* @ 서비스경로 : IVINF50M
+* @ 파일명      : IVINF50M.html  투자정보 > 금융 뉴스 > [T]전체 > 목록
+* @ 작성자      : 90196258
+* @ 작성일      : 2025-01-31
+************************** 수정이력 ****************************************
+* 날짜                    작업자                 변경내용
+*_________________________________________________________________________
+* 2025-01-31       90196258                 최초작성
+*************************************************************************/
+-->
+
+<style>
+	body {
+		background-color: var(--background-bg_lightGray);
+	}
+</style>
+
+<!-- snackbar-content -->
+<div class="snackbar-content is-sticky" style="bottom:70px;">
+	<button type="button" id="btnSearchNews" class="fab fab-primary fab-square" aria-label="뉴스 검색" data-micromodal-trigger="modal-news-search"><i class="ico-search bg-icon-white"></i></button>
+</div>
+<!-- //snackbar-content -->
+
+<!-- tab-content -->
+<div class="tab-content tab-fluid tab-sticky">
+	<ul class="tab-list tab-col overflow-list" role="tablist">
+		<li id="all" class="tab tab-active"><a role="tab" name="fncNews" data-id="all" href="javascript:void(0)">전체</a></li>
+		<li id="my" class="tab"><a role="tab" name="fncNews" data-id="my" href="javascript:void(0)">MY</a></li>
+		<li id="econ" class="tab"><a role="tab" name="fncNews" data-id="econ" href="javascript:void(0)">경제</a></li>
+		<li id="world" class="tab"><a role="tab" name="fncNews" data-id="world" href="javascript:void(0)">세계</a></li>
+		<li id="fund" class="tab"><a role="tab" name="fncNews" data-id="fund" href="javascript:void(0)">펀드</a></li>
+	</ul>
+</div>
+<!-- //tab-content -->
+
+<!-- sticky-content -->
+<div class="sticky-sentinal"></div>
+<div class="sticky-content content-fluid py0 bg-transparent">
+	<div class="sticky-content-inner">
+		<div class="group content-fluid py12">
+			<div class="right">
+				<button type="button" class="btn-xsmall btn-outlined btn-round" id="ttsPlayAll"><i class="ico-speaker"></i>전체 듣기</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //sticky-content -->
+
+<p class="description info body-small fc-typography-caption mt0" id="updateInfo">오늘의 금융뉴스는 오전 7시, 오후 12시, 4시에 업데이트됩니다.</p>
+
+<div class="financial-news">
+
+	<div id="allNewsDiv" class="financial-news-list mt16" style="display:none;">
+		<ul id="allNewsList">
+		</ul>
+	</div>
+	<div id="myNewsDiv" class="financial-news-list mt16" style="display:none;">
+		<ul id="myNewsList">
+		</ul>
+	</div>
+	<div id="econNewsDiv" class="financial-news-list mt16" style="display:none;">
+		<ul id="econNewsList">
+		</ul>
+	</div>
+	<div id="worldNewsDiv" class="financial-news-list mt16" style="display:none;">
+		<ul id="worldNewsList">
+		</ul>
+	</div>
+	<div id="fundNewsDiv" class="financial-news-list mt16" style="display:none;">
+		<ul id="fundNewsList">
+		</ul>
+	</div>
+</div>
+
+<div class="division-center" id="noFncNews">
+	<div class="no-result">
+		<i class="icon-only icon-48 icon-nobook bg-icon-gray_1"></i>
+		<p class="body-medium fw-400 ac"></p>
+	</div>
+</div>

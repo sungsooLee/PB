@@ -1,0 +1,64 @@
+<!--
+/*************************************************************************
+* @ 서비스경로 : DSCMNG10M
+* @ 파일명      : DSCMNG10M.html 일정관리 > 영업 캘린더 > 월간 일정
+* @ 작성자      : 90195467
+* @ 작성일      : 2024-12-26
+************************** 수정이력 ****************************************
+* 날짜                    작업자                 변경내용
+*_________________________________________________________________________
+* 2024-12-26            이혜성                 최초작성
+*************************************************************************/
+-->
+
+<style>
+    body {
+        background-color: var(--background-bg_lightGray);
+    }
+</style>
+<!-- snackbar-content -->
+<div class="snackbar-content is-sticky">
+	<a href="#" class="fab fab-secondary fab-square" aria-label="일정 검색" id="searchSchdBtn"><i class="ico-search" style="background-color:#FF8000;"></i></a>
+    <a href="#" class="fab fab-primary fab-square" aria-label="일정 추가" id="addSchdBtn"><i class="ico-calendar"></i></a>
+</div>
+<!-- //snackbar-content -->
+
+<!-- datepicker-wrap -->
+<div class="datepicker-wrap content-fluid pt16 pb40 bg-surface-surface">
+
+	<!-- inp-group -->
+	<div class="inp-group gap16 px0">
+		<div class="inp inp-medium" id="chk01Form">
+			<label> <input type="checkbox" class="type-yellow" id="chk01"
+				checked> <span class="label-title">개인 일정</span>
+			</label>
+		</div>
+		<div class="inp inp-medium" id="chk02Form" style="display:none">
+			<label> <input type="checkbox" class="type-cyan" id="chk02"
+				checked> <span class="label-title">수신 만기</span>
+			</label>
+		</div>
+		<div class="inp inp-medium" id="chk03Form" style="display:none">
+			<label> <input type="checkbox" class="type-purple" id="chk03"
+				checked> <span class="label-title">고객 생일</span>
+			</label>
+		</div>
+	</div>
+	<!-- //inp-group -->
+
+	<div aria-label="날짜 선택" class="datepicker-trigger"
+		id="datepicker_schedule"></div>
+</div>
+<!-- //datepicker-wrap -->
+
+<!-- schedule-section -->
+<div class="schedule-section content-fluid pt40">
+	<div class="tags-wrap mb24">
+		<div class="tags tags-medium tags-lightBlue" id="selTodayText"></div>
+	</div>
+	<div id="schdListForm" style="display:none">
+	</div>
+	
+	<p class="description ac my12 fc-typography-caption fs-15" id="noSchdListForm" style="display:none">일정이 없습니다.</p>
+</div>
+<!-- //schedule-section -->

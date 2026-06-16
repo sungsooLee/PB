@@ -1,0 +1,77 @@
+<!--
+/*************************************************************************
+* @ 서비스경로 : MNG02M
+* @ 파일명      : MNG02M.html 관리 > 커뮤니티 관리 > 목록
+* @ 화면ID		: PBWAD020000
+* @ 작성자      : 90195654
+* @ 작성일      : 2025-01-17
+************************** 수정이력 ****************************************
+* 날짜                    작업자                 변경내용
+*_________________________________________________________________________
+* 2025-01-17            90195654                 최초작성
+*************************************************************************/
+-->
+<!-- group-form -->
+<div class="group-form mt16">
+	<div class="group-title">
+		<strong class="title-medium">수정 기간</strong>
+	</div>
+	<div class="group-content">
+		<div class="form" id="dateForm">
+			<div class="label"></div>
+			<div class="input-wrap input-datepicker">
+				<button type="button" aria-label="대상기간 시작일"
+					data-micromodal-trigger="modal-datepicker1" id="startDtm"></button>
+				<div class="bul">-</div>
+				<button type="button" aria-label="대상기간 종료일"
+					data-micromodal-trigger="modal-datepicker2" id="endDtm"></button>
+			</div>
+			<p class="validate-text" id="dateErr"></p>
+		</div>
+	</div>
+</div>
+<!-- //group-form -->
+
+<!-- group-form -->
+<div class="group-form mt16">
+	<div class="group-content">
+		<div class="form">
+			<button class="select" data-micromodal-trigger="modal-select-list"
+				data-placeholder="선택하세요" id="selBtn">
+				<span id="selTxt">등록자</span>
+			</button>
+		</div>
+	</div>
+	<div class="group-content">
+		<div class="form" id="keywordForm">
+			<div class="label"></div>
+			<div class="input-wrap">
+				<input type="text" placeholder="검색어 입력" aria-label="검색어" id="keyword">
+				<button type="button" class="input-remove" aria-label="입력 내용 삭제"></button>
+			</div>
+			<p class="validate-text" id="keywordErr"></p>
+		</div>
+	</div>
+</div>
+<!-- //group-form -->
+
+<div class="btn-wrap">
+	<button type="button" class="btn-medium btn-primary" id="search"><i class="ico-search"></i>검색</button>
+</div>
+
+<!-- memo-list -->
+<div class="memo-list mt16">
+
+</div>
+<!-- //memo-list -->
+
+<!-- division-center -->
+<div class="division-center" id="no-result" style="display:none;">
+
+	<div class="no-result">
+		<i class="icon-only icon-48 icon-notext bg-icon-gray_1"></i>
+		<p class="body-medium fw-400">등록된 글이 없습니다.</p>
+	</div>
+
+</div>
+<!-- //division-center -->

@@ -1,0 +1,86 @@
+<!--
+/*************************************************************************
+* @ 서비스경로 : FND40S
+* @ 파일명      : FND40S.html  ETF > ETF상세 > 커뮤니티 
+* @ 작성자      : 90195654
+* @ 작성일      : 2024-12-26
+************************** 수정이력 ****************************************
+* 날짜                    작업자                 변경내용
+*_________________________________________________________________________
+* 2024-12-26       90195654                 최초작성
+*************************************************************************/
+-->
+<style>
+body {
+	background-color: var(--background-bg_lightGray);
+}
+</style>
+
+
+<!-- tab-content -->
+<div class="tab-content tab-fluid tab-sticky">
+	<ul class="tab-list tab-col overflow-list" role="tablist">
+		<li class="tab"><a role="tab" id="goFndDetail">ETF</a></li>
+		<li class="tab tab-active"><a role="tab" href="javascript:void(0)">커뮤니티
+			<i class="badge" id="tot_cnt"></i></a></li>
+	</ul>
+</div>
+<!-- //tab-content -->
+
+<!-- snackbar-content -->
+<div class="snackbar-content is-sticky">
+	<button type="button" class="fab fab-primary fab-square" id="new_regist_btn" aria-label="글쓰기"><i class="ico-reply"></i></button>
+</div>
+<!-- //snackbar-content -->
+
+
+
+<!-- sort-wrap -->
+<div class="sort-wrap py16">
+
+	<!-- sort-list -->
+	<button class="sort-list" id="myInfo_btn">
+		<span class="filter"> <span class="sort">내 정보관리</span>
+		</span>
+	</button>
+	<!-- sort-list -->
+</div>
+
+<div class="community-wrap" id="result">
+	<ul class="dep01">
+
+
+	</ul>
+</div>
+
+<!-- division-center -->
+<div class="division-center" style="display:none;" id="no-result">
+
+	<div class="no-result">
+		<i class="icon-only icon-48 icon-notext bg-icon-gray_1"></i>
+		<p class="body-medium fw-400 ac">첫 게시글을 기다리고 있습니다. <span class="list-spacing"></span>여러분의 전문적이고 유익한 <br> 정보를 공유해주세요.</p>
+	</div>
+
+</div>
+<!-- //division-center -->
+
+<div class="micromodal-slide micromodal-slide-dropdown modal" id="modal-dropdown-list" aria-hidden="true">
+	<div class="modal__overlay" tabindex="-1" data-micromodal-close>
+		<div class="modal__container" role="dialog" aria-modal="true">
+			<div class="modal__header modal__header__alert">
+				<button type="button" class="modal__close" aria-label="팝업 닫기" data-micromodal-close=""></button>
+			</div>
+			<div class="modal__content">
+				<div class="content content-fluid pb0">
+					<div class="dropdown-option">
+						<ul>
+							<li><button type="button" id="modify"><i class="ico-reply"></i>수정</button></li>
+							<li><button type="button" id="delete"><i class="ico-delete"></i>삭제</button></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- sort-wrap -->

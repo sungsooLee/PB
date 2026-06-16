@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/resources/css/d2coding.css" />
+    <link rel="stylesheet" href="/resources/css/NanumGothic.css" />
+    <link rel="stylesheet" href="/resources/css/md-content.min.css" />
+    <link rel="stylesheet" href="../../resources/css/monokai_sublime.css" />
+  </head>
+
+  <body>
+    <div class="markdown-body">
+      <h1>
+        dataLabels <em><strong>(plotOptions properties)</strong></em>
+      </h1>
+      <blockquote>
+        <p>데이터 라벨의 속성을 설정 합니다.</p>
+      </blockquote>
+      <h3>Info</h3>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>name</th>
+              <th>type</th>
+              <th>required</th>
+              <th>description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>dataLabels</td>
+              <td><code>object</code></td>
+              <td><span class="optional">선택</span></td>
+              <td>데이터 라벨 속성</td>
+            </tr>
+            <tr>
+              <td>dataLabels.align</td>
+              <td><code>string</code></td>
+              <td><span class="optional">선택(center)</span></td>
+              <td>정렬 방법</td>
+            </tr>
+            <tr>
+              <td>dataLabels.allowOverlap</td>
+              <td><code>boolean</code></td>
+              <td><span class="optional">선택(false)</span></td>
+              <td>데이터 중복 허용 여부</td>
+            </tr>
+            <tr>
+              <td>dataLabels.backgroundColor</td>
+              <td><code>color</code></td>
+              <td><span class="optional">선택(undefined)</span></td>
+              <td>데이터 레이블 배경 색상</td>
+            </tr>
+            <tr>
+              <td>dataLabels.borderColor</td>
+              <td><code>color</code></td>
+              <td><span class="optional">선택(undefined)</span></td>
+              <td>데이터 레이블 테두리 색상</td>
+            </tr>
+            <tr>
+              <td>dataLabels.borderRadius</td>
+              <td><code>number</code></td>
+              <td><span class="optional">선택(0)</span></td>
+              <td>데이터 레이블 테두리 radius 값</td>
+            </tr>
+            <tr>
+              <td>dataLabels.borderWidth</td>
+              <td><code>number</code></td>
+              <td><span class="optional">선택(0)</span></td>
+              <td>데이터 레이블 테두리 너비</td>
+            </tr>
+            <tr>
+              <td>dataLabels.distance</td>
+              <td><code>number</code></td>
+              <td><span class="optional">선택(30)</span></td>
+              <td>
+                끝지점 부터의 표시 위치<br /><code
+                  >pie, dependency-wheel 차트에서만 사용 가능</code
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>dataLabels.enabled</td>
+              <td><code>boolean</code></td>
+              <td><span class="optional">선택(false)</span></td>
+              <td>표시 여부</td>
+            </tr>
+            <tr>
+              <td>dataLabels.filter</td>
+              <td><code>object</code></td>
+              <td><span class="optional">선택</span></td>
+              <td>
+                데이터 레이블이 표시될 값 필터<br /><span style="color: blue"
+                  >Ex) filter: {property: 'percentage', operator: '&gt;', value:
+                  4}</span
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>dataLabels.format</td>
+              <td><code>string</code></td>
+              <td><span class="optional">선택({y})</span></td>
+              <td>
+                출력 포맷 <br /><span style="color: blue"
+                  >Ex) format: ‘{y} mm’</span
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>dataLabels.formatter</td>
+              <td><code>function()</code></td>
+              <td><span class="optional">선택</span></td>
+              <td>
+                출력 포맷을 정의하는 callback <br /><span style="color: blue"
+                  >Ex) this.y 현재 y값</span
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>dataLabels.inside</td>
+              <td><code>boolean</code></td>
+              <td><span class="optional">선택</span></td>
+              <td>
+                상자 내부의 레이블 정렬 여부 <br />
+                <span style="color: blue">true</span>일 경우 내부의 정렬
+              </td>
+            </tr>
+            <tr>
+              <td>dataLabels.linkFormat</td>
+              <td><code>string</code></td>
+              <td><span class="optional">선택</span></td>
+              <td>
+                노드를 잇는 링크(선) 위에 나타나는 데이터 레이블 문자열<br /><code
+                  >graph 차트에서만 사용 가능</code
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>dataLabels.rotation</td>
+              <td><code>number</code></td>
+              <td><span class="optional">선택(0)</span></td>
+              <td>기울기</td>
+            </tr>
+            <tr>
+              <td>dataLabels.shadow</td>
+              <td><code>boolean</code></td>
+              <td><span class="optional">선택(false)</span></td>
+              <td>그림자 여부</td>
+            </tr>
+            <tr>
+              <td>dataLabels.style</td>
+              <td><code>object</code></td>
+              <td><span class="optional">선택</span></td>
+              <td>스타일 속성</td>
+            </tr>
+            <tr>
+              <td>dataLabels.useHTML</td>
+              <td><code>boolean</code></td>
+              <td><span class="optional">선택</span></td>
+              <td>HTML 사용 여부</td>
+            </tr>
+            <tr>
+              <td>dataLabels.verticalAlign</td>
+              <td><code>string</code></td>
+              <td><span class="optional">선택(bottom)</span></td>
+              <td>수직 정렬 여부</td>
+            </tr>
+            <tr>
+              <td>dataLabels.x</td>
+              <td><code>number</code></td>
+              <td><span class="optional">선택</span></td>
+              <td>좌우 포지션 이동 값</td>
+            </tr>
+            <tr>
+              <td>dataLabels.y</td>
+              <td><code>number</code></td>
+              <td><span class="optional">선택</span></td>
+              <td>상하 포지션 이동 값</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <ul>
+        <li>dataLabels.style Info</li>
+      </ul>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>name</th>
+              <th>type</th>
+              <th>required</th>
+              <th>description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>color</td>
+              <td><code>color</code></td>
+              <td><span class="optional">선택</span></td>
+              <td>폰트 색상</td>
+            </tr>
+            <tr>
+              <td>fontSize</td>
+              <td><code>string</code></td>
+              <td><span class="optional">선택</span></td>
+              <td>폰트 크기(px)</td>
+            </tr>
+            <tr>
+              <td>fontWeight</td>
+              <td><code>string</code></td>
+              <td><span class="optional">선택(bold)</span></td>
+              <td>폰트 bold 여부</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <ul>
+        <li>dataLabels.filter Info</li>
+      </ul>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>name</th>
+              <th>type</th>
+              <th>required</th>
+              <th>description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>operator</td>
+              <td><code>operator</code></td>
+              <td><span class="optional">선택</span></td>
+              <td>
+                비교할 연산자 ( &quot;&gt;&quot; , &quot;&lt;&quot; ,
+                &quot;&gt;=&quot; , &quot;&lt;=&quot; , &quot; == &quot; ,
+                &quot;===&quot; , &quot;!=&quot; , &quot;!==&quot;)
+              </td>
+            </tr>
+            <tr>
+              <td>property</td>
+              <td><code>string</code></td>
+              <td><span class="optional">선택</span></td>
+              <td>
+                필터링 기준 데이터 포인트 속성 (x, y, name, percentage, sum 등)
+              </td>
+            </tr>
+            <tr>
+              <td>value</td>
+              <td><code>number</code></td>
+              <td><span class="optional">선택(bold)</span></td>
+              <td>필터링 기준 값</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Enum</h3>
+      <ul>
+        <li>align</li>
+      </ul>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>value</th>
+              <th>description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>center</td>
+              <td>중앙 정렬</td>
+            </tr>
+            <tr>
+              <td>left</td>
+              <td>좌측 정렬</td>
+            </tr>
+            <tr>
+              <td>right</td>
+              <td>우측 정렬</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <ul>
+        <li>verticalAlign</li>
+      </ul>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>value</th>
+              <th>description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>top</td>
+              <td>위쪽 정렬</td>
+            </tr>
+            <tr>
+              <td>middle</td>
+              <td>중간 정렬</td>
+            </tr>
+            <tr>
+              <td>bottom</td>
+              <td>아래쪽 정렬</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Example</h3>
+      <pre class="hljs"><code>myChart.setOptions({
+  <span class="hljs-attr">plotOptions</span>: {
+    <span class="hljs-attr">column</span>: {
+     <span class="hljs-attr">dataLabels</span> : {           <span class="hljs-comment">// dataLabels 속성 설정</span>
+      enabled:<span class="hljs-literal">true</span>,
+      <span class="hljs-attr">align</span>:<span class="hljs-string">"left"</span>,
+      <span class="hljs-attr">backgroundColor</span>:<span class="hljs-string">"#ffdab9"</span>,
+      <span class="hljs-attr">style</span>:{
+        <span class="hljs-attr">color</span>:<span class="hljs-string">"#800000"</span>
+      },
+      <span class="hljs-attr">formatter</span>:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.y + <span class="hljs-string">"개"</span>;
+      }
+    }
+  }
+ },
+ <span class="hljs-attr">series</span>: [{
+    <span class="hljs-attr">type</span>: <span class="hljs-string">"column"</span>,
+    <span class="hljs-attr">name</span> : <span class="hljs-string">"서울"</span>,
+    <span class="hljs-attr">data</span> : [<span class="hljs-number">60</span>,<span class="hljs-number">40</span>,<span class="hljs-number">20</span>,<span class="hljs-number">80</span>]
+ },{
+    <span class="hljs-attr">name</span> : <span class="hljs-string">"인천"</span>,
+    <span class="hljs-attr">data</span> : [<span class="hljs-number">30</span>,<span class="hljs-number">50</span>,<span class="hljs-number">90</span>,<span class="hljs-number">70</span>]
+ },{
+    <span class="hljs-attr">name</span> : <span class="hljs-string">"부산"</span>,
+    <span class="hljs-attr">data</span> : [<span class="hljs-number">40</span>,<span class="hljs-number">70</span>,<span class="hljs-number">30</span>,<span class="hljs-number">60</span>]
+ }]
+}, {
+  <span class="hljs-attr">append</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">redraw</span>: <span class="hljs-literal">true</span>
+});
+</code></pre>
+      <p>
+        <img
+          src="..//resources/images/ibchart/ibchart-dataLabels.png"
+          alt="s"
+        />
+      </p>
+      <h3>제공 버전</h3>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>version</th>
+              <th>desc</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>7.3.0.0</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="../../resources/plugins/jquery/jquery.slim.min.js"></script>
+    <script src="../../resources/plugins/jquery/jquery.mark.min.js"></script>
+    <script src="../../resources/js/ibChart/md-content.js"></script>
+  </body>
+</html>

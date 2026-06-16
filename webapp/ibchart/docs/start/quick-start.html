@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/resources/css/d2coding.css" />
+    <link rel="stylesheet" href="/resources/css/NanumGothic.css" />
+    <link rel="stylesheet" href="/resources/css/md-content.min.css" />
+    <link rel="stylesheet" href="../../resources/css/monokai_sublime.css" />
+  </head>
+
+  <body>
+    <div class="markdown-body">
+      <h1>Quick Start</h1>
+      <h2>설치</h2>
+      <p>
+        <code>IBChart</code> 를 사용하기 위해 아래 4가지 js 파일을 include
+        합니다.
+      </p>
+      <pre
+        class="hljs"
+      ><code><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/highcharts/highcharts.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/chart/ibleaders.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/chart/ibchartinfo.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/chart/ibchart.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+      <ul>
+        <li>
+          highcharts.js 파일은 highsoft의 highcharts입니다. IBChart를 이용하려면
+          <code>highcharts</code>를 반드시 사용해야 합니다.
+        </li>
+        <li>
+          highcharts.js는 기본으로 포함시키고 필요에 따라 highcharts의 module를
+          추가해서 사용합니다.
+        </li>
+      </ul>
+      <h2>차트 객체 생성</h2>
+      <p>
+        차트 객체 생성은 차트가 만들어질 컨테이너가 구성된 이후에 설정 할 수
+        있습니다.<br />
+      </p>
+      <ol>
+        <li>
+          body 태그 하위에 컨테이너로 사용할 <code>div</code>를 생성 하고, body
+          태그의 <code>onload</code> 이벤트로 생성하는 방법
+        </li>
+        <li>
+          jQuery 라이브러리를 사용하는 경우
+          <code>$(document).ready();</code> 에서 설정하는 방법
+        </li>
+      </ol>
+      <ul>
+        <li><span style="color: blue">일반적</span> 객체 생성 방법</li>
+      </ul>
+      <pre
+        class="hljs"
+      ><code><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+…
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="actionscript">
+<span class="hljs-comment">// 일반적으로 사용 시</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fnLoadPage</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-comment">// 차트 객체 생성</span>
+  createIBChart(<span class="hljs-string">"cont"</span>, <span class="hljs-string">"myChart"</span>, {
+      width:<span class="hljs-string">"500px"</span>,
+      height:<span class="hljs-string">"500px"</span>
+  });
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span> <span class="hljs-attr">onload</span>=<span class="hljs-string">"fnLoadPage();"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"cont"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+      <ul>
+        <li>
+          <span style="color: blue">jQuery 라이브러리</span> 사용 객체 생성 방법
+        </li>
+      </ul>
+      <pre
+        class="hljs"
+      ><code><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+…
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="javascript">
+<span class="hljs-comment">// jQuery 라이브러리 사용시</span>
+$(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-comment">// 차트 객체 생성</span>
+  createIBChart(<span class="hljs-string">"cont"</span>, <span class="hljs-string">"myChart"</span>, {
+    <span class="hljs-attr">width</span>:<span class="hljs-string">"500px"</span>,
+    <span class="hljs-attr">height</span>:<span class="hljs-string">"500px"</span>
+  });
+});
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"cont"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+
+</code></pre>
+      <h2>차트 구성 옵션 설정</h2>
+      <p>
+        차트 객체 생성 완료 후 <code>setOptions</code> method를 이용하여 차트
+        구성 옵션을 설정합니다.<a
+          href="#"
+          onclick="
+            window.event.preventDefault();
+            window.event.stopPropagation();
+            gotoByURL('docs/props/chart/achart.html');
+          "
+          >chart Properties 참고</a
+        >
+      </p>
+      <pre
+        class="hljs"
+      ><code><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+…
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="actionscript">
+  <span class="hljs-comment">// 일반적으로 사용 시</span>
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fnLoadPage</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-comment">// 차트 객체 생성</span>
+  createIBChart(<span class="hljs-string">"cont"</span>, <span class="hljs-string">"myChart"</span>, {
+    width:<span class="hljs-string">"500px"</span>,
+    height:<span class="hljs-string">"500px"</span>
+  });
+
+  <span class="hljs-comment">// 차트 구성 옵션 설정</span>
+  myChart.setOptions({
+    <span class="hljs-comment">// 사용자 설정</span>
+  });
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span> <span class="hljs-attr">onload</span>=<span class="hljs-string">"fnLoadPage();"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"cont"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+      <h2>조회된 데이터 사용</h2>
+      <p>
+        조회된 데이터를 차트에 동적으로 적용합니다. 이를 위한 단계는 아래와
+        같습니다.
+      </p>
+      <ol>
+        <li>
+          <p>
+            조회 데이터(JSON or XML) 생성하기
+            <span style="color: red">[필수]</span>
+            <a
+              href="#"
+              onclick="
+                window.event.preventDefault();
+                window.event.stopPropagation();
+                gotoByURL('docs/start/data-structure.html');
+              "
+              >※ 데이터 구조 참고</a
+            >
+          </p>
+        </li>
+        <li>
+          <p>
+            조회 완료 이벤트 처리하기 <span style="color: blue">[선택]</span>
+          </p>
+        </li>
+      </ol>
+      <pre
+        class="hljs"
+      ><code>myChart.setEventListener(<span class="hljs-string">"searchEnd"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"조회가 완료되었습니다."</span>);
+});
+</code></pre>
+      <ol start="3">
+        <li>
+          조회된 데이터(JSON or XML) 차트에 적용하기
+          <span style="color: red">[필수]</span><br />
+          <a
+            href="#"
+            onclick="
+              window.event.preventDefault();
+              window.event.stopPropagation();
+              gotoByURL('docs/funcs/chartObject/loadSearchData.html');
+            "
+            >loadSearchData</a
+          >
+          함수를 이용해 조회된 데이터를 적용시킵니다.
+        </li>
+      </ol>
+    </div>
+    <script src="../../resources/plugins/jquery/jquery.slim.min.js"></script>
+    <script src="../../resources/plugins/jquery/jquery.mark.min.js"></script>
+    <script src="../../resources/js/ibChart/md-content.js"></script>
+  </body>
+</html>

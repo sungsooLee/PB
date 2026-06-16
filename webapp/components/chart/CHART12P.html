@@ -1,0 +1,97 @@
+<!--
+/*************************************************************************
+* @ 서비스경로 : CHART12P
+* @ 파일명      : CHART12P.html 차트 > 펀드/지수 비교 > [P]상품/지수 검색 > 추천
+* @ 화면ID		: PBWCH009902
+* @ 작성자      : 90194835
+* @ 작성일      : 2025-01-21
+************************** 수정이력 ****************************************
+* 날짜                    작업자                 변경내용
+*_________________________________________________________________________
+* 2025-01-21            윤은정                 최초작성
+*************************************************************************/
+-->
+
+<div class="content">
+	<!-- sticky-content -->
+	<div class="sticky-sentinal"></div>
+	<div class="sticky-content content-fluid">
+		<div class="sticky-content-inner">
+			<!-- form -->
+			<div class="form" id="keywordChk">
+				<div class="label"></div>
+				<div class="search-history-back"><button type="button" aria-label="검색메뉴 닫기" id="btnSelBack"></button></div>
+				<div class="input-wrap input-btn">
+					<input type="text" placeholder="펀드, ETF, 지수 검색" aria-label="검색" id="inKeyword">
+					<button type="button" class="input-remove" aria-label="입력 내용 삭제"></button>
+					<button type="button" class="input-search" aria-label="입력 내용 검색" id="btnPopSearch"></button>
+				</div>
+				<p class="validate-text" id="keywordMsg"></p>
+			</div>
+			<!-- //form -->
+		</div>
+	</div>
+	<!-- //sticky-content -->
+	
+	<!-- 검색결화 영역 -->
+	<div id="searchDataLst" style="display: none;">
+<!-- 		<ul class="d-flex flex-column gap14 mt16"> -->
+<!-- 		</ul> -->
+	</div>
+	
+	<div id="basicArea">
+		<!-- group-form -->
+		<div class="group-form py16" id="cartArea">
+			<div class="group-title">
+				<strong class="title-medium fw-500">최근 비교한 상품/지수</strong>
+			</div>
+			<div class="group-content content-fluid px0 mt14">
+				<ul class="d-flex overflow-list px16" id="cookieData">
+				</ul>
+			</div>
+		</div>
+		<!-- //group-form -->
+		
+		<p class="description info body-small fc-typography-caption mt16" id="infoStr">비교하고 싶은 상품/지수를 아래에서 선택해 주세요.</p>
+
+        <div class="stroke stroke4 content-fluid mt16"></div>
+		
+		<!-- group-form -->
+		<div class="group-form mt16" id="nidxArea">
+			<div class="group-content content-fluid px0">
+				<!-- tab-content -->
+				<div class="tab-content">
+					<ul class="tab-list tab-col overflow-list px24" role="tablist">
+						<li class="tab tab-active"><button role="tab" class="fs-18" name="subTab" value="1">주가지수</button></li>
+						<li class="tab"><button role="tab" class="fs-18" name="subTab" value="2">채권금리</button></li>
+						<li class="tab"><button role="tab" class="fs-18" name="subTab" value="3">환율</button></li>
+						<li class="tab"><button role="tab" class="fs-18" name="subTab" value="4">원자재</button></li>
+						<li class="tab"><button role="tab" class="fs-18" name="subTab" value="5">나의 관심펀드</button></li>
+					</ul>
+				</div>
+		
+				<!-- //tab-content -->
+				<div class="tab-content mt16">
+					<div class="d-flex flex-wrap px16 gap10 bg-transparent" id="tabDataLst">
+					</div>
+				</div>
+		
+			</div>
+		</div>
+		<!-- //group-form -->
+	</div>
+	
+	<!-- bottom-btn -->
+	<div class="bottom-btn bottom-btn-shadow">
+		<div class="bottom-btn-title">
+			<strong class="title-medium">최대 3개를 비교할 수 있습니다.</strong>
+		</div>
+		<div class="btn-wrap btn-nowrap overflow-list" id="cartContainer">
+		</div>
+		<div class="btn-wrap">
+			<button type="button" class="btn-medium btn-primary" id="btnComp">비교하기</button>
+		</div>
+	</div>
+	<!-- //bottom-btn -->	
+</div>
+

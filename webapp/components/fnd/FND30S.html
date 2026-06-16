@@ -1,0 +1,285 @@
+<!--
+/*************************************************************************
+* @ 서비스경로 : FND30S
+* @ 파일명      : FND30S.html 펀드 > 상세
+* @ 작성자      : 90195654
+* @ 작성일      : 2024-12-26
+************************** 수정이력 ****************************************
+* 날짜                    작업자                 변경내용
+*_________________________________________________________________________
+* 2024-12-26       90195654                 최초작성
+*************************************************************************/
+-->
+<style>
+	body {
+		background-color: var(--background-bg_lightGray);
+	}
+</style>
+
+<!-- tab-content -->
+<div class="tab-content tab-fluid tab-sticky">
+	<ul class="tab-list tab-col overflow-list" role="tablist">
+		<li class="tab tab-active"><a role="tab" href="javascript:void(0);">펀드</a></li>
+		<li class="tab"><a role="tab" id="goCmty">커뮤니티<i class="badge" id="totCmtyCnt"></i></a></li>
+	</ul>
+</div>
+<!-- //tab-content -->
+
+<!-- fund-detail -->
+<div class="fund-detail">
+
+	<div class="fund-detail-title">
+		<div class="tag-wrap tag-wrap-top" id="tag">
+		</div>
+		<h2 class="headline-medium" id="prdKorlNm"></h2>
+
+		<div class="favorite-btn-wrap" data-toggle="toggle-wrap">
+			<button type="button" data-toggle="toggle-trigger" name="likeBtn" id="likeBtn">
+				<i class="icon-only icon-36 icon-fav" data-switch-inner="true"
+					data-switch-inner-before="icon-fav"
+					data-switch-inner-after="icon-fav-active" name="likeBtn"></i> <span
+					class="toggle-off blind">관심펀드 등록</span> <span
+					class="toggle-on blind">관심펀드 등록해제</span>
+			</button>
+		</div>
+
+		<p class="body-xlarge fw-400" id="prdDtlTxt"></p>
+		<div class="tag-wrap tag-wrap-bottom" id="fndPrdKrdNm">
+		</div>
+	</div>
+
+	<div class="fund-detail-rate mt16">
+		<div class="rate-inner" id="prftRtDiv">
+			<h3 class="title-large fw-700">수익률</h3>
+			<dl class="expect-list">
+				<div class="list">
+					<dt>1개월</dt>
+					<dd id="bmmPrftRt">-</dd>
+				</div>
+				<div class="list">
+					<dt>3개월</dt>
+					<dd id="m3PrftRt">-</dd>
+				</div>
+				<div class="list">
+					<dt>6개월</dt>
+					<dd id="m6PrftRt">-</dd>
+				</div>
+				<div class="list">
+					<dt>12개월</dt>
+					<dd id="m12PrftRt">-</dd>
+				</div>
+			</dl>
+		</div>
+		<div class="stroke stroke-dashed my32"></div>
+		<div class="rate-status">
+			<h3 class="title-large fw-700">기준가</h3>
+			<dl class="status-list">
+				<dt id="fndBasPr"></dt>
+			</dl>
+		</div>
+	</div>
+
+	<p class="description info body-small fc-typography-caption mt16 mb40">투자대상, 투자에 따른 위험, 위험등급, 수수료는 「금융소비자보호법」 제19조 제1항에서 규정하고 있는 중요한 사항입니다.</p>
+
+	<div class="fund-detail-info content-fluid mt40" id="fndAgrtTxtDiv">
+		<h4 class="headline-small">상품 특징</h4>
+		<pre class="body-large fw-400 px8" id="fndAgrtTxt">
+		</pre>
+	</div>
+
+	<div class="stroke stroke4 stroke-fluid" id="pieChartLine"></div>
+
+	<div class="fund-detail-info content-fluid" id="pieChartDiv">
+		<h4 class="headline-small">자산구성</h4>
+		<div style="height: 250px;">
+			<div  id="chart"></div>
+		</div>
+		<div class="group pb8">
+			<div class="right">
+				<span class="divide-list"> <span class="fs-14" id="baseDt"></span>
+					<span class="division h14 mx8"></span> <span class="fs-14">자료제공
+						: 제로인</span>
+				</span>
+			</div>
+		</div>
+	</div>
+
+	<div class="stroke stroke4 stroke-fluid" id="top10Div1"></div>
+
+	<div class="fund-detail-info content-fluid" id="top10Div2">
+		<h4 class="headline-small">상위 10위</h4>
+		<div class="top10-list">
+			<dl id="top10List">
+			</dl>
+		</div>
+		<div class="btn-wrap">
+			<button type="button" class="btn-xsmall btn-outlined btn-round" id="allShow">전체보기</button>
+		</div>
+	</div>
+
+	<div class="stroke stroke4 stroke-fluid" id="lineChartLine"></div>
+
+	<div class="fund-detail-info content-fluid" id="lineChart">
+		<h4 class="headline-small">누적 수익률</h4>
+		<!-- tab-content -->
+		<div class="tab-content">
+			<ul class="tab-list tab-button" role="tablist" id="tabList">
+				<li class="tab"><a name="ptrtTerm" data-term="1" role="tab" >1개월</a></li>
+				<li class="tab tab-active"><a name="ptrtTerm" data-term="3" role="tab">3개월</a></li>
+				<li class="tab"><a name="ptrtTerm" data-term="6" role="tab">6개월</a></li>
+				<li class="tab"><a name="ptrtTerm" data-term="12" role="tab">12개월</a></li>
+			</ul>
+		</div>
+		<!-- //tab-content -->
+		<div class="chart-wrap mt24">
+			<div style="height: 180px;">
+				<div id="chart2"></div>
+			</div>
+			<div class="group pb0">
+				<div class="right">
+					<span class="divide-list"> <span class="fs-14"><span id="prcBasDt"></span>
+							기준</span> <span class="division h14 mx8"></span> <span class="fs-14">자료제공:
+							제로인</span>
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="btn-wrap mt16">
+			<button type="button" class="btn-xsmall btn-outlined btn-round" name="popup" value="fnd31p">기간별 수익률/기준가 보기</button>
+		</div>
+		<p class="description info body-small fc-typography-caption mt16">역외펀드의
+			경우, 데이터 제공업체로부터 제공받은 가장 최신의 수익률을 기반으로 안내하고 있으나 당일자 실제 수익률과는 차이가 있을 수
+			있습니다.</p>
+	</div>
+
+	<div class="stroke stroke4 stroke-fluid"></div>
+
+	<div class="fund-detail-info content-fluid">
+		<h4 class="headline-small">수수료 및 보수</h4>
+
+		<div class="table-layout">
+			<div class="tbody">
+				<div class="tr">
+					<div class="th">
+						<div class="group gap2 py0 j-start">
+							<div>선취 수수료</div>
+							<button type="button" class="d-flex" id="tippy1" 
+								data-tippy-content="펀드 매수 시 지불하는 수수료입니다.">
+								<i class="icon-only icon-16 icon-tooltip bg-icon-gray_1"></i>
+							</button>
+						</div>
+
+					</div>
+					<div class="td" id="pocpFee">없음</div>
+				</div>
+				<div class="tr">
+					<div class="th">총 보수</div>
+					<div class="td" id="totPfeRt">
+						
+					</div>
+				</div>
+				<div class="tr">
+					<div class="th">
+						<div class="group gap2 py0 j-start">
+							<div>환매 수수료</div>
+							<button type="button" class="d-flex" id="tippy2"
+								data-tippy-content="계약기간 이전 중도에 펀드를 환매할 시 <br> 발생하는 수수료 입니다.">
+								<i class="icon-only icon-16 icon-tooltip bg-icon-gray_1"></i>
+							</button>
+
+						</div>
+					</div>
+					<div class="td" id="rprhFee">없음</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="stroke stroke4 stroke-fluid"></div>
+
+	<div class="content-fluid px0">
+		<button type="button" name="popup" value="fnd32p" class="anchor chevron anchor-fluid"
+			data-micromodal-trigger="modal-popup02">
+			<strong class="title-medium px4">매매 기준일</strong>
+		</button>
+		<div class="stroke px0" id="fnd33pStroke"></div>
+		<button type="button" name="popup" value="fnd33p" id="fnd33pBtn" class="anchor chevron anchor-fluid"
+			data-micromodal-trigger="modal-popup03">
+			<strong class="title-medium px4">투자설명서 및 약관</strong>
+		</button>
+		<div class="stroke px0"></div>
+		<button type="button" name="popup" value="fnd34p" class="anchor chevron anchor-fluid"
+			data-micromodal-trigger="modal-popup04">
+			<strong class="title-medium px4">투자에 따른 위험</strong>
+		</button>
+		<div class="stroke px0"></div>
+		<button type="button" name="popup" value="fnd35p" class="anchor chevron anchor-fluid"
+			data-micromodal-trigger="modal-popup04">
+			<strong class="title-medium px4">클래스 비교</strong>
+		</button>
+	</div>
+
+	<div class="stroke stroke4 stroke-fluid"></div>
+
+	<div class="fund-detail-info content-fluid">
+		<h4 class="headline-small">펀드 정보</h4>
+
+		<div class="stroke px0"></div>
+		<dl class="group pb0">
+			<dt class="fs-18 fw-400 px-4">펀드유형</dt>
+			<dd class="fs-18 fw-400 fc-status-info" id="zrinLrgTpNm"></dd>
+		</dl>
+		<dl class="group pb0">
+			<dt class="fs-18 fw-400 px-4">투자 국가</dt>
+			<dd class="fs-18 fw-400 fc-status-info" id="prdIvstRgnNm"></dd>
+		</dl>
+		<dl class="group pb0">
+			<dt class="fs-18 fw-400 px-4">펀드 설정일</dt>
+			<dd class="fs-18 fw-400 fc-status-info" id="fndEstDt"></dd>
+		</dl>
+		<dl class="group pb0">
+			<dt class="fs-18 fw-400 px-4">펀드 섹터</dt>
+			<dd class="fs-18 fw-400 fc-status-info" id="zrinTpNm"></dd>
+		</dl>
+		<dl class="group">
+			<dt class="fs-18 fw-400 px-4">운용사</dt>
+			<dd class="fs-18 fw-400 fc-status-info" id="asetOprcNm"></dd>
+		</dl>
+		<div class="stroke px0"></div>
+
+	</div>
+	
+	<div class="stroke stroke4 stroke-fluid"></div>
+
+	<div class="fund-detail-info content-fluid">
+		<h4 class="headline-small">유의사항</h4>
+
+		<ul class="dot-list p0 fc-typography-cpation">
+			<li>비예금상품은 원금손실이 발생할 수 있습니다.</li>
+			<li>과거수익률이 미래수익률을 보장하지 않습니다.</li>
+			<li>투자대상, 투자에 따른 위험, 위험등급, 수수료는 「금융소비자보호법」 제19조 제1항에서 규정하고 있는 중요한 사항입니다.</li>
+			<li>최근에 설정(운용 시작)되어 설정기간이 짧은 펀드는 기간별 수익률이 존재하지 않을 수 있습니다.</li>
+			<li>BM(벤치마크)은 제로인이 부여한 BM으로 투자설명서의 BM 또는 비교지수와 다를 수 있습니다.</li>
+			<li>제로인에서 제공하는 데이터 및 분석자료는 단순 정보제공을 목적으로 하며, 특정 펀드에 대한 투자를 권고하거나 거래를 목적으로 하지 않습니다.</li>
+            <li>제로인의 제공내용은 운용사의 공시 등 신뢰할만한 판단자료로 얻어진 것이나, 그 정확성이나 안전성을 당사가 보증하는 것은 아닙니다. 따라서 본 정보에 의존해 행해지는 행위로 인해 발생하는 결과에 대해 당사는 책임을 지지 않습니다.</li>
+			<li>제로인에서 제공하는 데이터 및 분석자료는 무단으로 배포하거나 재활용 할 수 없습니다.</li>
+		</ul>
+	</div>
+
+</div>
+<!-- //fund-detail -->
+
+
+ <!-- 펀드상세 행내한 안내팝업 -->
+  <div class="snackbar-content">
+	<div class="snackbar-content-inner">
+		<button type="button" class="snackbar-content-close" aria-label="팝업 닫기" data-snackbar-close><i class="ico-close-16"></i></button>
+		<strong class="block fs-15 fc-red-600 fw-500" id="snackbar-title"></strong>
+		<p class="fs-14 fc-typography-body mt6" id="snackbar-content"></p>
+	</div>
+  </div>
+  <!-- 펀드상세 행내한 안내팝업 -->
+  
+  <input type="hidden" id="fndPdcd" value="">
+  <input type="hidden" id="fndNm" value="">

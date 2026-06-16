@@ -1,0 +1,42 @@
+<div class="memo-inner is-toggled">
+	<div class="tag-wrap mb12">
+		<div class="tags tags-small tags-white tags-round" data-bind="memoHdnYn">나만보기</div>
+	</div>
+	<p data-bind="nmcrMemoTxt"></p>
+	<dl class="flex-column gap8 a-start">
+		<dt>등록자</dt>
+		<dd>
+			<div class="divide-list mt0">
+				<span class="fc-typography-gray fw-500" data-bind="empNm"></span>
+				<div class="division h14 mx8"></div>
+				<span data-bind="deptNm"></span>
+				<div class="division h14 mx8" data-bind="deptNmBar"></div>
+				<span data-bind="teamNm"></span>
+<!-- 				<div class="division h14 mx8"></div> -->
+<!-- 				<span>등록일시</span> -->
+				<div class="division h14 mx8" data-bind="teamNmBar"></div>
+				<span data-bind="lstAmdDtm"></span>
+
+			</div>
+		</dd>
+	</dl>
+	<dl class="flex-column gap8 a-start">
+		<dt>고객정보</dt>
+		<dd>
+			<div class="divide-list mt0">
+				<span class="fc-typography-gray fw-500" data-bind="nmcrNm"></span>
+				<div class="division h14 mx8"></div>
+				<span data-bind="nmcrDeptNm"></span>
+				<div class="division h14 mx8" data-bind="nmcrDeptNmBar"></div>
+				<span data-bind="nmcrDtsNm"></span>
+				<div class="division h14 mx8" data-bind="nmcrDtsNmBar"></div>
+				<span data-bind="nmcrComNm"></span>
+			</div>
+		</dd>
+	</dl>
+	<div class="memo-btn mt24">
+		<div class="right">
+			<button type="button" class="btn-noborder" id="btnDel"><i class="ico-delete"></i>삭제</button>
+		</div>
+	</div>
+</div>

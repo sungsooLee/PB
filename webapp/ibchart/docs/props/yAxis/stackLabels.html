@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/resources/css/d2coding.css" />
+    <link rel="stylesheet" href="/resources/css/NanumGothic.css" />
+    <link rel="stylesheet" href="/resources/css/md-content.min.css" />
+    <link rel="stylesheet" href="../../resources/css/monokai_sublime.css" />
+  </head>
+
+  <body>
+    <div class="markdown-body">
+      <h1>
+        stackLabels <em><strong>(xAxis properties)</strong></em>
+      </h1>
+      <blockquote>
+        <p>
+          누적형 레이블 사용여부(합계값 표시)를 표시합니다.<br />
+          누적형 차트에서만 사용할 수 있습니다.
+        </p>
+      </blockquote>
+      <h3>Info</h3>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>name</th>
+              <th>type</th>
+              <th>required(default)</th>
+              <th>description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>enabled</td>
+              <td><code>boolean</code></td>
+              <td><span class="optional">선택(false)</span></td>
+              <td>누적형 레이블 사용 여부</td>
+            </tr>
+            <tr>
+              <td>align</td>
+              <td><code>string</code></td>
+              <td><span class="optional">선택</span></td>
+              <td>누적형 레이블 위치</td>
+            </tr>
+            <tr>
+              <td>format</td>
+              <td><code>string</code></td>
+              <td><span class="optional">선택({total})</span></td>
+              <td>누적형 레이블 포맷 문자열</td>
+            </tr>
+            <tr>
+              <td>formatter</td>
+              <td><code>function()</code></td>
+              <td><span class="optional">선택</span></td>
+              <td>
+                누적형 레이블 포맷을 정의하는 callback 함수 (합계값은 this.total
+                로 표현)
+              </td>
+            </tr>
+            <tr>
+              <td>style</td>
+              <td><code>object</code></td>
+              <td><span class="optional">선택</span></td>
+              <td>누적형 레이블 스타일 속성</td>
+            </tr>
+            <tr>
+              <td>rotation</td>
+              <td><code>number</code></td>
+              <td><span class="optional">선택(0)</span></td>
+              <td>누적형 레이블 기울기 (0~360)</td>
+            </tr>
+            <tr>
+              <td>x</td>
+              <td><code>string</code></td>
+              <td><span class="optional">선택</span></td>
+              <td>x 위치 값 설정</td>
+            </tr>
+            <tr>
+              <td>y</td>
+              <td><code>string</code></td>
+              <td><span class="optional">선택</span></td>
+              <td>y 위치 값 설정</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <ul>
+        <li>stackLabels.style Info</li>
+      </ul>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>name</th>
+              <th>type</th>
+              <th>required(default)</th>
+              <th>description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>color</td>
+              <td><code>color</code></td>
+              <td><span class="optional">선택</span></td>
+              <td>폰트 색상</td>
+            </tr>
+            <tr>
+              <td>fontSize</td>
+              <td><code>string</code></td>
+              <td><span class="optional">선택</span></td>
+              <td>폰트 크기</td>
+            </tr>
+            <tr>
+              <td>fontWeight</td>
+              <td><code>string</code></td>
+              <td><span class="optional">선택</span></td>
+              <td>폰트 두께</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Enum</h3>
+      <ul>
+        <li>stackLabels.align</li>
+      </ul>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>value</th>
+              <th>description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>center</td>
+              <td>중앙 정렬</td>
+            </tr>
+            <tr>
+              <td>left</td>
+              <td>좌측 정렬</td>
+            </tr>
+            <tr>
+              <td>right</td>
+              <td>우측 정렬</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Example</h3>
+      <pre class="hljs"><code>myChart.setOptions({
+  <span class="hljs-attr">chart</span>: {
+    <span class="hljs-attr">type</span>: <span class="hljs-string">"column"</span>
+  },
+  <span class="hljs-attr">yAxis</span>: {
+    <span class="hljs-attr">stackLabels</span>: {
+      <span class="hljs-attr">enabled</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">align</span>: <span class="hljs-string">"left"</span>
+    }
+},
+<span class="hljs-attr">plotOptions</span>: {
+  <span class="hljs-attr">column</span>: {
+    <span class="hljs-attr">stacking</span>: <span class="hljs-string">"normal"</span>
+  }
+}
+  series: [{
+    <span class="hljs-attr">name</span>: <span class="hljs-string">"서울"</span>,
+    <span class="hljs-attr">data</span> : [<span class="hljs-number">60</span>,<span class="hljs-number">40</span>,<span class="hljs-number">20</span>,<span class="hljs-number">80</span>]
+  },{
+    <span class="hljs-attr">name</span>: <span class="hljs-string">"인천"</span>,
+    <span class="hljs-attr">data</span> : [<span class="hljs-number">30</span>,<span class="hljs-number">50</span>,<span class="hljs-number">90</span>,<span class="hljs-number">70</span>]
+  },{
+    <span class="hljs-attr">name</span>: <span class="hljs-string">"부산"</span>,
+    <span class="hljs-attr">data</span> : [<span class="hljs-number">40</span>,<span class="hljs-number">70</span>,<span class="hljs-number">30</span>,<span class="hljs-number">60</span>]
+  }]
+}, {
+  <span class="hljs-attr">append</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">redraw</span>: <span class="hljs-literal">true</span>
+});
+</code></pre>
+      <h3>제공 버전</h3>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>version</th>
+              <th>desc</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>7.3.0.0</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="../../resources/plugins/jquery/jquery.slim.min.js"></script>
+    <script src="../../resources/plugins/jquery/jquery.mark.min.js"></script>
+    <script src="../../resources/js/ibChart/md-content.js"></script>
+  </body>
+</html>

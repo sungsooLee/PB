@@ -1,0 +1,86 @@
+<!--
+/*************************************************************************
+* @ 서비스경로 : CRMPMNG45M
+* @ 파일명      : CRMPMNG45M.html  고객관리 > 기업정보조회 > 종합의견
+* @ 작성자      : 90195654
+* @ 작성일      : 2024-12-26
+************************** 수정이력 ****************************************
+* 날짜                    작업자                 변경내용
+*_________________________________________________________________________
+* 2024-12-26       90195654                 최초작성
+*************************************************************************/
+-->
+<style>
+body {
+	background-color: var(--background-bg_lightGray);
+}
+</style>
+
+<!-- customer-card-list -->
+<div class="customer-info-list mb-24">
+
+	<div class="customer-info-title">
+		<strong class="headline-large ac" id="cmm-tit1"></strong>
+		<div class="tag-wrap">
+			<div class="tags tags-medium tags-white" id="cmm-txt2"></div>
+		</div>
+	</div>
+
+	<!-- tab-content -->
+	<div class="tab-content tab-fluid tab-sticky">
+		<ul class="tab-list tab-col overflow-list px24" id="tabList" role="tablist">
+			<li class="tab"><a role="tab" name="tab" data-link="crmpmng42m" href="javascript:void(0);">기업일반</a></li>
+			<li class="tab"><a role="tab" name="tab" data-link="crmpmng43m" href="javascript:void(0);">기업신용</a></li>
+			<li class="tab"><a role="tab" name="tab" data-link="crmpmng44m" href="javascript:void(0);">재무정보</a></li>
+			<li class="tab tab-active"><a role="tab" name="tab" data-link="crmpmng45m" href="javascript:void(0);">종합의견</a></li>
+			<li class="tab"><a role="tab" name="tab" data-link="crmpmng46m" href="javascript:void(0);">연혁</a></li>
+			<li class="tab"><a role="tab" name="tab" data-link="crmpmng47m" href="javascript:void(0);">경영진현황</a></li>
+			<li class="tab"><a role="tab" name="tab" data-link="crmpmng48m" href="javascript:void(0);">거래처현황</a></li>
+			<li class="tab"><a role="tab" name="tab" data-link="crmpmng49m" href="javascript:void(0);">주요주주현황</a></li>
+		</ul>
+	</div>
+	<!-- //tab-content -->
+
+	<div class="tablet-maxwidth tablet-maxwidth-fluid bg-background-bg_white">
+		<a id="tab-prev" class="ui-tab ui-tab-prev" aria-label="이전 탭"></a>
+		<a id="tab-next" class="ui-tab ui-tab-next" aria-label="다음 탭"></a>
+		<!-- customer-contribution-list -->
+		<div class="customer-contribution-list content-fluid px0">
+
+			<!-- customer-contribution -->
+			<div class="box">
+				<h2 class="headline-small">기업체 개요</h2>
+
+				<p class="body-large mt24" id="opnn-enp"></p>
+				<p class="description caution body-small ac mt24" style="display:none" id="box1-no-search">조회 데이터가 없습니다.</p>
+				<div class="body-caption mt8"></div>
+			</div>
+			<!-- //customer-contribution -->
+
+			<div class="stroke stroke4"></div>
+
+			<!-- customer-contribution -->
+			<div class="box">
+				<h2 class="headline-small">경영진</h2>
+				<p class="description caution body-small ac mt24" style="display:none" id="box2-no-search">조회 데이터가 없습니다.</p>
+				<p class="body-large mt24" id="opnn-reper"></p>
+
+			</div>
+			<!-- //customer-contribution -->
+
+			<div class="stroke stroke4"></div>
+
+			<!-- customer-contribution -->
+			<div class="box">
+				<h2 class="headline-small">영업상황</h2>
+				<p class="description caution body-small ac mt24" style="display:none" id="box3-no-search">조회 데이터가 없습니다.</p>
+				<p class="body-large mt24" id="opnn-sales"></p>
+			</div>
+			<!-- //customer-contribution -->
+
+		</div>
+		<!-- //customer-contribution-list -->
+	</div>
+
+</div>
+<!-- //customer-card-list -->

@@ -1,0 +1,45 @@
+<style>
+  body {
+    background-color: var(--background-bg_lightGray);
+  }
+  .main-inner > #container > .content {padding-bottom:0;}
+</style>
+<input type="hidden" name="aiSelect" value="1">
+<div class="tab-content tab-fluid tab-sticky-transparent pt13 pb12 pl24 pr24">
+	<ul class="tab-list tab-anchor overflow-list" role="tablist">
+		<li id="aiType1" class="tab"><a name="aiType" data-id="0" class="fs-17 pt6 pb6" href="javascript:void(0)" style="border-radius:8px">우리상품 GPT</a></li>
+		<li id="aiType2" class="tab tab-active"><a name="aiType" data-id="1" class="fs-17 pt6 pb6" href="javascript:void(0)" style="border-radius:8px">외환규정 GPT</a></li>
+	</ul>
+</div>
+
+<div class="chatgpt-wrap content-fluid px0">
+  <div id="aiCnslIntro" class="chatgroup chatgroup-notice pt0">
+
+  </div>
+  <div id="aiCnslBody" class="chatgroup chatgroup-body" style="flex: 1">
+    <!-- 로딩 -->
+    <div class="chatbottom">
+      <div class="chatbody chat-loading" style="display:none;"><span id="loadingMessage" class="fw-300 ml20">답변 대기 중 입니다.</span>
+        <div class="spinner">
+          <div class="bounce1"></div>
+          <div class="bounce2"></div>
+          <div class="bounce3"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- 2025-04-22: bottom-btn 위치 layout.jsp으로 부터 이동함. -->
+<div id="aiCnslBtnDiv" class="bottom-btn bottom-btn-chatgpt">
+    <div class="btn-wrap a-end" style="box-shadow: 0px -2px 40px -1px rgba(12, 12, 13, 0.12);">
+        <div class="input-wrap input-chat-wrap">
+        <input class="textarea" id="quesInput" type="text" placeholder="궁금하신 사항을 질문하세요." data-bind="quesVal">
+        </div>
+        <button id="sendBtn" type="button" class="btn-small btn-primary btn-round" style="flex:0">확인</button>
+    </div>
+</div>
+<!-- //bottom-btn -->

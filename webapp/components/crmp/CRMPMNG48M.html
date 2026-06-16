@@ -1,0 +1,194 @@
+<!--
+/*************************************************************************
+* @ 서비스경로 : CRMPMNG48M
+* @ 파일명      : CRMPMNG48M.html  고객관리 > 기업정보조회 > 거래처현황
+* @ 작성자      : 90195654
+* @ 작성일      : 2024-12-26
+************************** 수정이력 ****************************************
+* 날짜                    작업자                 변경내용
+*_________________________________________________________________________
+* 2024-12-26       90195654                 최초작성
+*************************************************************************/
+-->
+<style>
+body {
+	background-color: var(--background-bg_lightGray);
+}
+</style>
+
+<!-- customer-card-list -->
+<div class="customer-info-list mb-24">
+
+	<div class="customer-info-title">
+		<strong class="headline-large ac" id="cmm-tit1"></strong>
+		<div class="tag-wrap">
+			<div class="tags tags-medium tags-white" id="cmm-txt2"></div>
+		</div>
+	</div>
+
+	<!-- tab-content -->
+	<div class="tab-content tab-fluid tab-sticky">
+		<ul class="tab-list tab-col overflow-list px24" id="tabList" role="tablist">
+			<li class="tab"><a role="tab" name="tab" data-link="crmpmng42m" href="javascript:void(0);">기업일반</a></li>
+			<li class="tab"><a role="tab" name="tab" data-link="crmpmng43m" href="javascript:void(0);">기업신용</a></li>
+			<li class="tab"><a role="tab" name="tab" data-link="crmpmng44m" href="javascript:void(0);">재무정보</a></li>
+			<li class="tab"><a role="tab" name="tab" data-link="crmpmng45m" href="javascript:void(0);">종합의견</a></li>
+			<li class="tab"><a role="tab" name="tab" data-link="crmpmng46m" href="javascript:void(0);">연혁</a></li>
+			<li class="tab"><a role="tab" name="tab" data-link="crmpmng47m" href="javascript:void(0);">경영진현황</a></li>
+			<li class="tab tab-active"><a role="tab" name="tab" data-link="crmpmng48m" href="javascript:void(0);">거래처현황</a></li>
+			<li class="tab"><a role="tab" name="tab" data-link="crmpmng49m" href="javascript:void(0);">주요주주현황</a></li>
+		</ul>
+	</div>
+	<!-- //tab-content -->
+
+	<div class="tablet-maxwidth tablet-maxwidth-fluid bg-background-bg_white">
+		<a id="tab-prev" class="ui-tab ui-tab-prev" aria-label="이전 탭"></a>
+		<a id="tab-next" class="ui-tab ui-tab-next" aria-label="다음 탭"></a>
+		<!-- customer-contribution-list -->
+		<div class="customer-contribution-list content-fluid px0">
+
+			<!-- customer-contribution -->
+			<div class="box">
+				<h2 class="headline-small">구매처</h2>
+				<div class="caption-visible mt24"></div>
+				<div class="table-col">
+					<table>
+						<caption>구매처</caption>
+						<colgroup>
+							<col>
+							<col style="width: 30%;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">주요구매처</th>
+								<th scope="col">거래비중</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="al" id="cust-nm1"></td>
+								<td class="ar" id="cust-rt1"></td>
+							</tr>
+							<tr>
+								<td class="al" id="cust-nm2"></td>
+								<td class="ar" id="cust-rt2"></td>
+							</tr>
+							<tr>
+								<td class="al" id="cust-nm3"></td>
+								<td class="ar" id="cust-rt3"></td>
+							</tr>
+							<tr>
+								<td class="al" id="cust-nm4"></td>
+								<td class="ar" id="cust-rt4"></td>
+							</tr>
+							<tr>
+								<td class="al" id="cust-nm5"></td>
+								<td class="ar" id="cust-rt5"></td>
+							</tr>
+							<tr>
+								<td class="al" id="cust-nm6"></td>
+								<td class="ar" id="cust-rt6"></td>
+							</tr>
+							<tr>
+								<td class="al" id="cust-nm7"></td>
+								<td class="ar" id="cust-rt7"></td>
+							</tr>
+							<tr>
+								<td class="al" id="cust-nm8"></td>
+								<td class="ar" id="cust-rt8"></td>
+							</tr>
+							<tr>
+								<td class="al" id="cust-nm9"></td>
+								<td class="ar" id="cust-rt9"></td>
+							</tr>
+							<tr>
+								<td class="al" id="cust-nm10"></td>
+								<td class="ar" id="cust-rt10"></td>
+							</tr>
+							<tr id="cust-no-data" style="display:none;">
+								<td colspan="2">
+									<p class="description caution body-small d-inflex">조회 데이터가 없습니다.</p>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!-- //customer-contribution -->
+
+			<div class="stroke stroke4"></div>
+
+			<!-- customer-contribution -->
+			<div class="box">
+				<h2 class="headline-small">판매처</h2>
+				<div class="caption-visible mt24"></div>
+				<div class="table-col">
+					<table>
+						<caption>판매처</caption>
+						<colgroup>
+							<col>
+							<col style="width: 30%;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">주요구매처</th>
+								<th scope="col">거래비중</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="al" id="supp-nm1"></td>
+								<td class="ar" id="supp-rt1"></td>
+							</tr>
+							<tr>
+								<td class="al" id="supp-nm2"></td>
+								<td class="ar" id="supp-rt2"></td>
+							</tr>
+							<tr>
+								<td class="al" id="supp-nm3"></td>
+								<td class="ar" id="supp-rt3"></td>
+							</tr>
+							<tr>
+								<td class="al" id="supp-nm4"></td>
+								<td class="ar" id="supp-rt4"></td>
+							</tr>
+							<tr>
+								<td class="al" id="supp-nm5"></td>
+								<td class="ar" id="supp-rt5"></td>
+							</tr>
+							<tr>
+								<td class="al" id="supp-nm6"></td>
+								<td class="ar" id="supp-rt6"></td>
+							</tr>
+							<tr>
+								<td class="al" id="supp-nm7"></td>
+								<td class="ar" id="supp-rt7"></td>
+							</tr>
+							<tr>
+								<td class="al" id="supp-nm8"></td>
+								<td class="ar" id="supp-rt8"></td>
+							</tr>
+							<tr>
+								<td class="al" id="supp-nm9"></td>
+								<td class="ar" id="supp-rt9"></td>
+							</tr>
+							<tr>
+								<td class="al" id="supp-nm10"></td>
+								<td class="ar" id="supp-rt10"></td>
+							</tr>
+							<tr id="supp-no-data" style="display:none;">
+								<td colspan="2">
+									<p class="description caution body-small d-inflex">조회 데이터가 없습니다.</p>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!-- //customer-contribution -->
+
+		</div>
+		<!-- //customer-contribution-list -->
+	</div>
+</div>
+<!-- //customer-card-list -->

@@ -1,0 +1,254 @@
+<input type="text" id="date" >
+<div id="view-wrap" data-layout="sub" data-page-id="RMMBC02S001" aria-hidden="false">
+	<div id="content">
+		<div class="box-bg">
+			<ul class="cmm-list dot">
+				<li>조회시점별 최신 고시회차를 반영하며, 고시기준일 선택시 해당일의 최종 고시회차 정보를 볼 수 있습니다.</li>
+			</ul>
+		</div>
+		<div class="cmm-form">
+			<p class="label"><span>고시기준일</span></p>
+			<div class="input" data-maxdate="0">
+				<input type="text" class="date1" id="date1" title="날짜선택" maxlength="10" placeholder="날짜선택" aria-hidden="true"  oninput="this.value = this.value.replace(/[^0-9]/g,'').replace(/(\d{4})(\d{2})(\d{2})/,'$1-$2-$3')";>
+				<button class="btn-icon date" ><i class="icon-calendar">날짜선택</i></button>
+			</div>
+			<hr class="h30">
+			<p class="unit" style="display : none">매매기준율(단위: 원)</p>
+		</div>
+		<hr class="h20">
+		<div>
+			<div class="list-text bg" id="cycd">
+				<ul class="list">
+					<li>
+						<a class="box" name="layerOpen" id="0" data-layer-open="RMMBC02R001">
+							<i class="icon-flag-USD"></i>
+							<span class="txt" id="USD">USD(미국달러)</span>
+							<span class="blue" id="USDrate" value="0" data-bind="USD">-</span>
+							<i class="icon-next"></i>
+						</a>
+					</li>
+					<li>
+						<a class="box" name="layerOpen" id="1" data-layer-open="RMMBC02R001">
+							<i class="icon-flag-JPY"></i>
+							<span class="txt" id="JPY">JPY(일본 100엔)</span>
+							<span class="blue" name="basXrt" id="JPYrate" data-bind="JPY">-</span>
+							<i class="icon-next"></i>
+						</a>
+					</li>
+					<li>
+						<a class="box" name="layerOpen" id="12" data-layer-open="RMMBC02R001">
+							<i class="icon-flag-EUR"></i>
+							<span class="txt" id="EUR">EUR(유럽 유로)</span>
+							<span class="blue" name="basXrt" id="EURrate" value="12" data-bind="EUR">-</span>
+							<i class="icon-next"></i>
+						</a>
+					</li>
+					<li>
+						<a class="box" name="layerOpen" id="2" data-layer-open="RMMBC02R001">
+							<i class="icon-flag-GBP"></i>
+							<span class="txt" id="GBP">GBP(영국 파운드)</span>
+							<span class="blue" id="GBPrate" data-bind="GBP">-</span>
+							<i class="icon-next"></i>
+						</a>
+					</li>
+					<li>
+						<a class="box" name="layerOpen" id="3" data-layer-open="RMMBC02R001">
+							<i class="icon-flag-CAD"></i>
+							<span class="txt" id="CAD">CAD(캐나다 달러)</span>
+							<span class="blue" id="CADrate" data-bind="CAD">-</span>
+							<i class="icon-next"></i>
+						</a>
+					</li>
+					<li>
+						<a class="box" name="layerOpen" id="4" data-layer-open="RMMBC02R001">
+							<i class="icon-flag-CHF"></i>
+							<span class="txt" id="CHF">CHF(스위스 프랑)</span>
+							<span class="blue" id="CHFrate" data-bind="CHF">-</span>
+							<i class="icon-next"></i>
+						</a>
+					</li>
+					<li>
+						<a class="box" name="layerOpen" id="5" data-layer-open="RMMBC02R001">
+							<i class="icon-flag-HKD"></i>
+							<span class="txt" id="HKD">HKD(홍콩 달러)</span>
+							<span class="blue" id="HKDrate" data-bind="HKD">-</span>
+							<i class="icon-next"></i>
+						</a>
+					</li>
+					<li>
+						<a class="box" name="layerOpen" id="6" data-layer-open="RMMBC02R001">
+							<i class="icon-flag-CNY"></i>
+							<span class="txt" id="CNY">CNY(중국위안)</span>
+							<span class="blue" id="CNYrate" data-bind="CNY">-</span>
+							<i class="icon-next"></i>
+						</a>
+					</li>
+					<li>
+						<a class="box" name="layerOpen" id="7" data-layer-open="RMMBC02R001">
+							<i class="icon-flag-THB"></i>
+							<span class="txt" id="THB">THB(태국 바트)</span>
+							<span class="blue" id="THBrate" data-bind="THB">-</span>
+							<i class="icon-next"></i>
+						</a>
+					</li>
+					<li>
+						<a class="box" name="layerOpen" id="8" data-layer-open="RMMBC02R001">
+							<i class="icon-flag-SEK"></i>
+							<span class="txt" id="SEK">SEK(스웨덴 크로나)</span>
+							<span class="blue" id="SEKrate" data-bind="SEK">-</span>
+							<i class="icon-next"></i>
+						</a>
+					</li>
+					<li>
+						<a class="box" name="layerOpen" id="9" data-layer-open="RMMBC02R001">
+							<i class="icon-flag-AUD"></i>
+							<span class="txt" id="AUD">AUD(호주 달러)</span>
+							<span class="blue" id="AUDrate" data-bind="AUD">-</span>
+							<i class="icon-next"></i>
+						</a>
+					</li>
+					<li>
+						<a class="box" name="layerOpen" id="10" data-layer-open="RMMBC02R001">
+							<i class="icon-flag-DKK"></i>
+							<span class="txt" id="DKK">DKK(덴마크 크로네)</span>
+							<span class="blue" id="DKKrate" data-bind="DKK">-</span>
+							<i class="icon-next"></i>
+						</a>
+					</li>
+					<li>
+						<a class="box" name="layerOpen" id="11" data-layer-open="RMMBC02R001">
+							<i class="icon-flag-NOK"></i>
+							<span class="txt" id="NOK">NOK(노르웨이 크로네)</span>
+							<span class="blue" id="NOKrate" data-bind="NOK">-</span>
+							<i class="icon-next"></i>
+						</a>
+					</li>
+					<li>
+						<a class="box" name="layerOpen" id="13" data-layer-open="RMMBC02R001">
+							<i class="icon-flag-SGD"></i>
+							<span class="txt" id="SGD">SGD(싱가폴 달러)</span>
+							<span class="blue" id="SGDrate" data-bind="SGD">-</span>
+							<i class="icon-next"></i>
+						</a>
+					</li>
+					<li>
+						<a class="box" name="layerOpen" id="14" data-layer-open="RMMBC02R001">
+							<i class="icon-flag-NZD"></i>
+							<span class="txt" id="NZD">NZD(뉴질랜드 달러)</span>
+							<span class="blue" id="NZDrate" data-bind="NZD">-</span>
+							<i class="icon-next"></i>
+						</a>
+					</li>
+					<li>
+						<a class="box" name="layerOpen" id="15" data-layer-open="RMMBC02R001">
+							<i class="icon-flag-PHP"></i>
+							<span class="txt" id="PHP">PHP(필리핀 페소)</span>
+							<span class="blue" id="PHPrate" data-bind="PHP">-</span>
+							<i class="icon-next"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div id="RMMBC02R001" class="layer-b bg" data-layout="layer" aria-hidden="true">
+	<div class="inner">
+		<div class="header">
+			<button type="button" id="close" class="btn-icon" data-layer-close="true"><i class="icon-close">닫기</i></button>
+		</div>
+		<div class="content">
+			<div class="cmm-tab-line">
+				<ul role="tablist">
+					<li><a id="tab01" role="tab" aria-selected="true"><span>환율고시</span></a></li>
+					<li><a id="tab02" role="tab" aria-selected="false"><span>본지점매매율</span></a></li>
+				</ul>
+			</div>
+			<div class="list-table">
+				<table>
+					<caption>환율고시</caption>
+					<colgroup>
+						<col style="width:40%;">
+						<col style="width:60%;">
+					</colgroup>
+					<tbody id="tab01Detail">
+						<tr>
+							<th scope="row"><span>통화</span></th>
+							<td class="t-right blue" id="area1" name="">-</td>
+						</tr>
+						<tr>
+							<th scope="row"><span>고시회차</span></th>
+							<td class="t-right blue" id="area2" name="">-</td>
+						</tr>
+						<tr>
+							<th scope="row"><span>고시기준일</span></th>
+							<td class="t-right blue" id="area3" name="">-</td>
+						</tr>
+						<tr>
+							<th scope="row"><span>고시시각</span></th>
+							<td class="t-right" id="area4" name="">-</td>
+						</tr>
+						<tr>
+							<th scope="row"><span>매매기준율</span></th>
+							<td class="t-right" id="area5" name="">-</td>
+						</tr>
+						<tr>
+							<th scope="row"><span>전신환매도율</span></th>
+							<td class="t-right" id="area6" name="">-</td>
+						</tr>
+						<tr>
+							<th scope="row"><span>전신환매입율</span></th>
+							<td class="t-right" id="area7" name="">-</td>
+						</tr>
+						<tr>
+							<th scope="row"><span>현찰매도율</span></th>
+							<td class="t-right" id="area8" name="">-</td>
+						</tr>
+						<tr>
+							<th scope="row"><span>현찰매입율</span></th>
+							<td class="t-right" id="area9" name="">-</td>
+						</tr>
+						<tr>
+							<th scope="row"><span>대미환산율</span></th>
+							<td class="t-right" id="area10" name="">-</td>
+						</tr>
+						<tr>
+							<th scope="row"><span>미불당환산율</span></th>
+							<td class="t-right" id="area11" name="">-</td>
+						</tr>
+					</tbody>
+
+					<tbody id="tab02Detail" style="display: none;">
+						<tr>
+							<th scope="row"><span>통화</span></th>
+							<td class="t-right blue" id="area21" name="">-</td>
+						</tr>
+						<tr>
+							<th scope="row"><span>고시회차</span></th>
+							<td class="t-right blue" id="area22" name="">-</td>
+						</tr>
+						<tr>
+							<th scope="row"><span>고시기준일</span></th>
+							<td class="t-right blue" id="area23" name="">-</td>
+						</tr>
+						<tr>
+							<th scope="row"><span>본지점매도율</span></th>
+							<td class="t-right" id="area24" name="">-</td>
+						</tr>
+						<tr>
+							<th scope="row"><span>본지점매입율</span></th>
+							<td class="t-right" id="area25" name="">-</td>
+						</tr>
+					</tbody>
+
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+</script>

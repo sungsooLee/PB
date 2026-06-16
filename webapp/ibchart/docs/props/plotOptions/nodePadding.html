@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/resources/css/d2coding.css" />
+    <link rel="stylesheet" href="/resources/css/NanumGothic.css" />
+    <link rel="stylesheet" href="/resources/css/md-content.min.css" />
+    <link rel="stylesheet" href="../../resources/css/monokai_sublime.css" />
+  </head>
+
+  <body>
+    <div class="markdown-body">
+      <h1>
+        nodePadding <em><strong>(plotOptions properties)</strong></em>
+      </h1>
+      <blockquote>
+        <p>
+          각 노드 간 padding 을 설정합니다.<br />
+          <code>sankey 차트</code>, <code>dependencywheel 차트</code>에서만
+          사용됩니다.
+        </p>
+      </blockquote>
+      <h3>Info</h3>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>name</th>
+              <th>type</th>
+              <th>required</th>
+              <th>description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>nodePadding</td>
+              <td><code>number</code></td>
+              <td><span class="optional">선택(10)</span></td>
+              <td>노드 간 padding</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Example</h3>
+      <pre class="hljs"><code>myChart.setOptions({
+  <span class="hljs-attr">plotOptions</span>: {
+    <span class="hljs-attr">sankey</span>: {
+      <span class="hljs-attr">nodePadding</span>: <span class="hljs-number">5</span> <span class="hljs-comment">// 노드 간 padding 설정</span>
+   }
+ },
+  <span class="hljs-attr">series</span>: [{
+<span class="hljs-attr">data</span>:[
+      [<span class="hljs-string">"node1"</span>,<span class="hljs-string">"node2"</span>,<span class="hljs-number">20</span>],
+      [<span class="hljs-string">"node1"</span>,<span class="hljs-string">"node3"</span>,<span class="hljs-number">5</span>],
+      [<span class="hljs-string">"node4"</span>,<span class="hljs-string">"node2"</span>,<span class="hljs-number">3</span>],
+      [<span class="hljs-string">"node5"</span>,<span class="hljs-string">"node1"</span>,<span class="hljs-number">10</span>]
+    ]
+  }]
+}, {
+  <span class="hljs-attr">append</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">redraw</span>: <span class="hljs-literal">true</span>
+});
+</code></pre>
+      <h3>제공 버전</h3>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>version</th>
+              <th>desc</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>7.3.0.0</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="../../resources/plugins/jquery/jquery.slim.min.js"></script>
+    <script src="../../resources/plugins/jquery/jquery.mark.min.js"></script>
+    <script src="../../resources/js/ibChart/md-content.js"></script>
+  </body>
+</html>

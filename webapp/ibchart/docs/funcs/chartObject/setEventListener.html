@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/resources/css/d2coding.css" />
+    <link rel="stylesheet" href="/resources/css/NanumGothic.css" />
+    <link rel="stylesheet" href="/resources/css/md-content.min.css" />
+    <link rel="stylesheet" href="../../resources/css/monokai_sublime.css" />
+  </head>
+
+  <body>
+    <div class="markdown-body">
+      <h1>
+        setEventListener <em><strong>(ChartObject method)</strong></em>
+      </h1>
+      <blockquote>
+        <p>특정 이벤트를 추가합니다.</p>
+      </blockquote>
+      <h3>Syntax</h3>
+      <pre class="hljs"><code>{ibchart}.setEventListener(eventType, func);
+</code></pre>
+      <h3>Parameters</h3>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Required</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>eventType</code></td>
+              <td><code>string</code></td>
+              <td><span class="required">필수</span></td>
+              <td>이벤트 종류</td>
+            </tr>
+            <tr>
+              <td><code>func</code></td>
+              <td><code>function</code></td>
+              <td><span class="required">필수</span></td>
+              <td>이벤트 핸들러</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Returns</h3>
+      <p>
+        <em><strong>none</strong></em>
+      </p>
+      <h3>Enum</h3>
+      <ul>
+        <li>eventType</li>
+      </ul>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Value</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>searchEnd</td>
+              <td>조회 완료 이벤트</td>
+            </tr>
+            <tr>
+              <td>addSeries</td>
+              <td>시리즈 추가 완료 이벤트</td>
+            </tr>
+            <tr>
+              <td>afterPrint</td>
+              <td>프린트 직후 이벤트</td>
+            </tr>
+            <tr>
+              <td>beforePrint</td>
+              <td>프린트 직전 이벤트</td>
+            </tr>
+            <tr>
+              <td>click</td>
+              <td>차트 영역 클릭 이벤트</td>
+            </tr>
+            <tr>
+              <td>drilldown</td>
+              <td>드릴다운 이벤트</td>
+            </tr>
+            <tr>
+              <td>drillup</td>
+              <td>드릴업 이벤트</td>
+            </tr>
+            <tr>
+              <td>drillupAll</td>
+              <td>최상단 드릴업 이벤트</td>
+            </tr>
+            <tr>
+              <td>redraw</td>
+              <td>redraw 이벤트</td>
+            </tr>
+            <tr>
+              <td>selection</td>
+              <td>선택 이벤트</td>
+            </tr>
+            <tr>
+              <td>seriesAfterAnimate</td>
+              <td>시리즈 애니메이션 직후 이벤트</td>
+            </tr>
+            <tr>
+              <td>seriesCheckBoxClick</td>
+              <td>시리즈 체크박스 클릭 이벤트</td>
+            </tr>
+            <tr>
+              <td>seriesClick</td>
+              <td>시리즈 클릭 이벤트</td>
+            </tr>
+            <tr>
+              <td>seriesHide</td>
+              <td>시리즈 숨김 이벤트</td>
+            </tr>
+            <tr>
+              <td>seriesLegendItemClick</td>
+              <td>시리즈 범례 클릭 이벤트</td>
+            </tr>
+            <tr>
+              <td>seriesMouseOut</td>
+              <td>시리즈 마우스 아웃 이벤트</td>
+            </tr>
+            <tr>
+              <td>seriesMouseOver</td>
+              <td>시리즈 마우스 오버 이벤트</td>
+            </tr>
+            <tr>
+              <td>seriesShow</td>
+              <td>시리즈 보임 이벤트</td>
+            </tr>
+            <tr>
+              <td>pointClick</td>
+              <td>포인트 클릭 이벤트</td>
+            </tr>
+            <tr>
+              <td>pointMouseOut</td>
+              <td>포인트 마우스 아웃 이벤트</td>
+            </tr>
+            <tr>
+              <td>pointMouseOver</td>
+              <td>포인트 마우스 오버 이벤트</td>
+            </tr>
+            <tr>
+              <td>pointRemove</td>
+              <td>포인트 선택 이벤트</td>
+            </tr>
+            <tr>
+              <td>pointSelect</td>
+              <td>포인트 선택 이벤트</td>
+            </tr>
+            <tr>
+              <td>pointUnselect</td>
+              <td>포인트 선택 해제 이벤트</td>
+            </tr>
+            <tr>
+              <td>pointUpdate</td>
+              <td>포인트 업데이트 이벤트</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Example</h3>
+      <pre
+        class="hljs"
+      ><code><span class="hljs-comment">// 조회 완료 이벤트 등록</span>
+myChart.setEventListener(<span class="hljs-string">"searchend"</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>)</span>{
+  <span class="hljs-keyword">if</span>(event.code === <span class="hljs-number">-1</span> || event.msg !== <span class="hljs-string">"OK"</span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;
+  }
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"데이터 "</span> + event.type + <span class="hljs-string">" 완료!"</span>);
+});
+</code></pre>
+      <h3>Since</h3>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>version</th>
+              <th>desc</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>7.3.0.0</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="../../resources/plugins/jquery/jquery.slim.min.js"></script>
+    <script src="../../resources/plugins/jquery/jquery.mark.min.js"></script>
+    <script src="../../resources/js/ibChart/md-content.js"></script>
+  </body>
+</html>

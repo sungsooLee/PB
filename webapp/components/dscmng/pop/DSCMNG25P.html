@@ -1,0 +1,72 @@
+<!-- 
+/*************************************************************************
+* @ 서비스경로 : DSCMNG25P
+* @ 파일명      : DSCMNG25P 일정관리 > 영업 캘린더 > 일정 등록 > 공유 팝업
+* @ 작성자      : 90195467
+* @ 작성일      : 2024-12-26
+************************** 수정이력 ****************************************
+* 날짜                    작업자                 변경내용
+*_________________________________________________________________________
+* 2024-12-26            이혜성                 최초작성
+*************************************************************************/
+ -->
+ 
+<div class="content">
+	<!-- group-form -->
+	<div class="group-form">
+		<div class="group-title">
+			<strong class="title-medium">직원 검색</strong>
+		</div>
+		<div class="group-content">
+			<div class="form" id="nameForm">
+				<div class="label"></div>
+				<div class="input-wrap input-placeholder">
+					<input type="search" placeholder="이름 입력" aria-label="이름" id="searchPrlmNm">
+				</div>
+				<p class="validate-text" id="nameValidTxt"></p>
+			</div>
+			<div class="form" id="deptForm">
+				<div class="label"></div>
+				<div class="input-wrap input-placeholder">
+					<input type="search" placeholder="부서명 입력" aria-label="부서명" id="searchDeptNm">
+				</div>
+				<p class="validate-text" id="deptValidTxt"></p>
+			</div>
+			<div class="form" id="chrgBizForm">
+				<div class="label"></div>
+				<div class="input-wrap input-placeholder">
+					<input type="search" placeholder="담당업무 입력" aria-label="담당업무" id="searchChrgBizNm">
+				</div>
+				<p class="validate-text" id="chrgBizValidTxt"></p>
+			</div>
+		</div>
+
+	</div>
+	<!-- //group-form -->
+
+
+	<!-- btn-wrap -->
+	<div class="btn-wrap pt24">
+		<button type="button" class="btn-medium btn-secondary" id="searchBtn">검색</button>
+	</div>
+	<!-- //btn-wrap -->
+
+	<div class="">
+		<div class="inp-box" id="prlmData" style="display:none'">
+			
+		</div>
+		
+		<!-- division-center -->
+			<div class="division-center"  id="noPrlmData" style="display:none">
+
+				<div class="no-result">
+					<i class="icon-only icon-48 icon-noresult bg-icon-gray_1"></i>
+					<p class="body-medium fw-400">검색 결과가 없습니다.</p>
+				</div>
+
+			</div>
+			<!-- //division-center -->
+			
+			<div id="observerTarget"></div>
+	</div>
+</div>

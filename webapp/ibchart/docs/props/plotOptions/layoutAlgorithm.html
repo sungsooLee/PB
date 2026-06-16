@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/resources/css/d2coding.css" />
+    <link rel="stylesheet" href="/resources/css/NanumGothic.css" />
+    <link rel="stylesheet" href="/resources/css/md-content.min.css" />
+    <link rel="stylesheet" href="../../resources/css/monokai_sublime.css" />
+  </head>
+
+  <body>
+    <div class="markdown-body">
+      <h1>
+        layoutAlgorithm <em><strong>(plotOptions properties)</strong></em>
+      </h1>
+      <blockquote>
+        <p>
+          배치 알고리즘을 설정합니다.<br />
+          <span style="color: blue">참고</span> : <code>tilemap</code> 에서는
+          타일의 모양을 설정하는 속성입니다.
+        </p>
+      </blockquote>
+      <h3>Info</h3>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>name</th>
+              <th>type</th>
+              <th>required</th>
+              <th>description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>layoutAlgorithm</td>
+              <td><code>string</code> or <code>object</code></td>
+              <td><span class="optional">선택</span></td>
+              <td>배치 방법 설정</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <ul>
+        <li>networkgraph.layoutAlgorithm Info</li>
+      </ul>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>name</th>
+              <th>type</th>
+              <th>required</th>
+              <th>description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>enableSimulation</td>
+              <td><code>boolean</code></td>
+              <td><span class="optional">선택(false)</span></td>
+              <td>노드와 링크가 모이는 실시간 애니메이션 사용 여부</td>
+            </tr>
+            <tr>
+              <td>friction</td>
+              <td><code>number</code></td>
+              <td><span class="optional">선택(-0.981)</span></td>
+              <td>
+                노드가 움직일 때 적용되는 마찰 정도<br />참고 :
+                <code>-0.999</code> ~ <code>-0.85</code> 사이에서 사용하는 것을
+                추천합니다.
+              </td>
+            </tr>
+            <tr>
+              <td>gravitationalConstant</td>
+              <td><code>number</code></td>
+              <td><span class="optional">선택(0.0625)</span></td>
+              <td>중간에 모이는 정도</td>
+            </tr>
+            <tr>
+              <td>initialPositionRadius</td>
+              <td><code>number</code></td>
+              <td><span class="optional">선택(1)</span></td>
+              <td>노드들이 최초로 생기는 위치 (중심부터의 거리)</td>
+            </tr>
+            <tr>
+              <td>gravitationalConstant</td>
+              <td><code>number</code></td>
+              <td><span class="optional">선택(0.0625)</span></td>
+              <td>중간에 모이는 정도</td>
+            </tr>
+            <tr>
+              <td>linkLength</td>
+              <td><code>number</code></td>
+              <td><span class="optional">선택</span></td>
+              <td>
+                링크들의 길이<br />참고 : 노드 사이의 배치로 인해 설정한
+                길이보다 짧거나 길어질 수도 있습니다.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <ul>
+        <li>packedbubble.layoutAlgorithm Info</li>
+      </ul>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>name</th>
+              <th>type</th>
+              <th>required</th>
+              <th>description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>bubblePadding</td>
+              <td><code>number</code></td>
+              <td><span class="optional">선택(5)</span></td>
+              <td>버블 간 padding 설정</td>
+            </tr>
+            <tr>
+              <td>gravitationalConstant</td>
+              <td><code>number</code></td>
+              <td><span class="optional">선택(0.01)</span></td>
+              <td>서로 끌어당기는 정도</td>
+            </tr>
+            <tr>
+              <td>initialPositionRadius</td>
+              <td><code>number</code></td>
+              <td><span class="optional">선택(20)</span></td>
+              <td>버블이 최초로 생기는 위치 (중심부터의 거리)</td>
+            </tr>
+            <tr>
+              <td>splitSeries</td>
+              <td><code>boolean</code></td>
+              <td><span class="optional">선택(false)</span></td>
+              <td>버블이 대분류를 기준으로 모일 지 여부</td>
+            </tr>
+            <tr>
+              <td>enableSimulation</td>
+              <td><code>boolean</code></td>
+              <td><span class="optional">선택(true)</span></td>
+              <td>버블이 모이는 애니메이션 사용 여부</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Enum</h3>
+      <ul>
+        <li>treemap.layoutAlgorithm</li>
+      </ul>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>sliceAndDice</td>
+            </tr>
+            <tr>
+              <td>stripes</td>
+            </tr>
+            <tr>
+              <td>squarified</td>
+            </tr>
+            <tr>
+              <td>strip</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <ul>
+        <li>tilemap.layoutAlgorithm (타일의 모양을 설정합니다.)</li>
+      </ul>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>value</th>
+              <th>description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>hexagon</td>
+              <td>육각형</td>
+            </tr>
+            <tr>
+              <td>circle</td>
+              <td>원</td>
+            </tr>
+            <tr>
+              <td>diamond</td>
+              <td>다이아몬드</td>
+            </tr>
+            <tr>
+              <td>square</td>
+              <td>사각형</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Example</h3>
+      <pre class="hljs"><code>myChart.setOptions({
+  <span class="hljs-attr">plotOptions</span>: {
+    <span class="hljs-attr">packedbubble</span>: {
+      <span class="hljs-attr">layoutAlgorithm</span>:{ <span class="hljs-comment">// 배치 알고리즘 설정</span>
+        splitSeries: <span class="hljs-literal">false</span>,
+        <span class="hljs-attr">bubblePadding</span>:<span class="hljs-number">10</span>,
+        <span class="hljs-attr">gravitationalConstant</span>: <span class="hljs-number">0.02</span>
+      }
+   }
+ },
+  <span class="hljs-attr">series</span>: [{
+    <span class="hljs-attr">name</span>: <span class="hljs-string">"서울"</span>,
+    <span class="hljs-attr">data</span> : [<span class="hljs-number">60</span>,<span class="hljs-number">40</span>,<span class="hljs-number">20</span>,<span class="hljs-number">80</span>]
+  },{
+    <span class="hljs-attr">name</span>: <span class="hljs-string">"인천"</span>,
+    <span class="hljs-attr">data</span> : [<span class="hljs-number">10</span>,<span class="hljs-number">15</span>,<span class="hljs-number">40</span>,<span class="hljs-number">40</span>]
+  },{
+    <span class="hljs-attr">name</span>: <span class="hljs-string">"부산"</span>,
+    <span class="hljs-attr">data</span> : [<span class="hljs-number">50</span>,<span class="hljs-number">40</span>,<span class="hljs-number">20</span>,<span class="hljs-number">70</span>]
+  }]
+}, {
+  <span class="hljs-attr">append</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">redraw</span>: <span class="hljs-literal">true</span>
+});
+</code></pre>
+      <h3>제공 버전</h3>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>version</th>
+              <th>desc</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>7.3.0.0</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="../../resources/plugins/jquery/jquery.slim.min.js"></script>
+    <script src="../../resources/plugins/jquery/jquery.mark.min.js"></script>
+    <script src="../../resources/js/ibChart/md-content.js"></script>
+  </body>
+</html>
