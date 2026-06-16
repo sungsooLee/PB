@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <title>자산관리 영업지원 App</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0, user-scalable=no"
+    />
+
+    <script src="../../resources/plugins/jquery/jquery.min.js"></script>
+
+    <!-- [plugins] -->
+    <!-- micromodal -->
+    <link
+      rel="stylesheet"
+      href="../../resources/plugins/micromodal/0.4.10/micromodal.css"
+    />
+    <script src="../../resources/plugins/micromodal/0.4.10/micromodal.min.js"></script>
+    <!-- sortable -->
+    <script src="../../resources/plugins/sortable/1.15.2/Sortable.min.js"></script>
+    <!-- sweetalert2 -->
+    <link
+      rel="stylesheet"
+      href="../../resources/plugins/sweetalert2/11.11.0/sweetalert2.min.css"
+    />
+    <script src="../../resources/plugins/sweetalert2/11.11.0/sweetalert2.min.js"></script>
+    <!-- swiper -->
+    <link
+      rel="stylesheet"
+      href="../../resources/plugins/swiper/11.1.1/swiper-bundle.min.css"
+    />
+    <script src="../../resources/plugins/swiper/11.1.1/swiper-bundle.min.js"></script>
+    <!-- tippy -->
+    <script src="../../resources/plugins/popper.js/2.11.8/umd/popper.min.js"></script>
+    <script src="../../resources/plugins/popper.js/2.11.8/umd/tippy-bundle.umd.min.js"></script>
+    <!-- toastr -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../resources/plugins/toastr/2.1.4/toastr.min.css"
+    />
+    <script src="../../resources/plugins/toastr/2.1.4/toastr.min.js"></script>
+    <!-- jquery-ui -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../resources/plugins/jquery-ui/jquery-ui.css"
+    />
+    <script src="../../resources/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- pinch-zoom -->
+    <script src="../../resources/plugins/pinch-zoom/pinch-zoom.umd.js"></script>
+    <!-- apexcharts -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../resources/plugins/apexcharts/3.50.0/apexcharts.css"
+    />
+    <script src="../../resources/plugins/apexcharts/3.50.0/apexcharts.min.js"></script>
+    <!-- AOS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../resources/plugins/aos/3.0.0-beta.6/aos.css"
+    />
+    <script src="../../resources/plugins/aos/3.0.0-beta.6/aos.js"></script>
+    <!-- jquery-ui-monthpicker-master -->
+    <script src="../../resources/plugins/jquery-ui-monthpicker-master/monthpicker.js"></script>
+    <!-- jquery-touchSwipe -->
+    <script src="../../resources/plugins/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <!-- //[plugins] -->
+
+    <!-- ui source -->
+    <link rel="stylesheet" href="../../resources/css/ui-fonts.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-variable.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-default.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-layout.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-style.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-content.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-bscard.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-plugins.css" />
+
+    <link rel="stylesheet" href="../../resources/css/ui-skeletone.css" />
+    <link rel="stylesheet" href="../../resources/css/ui-mediaquery.css" />
+
+    <link rel="stylesheet" href="../../resources/css/ui-wm.css" />
+    <!-- wm css 추가 -->
+    <script src="../../resources/js/ui-script.js"></script>
+    <script src="../../resources/js/ui-temp.js"></script>
+    <!-- 개발서버에서 include 제외해주세요 -->
+    <!-- //ui source -->
+  </head>
+
+  <body>
+    <!-- main -->
+    <main>
+      <!-- header -->
+      <header>
+        <div class="main-header">
+          <div class="left">
+            <button type="button" class="header-btn" aria-label="뒤로 가기">
+              <i class="i-back"></i>
+            </button>
+          </div>
+          <div class="center">
+            <h1>오늘의 관리고객</h1>
+          </div>
+        </div>
+      </header>
+      <!-- //header -->
+
+      <!-- main-inner -->
+      <!-- content start -->
+      <div class="main-inner">
+        <!-- container -->
+        <div id="container">
+          <!-- content -->
+          <div class="content bg-gray">
+            <div class="data-view">
+              <p class="data">2026.05.29 (금)</p>
+              <p class="total">
+                <strong>총<span>12명</span></strong>
+              </p>
+            </div>
+
+            <!-- data-list -->
+            <ul class="data-list">
+              <li>
+                <p class="tit-data">
+                  <!-- 아이콘 케이스 -->
+                  <!--
+                예금만기                : ico_deposit_maturity.svg
+                당반기 PB 이탈          : ico_pb_deposit.svg
+                PB이탈 위험(고유동성)   : ico_pb_risk.svg
+                상품관리필요            : ico_product_management.svg
+                사후관리                : ico_market_followup.svg
+                시황이슈발생            : ico_issue.svg
+                자산 증가               : ico_asset_growth.svg
+                -->
+                  <!-- 예금만기 -->
+                  <img
+                    src="../../resources/images/ico/ico_deposit_maturity.svg"
+                    alt=""
+                  />
+                  <span>PB고객 고액 예금만기</span>
+                </p>
+                <div class="info-wrap">
+                  <p class="user-info">
+                    <strong>김우리</strong> 고객님
+                    <span class="label color-01">3억PB</span>
+                    <!-- label 클래스 케이스 -->
+                    <!--
+                3억 PB          : color-01
+                1억 PB          : color-02
+                -->
+                  </p>
+
+                  <p class="info-recent">최근 관리일 2026.04.27</p>
+
+                  <div class="info-balance">
+                    <p>
+                      <span>금융수진평잔</span
+                      ><strong class="cost">351,000,000</strong>
+                    </p>
+                    <p>
+                      <span>자산가상품 잔액</span
+                      ><strong class="cost">351,000,000</strong>
+                    </p>
+                  </div>
+
+                  <div class="info-ai-view active">
+                    <ul>
+                      <li>
+                        김우리 고객님이 보유한 {상품명}과 연관된 코스피지수에
+                        52주 최고가 근접 이벤트가 발생했어요.
+                      </li>
+                      <li>
+                        한국 GDP 성장이 나타나는 가운데 한국 경제 성장 기대에
+                        따라 코스피 지수가 상승했습니다.
+                      </li>
+                      <li>
+                        코스피 지수가 52주 최고가에 근접한 상황에서 한국경제
+                        성장 기대가 긍정적인 영향을 미치고 있으나, 물가 상승
+                        우려가 존재하므로 신중한 접근이 필요합니다.
+                      </li>
+                    </ul>
+                    <button type="button" class="btn-more">
+                      <span class="sr-only">더보기</span>
+                    </button>
+                  </div>
+
+                  <button type="button" class="btn-medium btn-outlined">
+                    명함보내기
+                  </button>
+                </div>
+              </li>
+              <li>
+                <p class="tit-data">
+                  <img
+                    src="../../resources/images/ico/ico_asset_growth.svg"
+                    alt=""
+                  />
+                  <span>3개월연속 자산증가</span>
+                </p>
+                <div class="info-wrap">
+                  <p class="user-info">
+                    <strong>이우리</strong> 고객님
+                    <span class="label color-02">1억PB</span>
+                  </p>
+
+                  <p class="info-recent">최근 관리일 2026.04.27</p>
+
+                  <div class="info-balance">
+                    <p>
+                      <span>금융수진평잔</span
+                      ><strong class="cost">351,000,000</strong>
+                    </p>
+                    <p>
+                      <span>자산가상품 잔액</span
+                      ><strong class="cost">351,000,000</strong>
+                    </p>
+                  </div>
+
+                  <div class="info-ai-view">
+                    <ul>
+                      <li>이우리 고객님의 고액 예금 만기가 돌아오고 있어요!</li>
+                      <li>이우리 고객님의 고액 예금 만기가 돌아오고 있어요!</li>
+                      <li>이우리 고객님의 고액 예금 만기가 돌아오고 있어요!</li>
+                    </ul>
+                    <button type="button" class="btn-more">
+                      <span class="sr-only">더보기</span>
+                    </button>
+                  </div>
+
+                  <button type="button" class="btn-medium btn-outlined">
+                    명함보내기
+                  </button>
+                </div>
+              </li>
+            </ul>
+            <!--// data-list -->
+
+            <!-- 데이터 없는 경우 -->
+            <!-- division-center -->
+            <div class="division-center">
+              <div class="no-result">
+                <i class="icon-only icon-48 icon-noresult bg-icon-gray_1"></i>
+                <p class="body-medium fw-400">검색 결과가 없습니다.</p>
+              </div>
+            </div>
+            <!-- //division-center -->
+            <!--// 데이터 없는 경우 -->
+          </div>
+          <!-- //content -->
+        </div>
+        <!-- //container -->
+      </div>
+      <!-- //content end -->
+      <!-- //main-inner -->
+    </main>
+    <!-- //main -->
+
+    <script>
+      document.querySelectorAll(".info-ai-view").forEach((aiView) => {
+        const button = aiView.querySelector(".btn-more");
+        const buttonText = aiView.querySelector(".btn-more > span");
+
+        if (aiView.querySelectorAll("ul li").length <= 1) {
+          button.hidden = true;
+          return;
+        }
+
+        const update = () => {
+          const expanded = aiView.classList.contains("active");
+          buttonText.textContent = expanded ? "접기" : "더보기";
+          button.ariaExpanded = expanded;
+        };
+
+        update();
+
+        button.addEventListener("click", () => {
+          aiView.classList.toggle("active");
+          update();
+        });
+      });
+    </script>
+  </body>
+</html>

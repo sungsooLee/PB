@@ -8,18 +8,18 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0, user-scalable=no"
     />
 
-    <script src="../../resources/plugins/jquery/jquery.min.js"></script>
+    <script src="../resources/plugins/jquery/jquery.min.js"></script>
 
     <!-- ui source -->
-    <link rel="stylesheet" href="../../resources/css/ui-fonts.css" />
-    <link rel="stylesheet" href="../../resources/css/ui-variable.css" />
-    <link rel="stylesheet" href="../../resources/css/ui-default.css" />
+    <link rel="stylesheet" href="../resources/css/ui-fonts.css" />
+    <link rel="stylesheet" href="../resources/css/ui-variable.css" />
+    <link rel="stylesheet" href="../resources/css/ui-default.css" />
 
-    <link rel="stylesheet" href="../../resources/css/ui-plugins.css" />
+    <link rel="stylesheet" href="../resources/css/ui-plugins.css" />
 
-    <link rel="stylesheet" href="../../resources/css/ui-skeletone.css" />
-    <link rel="stylesheet" href="../../resources/css/ui-mediaquery.css" />
-    <link rel="stylesheet" href="../../resources/css/ui-guide.css" />
+    <link rel="stylesheet" href="../resources/css/ui-skeletone.css" />
+    <link rel="stylesheet" href="../resources/css/ui-mediaquery.css" />
+    <link rel="stylesheet" href="../resources/css/ui-guide.css" />
     <!-- //ui source -->
   </head>
 
@@ -1817,7 +1817,7 @@
         //add anchor
         if (this.attributes.href.value === "") {
           $(this).attr({
-            href: `/publish/${linkFolder}/${linkName}.html`,
+            href: `./${linkFolder}/${linkName}.html`,
             target: "_blank",
           });
         } else {
