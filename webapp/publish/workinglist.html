@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Publishing Task Board</title>
     <style>
-      @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
-
       * {
         margin: 0;
         padding: 0;
@@ -16,106 +14,186 @@
         background: #f8fafc;
         color: #0f172a;
         font-family: "Pretendard", sans-serif;
-        padding: 40px 20px;
+        padding: 40px 16px;
       }
       .container {
         max-width: 720px;
         margin: 0 auto;
       }
       .header {
-        margin-bottom: 32px;
+        margin-bottom: 24px;
       }
       .header h1 {
-        font-size: 28px;
+        font-size: 22px;
         letter-spacing: -0.02em;
-        margin-bottom: 8px;
+        font-weight: 700;
+        color: #1e293b;
       }
 
       /* 대시보드 */
       .dashboard {
         background: #ffffff;
-        padding: 24px;
-        border-radius: 20px;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-        margin-bottom: 24px;
+        padding: 20px;
+        border-radius: 14px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        border: 1px solid #e2e8f0;
+        margin-bottom: 20px;
       }
       .progress-meta {
         display: flex;
         justify-content: space-between;
-        margin-bottom: 12px;
+        margin-bottom: 10px;
         font-weight: 600;
+        font-size: 13px;
+        color: #64748b;
       }
       .progress-track {
-        height: 10px;
+        height: 6px;
         background: #f1f5f9;
         border-radius: 10px;
         overflow: hidden;
       }
       .progress-fill {
         height: 100%;
-        background: #3b82f6;
+        background: #2658ed; /* 딥한 솔리드 컬러로 고급감 부여 */
         border-radius: 10px;
-        transition: width 1s ease-out;
+        transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
       }
 
-      /* 리스트 */
+      /* 카드 기반 리스트 구조 */
       .list-container {
         display: flex;
         flex-direction: column;
-        gap: 12px;
+        gap: 10px;
       }
       .card {
         background: #ffffff;
-        padding: 20px;
-        border-radius: 16px;
+        padding: 16px 20px;
+        border-radius: 12px;
         display: flex;
         align-items: center;
         justify-content: space-between;
         border: 1px solid #e2e8f0;
         transition:
-          transform 0.2s,
-          box-shadow 0.2s;
+          border-color 0.2s,
+          background-color 0.2s;
       }
       .card:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+        border-color: #cbd5e1;
+        background-color: #fafafa;
+      }
+
+      /* 콘텐츠 영역 */
+      .card-info {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        min-width: 0;
+        flex: 1;
+        margin-right: 16px;
+      }
+
+      /* 타이틀 라인 (구분 텍스트와 제목 결합) */
+      .title-area {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 15px;
+      }
+
+      /* [신규/기존] 텍스트 스타일 */
+      .type-txt {
+        font-weight: 700;
+        font-size: 13px;
+        flex-shrink: 0;
+      }
+      .type-txt.new {
+        color: #0284c7;
+      }
+      .type-txt.old {
+        color: #94a3b8;
       }
 
       .title {
-        font-size: 16px;
         font-weight: 600;
-        margin-bottom: 4px;
-        display: block;
+        color: #1e293b;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
       .url {
-        font-size: 13px;
+        font-size: 12px;
         color: #64748b;
         text-decoration: none;
-        display: inline-block;
+        font-family: monospace;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding-left: 2px;
       }
       .url:hover {
         text-decoration: underline;
-        color: #3b82f6;
+        color: #0f172a;
       }
 
-      .badge {
-        padding: 6px 14px;
-        border-radius: 10px;
-        font-size: 12px;
+      /* 작업 상태 영역 (Dot + Text 스타일) */
+      .status-area {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 13px;
         font-weight: 700;
-        text-transform: uppercase;
+        flex-shrink: 0;
       }
-      .done {
-        background: #f0fdf4;
-        color: #16a34a;
+      .status-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        display: inline-block;
       }
-      .progress {
-        background: #fffbeb;
-        color: #d97706;
+
+      /* 상태별 컬러 바인딩 */
+      .status-area.done {
+        color: #00ad7c;
       }
-      .wait {
-        background: #f1f5f9;
-        color: #475569;
+      .status-area.done .status-dot {
+        background-color: #00ad7c;
+      }
+
+      /* 작업중 상태 */
+      .status-area.progress {
+        color: #ea580c;
+      }
+      .status-area.progress .status-dot {
+        background-color: #ea580c;
+      }
+
+      /* 대기 상태 */
+      .status-area.wait {
+        color: #64748b;
+      }
+      .status-area.wait .status-dot {
+        background-color: #94a3b8;
+      }
+
+      /* 📱 모바일 초소형 화면 대응 */
+      @media (max-width: 480px) {
+        .card {
+          padding: 14px 16px;
+        }
+        .title-area {
+          font-size: 14px;
+          gap: 4px;
+        }
+        .type-txt {
+          font-size: 12px;
+        }
+        .url {
+          font-size: 11px;
+        }
+        .status-area {
+          font-size: 12px;
+        }
       }
     </style>
   </head>
@@ -123,19 +201,21 @@
   <body>
     <div class="container">
       <div class="header">
-        <h1>PBWON 퍼블리싱</h1>
+        <h1>PBWON 퍼블리싱 현황</h1>
       </div>
 
-      <!-- <div class="dashboard">
+      <!-- 상단 대시보드 -->
+      <div class="dashboard">
         <div class="progress-meta">
-          <span id="stats"></span>
+          <span id="stats">진행 현황 (0/0)</span>
           <span id="progressText">0%</span>
         </div>
         <div class="progress-track">
           <div class="progress-fill" id="progressBar"></div>
         </div>
-      </div> -->
+      </div>
 
+      <!-- 미니멀 텍스트 스타일 리스트 -->
       <div class="list-container" id="list"></div>
     </div>
 
@@ -144,35 +224,55 @@
         {
           title: "시뮬레이션 상세",
           url: "./PBWSS/WM-SCR-13.html",
+          type: "신규",
           status: "progress",
         },
         {
           title: "고객 TO-DO 상세",
           url: "./PBWSS/WM-SCR-15.html",
+          type: "기존",
           status: "done",
+        },
+        {
+          title: "마이페이지 개인정보 변경 레이아웃",
+          url: "./PBWSS/WM-SCR-16.html",
+          type: "신규",
+          status: "wait",
         },
       ];
 
-      const statusMap = { done: "완료", progress: "진행중", wait: "대기중" };
+      const statusMap = {
+        done: "완료",
+        progress: "작업중",
+        wait: "대기",
+      };
+
       const list = document.getElementById("list");
 
       list.innerHTML = pages
         .map(
           (page) => `
         <div class="card">
-          <div>
-            <strong class="title">${page.title}</strong>
+          <div class="card-info">
+            <div class="title-area">
+              <span class="type-txt ${page.type === "신규" ? "new" : "old"}">[${page.type}]</span>
+              <strong class="title">${page.title}</strong>
+            </div>
             <a href="${page.url}" target="_blank" class="url">${page.url}</a>
           </div>
-          <span class="badge ${page.status}">${statusMap[page.status]}</span>
+          <div class="status-area ${page.status}">
+            <span class="status-dot"></span>
+            <span>${statusMap[page.status]}</span>
+          </div>
         </div>
       `,
         )
         .join("");
 
+      // 대시보드 업데이트
       const total = pages.length;
       const completed = pages.filter((p) => p.status === "done").length;
-      const percent = Math.round((completed / total) * 100);
+      const percent = total > 0 ? Math.round((completed / total) * 100) : 0;
 
       document.getElementById("progressBar").style.width = `${percent}%`;
       document.getElementById("progressText").textContent = `${percent}%`;
